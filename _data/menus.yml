@@ -1,0 +1,21 @@
+main:
+  - name: "Temas"
+    url: "/services/"
+    weight: 2
+  - name: "Trabajos"
+    url: "/team/"
+    weight: 3
+  - name: "Recursos de Información"
+    url: "/about/"
+    weight: 4
+  - name: "Contacto"
+    url: "/contact/"
+    weight: 5
+
+footer:
+  - name: "Inicio"
+    url: "/"
+    weight: 1
+  - name: "Contacto"
+    url: "/contact/"
+    weight: 2

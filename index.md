@@ -1,0 +1,19 @@
+---
+layout: home
+title: Inicio
+intro_image: "images/illustrations/final.svg"
+intro_image_absolute: false
+intro_image_hide_on_mobile: true
+---
+
+# R-Project en Experimentación Animal
+
+<p style="text-align:justify">
+
+Curso de <a href = "https://cran.r-project.org/">R-Project</a> aplicado en experimentación animal. Curso del pregrado de Ingeniería Agropecuaria de la 
+<a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziLSydjQwdTQx8LAws3AwcA0N8XE1CfQ0M_E31wwkpiAJKG-AAjgZA_VFgJXATDLwNTYEmuAb4hfg7B7h4GUEV4DGjIDfCINNRUREATA0gew!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/">Universidad de Antioquia,</a> Colombia.
+
+
+</p>
+
+

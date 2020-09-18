@@ -1,0 +1,18 @@
+[
+  {
+    "title": "R para Ciencia de Datos",
+    "description": "Libro de Garrett Grolemund y Hadley Wickham.",
+    "image": "images/features/libro_r4ds.svg"
+  },
+  {
+    "title": "Libro Vivo de Ciencia de Datos",
+    "description": "Libro de Pablo Casas.",
+    "image": "images/features/libro2.svg"
+  },
+  {
+    "title": "An Introduction to Statistical Learning: with Applications in R",
+    "description": "Libro de Gareth James, Daniela Witten, Trevor Hastie y Robert Tibshirani.",
+    "image": "images/features/libro3.svg"
+  }
+]
+

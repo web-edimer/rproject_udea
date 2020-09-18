@@ -1,0 +1,134 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Presentación del curso <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+# Yo...
+
+<br>
+<center>
+<img src = "img/img17.png"/>
+</center>
+
+.footnote[
+[1] [Perfil de Github](https://github.com/Edimer) <br>
+[2] [Mi página web](https://edimer.github.io/)
+]
+
+---
+
+# Propósito y objetivo general del curso
+
+## Propósito
+
+- El curso procura apoyar el desempeño profesional de nuestros futuros egresados mediante la enseñanza de un programa computacional para el manejo de hojas de datos, operaciones matemáticas, análisis estadísticos y gráficos.
+
+## Objetivo general
+
+- Adquirir los elementos necesarios para el uso del programa R aplicado a análisis estadísticos y modelación en las ciencias animales.
+
+---
+
+# Contenido y bibliografía básica
+
+## Tópicos generales
+
+- **Unidad 1:** Historia, soporte y estructura computacional de R.
+- **Unidad 2:** Hojas de datos (tipos de datos).
+- **Unidad 3:** Sistemas de graficación (`graphics`, `lattice`, `ggplot2`)
+- **Unidad 4:** Análisis de datos con R (`tidyverse`)
+
+## Bibliografía
+
+- R Development Core Team. R Language Definition. 2009, (15/05/2009) URL:http://cran.r-project.org/doc/manuals/R-lang.pdf
+- Diaz U R. Introducción al uso y programación del sistema estadístico R. 2003, (15/05/2009) URL:http://cran.r-project.org/doc/contib/curso-R.Diaz-Uriarte.pdf
+- Cerón-Muñoz MF, Galeano LF, Mosquera J 2013 Modelación Aplicada a las Ciencias Animales: Generalidades de R-project. http://editorialbiogenesis.udea.edu.co.
+
+---
+
+# Evaluación del curso
+
+<br>
+
+- **Actividad 1:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas
+  - 5 %
+- **Actividad 2:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas
+  - 30 %
+- **Actividad 3:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas
+  - 35 %
+- **Actividad 4:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas
+  - 30 %  
+
+---
+class: inverse, center, middle
+
+# Recursos de Información
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# R para Ciencia de Datos
+
+.footnote[
+[1] [Libro: versión español.](https://es.r4ds.hadley.nz/)
+]
+
+<br>
+<center>
+<img src = "img/libro2.png"/>
+</center>
+
+---
+
+# Libro vivo de Ciencia de Datos
+
+<br>
+<center>
+<img src = "img/libro3.png"width = 350; height = 400/>
+</center>
+
+.footnote[
+[1] [Libro: versión español.](https://librovivodecienciadedatos.ai/)
+]
+
+---
+
+# An Introduction to Statistical Learning
+
+.footnote[
+[1] [Libro: versión inglés.](http://faculty.marshall.usc.edu/gareth-james/ISL/)
+]
+
+<br>
+<center>
+<img src = "img/libro1.png" width = 600; height = 400/>
+</center>
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
