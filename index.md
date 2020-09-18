@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Inicio
+title: R-Project UdeA
 intro_image: "images/illustrations/final.svg"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
