@@ -3,7 +3,7 @@ title: Recursos de Información
 layout: 'page'
 ---
 
-En esta sección el usuario podrá encontrar material bibliogŕafico de apoyo para los temas abordados durante el semestre.
+En esta sección usted podrá encontrar material bibliogŕafico de apoyo para los temas abordados durante el semestre.
 
 # Documentación lenguaje R
 
