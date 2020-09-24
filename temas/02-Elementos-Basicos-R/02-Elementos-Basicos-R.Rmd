@@ -298,6 +298,23 @@ class: inverse, center, middle
 </center>
 ]
 
+---
+
+# Editando fragmentos de R
+
+<br>
+- Insertar fragmento de R con `Ctrl + ALt + i`.
+- **`fig.align`:** alineación de gráficos.
+- **`fig.width:`** ancho de gráficos.
+- **`fig.height:`** altura de gráficos.
+- **`echo:`** opción para imprimir el código en el documento.
+- **`eval:`** opción para evaluar el código, es decir, producir resultados.
+- **`warning:`** opción para desactivar las advertencias.
+- **`message:`** opción para desactivar los mensajes.
+
+<center>
+<img src = "img/chunkr.PNG"; height = 150/>
+</center>
 
 ---
 
@@ -328,7 +345,35 @@ class: inverse, center, middle
 <img src = "img/rmarkdown3.png"; height = 300/>
 </center>
 ]
-    
+
+---
+
+# Presentaciones HTML
+
+- Crear archivo de extensión ***.Rmd***
+    - *File -> New File -> R Mardown -> Presentation -> Ioslides*
+
+<center>
+ 
+  
+```{r, echo=FALSE, out.width="515px", out.height="320px"}
+knitr::include_graphics("img/present.png")
+```
+
+</center> 
+
+  - Guardar archivo **.Rmd**
+      - *File -> Save with Encoding -> UTF-8.*
+  - Nueva diapositiva con `##`.
+  - Diapositiva de tema principal con `#`.
+
+---
+class: inverse, center, middle
+
+# Publicar en Rpubs
+
+Publicación de documentos en  [Rpubs.](https://rpubs.com/)
+Regístrese [aquí.](https://rpubs.com/users/new)    
 
 ---
 class: inverse, center, middle
