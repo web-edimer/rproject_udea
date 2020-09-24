@@ -1,0 +1,91 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Tipos de datos y funciones en R <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Tipos de datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Clases atómicas y objetos estructurados
+
+## Objetos básicos
+
+- *Numérico*
+- *Entero*
+- *Caracteres* (texto)
+  - *Factor*
+- *Lógicos* 
+
+## Objetos estructurados
+
+- *Vector*
+- *Matriz*
+- *Base de datos*
+- *Lista*
+
+
+---
+class: inverse, center, middle
+
+# Funciones en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# Estructura de una función
+
+## Componentes
+
+- Nombre
+- Cuerpo
+- Entorno
+
+```r
+  nombre(argumento_1, argumento_2, ..., argumento_p)
+```
+
+## Funciones auxiliares
+
+- **`getwd()`**
+- **`help()`**
+- **`class()`**
+- **`str()`**
+- **`ls()`**
+- **`library()`** o  **`require()`**
+
+---
+class: inverse, center, middle
+
+# Bibliotecas en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Instalar y cargar biblioteca
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
