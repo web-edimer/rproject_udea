@@ -1,0 +1,43 @@
+---
+title: "R Project en Experimentación Animal"
+subtitle: "Actividad 1"
+author: "Edimer David Jaramillo"
+date: "25/9/2020"
+output:
+  html_document:
+    theme: readable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Actividad
+
+1. Ingrese a [datos.gov.co](https://www.datos.gov.co/browse?sortBy=newest&utf8=%E2%9C%93).
+2. Elegir una base de datos de interés (**se recomienda que esté ligada al sector agrario**).
+3. Construir un documento *R Markdown* que contenga:
+    - Hipervínculo de la base de datos.
+    - Imagen de la base de datos.
+    - Justificación de por qué eligió la base de datos.
+    - Tres consultas o preguntas a la base de datos.
+    
+<center>
+<img src = "image/metodo.jpg" />
+</center>    
+
+# Arduino Science Journal
+
+- [Science Journal (hasta diciembre de 2020).](https://play.google.com/store/apps/details?id=com.google.android.apps.forscience.whistlepunk&hl=es_CO)
+
+<center>
+<img src = "image/app2.PNG" />
+</center>
+
+- Instalar [Arduino Science Journal](https://play.google.com/store/apps/details?id=cc.arduino.sciencejournal&hl=es_419)
+
+<center>
+<img src = "image/app.png" />
+</center>
+
+- [Arduino Science Journal](https://blog.arduino.cc/2020/08/05/the-science-journal-is-graduating-from-google-coming-to-arduino-this-fall/)
