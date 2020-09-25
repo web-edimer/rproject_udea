@@ -1,6 +1,6 @@
 ---
 title: "Uso de R en experimentación animal:"
-subtitle: "Tipos de datos y funciones en R <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Tipos de datos, funciones y bibliotecas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -22,23 +22,39 @@ class: inverse, center, middle
 
 ---
 
-# Clases atómicas y objetos estructurados
+# Datos en R
 
-## Objetos básicos
+--
+.pull-left[
 
-- *Numérico*
-- *Entero*
-- *Caracteres* (texto)
-  - *Factor*
-- *Lógicos* 
+### Básicos
 
-## Objetos estructurados
+- *Numérico* `->` **`numeric`** o  **`double`**
+- *Entero* `->` **`integer`**
+- *Caracteres* (texto) `->` **`character`**
+  - *Factor* `->` **`factor`**
+- *Lógicos* `->` **`logical`**
 
-- *Vector*
-- *Matriz*
-- *Base de datos*
-- *Lista*
+### Estructurados
 
+- *Vector* `->` **`vector()`** o  **`c()`** 
+- *Matriz* `->` **`matrix()`** 
+- *Base de datos* `->` **`data.frame()`** 
+- *Lista* `->` **`list()`**  
+]
+
+--
+.pull-right[
+
+<center>
+<img src="img/tipos_variables.jpg"/>
+</center>
+
+#### Base de datos
+<center>
+<img src="img/tabla.PNG"/>
+</center>
+]
 
 ---
 class: inverse, center, middle
@@ -49,30 +65,36 @@ class: inverse, center, middle
 ---
 # Estructura de una función
 
-## Componentes
+### Componentes
 
-- Nombre
-- Cuerpo
-- Entorno
+- Nombre, Cuerpo y Entorno
 
 ```r
   nombre(argumento_1, argumento_2, ..., argumento_p)
+* getwd()
 ```
 
-## Funciones auxiliares
+### Funciones auxiliares
 
-- **`getwd()`**
-- **`help()`**
-- **`class()`**
-- **`str()`**
-- **`ls()`**
-- **`library()`** o  **`require()`**
+- **`getwd()`** `->` obtener directorio de trabajo actual.
+- **`help()`** `->` sistema de ayuda.
+- **`class()`** `->` clase atómica o tipo de datos.
+- **`str()`** `->` estructura de datos.
+- **`ls()`** `->` lista de objetos en ambiente.
+- **`install.packages()`** `->` instalar bibliotecas.
+- **`library()`** o  **`require()`** `->` cargar bibliotecas.
 
 ---
 class: inverse, center, middle
 
 # Bibliotecas en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+[Lista de bibliotecas disponibles en R - CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+
+[Bioconductor](http://bioconductor.org/)
+
+[Github: ejemplo `genR`](https://github.com/Edimer/genR)
 
 ---
 class: inverse, center, middle

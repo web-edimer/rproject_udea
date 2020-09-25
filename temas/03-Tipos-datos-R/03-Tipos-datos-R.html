@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-09-24" />
+    <meta name="date" content="2020-09-25" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -13,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 # Uso de R en experimentación animal:
-## Tipos de datos y funciones en R
+## Tipos de datos, funciones y bibliotecas
 <html>
 <div style="float:left">
 
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-09-24
+### 2020-09-25
 
 ---
 
@@ -34,23 +34,39 @@ class: inverse, center, middle
 
 ---
 
-# Clases atómicas y objetos estructurados
+# Datos en R
 
-## Objetos básicos
+--
+.pull-left[
 
-- *Numérico*
-- *Entero*
-- *Caracteres* (texto)
-  - *Factor*
-- *Lógicos* 
+### Básicos
 
-## Objetos estructurados
+- *Numérico* `-&gt;` **`numeric`** o  **`double`**
+- *Entero* `-&gt;` **`integer`**
+- *Caracteres* (texto) `-&gt;` **`character`**
+  - *Factor* `-&gt;` **`factor`**
+- *Lógicos* `-&gt;` **`logical`**
 
-- *Vector*
-- *Matriz*
-- *Base de datos*
-- *Lista*
+### Estructurados
 
+- *Vector* `-&gt;` **`vector()`** o  **`c()`** 
+- *Matriz* `-&gt;` **`matrix()`** 
+- *Base de datos* `-&gt;` **`data.frame()`** 
+- *Lista* `-&gt;` **`list()`**  
+]
+
+--
+.pull-right[
+
+&lt;center&gt;
+&lt;img src="img/tipos_variables.jpg"/&gt;
+&lt;/center&gt;
+
+#### Base de datos
+&lt;center&gt;
+&lt;img src="img/tabla.PNG"/&gt;
+&lt;/center&gt;
+]
 
 ---
 class: inverse, center, middle
@@ -61,30 +77,36 @@ class: inverse, center, middle
 ---
 # Estructura de una función
 
-## Componentes
+### Componentes
 
-- Nombre
-- Cuerpo
-- Entorno
+- Nombre, Cuerpo y Entorno
 
 ```r
   nombre(argumento_1, argumento_2, ..., argumento_p)
+* getwd()
 ```
 
-## Funciones auxiliares
+### Funciones auxiliares
 
-- **`getwd()`**
-- **`help()`**
-- **`class()`**
-- **`str()`**
-- **`ls()`**
-- **`library()`** o  **`require()`**
+- **`getwd()`** `-&gt;` obtener directorio de trabajo actual.
+- **`help()`** `-&gt;` sistema de ayuda.
+- **`class()`** `-&gt;` clase atómica o tipo de datos.
+- **`str()`** `-&gt;` estructura de datos.
+- **`ls()`** `-&gt;` lista de objetos en ambiente.
+- **`install.packages()`** `-&gt;` instalar bibliotecas.
+- **`library()`** o  **`require()`** `-&gt;` cargar bibliotecas.
 
 ---
 class: inverse, center, middle
 
 # Bibliotecas en R
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+[Lista de bibliotecas disponibles en R - CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+
+[Bioconductor](http://bioconductor.org/)
+
+[Github: ejemplo `genR`](https://github.com/Edimer/genR)
 
 ---
 class: inverse, center, middle
