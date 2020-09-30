@@ -13,5 +13,5 @@ intro_image_hide_on_mobile: true
     + [01-Introducción a R y RStudio](/temas/01-IntroR-RStudio/01-IntroR-RStudio.html)
     + [02-Elementos básicos de R](/temas/02-Elementos-basicos-R/02-Elementos-basicos-R.html)
 - **Unidad 2:**
-    + [03-Tipos de datos, funciones y bibliotecas en R](/temas/03-Tipos-datos-R/03-Tipos-datos-R.html)    
+    + [03-Tipos de datos, operadores, funciones y bibliotecas en R](/temas/03-Tipos-datos-R/03-Tipos-datos-R.html)    
     

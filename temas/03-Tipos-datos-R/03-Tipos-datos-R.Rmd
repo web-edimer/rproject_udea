@@ -59,6 +59,44 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
+# Operadores en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Operadores
+
+--
+.pull-left[
+
+### Operadores Aritméticos
+
+- **`+`:** suma.
+- **`-`:** resta.
+- **`*`:** multiplicación.
+- **`/`:** división.
+- **`^`:** potencia.
+  
+]
+
+--
+.pull-right[
+
+### Operadores Lógicos
+
+- **`==`:** igualdad.
+- **`!=`:** diferencia.
+- **`>`:** mayor.
+- **`<`:** menor.
+- **`>=`:** mayor o igual.
+- **`<=`:** menor o igual.
+- **`!`:** negación.
+
+]
+
+---
+class: inverse, center, middle
+
 # Funciones en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
