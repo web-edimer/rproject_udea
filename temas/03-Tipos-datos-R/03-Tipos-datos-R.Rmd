@@ -81,19 +81,19 @@ class: inverse, center, middle
 
 ### Operadores Aritméticos
 
-- **`+`:** suma.
-- **`-`:** resta.
-- **`*`:** multiplicación.
-- **`/`:** división.
-- **`^`:** potencia.
+- **+** `->` suma
+- **-** `->` resta
+- **`*`** `->` multiplicación
+- **/** `->` división
+- **^** `->` potencia
 
 ### Operadores Lógicos
 
-- **`!`:** negación.
-- **`|`:** disyunción `->` total
-- **`||`:** disyunción `->` individual
-- **`&`:** conjunción `->` total
-- **`&&`:** conjunción `->` individual
+- **!** `->` negación.
+- **|** `->` disyunción `->` total
+- **||** `->` disyunción `->` individual
+- **&** `->` conjunción `->` total
+- **&&** `->` conjunción `->` individual
   
 ]
 
@@ -102,13 +102,13 @@ class: inverse, center, middle
 
 ### Operadores Relacionales
 
-- **`==`:** igualdad.
-- **`!=`:** diferencia.
-- **`>`:** mayor.
-- **`<`:** menor.
-- **`>=`:** mayor o igual.
-- **`<=`:** menor o igual.
-- **`%in%`:** pertenece a.
+- **==** `->` igualdad
+- **!=** `->` diferencia
+- **>** `->` mayor
+- **<** `->` menor
+- **>=** `->` mayor o igual
+- **<=** `->` menor o igual
+- **%in%** `->` pertenece a
 
 ]
 
