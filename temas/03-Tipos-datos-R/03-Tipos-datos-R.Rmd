@@ -76,7 +76,7 @@ class: inverse, center, middle
 
 # Tipos de operadores
 
---
+
 .pull-left[
 
 ### Operadores Aritméticos
@@ -97,7 +97,7 @@ class: inverse, center, middle
   
 ]
 
---
+
 .pull-right[
 
 ### Operadores Relacionales
