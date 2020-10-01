@@ -137,6 +137,7 @@ class: inverse, center, middle
 - **`class()`** `->` clase atómica o tipo de datos.
 - **`str()`** `->` estructura de datos.
 - **`ls()`** `->` lista de objetos en ambiente.
+- **`rm()`** `->` remover objetos del ambiente.
 - **`install.packages()`** `->` instalar bibliotecas.
 - **`library()`** o  **`require()`** `->` cargar bibliotecas.
 
