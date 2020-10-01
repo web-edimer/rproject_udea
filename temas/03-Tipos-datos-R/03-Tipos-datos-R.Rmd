@@ -1,6 +1,6 @@
 ---
 title: "Uso de R en experimentación animal:"
-subtitle: "Tipos de datos, funciones y bibliotecas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Tipos de datos, operadores, funciones y bibliotecas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -59,12 +59,22 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
+# Valores ausentes en R - `NA`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+<center>
+<img src="img/na.png"/>
+</center>
+
+---
+class: inverse, center, middle
+
 # Operadores en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
 
 ---
 
-# Operadores
+# Tipos de operadores
 
 --
 .pull-left[
@@ -76,13 +86,21 @@ class: inverse, center, middle
 - **`*`:** multiplicación.
 - **`/`:** división.
 - **`^`:** potencia.
+
+### Operadores Lógicos
+
+- **`!`:** negación.
+- **`|`:** disyunción `->` total
+- **`||`:** disyunción `->` individual
+- **`&`:** conjunción `->` total
+- **`&&`:** conjunción `->` individual
   
 ]
 
 --
 .pull-right[
 
-### Operadores Lógicos
+### Operadores Relacionales
 
 - **`==`:** igualdad.
 - **`!=`:** diferencia.
@@ -90,7 +108,7 @@ class: inverse, center, middle
 - **`<`:** menor.
 - **`>=`:** mayor o igual.
 - **`<=`:** menor o igual.
-- **`!`:** negación.
+- **`%in%`:** pertenece a.
 
 ]
 

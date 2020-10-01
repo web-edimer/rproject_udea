@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-09-30" />
+    <meta name="date" content="2020-10-01" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -13,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 # Uso de R en experimentación animal:
-## Tipos de datos, funciones y bibliotecas
+## Tipos de datos, operadores, funciones y bibliotecas
 <html>
 <div style="float:left">
 
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-09-30
+### 2020-10-01
 
 ---
 
@@ -71,12 +71,22 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
+# Valores ausentes en R - `NA`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+&lt;center&gt;
+&lt;img src="img/na.png"/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
 # Operadores en R
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
 
 ---
 
-# Operadores
+# Tipos de operadores
 
 --
 .pull-left[
@@ -88,13 +98,21 @@ class: inverse, center, middle
 - **`*`:** multiplicación.
 - **`/`:** división.
 - **`^`:** potencia.
+
+### Operadores Lógicos
+
+- **`!`:** negación.
+- **`|`:** disyunción `-&gt;` total
+- **`||`:** disyunción `-&gt;` individual
+- **`&amp;`:** conjunción `-&gt;` total
+- **`&amp;&amp;`:** conjunción `-&gt;` individual
   
 ]
 
 --
 .pull-right[
 
-### Operadores Lógicos
+### Operadores Relacionales
 
 - **`==`:** igualdad.
 - **`!=`:** diferencia.
@@ -102,7 +120,7 @@ class: inverse, center, middle
 - **`&lt;`:** menor.
 - **`&gt;=`:** mayor o igual.
 - **`&lt;=`:** menor o igual.
-- **`!`:** negación.
+- **`%in%`:** pertenece a.
 
 ]
 
