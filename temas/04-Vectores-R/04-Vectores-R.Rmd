@@ -32,6 +32,8 @@ class: inverse, center, middle
 
 - **Sólo almacena datos de un mismo tipo**
 - Creación de vectores `->` **`c()`** o **`vector()`**
+- Longitud de un vector `->` **`length()`** 
+- Acceder a los nombres `->` **`names()`** 
 - Generación de secuencias `->` **`seq()`** o **`:`**
 - Generación de repeticiones `->` **`rep()`**
 - Pegar o concatenar texto `->` **`paste()`** o **`paste0()`**
