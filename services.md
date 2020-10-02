@@ -14,6 +14,7 @@ intro_image_hide_on_mobile: true
     + [02-Elementos básicos de R](/temas/02-Elementos-basicos-R/02-Elementos-basicos-R.html)
 - **Unidad 2:**
     + [03-Tipos de datos, operadores, funciones y bibliotecas en R](/temas/03-Tipos-datos-R/03-Tipos-datos-R.html)
+        + [Ejemplo de clase - Rpubs]()
     + [04-Vectores en R](/temas/04-Vectores-R/04-Vectores-R.html)
     
     
