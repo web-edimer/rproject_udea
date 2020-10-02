@@ -35,7 +35,12 @@ class: inverse, center, middle
 - Generación de secuencias `->` **`seq()`** o **`:`**
 - Generación de repeticiones `->` **`rep()`**
 - Pegar o concatenar texto `->` **`paste()`** o **`paste0()`**
+- Subconjuntos `->` `mi_vector[i]` *
 - Vectorización
+
+.footnote[
+`*[i]` puede ser el índice o nombre de un vector.
+]
 
 ]
 
