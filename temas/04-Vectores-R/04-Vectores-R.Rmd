@@ -1,0 +1,152 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Vectores<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Vectores en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Vectores
+
+--
+
+.pull-left[
+
+### Generalidades
+
+- **Sólo almacena datos de un mismo tipo**
+- Creación de vectores `->` **`c()`** o **`vector()`**
+- Generación de secuencias `->` **`seq()`** o **`:`**
+- Generación de repeticiones `->` **`rep()`**
+- Pegar o concatenar texto `->` **`paste()`** o **`paste0()`**
+- Vectorización
+
+]
+
+--
+
+.pull-right[
+
+### Coerción
+
+
+- Implícita 
+- Explícita (**`as.`**)
+
+<center>
+<img src="img/coercion.PNG"; height= 300/>
+</center>
+
+]
+
+---
+
+# Funciones de comprobación y coerción
+
+| Tipo | Comprobación | Coerción |
+| :---: | :----: | :----: |
+| Vector | `is.vector()` | `as.vector()` |
+| Matriz | `is.matrix()` | `as.matrix()` |
+| Base de datos | `is.data.frame()` | `as.data.frame()` |
+| Lista | `is.list()`| `as.list()` |
+| Numérico | `is.numeric()` | `as.numeric()` |
+| Entero | `is.integer()` | `as.integer()` |
+| Lógico | `is.logical()`| `as.logical()` |
+| Carácter | `is.character()`| `as.character()` |
+| Factor | `is.factor()`| `as.factor()` |
+| NA | `is.na()` |  |
+
+---
+
+# Funciones de estadística descriptiva
+
+.pull-left[
+| Función | Descripción |
+| :--- | :----------------: |
+| `mean()` | Media |
+| `median()` | Mediana |
+| `sd()` | Desviación estándar |
+| `var()` | Varianza |
+| `range()` | Rango |
+| `min()` | Valor mínimo |
+| `max()` | Valor máximo |
+| `quantile()` | Cuartiles, deciles y percentiles |
+| `cor()` | Coeficiente de correlación |
+| `IQR()` | Rango intercuartílico |
+]
+
+.pull-right[
+| Función | Descripción |
+| :--- | :----------------: |
+| `table()` | Frecuencias absolutas |
+| `prop.table()` | Frecuencias relativas |
+| `sort()` | Ordenar los datos |
+| `sum()` | Sumar |
+| `colSums()` | Suma por columnas |
+| `rowSums()` | Suma por filas |
+| `colMeans()` | Promedios por columnas |
+| `rowMeans()` | Promedios por filas |
+| `summary()` * | resumen genérico |
+
+.footnote[
+`*` `summary()` no es una función específica para estadística descriptiva.
+]
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+# Ejercicio con vectores
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Ejercicio 
+
+- Crear un vector para el género de los estudiantes.
+- Crear un vector que contenga la altura (aproximada) de los estudiantes.
+- Crear un vector que contenga el peso (aproximado) de los estudiantes.
+- Calcule el [Índice de Masa Corporal](https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal) con la siguiente expresión:
+
+$$IMC = \frac{Masa}{Altura^2}$$
+
+- Con R obtenga la proporción de personas que están en el ragno normal (IMC entre 18.5 y 24.9).
+- ¿Cuál género presenta mayor IMC promedio?
+- ¿Cuál género presenta mayor dispersión en el IMC?
+- ¿Cuál es la correlación entre altura y peso? ¿cómo se interpreta?
+
+
+<center>
+<img src="img/ejercicio.PNG"; height= 170; width = 500/>
+</center>
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
