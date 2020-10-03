@@ -20,6 +20,6 @@ intro_image_hide_on_mobile: true
 <br>
 
 - **Ejemplos de clase Rpubs:**
-+ [Ejemplo de clase 03 - (Jueves-Viernes)]()
++ [Ejemplo de clase 03 - (Jueves-Viernes)](03-Tipos-datos-R/01datosR-JuevesViernes.html)
     
     
