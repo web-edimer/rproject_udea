@@ -19,7 +19,7 @@ intro_image_hide_on_mobile: true
     + [04-Vectores en R](/temas/04-Vectores-R/04-Vectores-R.html)
 <br>
 
-- **Ejemplos de clase Rpubs:**
+- **Ejemplos de clase:**
 + [Ejemplo de clase 03 y 04 - (Martes-Miércoles)](/temas/Clases/MartesMiercoles/clase_datosR2.html)
 + [Ejemplo de clase 03 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/01datosR.html)
 + [Ejemplo de clase 04 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/vectores.html)
