@@ -1,0 +1,149 @@
+---
+title: "Vectores en R"
+author: "Edimer David Jaramillo"
+date: "2/10/2020"
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Vectores
+
+## Generalidades
+
+- Los vectores sólo almacenan datos de un sólo tipo. Se pueden crear con las funciones c() o vector().
+
+```{r}
+# No es de uso común
+vector1 <- vector(mode = "numeric", length = 10)
+vector1
+
+# Otra forma para crear vectores
+vector2 <- c(1, 2, 4, 50)
+vector2
+class(vector2)
+```
+
+- ¿Qué pasa cuándo incorporo en un mismo vector un texto y un número?
+
+```{r}
+vector3 <- c(20, "Edimer")
+vector3
+class(vector3)
+```
+
+- De los vectores es posible obtener la longitud a través de la función length().
+
+```{r}
+nuevo <- c(1, 20, 50, 40)
+nuevo
+length(nuevo)
+```
+
+- A los vectores es posible asignarles nombres y estos nombres pueden ser obtenidos a través de la función names().
+
+```{r}
+names(nuevo)
+
+# Nombres de un vector
+nuevo2 <- c(gato = 50, perro = 40, loro = 21)
+nuevo2
+names(nuevo2)
+```
+
+## Secuencias
+
+```{r}
+# Secuencia con :
+1:20 # ascendente
+20:1 # descendente
+secuencia <- 1:20
+
+# Secuencia con la función seq()
+1:5
+seq(from = 1, to = 5, by = 2)
+seq(from = 1, to = 20, length.out = 4)
+
+seq(2, 30, 5)
+seq(to = 5, by = 2, from = 1)
+```
+
+## Repeticiones
+
+```{r}
+rep(20, 10)
+rep("A", 5)
+rep(c(1, 5), 3)
+rep(c("a", "b"), 5)
+
+rep("b", 3)
+rep(x = "b", times = 3)
+
+rep(c(10, 20), each = 3)
+```
+
+## Concatenación ("pegado") de texto
+
+```{r}
+paste("Edimer", "udea")
+paste0("Edimer", "udea")
+paste("Edimer", "udea", "perro", "rojo")
+
+paste("Vaca", 1:20)
+paste0("Vaca", 1:20)
+```
+
+## Subconjuntos
+
+- Subconjunto por posición o índice:
+
+```{r}
+carro <- c(a = 10, b = 30, d = 25, e = 40)
+carro
+carro[2]
+carro[c(1, 4)]
+```
+
+- Subconjunto por nombre:
+
+```{r}
+names(carro)
+carro["a"]
+carro[c("a", "e")]
+```
+
+- Subconjunto por condición:
+
+```{r}
+# Subconjunto con condición simple
+carro[carro > 25] 
+
+
+# Subconjunto con condición doble
+carro[carro > 15 & carro < 35]
+
+carro > 15 & carro < 35
+carro > 15 && carro < 35
+```
+
+## Coerción (conversión) explícita
+
+- La conversión explícita de objetos en R se puede obtener a través de las funciones que comienzan por as.*
+
+```{r}
+raton <- c(1, 30, "a")
+raton
+
+raton2 <- as.numeric(raton)
+raton2
+
+# Comprobación 
+is.numeric(raton2)
+```
+
+
+

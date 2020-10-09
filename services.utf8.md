@@ -20,6 +20,8 @@ intro_image_hide_on_mobile: true
 <br>
 
 - **Ejemplos de clase Rpubs:**
-+ [Ejemplo de clase 03 - (Jueves-Viernes)]()
++ [Ejemplo de clase 03 y 04 - (Jueves-Viernes)](temas/Clases/MartesMiercoles/clase_datosR2.html)
++ [Ejemplo de clase 03 - (Jueves-Viernes)](temas/Clases/JuevesViernes/01datosR.html)
++ [Ejemplo de clase 04 - (Jueves-Viernes)](temas/Clases/JuevesViernes/vectores.html)
     
     

@@ -1,0 +1,305 @@
+---
+title: "Tipos de datos, operadores, funciones y bibliotecas en R"
+author: "Edimer David Jaramillo"
+date: "30/9/2020"
+output:
+  html_document:
+    toc: true
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tipos de datos
+
+- Los tipos de datos en R pueden ser:
+  - **Numéricos:** estos se conocen porque tienen decimales.
+  - **Enteros:** estos no tienen cifras decimales.
+  - **Caracteres:** todo texto es de tipo caracter en R.
+  - **Factores:** todo texto que posee estructura de agrupación.
+  - **Lógicos o booleanos:** son aquellos que denotan verdadero (TRUE) o falso (FALSE).
+  
+##  Ejemplo numéricos
+
+```{r}
+numerico <- 2.6
+```
+
+## Ejemplo de enteros
+
+- **Nota:** todo número en R, independientemente de si es entero o decimal, será codificado por R como numérico, no obstante, es posible declarar enteros agregando la letra "L" mayúscula al final del número.
+
+```{r}
+entero1 <- 2
+entero2 <- 3L
+```
+
+## Ejemplo de caracteres (string)
+
+- **Nota:** el texto en R se escribe siempre entre comillas (pueden ser comillas simples o dobles).
+
+```{r}
+edimer <- "Este es mi texto en R"
+edimer2 <- 'otro texto'
+```
+
+## Ejemplo de datos lógicos
+
+```{r}
+logico <- TRUE #recomendado
+logico2 <- T # no recomendado
+logico2
+```
+
+## Datos ausentes
+
+Los datos ausentes se denotan en R como NA.
+
+```{r}
+mi_na <- NA
+```
+
+# Tipos de operadores
+
+## Operadores aritméticos
+
+```{r}
+2 + 2
+2 - 2
+2 * 2
+2 / 2
+2 ^ 2
+```
+
+## Operadores relacionales
+
+- **Igualdad:**
+
+```{r}
+50 == 50
+"a" == "a"
+"A" == "a"
+```
+
+- **Diferencia:**
+
+```{r}
+50 != 40
+"E" != "E"
+```
+
+- **Mayor, mayor o igual...**
+
+```{r}
+50 > 30
+50 > 50
+50 >= 50
+"z" > "a"
+"b" < "a"
+"c" <= "c" 
+
+2 %in% 2
+```
+
+## Operadores lógicos
+
+- **Negación:**
+
+```{r}
+!2 == 2
+```
+
+- **Conjunción:** (y)
+
+```{r}
+gato <- 30
+perro <- 50
+
+gato & perro > 40 # forma incorrecta
+
+gato > 40 & perro > 40 # forma correcta
+gato > 40 && perro > 40 
+```
+
+- **Disyunción:** (o)
+
+```{r}
+gato > 40 | perro > 40
+gato > 40 || perro > 40
+```
+
+# Funciones auxiliares
+
+```{r}
+getwd()
+#help("getwd")
+
+carro <- 20.50
+class(carro)
+
+str(iris)
+```
+
+- **Ver lista de objetos almacenados y borrar algún objeto:**
+
+```{r}
+ls() # lista
+
+rm(perro)
+```
+
+- **Instalar y cargar bibliotecas:**
+
+```{r, eval=FALSE}
+install.packages("ggplot2", dependencies = TRUE)
+library(Hmisc)
+```
+
+# Vectores
+
+## Un sólo tipo de dato (coerción)
+
+```{r}
+mi_vector1 <- vector(mode = "numeric", length = 10)
+mi_vector1
+class(mi_vector1)
+
+mi_vector2 <- c(1, 2, 4, 20.50)
+mi_vector2
+
+mi_vector3 <- c("texto1", "texto2", "texto3")
+mi_vector3
+class(mi_vector3)
+
+mi_vector4 <- c(1, 1.50, "Edimer")
+mi_vector4
+
+mi_vector5 <- c(20, 10, TRUE)
+mi_vector5
+
+# Longitud del vector 5
+length(mi_vector5)
+
+# Nombres de vectores
+names(mi_vector5)
+
+mi_vector6 <- c(edimer = 20, udea = 50)
+mi_vector6
+names(mi_vector6)
+
+names(iris)
+```
+
+## Secuencias numéricas
+
+- **Nota:** las secuencias en R se pueden obtener con los dos puntos (:) o con la función seq(). 
+
+```{r}
+# Secuencia con dos puntos 
+1:10
+
+# Secuencia como vector
+variable1 <- 1:1000
+
+# Secuencia con función seq()
+seq(from = 1, to = 20, by = 2)
+
+seq(from = 20, to = 100, length.out = 10)
+
+edimer <- seq(from = 20, to = 100, length.out = 10)
+edimer
+```
+
+## Repeticiones
+
+- **Nota:** para generar repeticiones (numéricos, texto o de cualquier tipo) es posible utilizar la función rep().
+
+```{r}
+# Son equivalentes
+rep(1, 10)
+rep(x = 1, times = 10)
+
+# Repetir un vector de texto
+rep(x = c("A", "B", "D"), times = 10)
+
+# 
+rep(x = c(20, 30, 50), each = 5)
+```
+
+## Concatenación de texto
+
+- Para "pegar" cadenas de texto es posible utilizar las funciones paste() o paste0().
+
+```{r}
+paste("Edimer", "Udea")
+paste0("Edimer", "+", "Udea")
+
+# Texto + Número
+paste("Vaca", 1:10)
+paste("Vaca", seq(from = 1, to = 20, by = 2))
+paste0("Toro ", 1:5)
+```
+
+## Subconjuntos de vectores
+
+```{r}
+nuevo <- c(a = 20.3, b = 50, d = 20.8, e = 40.5, f = 21)
+nuevo
+
+# Subconjunto por posición
+nuevo[1]
+nuevo[c(1, 5)]
+
+# Subconjunto por nombre
+names(nuevo)
+nuevo["a"]
+nuevo[c("a", "f")]
+
+# Subconjunto por condición simple
+nuevo[nuevo > 25]
+
+# Subconjunto por condición doble
+nuevo > 20 & nuevo < 40
+nuevo > 20 && nuevo < 40
+
+# Equivalentes
+nuevo[nuevo > 20 & nuevo < 40]
+nuevo[nuevo %in% seq(20.1, 39.99, by = 0.01)]
+```
+
+## Coerción explícita
+
+- La coerción explícita es aquello que puede administrar el usuario a través de las funciones as.*
+
+```{r}
+nuevo2 <- c(1, 2, "Edimer")
+nuevo2
+nuevo3 <- as.numeric(nuevo2)
+
+is.character(nuevo2)
+is.character(nuevo3)
+```
+
+# Funciones estadística descriptiva
+
+```{r}
+pesos <- c(200.20, 300, 450, 310.15, 540)
+mean(pesos) # promedio
+min(pesos) # mínimo
+sd(pesos) # desviación estándar
+var(pesos) # varianza
+quantile(pesos) # cuartiles
+```
+
+
+
+
+
+
+
+
+
+
+
