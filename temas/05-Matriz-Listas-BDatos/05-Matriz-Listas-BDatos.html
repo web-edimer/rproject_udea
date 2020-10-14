@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-10-13" />
+    <meta name="date" content="2020-10-14" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -22,41 +22,125 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-10-13
+### 2020-10-14
 
 ---
 
 
 class: inverse, center, middle
 
-# Vectores en R
+# Tipos de datos en R
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/datos.PNG"; height= 400/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# Matrices y listas en R
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
 
-# Vectores
-
---
+# Matrices y listas
 
 .pull-left[
 
+### Matrices
 
+&lt;center&gt;
+&lt;img src="img/matriz.PNG"; height= 150/&gt;
+&lt;/center&gt;
 
-.footnote[
-`*[i]` puede ser el índice, nombre o condición.
+- **Almacenan datos de un sólo tipo**
+- Se generan con la función `matrix()`
+- Las matrices poseen atributos como nombres y dimensiones
+  - `names()`, `rownames()`, `colnames()`, `dim()`, `dimnames()`, `nrow()`, `ncol()`
+- Subconjuntos `-&gt;` `[filas, columnas]`
+
 ]
 
-]
-
---
 
 .pull-right[
 
-
+### Listas
 
 &lt;center&gt;
-&lt;img src="img/coercion.PNG"; height= 300/&gt;
+&lt;img src="img/listas.PNG"; height= 100/&gt;
 &lt;/center&gt;
+
+- **Almacenan datos de diferente tipo**
+- Se generan con la función `list()`
+- Subconjuntos `-&gt;` `[]` o `[[]]` o `$`
+- Las listas poseen atributos como nombres `-&gt;` `names()`
+
+##### ¿Cómo añadir nuevos datos a un vector, matriz o lista? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 100/&gt; &lt;/center&gt;
+
+
+]
+
+---
+class: inverse, center, middle
+
+# Bases de datos
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://teachdatascience.com/post/tidyverse/tidyverse-package-workflow.png"; height= 300/&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;img src="https://tidyverse.tidyverse.org/articles/tidyverse-logo.png"; height= 150/&gt;
+&lt;/center&gt;
+
+
+
+
+
+---
+
+# Data Frames
+
+.pull-left[
+
+&lt;center&gt;
+&lt;img src="img/base.PNG"; height= 100/&gt;
+&lt;/center&gt;
+
+- Se generan manualmente con la función `data.frame()`
+- Subconjuntos `-&gt;` `[]` o `[[]]` o `$`
+- Poseen atributos como nombres y dimensiones `-&gt;` `names()`, `rownames()`, `colnames()`, `dim()`, `dimnames()`, `nrow()`, `ncol()`
+- Importación de datos `-&gt;` `read.csv()`, `read.csv2()`, `read.table()` 
+- Exportación de datos `-&gt;` `write.csv()`, `write.csv2()`, `write.table()` 
+
+##### ¿Tibble y Data Frames? `-&gt;` ¿"Iguales"? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/&gt; &lt;/center&gt;
+
+]
+
+.pull-right[
+
+&lt;center&gt;
+&lt;img src="https://readr.tidyverse.org/logo.png"; height= 70/&gt;
+&lt;/center&gt;
+
+| Importar | Exportar | Separador |
+| :--- | :----------------: | :----: |
+| `read_csv()` | `write_csv()` | "," |
+| `read_csv2()` | `write_csv2()` | ";" |
+| `read_tsv()` | `write_tsv()`| " " |
+| `read_delim()` | `write_delim()` | "otro" |
+
+&lt;center&gt;
+&lt;img src="https://readxl.tidyverse.org/logo.png"; height= 80/&gt;
+&lt;/center&gt;
+
+| Importar | Exportar |
+| :--- | :----------------: |
+| `read_xls()` | `WriteXLS()` (`WriteXLS`) |
+| `read_xlsx()` | `write_xlsx()` (`writexl`) |
 
 ]
 
