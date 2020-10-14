@@ -17,6 +17,25 @@ output:
 
 class: inverse, center, middle
 
+# Datos IMC (Índice de Masa Corporal)
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Datos en varios formatos
+
+- **Formatos planos:**
+  - []()
+  - []()
+  - []()
+  - []()
+- **Formatos estructurados:**
+  - [IMC - Excel (.xlsx)](temas/05-Matriz-Listas-BDatos/data/imc_total.xlsx)
+
+---
+
+class: inverse, center, middle
+
 # Tipos de datos en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
@@ -129,9 +148,9 @@ class: inverse, center, middle
 | :--- | :----------------: |
 | `read_xls()` | `WriteXLS()` (`WriteXLS`) |
 | `read_xlsx()` | `write_xlsx()` (`writexl`) |
+| `read_excel()` | 2 anteriores |
 
 ]
-
 
 
 ---
