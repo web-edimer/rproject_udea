@@ -1,0 +1,63 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Matrices, listas y bases de datos<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Vectores en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Vectores
+
+--
+
+.pull-left[
+
+
+
+.footnote[
+`*[i]` puede ser el índice, nombre o condición.
+]
+
+]
+
+--
+
+.pull-right[
+
+
+
+<center>
+<img src="img/coercion.PNG"; height= 300/>
+</center>
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
