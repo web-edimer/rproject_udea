@@ -24,5 +24,10 @@ intro_image_hide_on_mobile: true
 + [Ejemplo de clase 03 y 04 - (Martes-Miércoles)](/temas/Clases/MartesMiercoles/clase_datosR2.html)
 + [Ejemplo de clase 03 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/01datosR.html)
 + [Ejemplo de clase 04 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/vectores.html)
+
+<br>
+
+- **Bases de datos:**
++ [Censo pecuario nacional año 2020 - ICA.](https://www.ica.gov.co/areas/pecuaria/servicios/epidemiologia-veterinaria/censos-2016/censo-2018.aspx)
     
     
