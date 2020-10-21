@@ -5,8 +5,6 @@ layout: 'page'
 
 En esta sección usted podrá encontrar material bibliogŕafico de apoyo para los temas abordados durante el semestre.
 
-<div class="columns-2">
-
 # Documentación lenguaje R
 
 - [*R para principiantes*](https://cran.r-project.org/doc/contrib/rdebuts_es.pdf)
@@ -28,9 +26,6 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 - [R-Exercises](https://www.r-exercises.com/)
 - [R-bloggers](https://www.r-bloggers.com/)
 
-<div class="columns-3">
-</div>
-
 # Guías
 
 - [*RStudio IDE: español*](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/rstudio-entorno.pdf)
@@ -46,4 +41,7 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 - [R Markdown: español](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/rmarkdown-2.0_Spanish.pdf)
 - [R Markdown: inglés](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
-</div>
+# Recomendaciones
+
+- [Conferencia TED: "Las mejores estadísticas que jamás hayas visto"](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
+- [Proyecto Gapminder.org](https://www.gapminder.org/tools/)
