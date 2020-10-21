@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-10-20" />
+    <meta name="date" content="2020-10-21" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -22,69 +22,156 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-10-20
+### 2020-10-21
 
 ---
 
 
 class: inverse, center, middle
 
-# Principal
+# Datos ordenados `-&gt;` **Tidy Data**
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://www.measureevaluation.org/resources/newsroom/news-images/tidy-data/image"; height= 350/&gt;
+&lt;/center&gt;
+
+&gt; [“Todos los set de datos ordenados se parecen unos a otros, pero cada set de datos desordenado lo es a su manera” — Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
 
 ---
 
-# Secundaria
+# Propiedades de datos ordenados
+
+.pull-left[
+1. Cada variable debe tener su propia columna.
+2. Cada observación debe tener su propia fila.
+3. Cada valor debe tener su propia celda
+]
+
+.pull-rigth[
+&lt;center&gt;
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/476fa4025501dcec05be08248b32d390dd2337d5/574c6/css/images/hex/tidyr.png", height= 200/&gt;
+&lt;/center&gt;
+]
+
+
+&lt;center&gt;
+&lt;img src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/tidy-1.svg", height= 150/&gt;
+&lt;/center&gt;
+
+.pull-left[
+- Nombres de columnas son valores, no nombres de variables.
+- Múltiples variables almacenadas en una misma columna.
+- Variables son almacenadas tanto en filas como en columnas.
+]
+
+.pull-rigth[
+- Múltiples tipos de unidades observacionales  almacenadas en la misma tabla.
+- Una misma observación es almacenada en varias tablas o bases de datos.
+
+.foot-note[
+[Fuente: Tidy data (Hadley Wickham).](https://vita.had.co.nz/papers/tidy-data.pdf)
+]
+]
+
+
+---
+
+# Formatos y funciones de uso común
+
+
 
 .pull-left[
 
-### Borrador
+&lt;center&gt; 
+&lt;img src="https://bookdown.org/Maxine/r4ds/images/12.png";width = 400/&gt; 
+&lt;/center&gt;
 
-  - [url](/temas/)
-
-### Borrador
+| Función | Tarea |
+| :--- | :----: |
+| `pivot_longer()` | Formato ancho a largo |
+| `pivot_wider()` |  Formato largo a ancho |
+| `separate()` |  separar una columna en dos o más variables |
+| `unite()`  | unir dos o más columnas en una variable |
 
 ]
 
 .pull-right[
 
-&lt;br&gt;
+- **`pivot_longer(data, cols, ...)`**
 
-&lt;center&gt;
-&lt;img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/&gt;
+&lt;center&gt; 
+&lt;img src="img/gather.PNG"; height= 80/&gt; 
+&lt;/center&gt;
+
+- **`pivot_wider(data, id_cols, ...)`**
+
+&lt;center&gt; 
+&lt;img src="img/spread.PNG";height= 80/&gt; 
+&lt;/center&gt;
+
+- **`separate(data, col, into, sep, ...)`**
+
+&lt;center&gt; 
+&lt;img src="img/separate.PNG";width = 80/&gt; 
+&lt;/center&gt;
+
+- **`unite(data, col, sep, ...)`:**
+
+&lt;center&gt; 
+&lt;img src="img/unite.PNG";width = 80/&gt; 
+&lt;/center&gt;
+]
+
+---
+
+# Concatenando procesos (`%&gt;%`)
+
+.pull-left[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/c1c91484f898fe9d7d90a570900f1d5cd703fe2e/d7df4/css/images/hex/readr.png"; height= 150/&gt; 
 &lt;/center&gt;
 
 
 
 ]
 
+.pull-rigth[
 
----
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/476fa4025501dcec05be08248b32d390dd2337d5/574c6/css/images/hex/tidyr.png"; height=150/&gt; 
+&lt;/center&gt;
 
-# Título
+]
+
+
+
+&lt;center&gt; 
+&lt;img src="https://magrittr.tidyverse.org/logo.png"; height= 190/&gt; 
+&lt;/center&gt;
 
 .pull-left[
 
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/621a9c8c5d7b47c4b6d72e8f01f28d14310e8370/193fc/css/images/hex/dplyr.png"; height= 150/&gt; 
+&lt;/center&gt;
 
-
-##### ¿? `-&gt;` ¿? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/&gt; &lt;/center&gt;
-
-]
-
-.pull-right[
-
-
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
 
 
 ]
 
+.pull-rigth[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png"; height= 150/&gt; &lt;img src="https://pbs.twimg.com/media/DkBFpSsW4AIyyIN.png"; height= 150/&gt;
+&lt;/center&gt;
+
+
+
+]
+
+- **Tecla de acceso rápido:** Ctrl + Shift + M
 
 ---
 class: inverse, center, middle
