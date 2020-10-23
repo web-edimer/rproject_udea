@@ -26,6 +26,8 @@ intro_image_hide_on_mobile: true
     + [Ejemplo de clase 03 y 04 - (Martes-Miércoles)](/temas/Clases/MartesMiercoles/clase_datosR2.html)
     + [Ejemplo de clase 03 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/01datosR.html)
     + [Ejemplo de clase 04 - (Jueves-Viernes)](/temas/Clases/JuevesViernes/vectores.html)
+    + [Ejemplo de clase 05 - (Martes-Miércoles)](https://rpubs.com/Edimer/679439)
+    + [Ejemplo de clase 05 - (Jueves-Viernes)](https://rpubs.com/Edimer/679908)
 <br>
 
 - **Bases de datos:**
