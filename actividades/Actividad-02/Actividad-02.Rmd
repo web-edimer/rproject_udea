@@ -26,6 +26,7 @@ Construya un documento R Markdown para responder a las siguientes preguntas:
 - 5. Importe la base de datos a R y seleccione sólo las variables que considere necearias para responder a sus consultas.
 - 6. ¿Qué métricas estadísticas le sirven para dar respuesta a las consultas? Obtenga con R los estadísticos descriptivos que considere necesarios.
 - 7. Además de las métricas estadísticas, ¿qué gráficos considera pertinentes para dilucidar la información de su base de datos? Construirlos manualmente (borrador en papel o paint) e incorporarlos al documento R Markdown.
+- 8. Imprima en su documento la base de datos final.
 - **Nota:** no olvide validar que sus datos sean correctos, es decir, que no hayan valores errados, que el tipo de información sea correctamente tipificada en R, que los nombres de las variables sean pertinentes para el manejor a través del software, etc.
 
 ## Ejercicio hipotético
