@@ -37,7 +37,7 @@ Usted ha sido encargado por el ministerio de agricultura para recopilar informac
 - El ensayo se realizará en tres zonas diferentes del país.
 - Se tomarán datos durante 3 meses con periodicidad de 1 mes.
 - En cada zona hay 5 predios productores de naranja que harán parte de esta investigación.
-- Las variables bajo análisis son rendimiento/hectárea, % de desperdicio y clasificación por tamaño (frutos pequeños, medianos y grandes).
+- Las variables bajo análisis son rendimiento/hectárea y % de fruta desperdiciada (clasificado como desperdicio bajo, moderado y alto).
 
 Con esta información usted deberá proponer la plantila de base de datos que utilizará el ministerio de agricultura para recopilar los registros. **Es una obligación para el ministerio de agricultura que los datos estén en formado *tidy.* ** 
 
