@@ -1,0 +1,45 @@
+---
+title: "R Project en Experimentación Animal"
+subtitle: "Actividad 2"
+author: "Edimer David Jaramillo"
+date: "28/10/2020"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Actividad
+
+## Base de datos actividad 1
+
+Construya un documento R Markdown para responder a las siguientes preguntas:
+
+- 1. ¿Cuál es el individuo bajo estudio para la base de datos seleccionada en la [actividad 1](https://rproject-udea.netlify.app/actividades/actividad-01/actividad-01)?
+- 2. Definir si la base de datos seleccionada en la actividad 1 posee la estructura de *datos ordenados*. Mencione las razones por las cuales cumple o no dicha condición. 
+- 3. Si la respuesta al numeral anterior es negativa, es decir, que su base de datos no cumple con los principios del *tidy data*, con R transforme sus datos al formato adecuado.
+- 4. ¿La información contenida en la base de datos es suficiente para responder las consultas planteadas en la actividad 1? 
+- 5. Importe la base de datos a R y seleccione sólo las variables que considere necearias para responder a sus consultas.
+- 6. ¿Qué métricas estadísticas le sirven para dar respuesta a las consultas? Obtenga con R los estadísticos descriptivos que considere necesarios.
+- 7. Además de las métricas estadísticas, ¿qué gráficos considera pertinentes para dilucidar la información de su base de datos? Construirlos manualmente (borrador en papel o paint) e incorporarlos al documento R Markdown.
+- **Nota:** no olvide validar que sus datos sean correctos, es decir, que no hayan valores errados, que el tipo de información sea correctamente tipificada en R, que los nombres de las variables sean pertinentes para el manejor a través del software, etc.
+
+## Ejercicio hipotético
+
+Usted ha sido encargado por el ministerio de agricultura para recopilar información de un experimento en cítricos. Le es suministrada la siguiente información:
+
+- Hay tres tratamientos bajo análisis y un cuarto grupo denominado "control".
+- El ensayo se realizará en tres zonas diferentes del país.
+- Se tomarán datos durante 3 meses con periodicidad de 1 mes.
+- En cada zona hay 5 predios productores de naranja que harán parte de esta investigación.
+- Las variables bajo análisis son rendimiento/hectárea, % de desperdicio y clasificación por tamaño (frutos pequeños, medianos y grandes).
+
+Con esta información usted deberá proponer la plantila de base de datos que utilizará el ministerio de agricultura para recopilar los registros. **Es una obligación para el ministerio de agricultura que los datos estén en formado *tidy.* ** 
+
+
+
+

@@ -16,7 +16,7 @@ A continuación se describen las cuatro actividades evaluativas para el curso:
 
 - [Actividad 2 (30%) - Unidad 2]()
   + [Ejercicio vectores (5%)](https://rproject-udea.netlify.app/temas/04-vectores-r/04-vectores-r#9)
-  + [Ejercicio bases de datos 1 (10%)]()
+  + [Ejercicio bases de datos 1 (10%)](/actividades/Actividad-02/Actividad-02.html)
 <br>
 <br>
   
