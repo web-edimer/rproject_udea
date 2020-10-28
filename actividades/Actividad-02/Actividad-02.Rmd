@@ -42,5 +42,6 @@ Usted ha sido encargado por el ministerio de agricultura para recopilar informac
 Con esta información usted deberá proponer la plantila de base de datos que utilizará el ministerio de agricultura para recopilar los registros. **Es una obligación para el ministerio de agricultura que los datos estén en formado *tidy.* ** 
 
 
+# Fecha de entrega
 
-
+- Máximo el 15 de noviembre de 2020 antes de las 11:59 pm.
