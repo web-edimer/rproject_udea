@@ -15,63 +15,197 @@ output:
       countIncrementalSlides: false
 ---
 
+
 class: inverse, center, middle
 
-# Principal
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+# `Tidyverse`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+
+<center>
+<img src="https://teachdatascience.com/post/tidyverse/tidyverse-package-workflow.png"; height= 400/>
+</center>
 
 ---
 
-# Secundaria
+# Factores y funciones `apply`
 
 .pull-left[
 
-### Borrador
+### Factores en R
 
-  - [url](/temas/)
-
-### Borrador
+  - Representan datos categóricos.
+  - En R se pueden crear con la función `factor()`
+  - Poseen *niveles* y *etiquetas*.
+  - Funciones auxiliares con factores:
+    - `levels()`, `as.factor()` 
+    
+```r
+  factor(x = character(),
+         levels,
+         labels,
+         ...)
+```    
 
 ]
 
 .pull-right[
 
-<br>
+
+### Familia `apply`
+
 
 <center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+<img src="https://1.bp.blogspot.com/-kX7tFXNpalQ/VwFYE80SzxI/AAAAAAAAFp0/9ffNfHolNDEiqRO2eDiezErWJOXmLIPeA/s1600/apply_family.PNG"; height= 350/>
 </center>
 
 
 
 ]
 
+---
+class: inverse, center, middle
+
+# `dplyr`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://dplyr.tidyverse.org/logo.png"; height= 400/>
+</center>
 
 ---
 
-# Título
+# Operador de tubería
+
+
+
+<center>
+<img src="https://debruine.github.io/images/pipe_sticker.png"; height= 400/>
+</center>
+
+
+- **Ctrl + Shift + M** `->` acceso rápido
+
+.foot-note[
+[La traición de las imágenes](https://es.wikipedia.org/wiki/La_traici%C3%B3n_de_las_im%C3%A1genes) `->` [Pintor René Magritte](https://es.wikipedia.org/wiki/Ren%C3%A9_Magritte) `->` [Biblioteca magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)
+]
+
+---
+
+# ¿Qué permite `dplyr`?
+
+<center>
+<img src="img/dplyr.PNG"; height= 500/>
+</center>
+
+---
+
+# Funciones `dplyr`
 
 .pull-left[
 
-
-##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
+- **Operaciones por filas:**
+  - `filter()`
+  - `arrange()`
+  - `slice()`
+  - `distinct()`
+- **Operaciones por columnas:**
+  - `rename()`
+  - `set_names()`<sup>1</sup>  
+  - `select()`
+  - `select_if()`
+  
+<center>
+<img src="img/select.PNG"; height= 150/>
+</center>  
 
 ]
 
 .pull-right[
 
+- **Resumen de datos:**
 
+<center>
+<img src="img/group.PNG"; width= 300/>
+</center> 
 
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
+  - `group_by()`
+  - `ungroup()`
+  - `summarise()` o `summarize()`
+  - `count()`
 
+- **Crear o editar variables:** `mutate()`
+  
 
 ]
 
+.foot-note[
+[1] Función de biblioteca [purrr](https://purrr.tidyverse.org/)
+]
+
+---
+
+# Diferencias `mutate()` y `summarise()`
+
+.pull-left[
+
+### `mutate()`
+
+<center>
+<img src="img/summarise.PNG"; height= 200/>
+</center>
+
+```r
+base_datos %>% 
+* group_by(factor) %>% 
+  mutate(nueva = mean(variable))
+```  
+
+]
+
+.pull-right[
+
+### `summarise()`
+
+<center>
+<img src="img/mutate.PNG"; height= 200/>
+</center>
+
+```r
+base_datos %>% 
+* group_by(factor) %>% 
+  summarise(nueva = mean(variable))
+``` 
+
+]
+
+---
+
+# Unión de datos
+
+<center>
+<img src="img/join.png"; height= 300/>
+</center>
+
+```r
+* función_join(data1, data2, by = "ID")
+``` 
+
+.pull-left[
+- `bind_rows(data1, data2)`
+- `bind_cols(data1, data2)` 
+]
+
+.pull-right[
+<center>
+<img src="img/rows.PNG"/>
+</center>
+
+<center>
+<img src="img/cols.PNG"/>
+</center>
+
+]
 
 ---
 class: inverse, center, middle

@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-10-20" />
+    <meta name="date" content="2020-11-03" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -22,68 +22,202 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-10-20
+### 2020-11-03
 
 ---
+
 
 
 class: inverse, center, middle
 
-# Principal
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+# `Tidyverse`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+
+&lt;center&gt;
+&lt;img src="https://teachdatascience.com/post/tidyverse/tidyverse-package-workflow.png"; height= 400/&gt;
+&lt;/center&gt;
 
 ---
 
-# Secundaria
+# Factores y funciones `apply`
 
 .pull-left[
 
-### Borrador
+### Factores en R
 
-  - [url](/temas/)
-
-### Borrador
+  - Representan datos categóricos.
+  - En R se pueden crear con la función `factor()`
+  - Poseen *niveles* y *etiquetas*.
+  - Funciones auxiliares con factores:
+    - `levels()`, `as.factor()` 
+    
+```r
+  factor(x = character(),
+         levels,
+         labels,
+         ...)
+```    
 
 ]
 
 .pull-right[
 
-&lt;br&gt;
+
+### Familia `apply`
+
 
 &lt;center&gt;
-&lt;img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/&gt;
+&lt;img src="https://1.bp.blogspot.com/-kX7tFXNpalQ/VwFYE80SzxI/AAAAAAAAFp0/9ffNfHolNDEiqRO2eDiezErWJOXmLIPeA/s1600/apply_family.PNG"; height= 350/&gt;
 &lt;/center&gt;
 
 
 
 ]
 
+---
+class: inverse, center, middle
+
+# `dplyr`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://dplyr.tidyverse.org/logo.png"; height= 400/&gt;
+&lt;/center&gt;
 
 ---
 
-# Título
+# Operador de tubería
+
+
+
+&lt;center&gt;
+&lt;img src="https://debruine.github.io/images/pipe_sticker.png"; height= 400/&gt;
+&lt;/center&gt;
+
+
+- **Ctrl + Shift + M** `-&gt;` acceso rápido
+
+.foot-note[
+[La traición de las imágenes](https://es.wikipedia.org/wiki/La_traici%C3%B3n_de_las_im%C3%A1genes) `-&gt;` [Pintor René Magritte](https://es.wikipedia.org/wiki/Ren%C3%A9_Magritte) `-&gt;` [Biblioteca magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)
+]
+
+---
+
+# ¿Qué permite `dplyr`?
+
+&lt;center&gt;
+&lt;img src="img/dplyr.PNG"; height= 500/&gt;
+&lt;/center&gt;
+
+---
+
+# Funciones `dplyr`
 
 .pull-left[
 
-
-##### ¿? `-&gt;` ¿? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/&gt; &lt;/center&gt;
+- **Operaciones por filas:**
+  - `filter()`
+  - `arrange()`
+  - `slice()`
+  - `distinct()`
+- **Operaciones por columnas:**
+  - `rename()`
+  - `set_names()`&lt;sup&gt;1&lt;/sup&gt;  
+  - `select()`
+  - `select_if()`
+  
+&lt;center&gt;
+&lt;img src="img/select.PNG"; height= 150/&gt;
+&lt;/center&gt;  
 
 ]
 
 .pull-right[
 
+- **Resumen de datos:**
 
+&lt;center&gt;
+&lt;img src="img/group.PNG"; width= 300/&gt;
+&lt;/center&gt; 
 
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
+  - `group_by()`
+  - `ungroup()`
+  - `summarise()` o `summarize()`
+  - `count()`
 
+- **Crear o editar variables:** `mutate()`
+  
 
 ]
 
+.foot-note[
+[1] Función de biblioteca [purrr](https://purrr.tidyverse.org/)
+]
+
+---
+
+# Diferencias `mutate()` y `summarise()`
+
+.pull-left[
+
+### `mutate()`
+
+&lt;center&gt;
+&lt;img src="img/summarise.PNG"; height= 200/&gt;
+&lt;/center&gt;
+
+```r
+base_datos %&gt;% 
+* group_by(factor) %&gt;% 
+  mutate(nueva = mean(variable))
+```  
+
+]
+
+.pull-right[
+
+### `summarise()`
+
+&lt;center&gt;
+&lt;img src="img/mutate.PNG"; height= 200/&gt;
+&lt;/center&gt;
+
+```r
+base_datos %&gt;% 
+* group_by(factor) %&gt;% 
+  summarise(nueva = mean(variable))
+``` 
+
+]
+
+---
+
+# Unión de datos
+
+&lt;center&gt;
+&lt;img src="img/join.png"; height= 300/&gt;
+&lt;/center&gt;
+
+```r
+* función_join(data1, data2, by = "ID")
+``` 
+
+.pull-left[
+- `bind_rows(data1, data2)`
+- `bind_cols(data1, data2)` 
+]
+
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/rows.PNG"/&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;img src="img/cols.PNG"/&gt;
+&lt;/center&gt;
+
+]
 
 ---
 class: inverse, center, middle
