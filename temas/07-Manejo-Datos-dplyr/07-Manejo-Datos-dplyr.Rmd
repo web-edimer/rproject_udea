@@ -180,6 +180,29 @@ base_datos %>%
 ]
 
 ---
+class: inverse, center, middle
+
+# Ejercicio: [créditos agropecuarios 2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Colocaciones-de-cr-dito-Sector-Agropecuario-2020/hbaj-th4x)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+<center>
+<img src="https://encolombia.com/wp-content/uploads/2013/01/productores-agropecuarios-recibieron-cr%C3%A9ditos-696x391.png"; height= 300/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Datos: [Boletín de mercado laboral en Colombia 2019](https://www.dane.gov.co/files/investigaciones/boletines/ech/ml_depto/Boletin_dep_19.pdf)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://media.telemundoutah.com/2020/09/TLMD-tasa-de-desempleo-baja-shutterstock_429364411-copy.jpg?resize=1200%2C675"; height= 300/>
+</center>
+
+---
 
 # Unión de datos
 
