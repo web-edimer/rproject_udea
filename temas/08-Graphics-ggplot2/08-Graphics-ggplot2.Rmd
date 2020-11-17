@@ -1,0 +1,89 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Plantilla<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Principal
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Secundaria
+
+.pull-left[
+
+### Borrador
+
+  - [url](/temas/)
+
+### Borrador
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+</center>
+
+
+
+]
+
+
+---
+
+# Título
+
+.pull-left[
+
+<center>
+<img src="img/base.PNG"; height= 100/>
+</center>
+
+##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
+
+]
+
+.pull-right[
+
+
+
+| Importar | Exportar | Separador |
+| :--- | :----------------: | :----: |
+| `read_csv()` | `write_csv()` | "," |
+| `read_csv2()` | `write_csv2()` | ";" |
+| `read_tsv()` | `write_tsv()`| " " |
+| `read_delim()` | `write_delim()` | "otro" |
+
+
+]
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

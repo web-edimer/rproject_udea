@@ -31,6 +31,7 @@ intro_image_hide_on_mobile: true
     + [Ejemplo de clase 06 - (Martes-Miércoles)](https://rpubs.com/Edimer/682972)
     + [Ejemplo de clase 06 - (Jueves-Viernes)](https://rpubs.com/Edimer/685502)
     + [Ejemplo de clase 07 - (Martes-Miércoles)](https://rpubs.com/Edimer/689875)
+    + [Ejemplo de clase 07 - (Jueves-Viernes)](https://rpubs.com/Edimer/692247)
 <br>
 
 - **Bases de datos:**
