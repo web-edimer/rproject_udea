@@ -4,7 +4,7 @@
     <title>Uso de R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2020-11-18" />
+    <meta name="date" content="2020-11-25" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -13,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 # Uso de R en experimentación animal:
-## Visualizaciones con ggplot2
+## Visualizaciones con ggplot2 - Introducción
 <html>
 <div style="float:left">
 
@@ -22,70 +22,321 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2020-11-18
+### 2020-11-25
 
 ---
 
 
 class: inverse, center, middle
 
-# Fundamentos de visualización
+# Introducción a `ggplot2`
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://ggplot2.tidyverse.org/logo.png"; height= 400/&gt;
+&lt;/center&gt;
 
 ---
 
-# Secundaria
+# Estrategia de análisis
+
+&lt;center&gt;
+&lt;img src="img/img0.png"; height= 550/&gt;
+&lt;/center&gt;
+
+
+---
+
+# Tipos de gráficos
+
+&lt;center&gt;
+&lt;img src="img/img02.png"; height= 500/&gt;
+&lt;/center&gt;
+
+---
+
+# ¿Cómo funciona `ggplot2`?
+
+&lt;center&gt;
+&lt;img src="img/img01.png"; height= 350/&gt;
+&lt;/center&gt;
 
 .pull-left[
 
-### Borrador
-
-  - [url](/temas/)
-
-### Borrador
+```r
+  ggplot(data = datos,
+         mapping = aes(x = mi_x, y = mi_y)) +
+* geom_point() +
+  labs(x = "Eje X", y = "Eje Y",
+       title = "Título", subtitle = "Subtítulo") 
+``` 
 
 ]
 
 .pull-right[
+
+```r
+  datos %&gt;% 
+    ggplot(mapping = aes(x = mi_x, y = mi_y)) +
+*   geom_point() +
+    labs(x = "Eje X", y = "Eje Y",
+         title = "Título", subtitle = "Subtítulo")
+``` 
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Directorio de gráficos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+.foot-note[
+
+[Imágenes tomadas de *Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/)
+
+&lt;center&gt;
+&lt;img src="https://clauswilke.com/dataviz/cover.png"; height= 300/&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# Cantidades y Proporciones
+
+.pull-left[
+
+#### Cantidades (conteos) - Individuales:
+
+&lt;center&gt;
+&lt;img src="img/img1.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+#### Proporciones - Individuales:
+
+&lt;center&gt;
+&lt;img src="img/img5.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+]
+
+.pull-right[
+
+#### Cantidades (conteos) - Agrupaciones:
+
+&lt;center&gt;
+&lt;img src="img/img2.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+#### Proporciones - Agrupaciones:
+
+&lt;center&gt;
+&lt;img src="img/img6.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# Distribuciones
+
+.pull-left[
+
+#### Distribuciones - Individuales:
+
+&lt;center&gt;
+&lt;img src="img/img3.PNG"; height= 200/&gt;
+&lt;/center&gt;
 
 &lt;br&gt;
 
 &lt;center&gt;
-&lt;img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/&gt;
+&lt;img src="img/img00.PNG"; height= 120/&gt;
 &lt;/center&gt;
-
-
-
-]
-
-
----
-
-# Título
-
-.pull-left[
-
-&lt;center&gt;
-&lt;img src="img/base.PNG"; height= 100/&gt;
-&lt;/center&gt;
-
-##### ¿? `-&gt;` ¿? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/&gt; &lt;/center&gt;
 
 ]
 
 .pull-right[
 
+#### Distribuciones - Agrupaciones:
 
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
-
+&lt;center&gt;
+&lt;img src="img/img4.PNG"; width= 350/&gt;
+&lt;/center&gt;
 
 ]
+
+---
+
+# Relaciones *X - Y*
+
+.pull-left[
+
+#### Diagrama de dispersión (pocos datos):
+
+&lt;center&gt;
+&lt;img src="img/img7.PNG"; height= 200/&gt;
+&lt;/center&gt;
+
+#### Diagrama de dispersión (muchos datos):
+
+&lt;center&gt;
+&lt;img src="img/img8.PNG"; width= 300/&gt;
+&lt;/center&gt;
+
+]
+
+.pull-right[
+
+#### Correlograma:
+
+&lt;center&gt;
+&lt;img src="img/corr.PNG"; width= 250/&gt;
+&lt;/center&gt;
+
+#### *Y* vs Tiempo:
+
+&lt;center&gt;
+&lt;img src="img/img9.PNG"; width= 450/&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# Incertidumbre y Geoespacial
+
+.pull-left[
+
+#### Error estándar:
+
+&lt;center&gt;
+&lt;img src="img/img10.PNG"; height= 200/&gt;
+&lt;/center&gt;
+
+#### Bandas de confianza:
+
+&lt;center&gt;
+&lt;img src="img/img11.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+]
+
+.pull-right[
+
+#### Mapas:
+
+&lt;center&gt;
+&lt;img src="img/img12.PNG"; height= 150/&gt;
+&lt;/center&gt;
+
+#### Tipos de datos geoespaciales:
+
+&lt;center&gt;
+&lt;img src="https://1.bp.blogspot.com/-oOKzhCJawvk/VzynE_E_qMI/AAAAAAAAA0k/bhstuh4aV6oHqb5fJwK_8G2D_5jnLiyUwCLcB/s1600/RasterandVector.png"; height= 200/&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# Algunas funciones de `ggplot2`
+
+.pull-left[
+
+#### Mapeo estético y Objetos geométricos
+
+| Función | Descripción |
+| :--- | :----------------: |
+| `ggplot()` | Función principal  |
+| `geom_bar()` | Diagrama de barras |
+| `geom_col()` | Diagrama de barras |
+| `geom_histogram()` | Histogramas  |
+| `geom_density()` | Densidades |
+| `geom_boxplot()` | Boxplot  |
+| `geom_point()` | Capa de puntos |
+| `geom_line()` | Capa de líneas  |
+| `geom_smooth()` | Suavizaciones |
+| `geom_errorbar()` | Incertidumbre |
+
+]
+
+.pull-right[
+
+#### Otras funciones
+
+| Función | Descripción |
+| :--- | :----------------: |
+| `labs()` |  Etiquetas |
+| `xlab()` |  Etiqueta eje X |
+| `ylab()` |  Etiqueta eje Y |
+| `ggtitle()` | Título de gráfico  |
+| `geom_text()` | Añadir texto  |
+| `scale_color_manual()` | Manejo de colores |
+| `scale_fill_manual()` | Manejo de colores |
+| `coord_flip()` | Dar la vuelta |
+| `facet_wrap()` | Páneles o facetas |
+| `facet_grid()` | Páneles o facetas |
+
+]
+
+---
+class: inverse, center, middle
+
+# Colores en R
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://i.pinimg.com/originals/c5/5d/72/c55d724f878fb587e4d1ad15d0107b9e.gif"/&gt;
+&lt;/center&gt;
+
+---
+
+# Gestión del color en R
+
+- **Colores:**
+
+
+```r
+head(colors())
+```
+
+```
+## [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
+## [5] "antiquewhite2" "antiquewhite3"
+```
+
+
+- **Paleta por defecto:**
+
+
+```r
+palette()
+```
+
+```
+## [1] "black"   "#DF536B" "#61D04F" "#2297E6" "#28E2E5" "#CD0BBC" "#F5C710"
+## [8] "gray62"
+```
+
+- **Otras paletas:**
+
+
+```r
+palette.pals()
+```
+
+```
+##  [1] "R3"              "R4"              "ggplot2"         "Okabe-Ito"      
+##  [5] "Accent"          "Dark 2"          "Paired"          "Pastel 1"       
+##  [9] "Pastel 2"        "Set 1"           "Set 2"           "Set 3"          
+## [13] "Tableau 10"      "Classic Tableau" "Polychrome 36"   "Alphabet"
+```
+
+
 
 
 ---

@@ -24,7 +24,7 @@ intro_image_hide_on_mobile: true
 
 - **Unidad 3: Visualizaciones**
     + [08-Introducción a la visualización de datos](/temas/08-Intro-Graphics/08-Intro-Graphics.html)
-    + [09-Visualizaciones con ggplot2](/temas/09-Graphics-ggplot2/09-Graphics-ggplot2.html)
+    + [09-Visualizaciones con ggplot2 (parte 1)](/temas/09-Graphics-ggplot2/09-Graphics-ggplot2.html)
 
 
 - **Ejemplos de clase:**
