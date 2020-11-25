@@ -1,0 +1,26 @@
+---
+title: "R Project en Experimentación Animal"
+subtitle: "Actividad 3"
+author: "Edimer David Jaramillo"
+date: "25/11/2020"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Actividad
+
+- Ingrese a la [página web del censo pecuario 2020](https://www.ica.gov.co/areas/pecuaria/servicios/epidemiologia-veterinaria/censos-2016/censo-2018.aspx) y elija tres especies sobre las cuales desee trabajar. **Nota:** no puede utilizar la base de datos del *censo bovino* porque fue abordada previamente en clase.
+- Ordene las bases de datos haciendo uso de la biblioteca *tidyr*.
+- Concatene las tres bases de datos en una sola a través de la biblioteca *dplyr*.
+- Con la base de datos final proponga una consulta (**objetiva, lógica y con resolución cuantitativa**) que involucre las especies bajo análisis.
+- Proponga y construya un gráfico (**sólo uno**) para responder a la consulta.
+
+# Fecha de entrega
+
+- Máximo el 06 de diciembre de 2020 antes de las 11:59 pm.
