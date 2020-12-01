@@ -225,6 +225,30 @@ class: inverse, center, middle
 
 ---
 
+# Gráficos engañosos: Colombia (2020)
+
+<center>
+<img src="img/nueva1.png"; height= 350/>
+</center>
+
+<center>
+<img src="img/nueva4.PNG"; height= 200/>
+</center>
+
+---
+
+# Gráficos engañosos: Colombia (2020)
+
+<center>
+<img src="img/nueva3.png"; height= 250/>
+</center>
+
+<center>
+<img src="img/nueva2.png"; height= 250/>
+</center>
+
+---
+
 class: inverse, center, middle
 
 # Recursos sugeridos
