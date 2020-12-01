@@ -35,8 +35,11 @@ intro_image_hide_on_mobile: true
     + [Ejemplo de clase 05 - (Jueves-Viernes)](https://rpubs.com/Edimer/679908)
     + [Ejemplo de clase 06 - (Martes-Miércoles)](https://rpubs.com/Edimer/682972)
     + [Ejemplo de clase 06 - (Jueves-Viernes)](https://rpubs.com/Edimer/685502)
-    + [Ejemplo de clase 07 - (Martes-Miércoles)](https://rpubs.com/Edimer/689875)
-    + [Ejemplo de clase 07 - (Jueves-Viernes)](https://rpubs.com/Edimer/692247)
+    + [Ejemplo de clase 07 (Funciones dplyr) - (Martes-Miércoles)](https://rpubs.com/Edimer/689875)
+    + [Ejemplo de clase 07 (Depuración) - (Martes-Miércoles)](https://rpubs.com/Edimer/698542)
+    + [Ejemplo de clase 07 (Unión y Resumen Descriptivo) - (Martes-Miércoles)](https://rpubs.com/Edimer/698543)
+    + [Ejemplo de clase 07 (Funciones dplyr) - (Jueves-Viernes)](https://rpubs.com/Edimer/692247)
+    + [Ejemplo de clase 07 (Depuración, Unión y Resumen Descriptivo) - (Jueves-Viernes)](https://rpubs.com/Edimer/698544)
 <br>
 
 - **Bases de datos:**
