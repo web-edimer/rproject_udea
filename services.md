@@ -40,6 +40,7 @@ intro_image_hide_on_mobile: true
     + [Ejemplo de clase 07 (Unión y Resumen Descriptivo) - (Martes-Miércoles)](https://rpubs.com/Edimer/698543)
     + [Ejemplo de clase 07 (Funciones dplyr) - (Jueves-Viernes)](https://rpubs.com/Edimer/692247)
     + [Ejemplo de clase 07 (Depuración, Unión y Resumen Descriptivo) - (Jueves-Viernes)](https://rpubs.com/Edimer/698544)
+    + [Ejemplo de clase 08 y 09 - (Martes-Miércoles)](https://rpubs.com/Edimer/698991)
 <br>
 
 - **Bases de datos:**
