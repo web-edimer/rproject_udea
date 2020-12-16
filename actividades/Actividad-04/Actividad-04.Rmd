@@ -36,8 +36,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
 ## Datos nutricionales (kaggle)
 
 - La base de datos puede ser obtenida de la  [plataforma kaggle.](https://www.kaggle.com/ofrancisco/emoji-diet-nutritional-data-sr28)
-- Descargar [aquí.](/temas/data/datos_kaggle_nutrition.csv)
-- Si usted no está registrado en la plataforma, puede descargar la base de datos que está disponible en el apartado **Temas** [de esta página web.](https://rproject-udea.netlify.app/services/)
+-  Si usted no está registrado en la plataforma, puede descargar la base de datos [aquí.](/temas/data/datos_kaggle_nutrition.csv)
 
 # Fecha de entrega
 
