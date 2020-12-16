@@ -21,7 +21,7 @@ A continuación se describen las cuatro actividades evaluativas para el curso:
 <br>
 <br>
   
-- [Actividad 4 (35%) - Unidad 3]()
+- [Actividad 4 (35%) - Unidad 3](/actividades/Actividad-04/Actividad-04.html)
 <br>
 
 - [Actividad 5 (30%) - Unidad 4]()

@@ -1,0 +1,43 @@
+---
+title: "R Project en Experimentación Animal"
+subtitle: "Actividad 4"
+author: "Edimer David Jaramillo"
+date: "16/12/2020"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
+                      warning = FALSE, message = FALSE)
+```
+
+# Parte 1 (15%)
+
+- Seleccione un gráfico de la web  sobre el cual pueda proponer y materializar una mejora a través de R (utilizando `ggplot2`). Tenga en cuenta que la base de datos (**capa 1 con `ggplot2`**) deberá ser construida por usted antes de desarrollar la visualización.
+- El siguiente gráfico cumple con la característica de ser *engañoso*, los dos ejes en una misma visualización, aunque son comunes, **no son recomendados**. ([Leer aquí una breve descripción.](https://blog.revolutionanalytics.com/2016/08/dual-axis-time-series.html)) Proponga un gráfico correcto para representar la información que contiene la siguiente imagen.
+
+<center>
+![](image/img1.PNG)
+</center>
+
+# Parte 2 (20%)
+
+## Hurto de cabezas de ganado 2019 - Colombia
+
+- La base de datos puede ser obtenida en el [portal de datos abiertos de Colombia.](https://www.datos.gov.co/Estad-sticas-Nacionales/HURTO-A-CABEZAS-DE-GANADO-PER-ODO-DEL-01-DE-ENERO-/yvbq-tq9x)
+
+## Accidentalidad con motocicletas en Medellín 2015-2019
+
+- La base de datos puede ser obtenida en el [portal de datos abiertos de Colombia.](https://www.datos.gov.co/Estad-sticas-Nacionales/Accidentalidad-con-motos-municipio-de-Medell-n-act/b7ik-2upt)
+
+## Datos nutricionales (kaggle)
+
+- La base de datos puede ser obtenida de la  [plataforma kaggle.](https://www.kaggle.com/ofrancisco/emoji-diet-nutritional-data-sr28)
+- Si usted no está registrado en la plataforma, puede descargar la base de datos dando clic [aquí.](/actividades/Actividad-04/Emoji Diet Nutritional Data (g) - EmojiFoods (g).csv)
+
+# Fecha de entrega
+
+- Máximo el domingo 24 de enero de 2021 hasta de las 11:59 pm.
