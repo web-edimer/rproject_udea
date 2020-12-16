@@ -7,6 +7,8 @@ output:
   html_document:
     theme: readable
     df_print: paged
+    highlight: pygments
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -28,16 +30,193 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
 ## Hurto de cabezas de ganado 2019 - Colombia
 
 - La base de datos puede ser obtenida en el [portal de datos abiertos de Colombia.](https://www.datos.gov.co/Estad-sticas-Nacionales/HURTO-A-CABEZAS-DE-GANADO-PER-ODO-DEL-01-DE-ENERO-/yvbq-tq9x)
+- Luego de descargar la base de datos ejecute el siguiente código para leerla desde R. En el siguiente *script* además de la lectura se realizan algunos procesos de depuración de datos.
+
+```{r, echo=TRUE}
+# Datos hurtos de Ganado 2019
+library(janitor)
+library(tidyverse)
+library(Hmisc)
+data_hurtos <- read_csv(
+  file = "HURTO_A_CABEZAS_DE_GANADO_PER_ODO_DEL_01_DE_ENERO__AL_31_DE_DICIEMBRE_A_O_2019.csv"
+) %>% 
+  clean_names() %>% 
+  filter(cantidad == 1) %>% 
+  mutate_if(is.character, tolower) %>% 
+  mutate_if(is.character, capitalize) %>% 
+  mutate_if(is.character, as.factor) %>% 
+  mutate(dia = factor(dia,
+                      levels = c("Lunes", "Martes", "Miércoles", "Jueves",
+                                 "Viernes", "Sábado", "Domingo"))) %>% 
+  select(-codigo_dane)
+head(data_hurtos)
+```
+
+- Con la base de datos importada a R, obtenga los códigos necesarios para replicar los siguientes gráficos (**el resultado debe ser exactamente el mismo**).
+
+### Gráfico 1
+
+```{r}
+data_hurtos %>% 
+  group_by(dia, zona) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = dia, y = total, color = zona, group = zona)) +
+  geom_point(size = 4) +
+  geom_line(size = 1) +
+  scale_y_continuous(limits = c(0, 350)) +
+  labs(x = "Día",
+       y = "Total",
+       title = "Hurtos por día de la semana y zona",
+       color = "Zona") 
+```
+
+### Gráfico 2
+
+```{r, fig.width=9, fig.height=15}
+data_hurtos %>% 
+  group_by(dia, zona, departamento) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = dia, y = total, color = zona, group = zona)) +
+  facet_wrap(~departamento, scales = "free", ncol = 4) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Día",
+       y = "Total",
+       title = "Hurtos por día de la semana y zona",
+       subtitle = "Comportamiento departamental",
+       color = "Zona") +
+  theme(legend.position = "top",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+### Gráfico 3
+
+```{r, fig.width=9}
+data_hurtos %>% 
+  group_by(zona, clase_de_empleado) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = reorder(clase_de_empleado, total), y = total)) +
+  facet_wrap(~zona, scales = "free") +
+  geom_point(size = 2) +
+  coord_flip() +
+  labs(x = "",
+       y = "Total",
+       title = "Hurtos por clase de empleado",
+       subtitle = "Comportamiento por zonas")
+```
+
+### Gráfico 4
+
+```{r, fig.width=9, fig.height=15}
+data_hurtos %>% 
+  group_by(dia, departamento) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = total)) +
+  facet_wrap(~departamento, scales = "free", ncol = 4) +
+  geom_density() +
+  labs(x = "Total",
+       y = "Densidad",
+       title = "Distribución de hurtos por departamento",
+       subtitle = "Comportamiento semanal")
+```
 
 ## Accidentalidad con motocicletas en Medellín 2015-2019
 
 - La base de datos puede ser obtenida en el [portal de datos abiertos de Colombia.](https://www.datos.gov.co/Estad-sticas-Nacionales/Accidentalidad-con-motos-municipio-de-Medell-n-act/b7ik-2upt)
+- Luego de descargar la base de datos ejecute el siguiente código para leerla desde R. En el siguiente *script* además de la lectura se realizan algunos procesos de depuración de datos.
+
+```{r, echo=TRUE}
+# Accidentalidad Motos Medellín 2015-2020
+library(janitor)
+library(tidyverse)
+library(Hmisc)
+data_motos <- read_csv("Accidentalidad_con_motos_municipio_de_Medell_n_a_o_2019.csv") %>% 
+  clean_names() %>% 
+  mutate(fecha_accidente = as.Date(fecha_accidente, format = "%m/%d/%Y")) %>% 
+  mutate_if(is.character, tolower) %>% 
+  mutate_if(is.character, capitalize) %>% 
+  mutate_if(is.character, as.factor) 
+head(data_motos)
+```
+
+- Con la base de datos importada a R, obtenga los códigos necesarios para replicar los siguientes gráficos (**el resultado debe ser exactamente el mismo**).
+
+### Gráfico 1
+
+- **Consulta:** ¿En cuál de las comunas (16 en total) de Medellín se presenta mayor número de accidentes?
+
+```{r}
+data_motos %>% 
+  filter(zona %in% paste0("Comuna ", 1:16)) %>% 
+  group_by(zona) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = reorder(zona, total), y = total)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = "Comuna",
+       y = "Total",
+       title = "Número de accidentes en motocicleta por comuna",
+       subtitle = "Medellín, Colombia (2015-2019)")
+```
+
+
+### Gráfico 2
+
+- **Consulta:** ¿En qué hora del día se maximizan los accidentes en Medellín?
+
+```{r}
+data_motos %>% 
+  group_by(hora_accidente) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = hora_accidente, y = total)) +
+  geom_smooth(se = FALSE)  +
+  scale_x_time(breaks = seq(min(data_motos$hora_accidente, na.rm = TRUE),
+                            max(data_motos$hora_accidente, na.rm = TRUE),
+                            length.out = 10)) +
+  labs(x = "Hora",
+       y = "Total",
+       title = "Accidentes en motocicleta vs hora del día",
+       subtitle = "Medellín, Colombia (2015-2019)")
+```
+
+### Gráfico 3
+
+- **Consulta:** ¿El patrón de comportamiento observado en el gráfico anterior es el mismo para todas las comunas?
+
+```{r, fig.width=9, fig.height=10}
+data_motos %>% 
+  filter(zona %in% paste0("Comuna ", 1:16)) %>% 
+  group_by(hora_accidente, zona) %>% 
+  count(name = "total") %>% 
+  ggplot(aes(x = hora_accidente, y = total)) +
+  facet_wrap(~zona, scales = "free", ncol = 3) +
+  geom_smooth(se = FALSE)  +
+  scale_x_time(breaks = seq(min(data_motos$hora_accidente, na.rm = TRUE),
+                            max(data_motos$hora_accidente, na.rm = TRUE),
+                            length.out = 5)) +
+  labs(x = "Hora",
+       y = "Total",
+       title = "Accidentes en motocicleta vs hora del día por comuna",
+       subtitle = "Medellín, Colombia (2015-2019)")
+```
 
 ## Datos nutricionales (kaggle)
 
 - La base de datos puede ser obtenida de la  [plataforma kaggle.](https://www.kaggle.com/ofrancisco/emoji-diet-nutritional-data-sr28)
 -  Si usted no está registrado en la plataforma, puede descargar la base de datos [aquí.](/temas/data/datos_kaggle_nutrition.csv)
+- Luego de descargar la base de datos ejecute el siguiente código para leerla desde R.
+- **Objetivo:**
+  - Clasifique la varible *name* en los grupos que usted considere pertinente (por ejemplo, vegetales, proteína animal y otros).
+  - En un sólo gráfico (**sólo uno**) represente la distribución de las 33 variables numéricas en función de los grupos que clasificó previamente.
 
-# Fecha de entrega
+```{r, echo = TRUE}
+# Kaggle
+data_nutri <- read_csv("datos_kaggle_nutrition.csv")
+data_nutri
+```
 
-- Máximo el domingo 24 de enero de 2021 hasta de las 11:59 pm.
+
+# Fecha y formato de entrega
+
+- **Fecha:**Máximo el domingo 24 de enero de 2021 hasta de las 11:59 pm.
+- **Formato:** documento *HTML* con la solución para punto de la actividad.
