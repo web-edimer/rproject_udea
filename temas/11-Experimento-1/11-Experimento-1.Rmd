@@ -1,6 +1,6 @@
 ---
 title: "Uso de R en experimentación animal:"
-subtitle: "Visualización y análisis de experimentos (1)<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Visualización y análisis de experimentos<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -17,64 +17,105 @@ output:
 
 class: inverse, center, middle
 
-# Principal
+# Estadística Descriptiva e Inferencial
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
----
-
-# Secundaria
-
-.pull-left[
-
-### Borrador
-
-  - [url](/temas/)
-
-### Borrador
-
-]
-
-.pull-right[
 
 <br>
 
 <center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+<img src = "img/img6.png"; height= 350 />
 </center>
-
-
-
-]
-
 
 ---
 
-# Título
+# Propósito
 
-.pull-left[
+<br>
 
 <center>
-<img src="img/base.PNG"; height= 100/>
+<img src = "img/img1.jpg" />
 </center>
 
-##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
+---
 
-]
+# Muestras representativas
 
-.pull-right[
+<br>
 
+<center>
+<img src = "img/img2.jpg" />
+</center>
 
+---
 
-| Importar | Exportar | Separador |
+class: inverse, center, middle
+
+# Modelos Estadísticos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Tipos de modelos
+
+<br>
+
+<center>
+<img src = "img/img0.png" />
+</center>
+
+---
+
+# Métodos estadísticos
+
+<center>
+<img src = "img/img3.png" />
+</center>
+
+| Tipo de análisis | Método Paramétrico | Método no Paramétrico |
 | :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
+| Correlación | *Pearson* | *Spearman* o *Kendall* |
+| Comparar medias (2 grupos) | *t-Student* | *Wilcoxon* |
+| Comparar medias (> 2 grupos) | *Anova*  | *Kruskal-Wallis* |
+
+---
+
+# Tipos de hipótesis
 
 
-]
+<center>
+<img src = "img/img4.jpg"; height= 320 />
+</center>
 
+
+<center>
+<img src = "img/img5.PNG" />
+</center>
+
+---
+class: inverse, center, middle
+
+# Ejemplo 1: *Efecto de dietas sobre el crecimiento de 4 líneas de pollo de engorde*
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/paper1.PNG"; height= 360/>
+</center>
+
+[Artículo y datos.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127819#abstract0)
+
+---
+class: inverse, center, middle
+
+# Ejemplo 2: *Producción de metano en bovinos de dos razas con dos tipos de alimentación*
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/paper2.PNG"; height= 360/>
+</center>
+
+[Artículo y datos.](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005846#sec018)
 
 ---
 class: inverse, center, middle
