@@ -119,7 +119,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-# Ejemplo 2: *Producción de metano en bovinos de dos razas con dos tipos de alimentación*
+# Ejercicio (10%): *Producción de metano en bovinos de dos razas con dos tipos de alimentación*
 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
@@ -128,6 +128,35 @@ class: inverse, center, middle
 &lt;/center&gt;
 
 [Artículo y datos.](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005846#sec018)
+
+---
+
+# Ejercicio
+
+1. Comparar la emisión de metano por día (`methane_g_day`) para las dos razas y los dos tipos de dietas.
+2. En cada comparación, comprobar el supuesto de normalidad a través de gráficos y prueba analítica.
+3. En cada comparación, comprobar el supuesto de homocedasticidad a través de gráficos y prueba analítica.
+4. Ejecute la prueba estadística que considere pertinente basado en el resultado de los numerales anteriores. Interprete los resultados obtenidos.
+
+
+```r
+library(readxl); library(tidyverse); library(janitor)
+datos &lt;- read_excel("data/S1 Dataset.xlsx", skip = 1) %&gt;% 
+  clean_names()
+head(datos, n = 3L)
+```
+
+```
+## # A tibble: 3 x 9
+##   breed sire  diet  chamber block methane_g_day methane_g_kg_dmi a_b_ratio_pm
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+## 1 AA    AA1   CON         5     2           151             13.7         2.44
+## 2 AA    AA1   CON         4     1           174             17.2         4.77
+## 3 AA    AA1   CON         6     1           189             16.3         5.77
+## # ... with 1 more variable: a_b_ratio_live &lt;dbl&gt;
+```
+
+
 
 ---
 class: inverse, center, middle

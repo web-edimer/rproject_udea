@@ -107,7 +107,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-# Ejemplo 2: *Producción de metano en bovinos de dos razas con dos tipos de alimentación*
+# Ejercicio (10%): *Producción de metano en bovinos de dos razas con dos tipos de alimentación*
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
@@ -116,6 +116,24 @@ class: inverse, center, middle
 </center>
 
 [Artículo y datos.](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005846#sec018)
+
+---
+
+# Ejercicio
+
+1. Comparar la emisión de metano por día (`methane_g_day`) para las dos razas y los dos tipos de dietas.
+2. En cada comparación, comprobar el supuesto de normalidad a través de gráficos y prueba analítica.
+3. En cada comparación, comprobar el supuesto de homocedasticidad a través de gráficos y prueba analítica.
+4. Ejecute la prueba estadística que considere pertinente basado en el resultado de los numerales anteriores. Interprete los resultados obtenidos.
+
+```{r, warning=FALSE, message=FALSE}
+library(readxl); library(tidyverse); library(janitor)
+datos <- read_excel("data/S1 Dataset.xlsx", skip = 1) %>% 
+  clean_names()
+head(datos, n = 3L)
+```
+
+
 
 ---
 class: inverse, center, middle
