@@ -49,6 +49,7 @@ intro_image_hide_on_mobile: true
     + [Ejemplo de clase 07 (Depuración, Unión y Resumen Descriptivo) - (Jueves-Viernes)](https://rpubs.com/Edimer/698544)
     + [Ejemplo de clase 08 y 09 - (Martes-Miércoles)](https://rpubs.com/Edimer/698991)
     + [Ejemplo de clase 08 y 09 - (Jueves-Viernes)](https://rpubs.com/Edimer/700038)
+    + [Ejemplo de clase 11 - (Martes-Miércoles)](https://rpubs.com/Edimer/715550)
 <br>
 
 - **Bases de datos:**
