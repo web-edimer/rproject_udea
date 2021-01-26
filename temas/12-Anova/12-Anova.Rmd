@@ -228,15 +228,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-# Ejemplo: *Agroecological coffee management increases arbuscular mycorrhizal fungi diversity*
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-<center>
-<img src="img/paper1.PNG"; height= 350/>
-</center>
-
-[Artículo y datos](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0209093#sec016)
+# Ejemplo
 
 ---
 class: inverse, center, middle
