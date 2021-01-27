@@ -12,6 +12,7 @@ output:
       collapsed: false
     highlight: pygments
     theme: cerulean
+    css: estilo.css
 ---
 
 ```{r setup, include=FALSE}
@@ -23,6 +24,108 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 
 ## Descarga de mapas
 
+- Utilizamos la biblioteca `raster`
+- Para descargar [*shapes*](https://es.wikipedia.org/wiki/Shapefile) podemos utilizar la función `getData()`
+- El siguiente código permite ver los nombres con codificación ISO para cada país, en este caso para Colombia el nombre es **COL**.
+
+```{r}
+library(raster)
+getData(name = "ISO3")
+```
+
+- **Obtención de datos con función getData() para Colombia:**
+
+  - `level = 0`: división a nivel de país.
+  - `level = 1`: división regional (departamentos)
+  - `level = 2`: división municipal (municipios)
+  
+```{r}
+colombia_pais <- getData(name = "GADM", country = "COL", level = 0)
+colombia_dept <- getData(name = "GADM", country = "COL", level = 1)
+colombia_muni <- getData(name = "GADM", country = "COL", level = 2)
+```
+
+- Ahora podemos graficar cada mapa a través de la función `plot()`:
+
+```{r}
+plot(colombia_pais)
+```
+
+```{r}
+plot(colombia_dept)
+```
+
+```{r}
+plot(colombia_muni)
+```
+
+- Los objetos previamente creados son de tipo `SpatialPolygonsDataFrame`:
+
+```{r}
+class(colombia_pais)
+```
+
+- Podemos acceder a los nombres de cada departamento de la siguiente manera:
+
+```{r}
+colombia_dept$NAME_1
+```
+
+
 ## Biblioteca `rworldxtra`
 
+- La biblioteca `rworldxtra` posee mapas con información de interés, por ejemplo, la población mundial. Cargamos el conjunto de datos `countriesHigh` que es de tipo `SpatialPolygonsDataFrame`.
+
+```{r}
+library(rworldxtra)
+data("countriesHigh")
+
+class(countriesHigh)
+```
+
+- Graficamos con la función `plot()`:
+
+```{r}
+plot(countriesHigh)
+```
+
 # Biblioteca `sf`
+
+- A través de la biblioteca `sf` podemos convertir los objetos de tipo `SpatialPolygonsDataFrame` a `data.frame`, facilitando el manejo con bibliotecas como `dplyr` o la visualización con `ggplot2`.
+- La función `st_as_sf()` recibe un objeto de tipo `SpatialPolygonsDataFrame` y realiza la conversión a `data.frame`.
+- En la variable mundo estamos asignando el objeto `countriesHigh` que habíamos cargado previamente. Cuando consultamos la clase vemos que es de tipo `data.frame` y `sf`.
+
+```{r}
+library(sf)
+mundo <- st_as_sf(countriesHigh)
+class(mundo)
+```
+
+- Veamos el objeto `mundo` como `data.frame()`:
+
+```{r}
+mundo %>% as.data.frame()
+```
+
+- Ahora podemos graficar la población mundial (`POP_EST`) con `ggplot2` haciendo uso del objeto geométrico `geom_sf()`:
+
+```{r}
+library(ggplot2)
+mundo %>% 
+  ggplot(aes(fill = POP_EST)) +
+  geom_sf() +
+  labs(title = "Población mundial")
+```
+
+- Podemos filtrar sólo Sur América y el Caribe para ejemplificar cómo usar las funciones de `dplyr`. Además le asignamos colores diferentes con la biblioteca `viridis`.
+
+```{r}
+library(viridis)
+library(dplyr)
+mundo %>% 
+  filter(continent == "South America and the Caribbean") %>% 
+  ggplot(aes(fill = POP_EST)) +
+  geom_sf() +
+  scale_fill_viridis_c()
+```
+
