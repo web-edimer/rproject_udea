@@ -17,64 +17,187 @@ output:
 
 class: inverse, center, middle
 
-# Principal
+# Regresión Lineal
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
+<center>
+<img src="https://images.squarespace-cdn.com/content/v1/58e6894159cc68fb0d646b07/1508452497921-2KN81XMZVYOC3N531ZIK/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmrMDYraMJMCQwFxTSOIP7LpSBEQpA-g5k6VTjWbSuadHJq0dp98hg5AZvIaPb3DoM/Website-Icons-MLR-1.png"; height= 400/>
+</center>
+
+
+
 ---
 
-# Secundaria
+# Correlación: concepto
+
+El coeficiente de correlación es una métrica que mide la variación conjunta de dos variables aleatorias cuantitativas. A diferencia de la covarianza, la correlación es independiente de la escala de medida.
+
+Este coeficiente puede ser de dos tipos:
+
+- Paramétrico: sujeto a distribución normal o gausiana.
+- No paramétrico: no está sujeto a distribución normal o gausiana.
+
+$$\rho_{(X,Y)} = \frac{Cov_{(X,Y)}}{\sigma_X\times\sigma_Y} = \frac{\sum_{i=1}^{n}(X_i-\mu_X)(Y_i-\mu_Y)}{\sigma_X\times\sigma_Y}$$
+
 
 .pull-left[
 
-### Borrador
+- **Correlaciones con R:**
 
-  - [url](/temas/)
+```{r, eval=FALSE}
+ # Paramétrico
+cor(x, y, method = "pearson")
 
-### Borrador
+# No paramétrico
+cor(x, y, method = "spearman") 
+cor(x, y, method = "kendall") 
+```
 
 ]
 
 .pull-right[
 
-<br>
+- **Covarianzas con R:**
+
+```{r, eval=FALSE}
+ # Covarianza
+cov(x, y)
+
+# Correlación manual
+cov(x, y) / (sd(x) * sd(y))
+```
+
+]
+
+---
+
+# Interpretación de correlación 
 
 <center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/corr.jpg?raw=true"; height= 200/>
+</center>
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/measurecor.png?raw=true"; height= 350/>
+</center>
+
+---
+
+# Prueba de hipótesis sobre $\rho$
+
+- Juego de hipótesis:
+
+$$H_0: \rho = 0 \\
+H_1: \rho \neq 0$$
+
+- Ejemplo:
+
+```{r}
+cor.test(x = iris$Sepal.Length, y = iris$Petal.Length, method = "pearson",
+         alternative = "two.sided", conf.level = 0.95)
+```
+
+---
+
+# Regresión Lineal: origen
+
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/galton.jpg?raw=true"; height= 250/>
+</center>
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/galtondatos.PNG?raw=true"; height= 300/>
+</center>
+
+---
+
+# Regresión lineal: idea intuitiva
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/regression.gif?raw=true"; height= 350/>
+</center>
+
+- Regresión lineal interactiva:
+  - [Ordinary Least Squares Regression](https://setosa.io/ev/ordinary-least-squares-regression/)
+  - [Least Squares - Wolfram](https://demonstrations.wolfram.com/LeastSquaresCriteriaForTheLeastSquaresRegressionLine/)
+  - [Least Squares - GeoGebra](https://www.geogebra.org/m/XUkhCJRj)
+
+---
+
+# Regresión lineal: ajuste de parámetros
+
+- El propósito principal del análisis de regresión es estimar la función de regresión poblacional con base en la función de regresión muestral.
+
+$$Y_i = \beta_0\ +\ \beta_1X$$
+$$\hat{Y_i} = \hat{\beta_0}\ + \hat{\beta_1}X_i\ + \hat{\epsilon_i}$$
+
+- Función matemática:
+
+$$Y_i = E(Y|X_i)\ +\ \epsilon_i\\$$
+
+- Asumiendo que $E(Y|X_i)$ es lineal en $X_i$:
+
+$$Y_i = E(Y|X_i)\ +\ \epsilon_i\\
+Y_i = \beta_0 +\ \beta_1X_i\ +\ \epsilon_i$$
+
+---
+
+# Supuestos matemáticos
+
+1. Linealidad en los parámetros.
+2. Valores de $X$ independientes del término residual $\epsilon$.
+3. Valor medio de los residuales igual a cero: $E(\epsilon_i|X_i) = 0$.
+4. Homocedasticidad o varianza constante de los errores $\epsilon_i$.
+5. Independencia de los errores (autocorrelación): $cov(\epsilon_i, \epsilon_j)=0$.
+
+$$\epsilon_i\ \overset{\text{i.i.d.}}\sim\ N(\mu = 0,\ \sigma^2)$$
+
+.pull-left[
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/normalidad.PNG?raw=true"; height= 330/>
 </center>
 
 
 
 ]
 
-
----
-
-# Título
-
-.pull-left[
-
-<center>
-<img src="img/base.PNG"; height= 100/>
-</center>
-
-##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
-
-]
-
 .pull-right[
 
 
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
-
+<center>
+<img src="
+https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/homocedasticidad.PNG?raw=true?raw=true"; height= 330/>
+</center>
 
 ]
 
+---
+class: inverse, center, middle
+
+# Ejemplo de Regresión Lineal Simple con R
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+<center>
+<img src="img/paper1.PNG"/>
+</center>
+
+[Artículo y datos](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205272)
+
+---
+class: inverse, center, middle
+
+# [Ejemplo de Regresión Lineal Múltiple con R](https://rpubs.com/Edimer/565984)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+<center>
+<img src="img/paper2.PNG"/>
+</center>
 
 ---
 class: inverse, center, middle
