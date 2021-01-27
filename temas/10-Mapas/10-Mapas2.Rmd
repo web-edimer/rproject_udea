@@ -1,0 +1,28 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Mapas con R"
+author: "Edimer David Jaramillo"
+date: "27/1/2021<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+    toc_float:
+      smooth_scroll: false
+      collapsed: false
+    highlight: pygments
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.align = "center", fig.width = 8)
+```
+
+# Mapas desde R
+
+## Descarga de mapas
+
+## Biblioteca `rworldxtra`
+
+# Biblioteca `sf`
