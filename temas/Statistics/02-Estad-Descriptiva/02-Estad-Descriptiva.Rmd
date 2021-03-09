@@ -1,6 +1,6 @@
 ---
 title: "Estadística:"
-subtitle: "Plantilla<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Introducción a la estadística descriptiva<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -17,64 +17,160 @@ output:
 
 class: inverse, center, middle
 
-# Principal
+# Historia y aplicaciones de la estadística
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Two_red_dice_01.svg/1200px-Two_red_dice_01.svg.png"; height= 400/>
+</center>
+
 ---
 
-# Secundaria
-
-.pull-left[
-
-### Borrador
-
-  - [url](/temas/)
-
-### Borrador
+# Algunas personas importantes
+  
+  .pull-left[
+  
+- Siglo XVI: Girolamo Cardano
+- Siglo XVIII: Thomas Bayes
+- Siglo XVIII: Pierre Simon Laplace
+- Siglo XIX: Carl Friedrich Gauss y Laplace
+- **Siglo XX: Ronald Fisher**
+<br>
+<br>
+- Blaise Pascal
+- Pierre de Fermat
+- Karl Pearson
+- Francis Galton
+- Jerzy Neyman
+- Andréi Kolmogórov
+<br>
+<br>
+- [La estadística una ciencia del siglo XX: R. A. Fisher el genio](https://www.emis.de/journals/RCE/V23/V23_2_1Yanez.pdf)
 
 ]
 
 .pull-right[
+
+<center>
+<img src="http://anabelforte.com/wp-content/uploads/2020/09/ronald-fisher-4-uofa.jpg"; width= 350/>
+</center>
+
+]
+
+---
+
+# Estadística: concepto y aplicaciones
+
+**La estadística** se puede puede definir como el conjunto de técnicas y herramientas que permite ejercer labores de colección, resumen, comparación y generalización de resultados. 
+
+  - Aritmética política
+  - Teoría de probabilidad
+  - Teoría de la medida
+  - Teoría de la toma de decisiones
+
+.pull-left[
+
+#### Áreas de estudio
+
+  - Ciencias sociales
+  - Econometría
+  - Física
+  - Química
+  - Sistemas de información geográfico
+  - Geoestadística
+  - Minería de datos
+  - **Ciencias biológicas**
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://lh3.googleusercontent.com/proxy/Q-b4sQ378ZWStutV18iOuLYfHtyg4Zy6fbtEVP8N0G9AFcdkg9ebfNgekFQ0tfEbE_-TMixc_jKT7mYAe4PI7xrSBCQ9c6fCe4zXKuzgtchUKdglB2aO97Z1lYC9r-oJ0dSKy6FG9keITjumFm-SX52B93kv";
+width = 350/>
+</center>
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Tipos de variables y métricas estadísticas
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://image.freepik.com/vector-gratis/ilustracion-colorida-mujer-cientifica_23-2148394382.jpg"; width= 450/>
+</center>
+
+---
+
+# Tipos de variables
+
+<center>
+<img src="https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png"/>
+</center>
+
+---
+
+# Tipos de medidas
+
+.pull-left[
+
+### Medidas de centralización
+
+- Media
+- Mediana
+- Moda
+
+### Medidas de dispersión
+
+- Desviación estándar
+- Varianza
+- Rango
+- Rango intercuartílico
+
+]
+
+.pull-right[
+
+### Medidas de posición
+
+- Cuartiles
+- Deciles
+- Percentiles
+    
+### Medidas de distribución
+    
+- Coeficiente de asimetría
+- Coeficiente de curtosis
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Estadística descriptiva e inferencial
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://datatab.net/assets/tutorial/inferenz_deskriptiv_en.png"; width = 850/>
+</center>
+
+---
+
+# Estadística descriptiva e inferencial
 
 <br>
+<br>
 
-<center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
-</center>
-
-
-
-]
-
-
----
-
-# Título
-
-.pull-left[
-
-<center>
-<img src="img/base.PNG"; height= 100/>
-</center>
-
-##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
-
-]
-
-.pull-right[
-
-
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
-
-
-]
-
+| Descriptiva   | Inferencial |
+| :--------: | :-----------: |
+| Resumen de información | Generalización de resultados |
+| Variables cualitativas<br> Variables cuantitativas | Variables cualitativas<br> Variables cuantitativas |
+| Medidas de resumen<br> Tablas<br> Gráficos | Estimación de parámetros<br> Contraste de hipótesis |
+| Formular hipótesis | Rechazar o no las hipótesis |
 
 ---
 class: inverse, center, middle

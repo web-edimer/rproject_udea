@@ -37,19 +37,20 @@ intro_image_hide_on_mobile: true
 - **Unidad 1: Introducción y Estadística Descriptiva**
     + [00-Presentación del curso](/temas/Statistics/00-Curso/00-Curso.html)
     + [01-R, RStudio y R Markdown](/temas/Statistics/01-R-RStudio/01-R-RStudio.html)
-    + [02-Estadística Descriptiva](/temas/Statistics/02-Estad-Descriptiva/02-Estad-Descriptiva.html)
+    + [02-Estadística Descriptiva: Introducción](/temas/Statistics/02-Estad-Descriptiva/02-Estad-Descriptiva.html)
+    + [03-Estadística Descriptiva: aplicaciones con R](/temas/Statistics/03-Estad-Descriptiva-R/03-Estad-Descriptiva-R.html)
 
 - **Unidad 2: Probabilidad**
-    + [03-Probabilidad](/temas/Statistics/)
+    + [04-Probabilidad](/temas/Statistics/)
 
 - **Unidad 3: Inferencia Estadística**
-    + [04-Inferencia](/temas/Statistics/)
+    + [05-Inferencia](/temas/Statistics/)
 
 - **Unidad 4: Diseño de Experimentos**
-    + [05-Diseño de Experimentos](/temas/Statistics/)
+    + [06-Diseño de Experimentos](/temas/Statistics/)
 
 - **Unidad 5: Diseños Factoriales**
-    + [06-Diseños Factoriales](/temas/Statistics/)
+    + [07-Diseños Factoriales](/temas/Statistics/)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [07-Correlación y Regresión Lineal](/temas/Statistics/)
+    + [08-Correlación y Regresión Lineal](/temas/Statistics/)
