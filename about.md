@@ -13,6 +13,14 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 - [*Statistics Using R with Biological Examples*](https://cran.r-project.org/doc/contrib/Seefeld_StatsRBio.pdf)
 - [*R for Biologists*](https://cran.r-project.org/doc/contrib/Martinez-RforBiologistv1.1.pdf)
 
+# Estadística con R
+
+- [Modelos Estadísticos](https://bookdown.org/j_morales/librostat/)
+- [Modelos de Regresión con R](https://fhernanb.github.io/libro_regresion/)
+- [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/)
+- [Beyond Multiple Linear Regression: Applied Generalized Linear Models and Multilevel Models in R](https://bookdown.org/roback/bookdown-BeyondMLR/)
+- [Statistics handbook for a data analyst](https://bookdown.org/mpfoley1973/statistics/)
+
 # Recursos web
 
 - [Stack Overflow en inglés](https://stackoverflow.com/)

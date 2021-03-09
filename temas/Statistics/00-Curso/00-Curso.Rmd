@@ -1,0 +1,161 @@
+---
+title: "Estadística:"
+subtitle: "Presentación del curso<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Yo...
+
+<br>
+<center>
+<img src = "img/img17.png"/>
+</center>
+
+.footnote[
+[1] [Perfil de Github](https://github.com/Edimer) <br>
+[2] [Mi página web](https://edimer.github.io/)
+]
+
+---
+
+# Objetivo general y objetivos específicos del curso
+
+## Objetivo general
+
+- Estudiar las características y aspectos generales de la estadística y el diseño de experimentos como herramientas para el análisis de experimentos y para el mejoramiento de la productividad en procesos biotecnológicos y/o bioquímicos. 
+
+## Objetivos específicos
+
+- Organizar, analizar e interpretar datos cualitativos o cuantitativos de estudios experimentales.
+- Conocer los principios metodológicos de los diseños experimentales factoriales y aplicarlos en problemas de Ingeniería.
+- Estudiar las diferentes aplicaciones de los modelos de regresión en la Ingeniería y el concepto de correlación.
+
+---
+
+# Contenido y bibliografía recomendada
+
+## Tópicos generales
+
+- **Unidad 1:** Introducción al curso y estadística descriptiva.
+- **Unidad 2:** Probabilidad.
+- **Unidad 3:** Inferencia estadística.
+- **Unidad 4:** Diseño de experimentos.
+- **Unidad 5:** Diseños factoriales.
+- **Unidad 6:** Correlación y regresión lineal.
+
+## Bibliografía básica
+
+- Montgomery, D. C. (2003). Diseño y análisis de experimentos (Segunda ed.). Limusa Wiley.
+- Montgomery, D. C., & Runger, G. C. (2003). Probabilidad y estadística aplicadas a la Ingeniería (Tercera ed.).
+John Wiley & Sons, Inc.
+
+---
+
+# Evaluación del curso
+
+<br>
+
+- **Actividad 1:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (10 %)
+- **Actividad 2:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (10 %)
+- **Actividad 3:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
+- **Actividad 4:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
+- **Actividad 5:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
+- **Actividad 6:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 % )   
+
+---
+class: inverse, center, middle
+
+# Recursos de Información
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Análisis de Regresión con R
+
+.footnote[
+[1] [Análisis de Regresión con R](https://fhernanb.github.io/libro_regresion/)
+]
+
+<center>
+<img src = "img/libro4.png"; width = 350/>
+</center>
+
+---
+
+# Statistical Inference via Data Science
+
+.footnote[
+[1] [Statistical Inference via Data Science](https://moderndive.com/)
+]
+
+<center>
+<img src = "img/libro5.png"; width = 320/>
+</center>
+
+---
+
+# Beyond Multiple Linear Regression
+
+.footnote[
+[1] [Beyond Multiple Linear Regression](https://bookdown.org/roback/bookdown-BeyondMLR/)
+]
+
+<center>
+<img src = "img/libro6.jpg"; width = 310/>
+</center>
+
+---
+
+# R para Ciencia de Datos
+
+.footnote[
+[1] [Libro: versión español.](https://es.r4ds.hadley.nz/)
+]
+
+<br>
+<center>
+<img src = "img/libro2.png";width = 500/>
+</center>
+
+---
+
+# Libro vivo de Ciencia de Datos
+
+<br>
+<center>
+<img src = "img/libro3.png"width = 350; height = 400/>
+</center>
+
+.footnote[
+[1] [Libro: versión español.](https://librovivodecienciadedatos.ai/)
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

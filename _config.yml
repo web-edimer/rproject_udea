@@ -1,7 +1,7 @@
 baseurl: ''
 exclude: ['README.md']
 permalink: pretty
-title: 'R-Project en Experimentación Animal'
+title: 'Estadística y R-Project en Experimentación Animal'
 
 google_analytics_id: null
 homepage:
