@@ -242,7 +242,13 @@ class: inverse, center, middle
 
 ]
 
+---
+class: inverse, center, middle
 
+# Publicar en Rpubs
+
+Publicación de documentos en  [Rpubs.](https://rpubs.com/)
+Regístrese [aquí.](https://rpubs.com/users/new)  
 
 ---
 class: inverse, center, middle
