@@ -97,15 +97,15 @@ class: inverse, center, middle
 
 ---
 
-# Top Lenguajes 2019
+# Top Lenguajes 2020
 
 <br>
 <center>
-<img src = "img/rank.PNG" height = 430px width = 450px/>
+<img src = "https://developer-tech.com/wp-content/uploads/sites/3/2020/07/tiobe-default-ranking-programming-languages-2020.jpg" height = 430px width = 450px/>
 </center>
 
 .footnote[
-[1] [ieee.org](https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019)
+[1] [ieee.org](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020)
 ]
 
 ---
@@ -257,6 +257,24 @@ class: inverse, center, middle
 ]
 
 ---
+
+# TensorFlow en la agricultura
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/NlpS-DhayQA" frameborder="0" allowfullscreen></iframe>
+
+---
+
+# TensorFlow en la agricultura
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/23Q7HciuVyM" frameborder="0" allowfullscreen></iframe>
+
+---
+
+# TensorFlow en producción lechera
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/6taIMlZysJQ" frameborder="0" allowfullscreen></iframe>
+
+---
 class: inverse, center, middle
 
 # Instalación de herramientas
@@ -272,8 +290,10 @@ class: inverse, center, middle
 <img src = "img/r-rstudio.png"/>
 </center>
 
-- [Descargar R (última versión).](https://cran.r-project.org/)
-- [Descargar RStudio (última versión).](https://rstudio.com/products/rstudio/download/)
+- [Descargar R (última versión) - Windows.](https://cran.r-project.org/bin/windows/base/R-4.0.4-win.exe)
+- [Descargar R (última versión) - MacOS.](https://cran.r-project.org/bin/macosx/R-4.0.4.pkg)
+- [Descargar RStudio (última versión) - Windows.](https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe)
+- [Descargar RStudio (última versión) - MacOS.](https://download1.rstudio.org/desktop/macos/RStudio-1.4.1106.dmg)
 
 ---
 class: inverse, center, middle

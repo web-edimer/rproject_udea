@@ -33,7 +33,7 @@ class: inverse, center, middle
 # Entorno de desarrollo integrado
 
 <center>
-<img src = "img/rsstudio.png"; width=600/>
+<img src = "img/rstudio.PNG"; width=600/>
 </center>
 
 ---
