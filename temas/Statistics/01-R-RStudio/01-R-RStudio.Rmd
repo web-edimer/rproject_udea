@@ -169,11 +169,13 @@ class: inverse, center, middle
 
 # Abrir R Markdown
 
-- *File* `->` *New File* `->` *R Markdown*
+- **Crear archivo:** *File* `->` *New File* `->` *R Markdown*
 
 <center>
 <img src = "img/rmarkdown2.PNG"; height = 400/>
 </center>
+
+- **Guardar archivo:** *File* `->` *Save with Encoding* `->` *UTF-8*
 
 ---
 
