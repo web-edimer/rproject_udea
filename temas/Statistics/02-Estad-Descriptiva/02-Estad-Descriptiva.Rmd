@@ -86,7 +86,7 @@ class: inverse, center, middle
 .pull-right[
 
 <center>
-<img src="https://lh3.googleusercontent.com/proxy/Q-b4sQ378ZWStutV18iOuLYfHtyg4Zy6fbtEVP8N0G9AFcdkg9ebfNgekFQ0tfEbE_-TMixc_jKT7mYAe4PI7xrSBCQ9c6fCe4zXKuzgtchUKdglB2aO97Z1lYC9r-oJ0dSKy6FG9keITjumFm-SX52B93kv";
+<img src="https://img.freepik.com/vector-gratis/coleccion-elementos-infografia_1284-1912.jpg?size=338&ext=jpg";
 width = 350/>
 </center>
 
