@@ -38,7 +38,8 @@ intro_image_hide_on_mobile: true
     + [00-Presentación del curso](/temas/Statistics/00-Curso/00-Curso.html)
     + [01-R, RStudio y R Markdown](/temas/Statistics/01-R-RStudio/01-R-RStudio.html)
     + [02-Estadística Descriptiva: Introducción](/temas/Statistics/02-Estad-Descriptiva/02-Estad-Descriptiva.html)
-    + [03-Estadística Descriptiva: aplicaciones con R](/temas/Statistics/03-Estad-Descriptiva-R/03-Estad-Descriptiva-R.html)
+    + [03-Estadística Descriptiva: métricas estadísticas](/temas/Statistics/03-Estad-Descriptiva-R/03-Estad-Descriptiva-R.html)
+    + [04-Estadística Descriptiva: tablas y gráficos](/temas/Statistics/04-Estad-Descriptiva-R2/04-Estad-Descriptiva-R2.html)
 
 - **Unidad 2: Probabilidad**
     + [04-Probabilidad](/temas/Statistics/)
