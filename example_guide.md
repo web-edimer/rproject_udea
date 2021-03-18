@@ -8,7 +8,7 @@ intro_image_hide_on_mobile: true
 
 # Ejemplos R-Project
 
-- [01-Ejemplo R Markdown]() ([Descargar .Rmd](/temas/Guides/examples_statistics/ejemplo_rmarkdown.Rmd))
+- [01-Ejemplo R Markdown]() ([Descargar .Rmd](/temas/Guides/examples_statistics/01-ejemplo_rmarkdown.zip))
 - [02-Ejemplo tipos de datos en R]() ([Descargar .Rmd]())
 
 <br>
