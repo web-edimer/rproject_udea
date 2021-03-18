@@ -1,0 +1,50 @@
+---
+title: "Instalación de bibliotecas en R"
+author: "Edimer David Jaramillo"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instalar bibliotecas desde RStudio
+
+### 1. Abrir RStudio
+
+### 2. Dar clic en la pestaña **`Packages`**
+
+<center>
+<img src = "img/guide01.PNG" />
+</center>
+
+### 3. Dar clic en la pastaña **`Install`**
+
+<center>
+<img src = "img/guide02.PNG" />
+</center>
+
+### 4. Escribir el nombre de las bibliotecas a instalar
+
+<center>
+<img src = "img/guide03.PNG" />
+</center>
+
+En este caso se van a instalar las siguientes bibliotecas:
+
+- `tidyverse`
+- `moments`
+- `janitor`
+- `ggsci`
+
+<center>
+<img src = "img/guide04.PNG" />
+</center>
+
+### 5. Clic en el botón **`Install`**
+
+<center>
+<img src = "img/guide05.PNG" />
+</center>
+<br>
+Se dará cuenta que la instalación terminó cuando en la consola aparezca nuevamente el símbolo `>`.
