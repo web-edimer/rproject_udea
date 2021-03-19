@@ -20,6 +20,12 @@ class: inverse, center, middle
 # Tipos de datos
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
+<center>
+<img src="https://rstudio-education.github.io/hopr/images/hopr_0306.png" width = 720/>
+</center>
+
+
+
 ---
 
 # Datos en R
@@ -52,7 +58,7 @@ class: inverse, center, middle
 
 #### Base de datos
 <center>
-<img src="img/tabla.PNG"/>
+<img src="https://rstudio-education.github.io/hopr/images/hopr_0302.png"/>
 </center>
 ]
 
@@ -152,6 +158,8 @@ class: inverse, center, middle
 [Bioconductor](http://bioconductor.org/)
 
 [Github: ejemplo `genR`](https://github.com/Edimer/genR)
+
+[Guía para instalar bibliotecas desde RStudio](https://rproject-udea.netlify.app/temas/guides/01-installpackage)
 
 ---
 class: inverse, center, middle
