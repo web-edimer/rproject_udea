@@ -2,7 +2,7 @@ main:
   - name: "Temas"
     url: "/services/"
     weight: 1
-  - name: "Ejemplos y Guías"
+  - name: "Ejemplos, Guías y Datos"
     url: "/example_guide/"
     weight: 2   
   - name: "Trabajos"
