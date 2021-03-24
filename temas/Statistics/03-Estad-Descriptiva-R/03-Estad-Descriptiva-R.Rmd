@@ -218,7 +218,7 @@ class: inverse, center, middle
 
 # Varianza
   
-  - **Varianza $(S^2)$:** proporciona una medida de dispersión relativa al tamaño muestral de las distintas observaciones respecto a la media aritmética $\bar{x}$. Se define como la suma de los cuadrados de las diferencias entre cada valor de la muestra y su media.
+  - **Varianza $(S^2)$:** proporciona una medida de dispersión de las distintas observaciones respecto a la media aritmética $\bar{x}$. Se define como la suma de los cuadrados de las diferencias entre cada valor de la muestra y su media.
     
 - Para la población: $$\sigma^2=\frac{\sum\nolimits_{i=1}^n(x_{i}-\bar{x})}{N}^2$$
 
