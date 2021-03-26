@@ -11,7 +11,7 @@ intro_image_hide_on_mobile: true
 
 A continuación se describen las actividades evaluativas para el curso:
 
-- [Actividad 1 (5%) - Unidad 1](/actividades/Actividad-01/)
+- [Actividad 1 (5%) - Unidad 1](https://rproject-udea.netlify.app/temas/04-vectores-r/04-vectores-r#9)
 <br>
 
 - [Actividad 2 (30%) - Unidad 2](/actividades/Actividad-02/)
