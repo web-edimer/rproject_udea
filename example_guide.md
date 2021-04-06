@@ -16,8 +16,7 @@ intro_image_hide_on_mobile: true
 # Ejemplos Estadística
 
 - [01-Ejemplo R Markdown](https://rpubs.com/Edimer/740944) ([Descargar .Rmd](/temas/Guides/examples_statistics/ejemplo_rmarkdown.Rmd))
-- [02-Ejemplo métricas estadísticas]() ([Descargar .Rmd]())
-- [03-Ejemplo gráficos estadísticos]() ([Descargar .Rmd]())
+- [02-Ejemplos estadística descriptiva (métricas, tablas y gráficos)](https://rpubs.com/Edimer/750443) ([Descargar .Rmd](/temas/Guides/examples_statistics/01-estad-descriptiva.Rmd))
 
 <br>
 

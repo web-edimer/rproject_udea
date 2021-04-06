@@ -1,0 +1,208 @@
+---
+title: "Estadística descriptiva con R"
+author: "Edimer David Jaramillo"
+date: "17/3/2021"
+output: 
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tipos de variables
+
+- Cuantitativas:
+  - Continuas: en R las variables cuantitativas continuas se tipifican como **numeric** o **double**.
+  - Discretas: en R las variables cuantitativas discretas se tipifican como **integer**.
+- Cualitativas:
+  - Nominales: en R se tipifican como **character**
+  - Ordinales: en R se tipifican como **factor**
+  
+## Numérico (cuantitativa continua)
+
+```{r}
+ejemplo_num <- c(175.13, 180.25, 190.14, 160.50, 140.78)
+ejemplo_num
+```
+
+Puedo ver la clase o tipo de dato con la función class():
+
+```{r}
+class(ejemplo_num)
+```
+
+## Enteros (cuantitativas discretas)
+
+```{r}
+ejemplo_entero <- c(1L, 3L, 5L, 20L)
+class(ejemplo_entero)
+```
+
+## Caracteres (cualitativas nominales)
+
+```{r}
+ejemplo_nominal <- c("udea", "unal", "eafit", "poli")
+class(ejemplo_nominal)
+```
+
+## Factores (cualitativas ordinales)
+
+```{r}
+ejemplo_ordinal_mal <- factor(c("enero", "febrero", "marzo",
+                                "abril", "mayo", "junio"))
+class(ejemplo_ordinal_mal)
+```
+
+Puedo consultar el orden de los niveles con la función levels():
+
+```{r}
+levels(ejemplo_ordinal_mal)
+```
+
+Vamos a controlar desde la función factor() el orden de los niveles:
+
+```{r}
+ejemplo_ordinal_bien <- factor(c("enero", "febrero", "marzo",
+                                 "abril", "mayo", "junio"),
+                               levels = c("enero", "febrero", "marzo",
+                                          "abril", "mayo", "junio"))
+levels(ejemplo_ordinal_bien)
+```
+
+# Métricas estadísticas
+
+## Media o promedio
+
+```{r}
+numeros <- c(2, 3, 4, 5, 8, 2, 1, 50)
+mean(numeros)
+```
+
+- Calcular la media cuando hay valores ausentes (NA):
+
+```{r}
+ejemplo <- c(3, 5, 6, 8, NA)
+mean(ejemplo, na.rm = TRUE)
+```
+
+- Otro ejemplo manual:
+
+```{r}
+ejemplo2 <- c(1, 30, 40, 51)
+mean(ejemplo2)
+sum(ejemplo2) / length(ejemplo2)
+```
+
+- Podemos calcular la media sobre una variable de una base de datos:
+
+```{r}
+names(women)
+class(women$height)
+mean(women$height)
+length(women$height)
+```
+
+## Media ponderada
+
+- Podemos calcular la media ponderada de forma manual:
+
+```{r}
+animales <- c(2, 30, 40, 60)
+peso <- c(30, 43, 51, 60)
+
+sum(animales * peso) / sum(animales)
+
+mean(peso)
+```
+
+- Media ponderada con función de R:
+
+```{r}
+weighted.mean(peso, animales)
+```
+
+## Mediana
+
+```{r}
+median(women$height)
+```
+
+## Moda
+
+```{r}
+moda <- function(x) {
+  ux = unique(x)
+  tab = tabulate(match(x, ux))
+  ux[tab == max(tab)]
+}
+
+letras <- c("a", "a", "b", "c", "d")
+moda(letras)
+
+numeros <- c(1, 2, 3, 3, 3, 1, 5)
+moda(numeros)
+
+numeros2 <- c(1, 1, 2, 2, 3)
+moda(numeros2)
+```
+
+## Percentiles, deciles y cuartiles
+
+### Percentil 50, decil 5 y cuartil 2 = mediana
+
+- Ordenando las alturas de menor a mayor (decreasing = FALSE):
+
+```{r}
+altura_ordenada <- sort(women$height, decreasing = FALSE)
+altura_ordenada
+```
+
+- Calculando la mediana:
+
+```{r}
+median(altura_ordenada)
+```
+
+- Calculando el percentil 50 manualmente:
+
+$$P_k = \frac{k(n+1)}{100}$$
+
+```{r}
+# Ubicación del percentil 50
+(50 * (15 + 1)) / 100
+```
+
+- Buscamos el valor ubicado en la posición 8:
+
+```{r}
+altura_ordenada[8]
+```
+
+- Calculando el percentil 50 con la función quantile():
+
+```{r}
+quantile(women$height, probs = 0.50)
+```
+
+- Calculando los 100 percentiles:
+
+```{r}
+quantile(women$height, probs = seq(0, 1, 0.01))
+```
+
+
+# Funciones auxiliares
+
+- class(): permite conocer el tipo de dato de un objeto dentro de R.
+- length(): permite calcular la longitud (número de elementos) de un vector o variable de una base de datos.
+- sum(): permite sumar los elementos de un vector o variable de una base de datos.
+- names(): permite obtener los nombres de las columnas en una base de datos.
+- Signo pesos ($): nos permite ingresar a las variables de una base de datos.
+- factor(): permite crear factores en R. Brinda la posibilidad de ordenar los niveles.
+- c(): función para concatenar, es decir, crear vectores en R.
+- levels(): permite consultar los niveles de un factor. 
+- sort(): ordenar un vector de tipo cuantitativo (numeric o integer) o cualitativo (character o factor).
+- seq(): permite crear secuencias de datos.
+
