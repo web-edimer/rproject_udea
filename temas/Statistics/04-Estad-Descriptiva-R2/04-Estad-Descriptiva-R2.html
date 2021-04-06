@@ -4,8 +4,8 @@
     <title>Estadística:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2021-03-17" />
-    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <meta name="date" content="2021-04-06" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 # Estadística:
-## Plantilla
+## Gráficos y Tablas
 <html>
 <div style="float:left">
 
@@ -23,71 +23,234 @@ class: center, middle, inverse, title-slide
 </html>
 ### Edimer David Jaramillo
 ### Universidad de Antioquia
-### 2021-03-17
+### 2021-04-06
 
 ---
 
 
 class: inverse, center, middle
 
-# Principal
+
+
+# *"La mejor gráfica de la historia"* — Edward Tufte
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://www.edwardtufte.com/tufte/graphics/minard_lg.gif"/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# John Tukey
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://www.ecured.cu/images/thumb/4/48/Tukey.jpeg/260px-Tukey.jpeg"/&gt;
+&lt;/center&gt;
+
+&gt; *“Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo.”* — John Tukey
+
+---
+class: inverse, center, middle
+
+# Exploración de datos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/data-science-explore.svg"/&gt;
+&lt;/center&gt;
 
 ---
 
-# Secundaria
+# Diccionario de gráficos
 
 .pull-left[
 
-### Borrador
+### 1. Cantidades
 
-  - [url](/temas/)
+### 2. Distribuciones
 
-### Borrador
+### 3. Proporciones
+
+### 4. Relaciones *x - y*
+
+### 5. Datos geoespaciales
+
+### 6. Incertidumbre
+
+]
+
+.pull-right[
+
+&lt;center&gt;
+&lt;img src="img/graficos.png" height = 400/&gt;
+&lt;/center&gt;
+
+[Fuente: *capítulo 5 Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/directory-of-visualizations.html)
+
+]
+
+---
+
+# Tipos de gráficos
+
+.pull-left[
+
+- **Una variable:**
+  - **Variable cuantitativa:**
+    - Histogramas `-&gt;` `geom_histogram()`
+    - Densidades `-&gt;` `geom_density()`
+    - Cuantil-cuantil (*Q-Q Norm*) `-&gt;` `geom_qq()` y `geom_qq_line()`
+    - Boxplot `-&gt;` `geom_boxplot()`
+  - **Variable cualitativa:**
+    - Diagrama de barras `-&gt;` `geom_bar()`
+    - Diagrama de sectores `-&gt;` `geom_bar()`
+    
+- **Dos variables cuantitativas:**
+  - Diagrama de dispersión `-&gt;` `geom_point()`
+  - Tendencias `-&gt;` `geom_smooth()`
+
+]
+
+.pull-right[
+
+- **Dos variables cualitativas:**
+  - Diagrama puntos superpuestos `-&gt;` `geom_count()`
+  
+- **Dos variables - cuantitativa y cualitativa:**
+  - Diagrama de barras `-&gt;` `geom_col()`
+  - Boxplot `-&gt;` `geom_boxplot()`
+
+- **Dos variables - cuantitativa y tiempo:**
+  - Diagrama de líneas `-&gt;` `geom_line()`
+  - Diagrama de área `-&gt;` `geom_area()`
+  
+- **Visualizando incertidumbre:**
+  - Barras de errores `-&gt;` `geom_errorbar()`   
+
+]
+
+---
+class: inverse, center, middle
+
+# `ggplot2` 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://ggplot2.tidyverse.org/logo.png"; height= 320/&gt;
+&lt;/center&gt;
+
+[La gramática de gráficos en capas (artículo Hadley Wickham)](http://vita.had.co.nz/papers/layered-grammar.pdf)
+
+[Capítulo 3 R for Data Science - Visualización de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
+
+---
+
+# ¿Cómo funciona `ggplot2`?
+
+.pull-left[
+
+&lt;center&gt;
+&lt;img src="img/ggplot2_1.PNG"/&gt;
+&lt;/center&gt;
+
 
 ]
 
 .pull-right[
 
 &lt;br&gt;
-
+&lt;br&gt;
 &lt;center&gt;
-&lt;img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/&gt;
+&lt;img src="img/ggplot2_2.PNG"/&gt;
 &lt;/center&gt;
-
-
 
 ]
 
+&lt;br&gt;
+
+.foot-note[
+Tomado de [*hoja de referencia `ggplot2`*](https://www.rstudio.com/wp-content/uploads/2016/12/ggplot2-cheatsheet-2.1-Spanish.pdf)
+]
 
 ---
+class: inverse, center, middle
 
-# Título
+# Tablas de frecuencias: `table()`, `prop.table()`, `xtabs()` y `tabyl()`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://ekuatio.com/wp-content/uploads/tabla-de-frecuencias-29.png" width = 550/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# Ejemplo Encuesta
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://goto.onlinesurveybureau.com/images/survey.gif"/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# Libros recomendados
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 .pull-left[
 
-&lt;center&gt;
-&lt;img src="img/base.PNG"; height= 100/&gt;
-&lt;/center&gt;
 
-##### ¿? `-&gt;` ¿? &lt;center&gt; &lt;img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/&gt; &lt;/center&gt;
+### [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+&lt;center&gt;
+&lt;img src="https://clauswilke.com/dataviz/cover.png"; height= 300/&gt;
+&lt;/center&gt;
 
 ]
 
 .pull-right[
 
+### [Data Visualization: A practical introduction](https://socviz.co/index.html)
 
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
+&lt;center&gt;
+&lt;img src="https://socviz.co/assets/dv-cover-pupress.jpg"; height= 300/&gt;
+&lt;/center&gt;
 
 
 ]
 
+---
+class: inverse, center, middle
+
+# Libros recomendados
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+.pull-left[
+
+
+### [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/index.html)
+
+&lt;center&gt;
+&lt;img src="https://ggplot2-book.org/cover.jpg"; height= 300/&gt;
+&lt;/center&gt;
+
+]
+
+.pull-right[
+
+### [R Graphics Cookbook, 2nd edition](https://r-graphics.org/)
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src="https://r-graphics.org/cover.jpg"; height= 300/&gt;
+&lt;/center&gt;
+
+
+]
 
 ---
 class: inverse, center, middle

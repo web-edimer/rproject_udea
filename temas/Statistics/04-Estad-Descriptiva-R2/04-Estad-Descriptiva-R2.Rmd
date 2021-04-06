@@ -1,6 +1,6 @@
 ---
 title: "Estadística:"
-subtitle: "Plantilla<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Gráficos y Tablas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -17,64 +17,227 @@ output:
 
 class: inverse, center, middle
 
-# Principal
+
+
+# *"La mejor gráfica de la historia"* — Edward Tufte
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://www.edwardtufte.com/tufte/graphics/minard_lg.gif"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# John Tukey
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://www.ecured.cu/images/thumb/4/48/Tukey.jpeg/260px-Tukey.jpeg"/>
+</center>
+
+> *“Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo.”* — John Tukey
+
+---
+class: inverse, center, middle
+
+# Exploración de datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/data-science-explore.svg"/>
+</center>
 
 ---
 
-# Secundaria
+# Diccionario de gráficos
 
 .pull-left[
 
-### Borrador
+### 1. Cantidades
 
-  - [url](/temas/)
+### 2. Distribuciones
 
-### Borrador
+### 3. Proporciones
+
+### 4. Relaciones *x - y*
+
+### 5. Datos geoespaciales
+
+### 6. Incertidumbre
+
+]
+
+.pull-right[
+
+<center>
+<img src="img/graficos.png" height = 400/>
+</center>
+
+[Fuente: *capítulo 5 Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/directory-of-visualizations.html)
+
+]
+
+---
+
+# Tipos de gráficos
+
+.pull-left[
+
+- **Una variable:**
+  - **Variable cuantitativa:**
+    - Histogramas `->` `geom_histogram()`
+    - Densidades `->` `geom_density()`
+    - Cuantil-cuantil (*Q-Q Norm*) `->` `geom_qq()` y `geom_qq_line()`
+    - Boxplot `->` `geom_boxplot()`
+  - **Variable cualitativa:**
+    - Diagrama de barras `->` `geom_bar()`
+    - Diagrama de sectores `->` `geom_bar()`
+    
+- **Dos variables cuantitativas:**
+  - Diagrama de dispersión `->` `geom_point()`
+  - Tendencias `->` `geom_smooth()`
+
+]
+
+.pull-right[
+
+- **Dos variables cualitativas:**
+  - Diagrama puntos superpuestos `->` `geom_count()`
+  
+- **Dos variables - cuantitativa y cualitativa:**
+  - Diagrama de barras `->` `geom_col()`
+  - Boxplot `->` `geom_boxplot()`
+
+- **Dos variables - cuantitativa y tiempo:**
+  - Diagrama de líneas `->` `geom_line()`
+  - Diagrama de área `->` `geom_area()`
+  
+- **Visualizando incertidumbre:**
+  - Barras de errores `->` `geom_errorbar()`   
+
+]
+
+---
+class: inverse, center, middle
+
+# `ggplot2` 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://ggplot2.tidyverse.org/logo.png"; height= 320/>
+</center>
+
+[La gramática de gráficos en capas (artículo Hadley Wickham)](http://vita.had.co.nz/papers/layered-grammar.pdf)
+
+[Capítulo 3 R for Data Science - Visualización de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
+
+---
+
+# ¿Cómo funciona `ggplot2`?
+
+.pull-left[
+
+<center>
+<img src="img/ggplot2_1.PNG"/>
+</center>
+
 
 ]
 
 .pull-right[
 
 <br>
-
+<br>
 <center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+<img src="img/ggplot2_2.PNG"/>
 </center>
-
-
 
 ]
 
+<br>
+
+.foot-note[
+Tomado de [*hoja de referencia `ggplot2`*](https://www.rstudio.com/wp-content/uploads/2016/12/ggplot2-cheatsheet-2.1-Spanish.pdf)
+]
 
 ---
+class: inverse, center, middle
 
-# Título
+# Tablas de frecuencias: `table()`, `prop.table()`, `xtabs()` y `tabyl()`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://ekuatio.com/wp-content/uploads/tabla-de-frecuencias-29.png" width = 550/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Ejemplo Encuesta
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://goto.onlinesurveybureau.com/images/survey.gif"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Libros recomendados
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 .pull-left[
 
-<center>
-<img src="img/base.PNG"; height= 100/>
-</center>
 
-##### ¿? `->` ¿? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
+### [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+<center>
+<img src="https://clauswilke.com/dataviz/cover.png"; height= 300/>
+</center>
 
 ]
 
 .pull-right[
 
+### [Data Visualization: A practical introduction](https://socviz.co/index.html)
 
-
-| Importar | Exportar | Separador |
-| :--- | :----------------: | :----: |
-| `read_csv()` | `write_csv()` | "," |
-| `read_csv2()` | `write_csv2()` | ";" |
-| `read_tsv()` | `write_tsv()`| " " |
-| `read_delim()` | `write_delim()` | "otro" |
+<center>
+<img src="https://socviz.co/assets/dv-cover-pupress.jpg"; height= 300/>
+</center>
 
 
 ]
 
+---
+class: inverse, center, middle
+
+# Libros recomendados
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+.pull-left[
+
+
+### [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/index.html)
+
+<center>
+<img src="https://ggplot2-book.org/cover.jpg"; height= 300/>
+</center>
+
+]
+
+.pull-right[
+
+### [R Graphics Cookbook, 2nd edition](https://r-graphics.org/)
+
+<br>
+
+<center>
+<img src="https://r-graphics.org/cover.jpg"; height= 300/>
+</center>
+
+
+]
 
 ---
 class: inverse, center, middle
