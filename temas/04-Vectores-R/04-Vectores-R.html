@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
     <meta name="date" content="2021-03-26" />
-    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -53,9 +53,8 @@ class: inverse, center, middle
 - Acceder a los nombres `-&gt;` **`names()`** 
 - Generación de secuencias `-&gt;` **`seq()`** o **`:`**
 - Generación de repeticiones `-&gt;` **`rep()`**
-- Pegar o concatenar texto `-&gt;` **`paste()`** o **`paste0()`**
+- Pegar o concatenar texto `-&gt;` **`paste()`**, **`paste0()`** 
 - Subconjuntos `-&gt;` `mi_vector[i]` *
-- Vectorización
 
 .footnote[
 `*[i]` puede ser el índice, nombre o condición.
@@ -155,6 +154,48 @@ class: inverse, center, middle
 7. Extraiga los departamentos que superan la mediana (calculada en el numeral anterior).
 
 - **Fecha de entrega:** hasta el domingo 11 de abril a las 11:59 pm.
+
+---
+class: inverse, center, middle
+
+# `tidyverse`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+&lt;center&gt;
+&lt;img src = "https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png"  width = 450 /&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# Proceso de análisis de datos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+&lt;center&gt;
+&lt;img src = "https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/data-science.svg"  width = 950 /&gt;
+&lt;/center&gt;
+
+
+---
+
+# Manejo de caracteres (`stringr`) 
+
+&lt;center&gt;
+&lt;img src = "https://stringr.tidyverse.org/logo.png" width = 100/&gt;
+&lt;/center&gt;
+
+| Función | Descripción |
+| :--- | :----------------: |
+| `str_c()` | Pegar texto |
+| `str_length()` | Conteo de caracteres |
+| `str_replace_all()` | Reemplazar patrones de texto |
+| `str_sort()` | Ordenar cadenas de texto |
+| `str_to_lower()` | Convertir texto a minúsculas |
+| `str_to_upper()` | Convertir texto a mayúsculas |
+| `str_to_title()` | Letras iniciales en mayúsculas  |
+| `str_to_sentence()` | Primera letra en mayúscula |
+| `str_trim()` | Eliminr espacios en blanco del texto |
+
 
 ---
 class: inverse, center, middle
