@@ -6,23 +6,56 @@ date: "14/04/2021"
 output:
   html_document:
     theme: readable
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
 # Actividad
 
 - Elija una base de datos sobre la cual desee realizar el análisis estadístico de tipo descriptivo y exploratorio:
-  - [Producción de oro y plata en Colombia años 2012 a 2020.](/actividades/Statistics/Actividad-01/oro_plata.csv)
 
-# Bases de datos
 
-## Minería en colombia años 2012 a 2020
+| Base de datos | Link de descarga | Fuente original | Filas | Columnas |
+| :------------ | :--------------: | :-------------: | :---: | :------: |
+| Producción y contrapestación económica de oro y plata en Colombia (2012-2020) | [Descargar](/actividades/Statistics/Actividad-01/oro_plata.csv) | [Minería en colombia años 2012 a 2020.](https://www.datos.gov.co/Minas-y-Energ-a/ANM-Producci-n-Nacional-de-Minerales-y-Contraprest/r85m-vv6c) | 15263 | 11 |
+| Evaluaciones Agropecuarias 2007 a 2019 | [Descargar](/actividades/Statistics/Actividad-01/EVA.rds) | [Estadísticas Agronet - Base Agricola EVA 2007-2019 (P)](https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=59) | 229716 | 17 |
+| Alimentos del trópico para alimentación animal - AlimenTro | [Descargar](/actividades/Statistics/Actividad-01/alimentro.csv) | [Alimentos del trópico para alimentación animal - AlimenTro (Agrosavia)](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Alimentos-del-tr-pico-para-alimentaci-n-animal-Ali/6arb-d547) | 41309 | 26 |
+| Niveles del mar en Buenaventura y Cartagena 2005 - 2020 | [Descargar](/actividades/Statistics/Actividad-01/nivel_mar.rds) | [Niveles del mar - IDEAM 2005 a 2020](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar/ia8x-22em) | 278344 | 17 |
+| | | | | |
 
-<center>
-<img src = "image/mineria.PNG" />
-</center> 
+# Ejemplo de lectura de datos
 
-- La base de datos completa puede ser consultada [aquí.](https://www.datos.gov.co/Minas-y-Energ-a/ANM-Producci-n-Nacional-de-Minerales-y-Contraprest/r85m-vv6c)
+## Producción de oro y plata en Colombia
+
+```{r}
+library(tidyverse)
+datos_mineria <- read_csv("oro_plata.csv")
+datos_mineria %>% head()
+```
+
+## Evaluaciones agropecuarias en Colombia
+
+```{r}
+library(tidyverse)
+datos_eva <- read_rds("EVA.rds")
+datos_eva %>% head()
+```
+
+## Alimentro - Agrosavia
+
+```{r}
+library(tidyverse)
+datos_alimentro <- read_csv("alimentro.csv")
+datos_alimentro %>% head()
+```
+
+## Nivel del mar
+
+```{r}
+datos_mar <- read_rds("nivel_mar.rds")
+datos_mar %>% head()
+```
+
