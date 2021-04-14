@@ -226,11 +226,11 @@ pre code {
 <td align="center">17</td>
 </tr>
 <tr class="odd">
-<td align="left"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left">Calidad Del Agua 2015 - 2018 en Cali</td>
+<td align="center"><a href="/actividades/Statistics/Actividad-01/calidad_agua.csv">Descargar</a></td>
+<td align="center"><a href="https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Reporte-Calidad-Del-Agua-2015-2018-en-la-ciudad-de/x3ds-vaid">Reporte Calidad Del Agua 2015 - 2018 en la ciudad de Santiago de Cali</a></td>
+<td align="center">203</td>
+<td align="center">10</td>
 </tr>
 </tbody>
 </table>
@@ -272,11 +272,23 @@ datos_alimentro %&gt;% head()</code></pre>
 </div>
 <div id="nivel-del-mar" class="section level2">
 <h2>Nivel del mar</h2>
-<pre class="r"><code>datos_mar &lt;- read_rds(&quot;nivel_mar.rds&quot;)
+<pre class="r"><code>library(tidyverse)
+datos_mar &lt;- read_rds(&quot;nivel_mar.rds&quot;)
 datos_mar %&gt;% head()</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["fecha"],"name":[1],"type":["dttm"],"align":["right"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mes"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["dia"],"name":[4],"type":["int"],"align":["right"]},{"label":["hora"],"name":[5],"type":["int"],"align":["right"]},{"label":["tipo"],"name":[6],"type":["chr"],"align":["left"]},{"label":["codigo_estacion"],"name":[7],"type":["chr"],"align":["left"]},{"label":["codigo_sensor"],"name":[8],"type":["chr"],"align":["left"]},{"label":["valor_observado"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["nombre_estacion"],"name":[10],"type":["chr"],"align":["left"]},{"label":["departamento"],"name":[11],"type":["chr"],"align":["left"]},{"label":["municipio"],"name":[12],"type":["chr"],"align":["left"]},{"label":["zona_hidrografica"],"name":[13],"type":["chr"],"align":["left"]},{"label":["latitud"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["longitud"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["descripcion_sensor"],"name":[16],"type":["chr"],"align":["left"]},{"label":["unidad_medida"],"name":[17],"type":["chr"],"align":["left"]}],"data":[{"1":"2007-03-21 20:00:00","2":"2007","3":"3","4":"21","5":"20","6":"PM","7":"0054077210","8":"0407","9":"5.290","10":"Juanchaco - Aut","11":"Valle Del Cauca","12":"Buenaventura","13":"San Juán","14":"3.925147","15":"-77.34901","16":"Nivel Del Mar","17":"m"},{"1":"2018-06-02 23:00:00","2":"2018","3":"6","4":"2","5":"23","6":"PM","7":"0014017001","8":"0407","9":"0.013","10":"Tesoro Invemar","11":"Bolívar","12":"Cartagena De Indias","13":"Bajo Magdalena","14":"10.235000","15":"-75.74100","16":"Nivel Del Mar","17":"m"},{"1":"2010-05-08 04:00:00","2":"2010","3":"5","4":"8","5":"4","6":"AM","7":"0054077210","8":"0407","9":"1.610","10":"Juanchaco - Aut","11":"Valle Del Cauca","12":"Buenaventura","13":"San Juán","14":"3.925147","15":"-77.34901","16":"Nivel Del Mar","17":"m"},{"1":"2013-11-20 17:00:00","2":"2013","3":"11","4":"20","5":"17","6":"PM","7":"0014017001","8":"0407","9":"4.812","10":"Tesoro Invemar","11":"Bolívar","12":"Cartagena De Indias","13":"Bajo Magdalena","14":"10.235000","15":"-75.74100","16":"Nivel Del Mar","17":"m"},{"1":"2018-08-30 07:40:00","2":"2018","3":"8","4":"30","5":"7","6":"AM","7":"0014017001","8":"0407","9":"0.179","10":"Tesoro Invemar","11":"Bolívar","12":"Cartagena De Indias","13":"Bajo Magdalena","14":"10.235000","15":"-75.74100","16":"Nivel Del Mar","17":"m"},{"1":"2016-10-18 19:50:00","2":"2016","3":"10","4":"18","5":"19","6":"PM","7":"0014017001","8":"0407","9":"0.188","10":"Tesoro Invemar","11":"Bolívar","12":"Cartagena De Indias","13":"Bajo Magdalena","14":"10.235000","15":"-75.74100","16":"Nivel Del Mar","17":"m"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="calidad-de-agua" class="section level2">
+<h2>Calidad de agua</h2>
+<pre class="r"><code>library(tidyverse)
+datos_agua &lt;- read_csv(&quot;calidad_agua.csv&quot;)
+datos_agua %&gt;% head()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["punto_de_muestreo"],"name":[2],"type":["chr"],"align":["left"]},{"label":["punto"],"name":[3],"type":["chr"],"align":["left"]},{"label":["rio"],"name":[4],"type":["chr"],"align":["left"]},{"label":["ica_ideam"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["od_percent"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["p_h"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["dqo_mg_l"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["ce_m_s_cm"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["sst_mg_l"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"2012","2":"Entrada al perimetro urbano (Puente Azul)","3":"Entrada","4":"Aguacatal","5":"0.77","6":"117.71","7":"7.64","8":"22.3","9":"205","10":"8.0"},{"1":"2012","2":"Salida(El Ancla, antes de desembocar el Rio Cali)","3":"Salida","4":"Aguacatal","5":"0.64","6":"124.15","7":"7.38","8":"28.8","9":"412","10":"27.0"},{"1":"2012","2":"Entrada al perimetro urbano (Bocatoma Acueducto San Antonio)","3":"Entrada","4":"Cali","5":"0.70","6":"63.44","7":"7.20","8":"93.0","9":"99","10":"2.8"},{"1":"2012","2":"Salida del perimetro urbano(200 metros antes de desembocadura al Rio Cauca)","3":"Salida","4":"Cali","5":"0.40","6":"55.38","7":"6.73","8":"425.0","9":"406","10":"193.0"},{"1":"2012","2":"Entrada al perimetro urbano (Colegio Ideas)","3":"Entrada","4":"Cañaveralejo","5":"0.76","6":"86.59","7":"7.32","8":"25.9","9":"186","10":"5.0"},{"1":"2012","2":"Salida (Antes de desemboocar al Canal Sur, Cra 50 Cll 17)","3":"Salida","4":"Cañaveralejo","5":"0.37","6":"17.42","7":"6.31","8":"88.8","9":"426","10":"50.5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>

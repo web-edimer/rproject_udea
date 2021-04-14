@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 | Evaluaciones Agropecuarias 2007 a 2019 | [Descargar](/actividades/Statistics/Actividad-01/EVA.rds) | [Estadísticas Agronet - Base Agricola EVA 2007-2019 (P)](https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=59) | 229716 | 17 |
 | Alimentos del trópico para alimentación animal - AlimenTro | [Descargar](/actividades/Statistics/Actividad-01/alimentro.csv) | [Alimentos del trópico para alimentación animal - AlimenTro (Agrosavia)](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Alimentos-del-tr-pico-para-alimentaci-n-animal-Ali/6arb-d547) | 41309 | 26 |
 | Niveles del mar en Buenaventura y Cartagena 2005 - 2020 | [Descargar](/actividades/Statistics/Actividad-01/nivel_mar.rds) | [Niveles del mar - IDEAM 2005 a 2020](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar/ia8x-22em) | 278344 | 17 |
-| | | | | |
+| Calidad Del Agua 2015 - 2018 en Cali | [Descargar](/actividades/Statistics/Actividad-01/calidad_agua.csv) | [Reporte Calidad Del Agua 2015 - 2018 en la ciudad de Santiago de Cali](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Reporte-Calidad-Del-Agua-2015-2018-en-la-ciudad-de/x3ds-vaid) | 203 | 10 |
 
 # Ejemplo de lectura de datos
 
@@ -55,7 +55,16 @@ datos_alimentro %>% head()
 ## Nivel del mar
 
 ```{r}
+library(tidyverse)
 datos_mar <- read_rds("nivel_mar.rds")
 datos_mar %>% head()
+```
+
+## Calidad de agua
+
+```{r}
+library(tidyverse)
+datos_agua <- read_csv("calidad_agua.csv")
+datos_agua %>% head()
 ```
 

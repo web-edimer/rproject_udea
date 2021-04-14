@@ -57,3 +57,17 @@ df_mar <- read_csv("Nivel_del_Mar.csv") %>%
          unidad_medida = str_to_lower(unidad_medida))
 
 write_rds(df_mar, file = "nivel_mar.rds", compress = "xz")
+
+# -------------- Calidad de agua -----------
+df_agua <- read_csv("Reporte_Calidad_Del_Agua_2015_-_2018_en_la_ciudad_de_Santiago_de_Cali.csv") %>% 
+  clean_names() %>% 
+  mutate(ica_ideam = as.numeric(ica_ideam),
+         od_percent = as.numeric(parse_number(od_percent)),
+         p_h = as.numeric(p_h),
+         dqo_mg_l = as.numeric(dqo_mg_l),
+         ce_m_s_cm = as.numeric(ce_m_s_cm),
+         sst_mg_l = as.numeric(sst_mg_l)) %>% 
+  rename(year = ano) %>% 
+  select(-c(fecha, muestreo_no, cordenadas))
+
+write_csv(df_agua, file = "calidad_agua.csv")
