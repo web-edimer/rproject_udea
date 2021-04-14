@@ -26,6 +26,14 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 | Niveles del mar en Buenaventura y Cartagena 2005 - 2020 | [Descargar](/actividades/Statistics/Actividad-01/nivel_mar.rds) | [Niveles del mar - IDEAM 2005 a 2020](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar/ia8x-22em) | 278344 | 17 |
 | Calidad Del Agua 2015 - 2018 en Cali | [Descargar](/actividades/Statistics/Actividad-01/calidad_agua.csv) | [Reporte Calidad Del Agua 2015 - 2018 en la ciudad de Santiago de Cali](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Reporte-Calidad-Del-Agua-2015-2018-en-la-ciudad-de/x3ds-vaid) | 203 | 10 |
 
+- Con la base de datos elegida construya los resúmenes descriptivos que considere pertinentes. Tenga en cuenta que debe usar mínimo métricas de tendencia central, posición y dispersión.
+- Genere mínimo tres gráficos que complementen el análisis descriptivo.
+- **Nota:** es importante que genere una narrativa sistemática con los datos, es decir, que exista sinergía entre los resúmenes descriptivos y el análisis exploratorio a través de gráficos. Al final deberá conjeturar una conclusión con base en lo que desarrolló previamente.
+
+# Fecha de entrega
+
+- Máximo el 28 de abril de 2021 hasta las 11:59 pm.
+
 # Ejemplo de lectura de datos
 
 ## Producción de oro y plata en Colombia
