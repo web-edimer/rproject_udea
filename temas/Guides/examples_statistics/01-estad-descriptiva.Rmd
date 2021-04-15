@@ -2,9 +2,9 @@
 title: "Estadística descriptiva con R"
 author: "Edimer David Jaramillo"
 date: "17/3/2021"
-output: 
+output:
   html_document:
-    toc: yes
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -192,6 +192,84 @@ quantile(women$height, probs = 0.50)
 quantile(women$height, probs = seq(0, 1, 0.01))
 ```
 
+### Deciles
+
+```{r}
+quantile(women$height, probs = seq(0, 1, 0.1))
+```
+
+```{r}
+quantile(women$height, probs = 0.80)
+```
+
+### Cuartiles
+
+```{r}
+quantile(women$height, probs = seq(0, 1, 0.25))
+```
+
+# Varianza
+
+```{r}
+var(women$height)
+```
+
+# Desviación 
+
+```{r}
+sd(women$height)
+sd(women$weight)
+```
+
+# Coeficiente de variación
+
+```{r}
+media_altura <- mean(women$height)
+media_peso <- mean(women$weight)
+
+desv_altura <- sd(women$height)
+desv_peso <- sd(women$weight)
+```
+
+- Coeficiente de variación de la altura:
+
+```{r}
+(desv_altura / media_altura) * 100
+```
+
+- Coeficiente de variación del peso:
+
+```{r}
+(desv_peso / media_peso) * 100
+```
+
+# Rango (recorrido)
+
+```{r}
+range(women$height)
+min(women$height)
+max(women$height)
+```
+
+# Rango intercuartílico
+
+```{r}
+IQR(women$height)
+```
+
+# Coeficiente de asimetría
+
+```{r}
+library(moments)
+skewness(women$height)
+```
+
+# Coeficiente de curtosis
+
+```{r}
+kurtosis(women$height)
+```
+
 
 # Funciones auxiliares
 
@@ -205,4 +283,5 @@ quantile(women$height, probs = seq(0, 1, 0.01))
 - levels(): permite consultar los niveles de un factor. 
 - sort(): ordenar un vector de tipo cuantitativo (numeric o integer) o cualitativo (character o factor).
 - seq(): permite crear secuencias de datos.
-
+- library() o require(): permite cargar bibliotecas.
+ 

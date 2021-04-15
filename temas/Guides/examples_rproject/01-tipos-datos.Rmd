@@ -1,0 +1,440 @@
+---
+title: "Tipos de datos en R"
+author: "Edimer David Jaramillo"
+date: "25/3/2021"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+# Tipos de datos en R
+
+## Numéricos
+
+-   En R los datos de tipo numérico se identifican como **numeric o double:**
+
+```{r}
+numero <- 34.80
+numero
+```
+
+-   Podemos consultar el tipo de dato a través de la función **class():**
+
+```{r}
+class(numero)
+```
+
+- Vamos a crear un vector de números decimales (**numeric o double**):
+
+```{r}
+vector_numeros <- c(10.2, 20.5, 30.8)
+vector_numeros
+```
+
+- Podemos preguntar la clase o tipo de dato del vector anterior:
+
+```{r}
+class(vector_numeros)
+```
+
+## Enteros
+
+- Los enteros en R se tipifican como **integer**:
+
+```{r}
+enteros1 <- 5
+class(enteros1)
+```
+
+- Todos los números en R (enteros o decimales) se tipifican como **numeric**, sin embargo, podemos forzar a R para que entienda un entero como tal:
+
+```{r}
+enteros2 <- 5L
+class(enteros2)
+```
+
+- Puedo crear un vector de enteros:
+
+```{r}
+vector_enteros <- c(1L, 2L, 3L)
+class(vector_enteros)
+```
+
+## Caracteres (texto)
+
+- Los caracteres representan variables cualitativas, en R todo texto debe estar escrito entre comillas ("" o ''):
+
+```{r}
+texto <- "universidad"
+class(texto)
+```
+
+- Podemos crear un vector de caracteres:
+
+```{r}
+vector_texto <- c("a", "b", "c")
+class(vector_texto)
+```
+
+## Factores 
+
+- Los factores representan variables cualitativas ordinales y se pueden crear dentro de R con la función **factor()**:
+
+```{r}
+vector_mes_malo <- factor(c("enero", "febrero", "marzo", "abril", "enero"))
+class(vector_mes_malo)
+```
+
+- Podemos solicitar a R los niveles del factor a través de la función **levels()**:
+
+```{r}
+levels(vector_mes_malo)
+```
+
+- Podemos controlar el orden de los niveles en la función **factor()** editando el argumento **levels**:
+
+```{r}
+vector_mes_bueno <- factor(c("enero", "febrero", "marzo", "abril", "enero"),
+                           levels = c("enero", "febrero", "marzo", "abril"))
+levels(vector_mes_bueno)
+```
+
+## Lógicos
+
+- En R los datos lógicos representan TRUE o FALSE:
+
+```{r}
+logico <- TRUE
+class(logico)
+```
+
+- Podemos crear un vector de lógicos:
+
+```{r}
+vector_logicos <- c(TRUE, FALSE, TRUE, FALSE)
+class(vector_logicos)
+```
+
+# Valores ausentes
+
+- En R los valores ausentes se tipifican como **NA**:
+
+```{r}
+valor_ausente <- NA
+class(valor_ausente)
+```
+
+- Un vecto puede incluir valores ausentes:
+
+```{r}
+vector_ausente <- c(34.6, NA, 56.9)
+class(vector_ausente)
+```
+
+# Operadores
+
+## Aritméticos
+
+### Suma
+
+```{r}
+vector_numeros <- c(3, 5, 10)
+2 + vector_numeros
+```
+
+- Podemos operar dos vectores de la misma longitud:
+
+```{r}
+vector1 <- c(1, 3, 5)
+vector2 <- c(10, 20, 30)
+vector1 + vector2 
+```
+
+- Podemos operar dos vectores de diferente longitud:
+
+```{r}
+vector3 <- c(10, 20)
+vector4 <- c(10, 20, 30)
+vector3 + vector4
+```
+
+### Potencia
+
+```{r}
+2^2
+vector3^3
+```
+
+## Relacionales
+
+### Igualdad
+
+- En R la igualdad se denota con doble símbolo igual (==):
+
+```{r}
+50 == 40
+```
+
+- Podemos operar con la igualdad en vectores:
+
+```{r}
+vector_ejemplo <- c(40, 20, 2)
+2 == vector_ejemplo
+```
+
+### Diferencia
+
+- La diferencia en R se denota con un signo de exclamación de cierre y el igual (!=):
+
+```{r}
+3 != 3
+```
+
+- Tambien es posible operar de manera relacional con caracteres:
+
+```{r}
+texto <- c("A", "a", "b")
+"a" != texto
+```
+
+### Pertece a o está dentro de
+
+- En R podemos denotar el "pertene a" con %in%:
+
+```{r}
+numeros2 <- c(10, 20, 30, 40)
+30 %in% numeros2
+```
+
+- Podemos operar sobre vectores de texto:
+
+```{r}
+texto2 <- c("a", "b", "c", "A")
+"A" %in% texto2
+```
+
+### Mayor o igual
+
+- En R el mayor o igual se denota con >=:
+
+```{r}
+ejemplo <- c(30, 40, 50, 10)
+ejemplo >= 20
+```
+
+## Operadores lógicos
+
+### Negación
+
+```{r}
+!2 == 2 # no es igual 2 a 2
+
+!3 %in% c(2, 3, 5) # no pertenece el 3 al vector
+```
+
+### Disyunción (o)
+
+```{r}
+ejemplo2 <- c(1, 5, 10, 15, 20)
+ejemplo2 > 10 | ejemplo2 < 5
+```
+
+### Conjunción (y)
+
+```{r}
+frutas1 <- c(80.5, 90, 50.4, 30)
+frutas2 <- c(90, 30, 40, 20)
+
+frutas1 > 80 | frutas2 > 80
+
+frutas1 > 80 & frutas2 > 80
+```
+
+- ¿Qué pasa cuando utilizo el doble o y el doble y:
+
+```{r}
+frutas1 > 80 || frutas2 > 80
+
+frutas1 > 80 && frutas2 > 80
+```
+
+# Funciones
+
+```{r}
+str(iris)
+```
+
+## Cargar biblioteca
+
+```{r}
+library(tidyverse)
+```
+
+# Vectores
+
+- Almacenan información de un sólo tipo.
+- Cuando mezclamos dos tipos de datos (numéricos y texto) R automáticamente coerciona al tipo de dato más sencillo.
+
+## Coerción implícita
+
+```{r}
+mezcla1 <- c(1, 20, "a")
+class(mezcla1)
+mezcla1
+```
+
+## Coerción explícita
+
+- Forzar la conversión de un tipo de dato a otro a través de las funciones con el prefijo **as.**
+
+```{r}
+mezcla2 <- as.numeric(mezcla1)
+class(mezcla2)
+mezcla2
+```
+
+- Otro ejemplo de coerción explícita:
+
+```{r}
+peso <- c("1.5", "2.50", "3.50", "4.5", "5")
+class(peso)
+
+peso2 <- as.numeric(peso)
+peso2
+class(peso2)
+
+problema <- "2,2"
+as.numeric(problema)
+```
+
+## Funciones sobre vectores
+
+```{r}
+vector1 <- c(1, 4, 20, 50, 20)
+length(vector1)
+vector1
+```
+
+- Los vectores tienen el atributo nombre:
+
+```{r}
+vector_nombrado <- c(elemento1 = 20, elemento2 = 50)
+names(vector_nombrado)
+vector_nombrado
+```
+
+- También puedo editar los nombres de un vector:
+
+```{r}
+names(vector_nombrado) <- c("variable1", "variable2")
+vector_nombrado
+```
+
+## Secuencias de datos
+
+- Los dos puntos (:) permiten crear secuencias de datos numéricos:
+
+```{r}
+secuencia1 <- c(1:10)
+secuencia1
+```
+
+- Podemos crear secuencias numéricas controladas con la función seq():
+
+```{r}
+secuencia2 <- seq(from = 20, to = 50, by = 2)
+secuencia2
+```
+
+- Podemos controlar la longitud de la secuencia:
+
+```{r}
+seq(from = 1, to = 20, length.out = 30)
+```
+
+## Repeticiones
+
+```{r}
+rep(1, 20)
+
+rep("a", 5)
+
+rep(c("A", "B", "C", "D"), 12)
+
+rep(c("T1", "T2"), each = 12)
+```
+
+## Concatención (unión) de texto
+
+```{r}
+paste("T", 1, sep = "-")
+
+mi_nombre <- "Edimer"
+
+paste0("Hola ", mi_nombre, " ¿Cómo estás?")
+
+paste0("T", 1:12)
+```
+
+## Subconjutos
+
+- Podemos extraer subconjuntos a través de los corchetes [] haciendo uso del índice o nombre del elemento:
+
+```{r}
+vector5 <- c(10, 20, 30)
+vector5[2]
+
+vector5[c(1, 3)]
+
+vector6 <- c(1, 10, 20, 30, 40, 50)
+vector6[c(3:6)]
+
+vector7 <- c(v1 = 3, v2 = 4, v3 = 5)
+vector7["v2"]
+```
+
+- Podemos extraer subconjuntos con base en una condición:
+
+```{r}
+vector8 <- c(1, 2, 3, 6, 10, 50, 100, 500, 1000)
+
+vector8[vector8 > 100]
+```
+
+- Ejemplo:
+
+```{r}
+vector9 <- c(10, 20)
+vector9[c(FALSE, TRUE)]
+```
+
+- Vamos a extraer los valores que superan el promedio de vector8:
+
+```{r}
+promedio <- mean(vector8)
+vector8[vector8 > promedio]
+```
+
+```{r}
+vector8[!vector8 > promedio]
+```
+
+- Otro ejemplo:
+
+```{r}
+departamentos <- c("antioquia", "valle", "nariño", "caldas")
+hurtos <- c(40, 50, 20, 15)
+
+departamentos[hurtos > 20]
+```
+

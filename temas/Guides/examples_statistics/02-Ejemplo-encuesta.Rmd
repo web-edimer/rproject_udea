@@ -1,0 +1,173 @@
+---
+title: "Ejemplo encuesta"
+author: "Edimer David Jaramillo"
+date: "7/4/2021"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Lectura de datos
+
+```{r}
+library(readxl)
+encuesta <- read_excel("encuesta_depurada.xlsx")
+encuesta
+```
+
+# Estructura interna de datos
+
+```{r}
+library(dplyr)
+glimpse(encuesta)
+```
+
+# Media del promedio académico
+
+```{r}
+mean(encuesta$promedio_academico)
+```
+
+# Descriptivo general
+
+```{r}
+library(skimr)
+skim(encuesta)
+```
+
+# Resumen descriptivo agrupado
+
+## Trabajo
+
+- Ctrl + Shift + M: obtener operador de tubería
+
+```{r}
+# library(dplyr)
+encuesta %>% 
+  group_by(trabajo) %>%
+  summarise(
+    promedio = mean(promedio_academico),
+    desv_estandar = sd(promedio_academico),
+    promedio_dormir = mean(horas_dormir),
+    promedio_estudiar = mean(horas_estudiar),
+    total = n()
+  )
+```
+
+- ¿Cuántos trabajan y cuántos no trabajan?
+
+```{r}
+encuesta %>% 
+  count(trabajo)
+```
+
+## Trabajo y lectura
+
+```{r}
+encuesta %>% 
+  group_by(trabajo, lectura) %>%
+  summarise(
+    promedio = mean(promedio_academico),
+    desv = sd(promedio_academico),
+    minimo = min(promedio_academico),
+    maximo = max(promedio_academico),
+    mediana = median(promedio_academico),
+    p75 = quantile(promedio_academico, probs = 0.75),
+    cv = (desv / promedio) * 100,
+    total = n()
+  )
+```
+
+# Visualizaciones
+
+## Cantidades
+
+```{r}
+library(ggplot2)
+encuesta %>%
+  ggplot(mapping = aes(x = color_favorito)) +
+  geom_bar(fill = "blue", color = "black") +
+  labs(x = "Color", y = "Frecuencia",
+       title = "Frecuencia absoluta por color favorito")
+```
+
+- Podemos darle interactividad al gráfico anterior a través de la función ggplotly() del paquete plotly:
+
+```{r}
+library(plotly)
+ggplotly(
+  encuesta %>%
+  ggplot(mapping = aes(x = color_favorito)) +
+  geom_bar(fill = "blue", color = "black") +
+  labs(x = "Color", y = "Frecuencia",
+       title = "Frecuencia absoluta por color favorito")
+)
+```
+
+- Representando cantidad (promedio) con barras:
+
+```{r}
+encuesta %>% 
+  group_by(trabajo) %>% 
+  summarise(promedio_estudiar = mean(horas_estudiar)) %>% 
+  ggplot(mapping = aes(x = trabajo, y = promedio_estudiar)) +
+  geom_col()
+```
+
+- Representando cantidades agrupadas:
+
+```{r}
+encuesta %>% 
+  group_by(trabajo, lectura) %>% 
+  summarise(promedio_estudiar = mean(horas_estudiar)) %>% 
+  ggplot(mapping = aes(x = trabajo, y = promedio_estudiar, fill = lectura)) +
+  geom_col(position = "dodge")
+```
+
+
+## Distribuciones
+
+- Regla de Sturges: 1 + log2(N). Donde N = número de datos (en este caso N = 30). Resultado 5.90
+
+```{r}
+encuesta %>% 
+  ggplot(mapping = aes(x = horas_estudiar)) +
+  geom_histogram(bins = 6, color = "black")
+```
+
+```{r}
+encuesta %>% 
+  ggplot(mapping = aes(x = horas_estudiar)) +
+  geom_density()
+```
+
+- Distribución por trabajo:
+
+```{r}
+encuesta %>%
+  ggplot(mapping = aes(x = trabajo, y = promedio_academico)) +
+  geom_boxplot()
+```
+
+# Biblioteca esquisse
+
+```{r}
+library(esquisse)
+#esquisser(viewer = "browser")
+```
+
+
+# Funciones auxiliares
+
+- read_excel(): función que permite importar archivos de excel. Es necesario cargar previamente la biblioteca readxl.
+- glimpse(): función que permite ver cómo fueron tipificadas las variables de una base de datos. Es necesario cargar previamente la biblioteca dplyr.
+- skim(): función que permite obtener un resumen descriptivo general para una base de datos. Es necesario cargar previamente la biblioteca skimr.
+- group_by(): generar agrupaciones por una o más variables.
+- summarise(): generar resúmenes descriptivos para una o más variables. Se usa frecuentemente junto a group_by()
+- count(): generar conteos (número de filas) para una variable categórica (character o factor)
+- n(): contar número de observaciones
