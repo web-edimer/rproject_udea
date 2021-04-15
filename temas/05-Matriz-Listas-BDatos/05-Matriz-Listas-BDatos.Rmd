@@ -17,43 +17,6 @@ output:
 
 class: inverse, center, middle
 
-# Datos IMC (Índice de Masa Corporal)
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
----
-
-# Datos en varios formatos
-
-.pull-left[
-
-### Formatos planos
-
-  - [IMC - Separados por comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/imc_total_comas.csv)
-  - [IMC - Separados por punto y comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/imc_total_puntocomas.csv)
-  - [IMC - Separados por espacios o tabulaciones (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/imc_total_espacios.csv)
-  - [IMC - Separados por otro delimitador (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/imc_total_otrodelim.csv)
-
-### Formato estructurado
-  - [IMC - Excel (.xlsx)](/temas/05-Matriz-Listas-BDatos/data/imc_total.xlsx)
-
-]
-
-.pull-right[
-
-<br>
-
-<center>
-<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
-</center>
-
-
-
-]
-
----
-
-class: inverse, center, middle
-
 # Tipos de datos en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
@@ -66,6 +29,10 @@ class: inverse, center, middle
 
 # Matrices y listas en R
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/matriz_listas.PNG"; height= 350/>
+</center>
 
 ---
 
@@ -121,10 +88,6 @@ class: inverse, center, middle
 <img src="https://tidyverse.tidyverse.org/articles/tidyverse-logo.png"; height= 150/>
 </center>
 
-
-
-
-
 ---
 
 # Data Frames
@@ -167,6 +130,46 @@ class: inverse, center, middle
 | `read_xls()` | `WriteXLS()` (`WriteXLS`) |
 | `read_xlsx()` | `write_xlsx()` (`writexl`) |
 | `read_excel()` | 2 anteriores |
+
+]
+
+---
+class: inverse, center, middle
+
+# Datos Encuesta 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://goto.onlinesurveybureau.com/images/survey.gif"/>
+</center>
+
+---
+
+# Datos en varios formatos
+
+.pull-left[
+
+### Formatos planos
+
+  - [Encuesta - Separados por comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_comas.csv)
+  - [Encuesta - Separados por punto y comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_puntocomas.csv)
+  - [Encuesta - Separados por espacios o tabulaciones (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_espacios.csv)
+  - [Encuesta - Separados por otro delimitador (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_delim.csv)
+
+### Formato estructurado
+  - [Encuesta - Excel (.xlsx o .xls)](/temas/05-Matriz-Listas-BDatos/data/encuesta_excel.xlsx)
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+</center>
+
+
 
 ]
 
