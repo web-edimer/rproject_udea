@@ -17,7 +17,7 @@ intro_image_hide_on_mobile: true
 - **Unidad 2: Manejo de datos**
     + [03-Tipos de datos, operadores, funciones y bibliotecas en R](/temas/03-Tipos-datos-R/03-Tipos-datos-R.html)
     + [04-Vectores en R](/temas/04-Vectores-R/04-Vectores-R.html)
-    + [05-Matrices, listas y bases de datos en R]()
+    + [05-Matrices, listas y bases de datos en R](/temas/05-Matriz-Listas-BDatos/05-Matriz-Listas-BDatos.html)
     + [06-Datos ordedanos en R (tidyr)]()
     + [07-Manejo de bases de datos con dplyr]()
 <br>
