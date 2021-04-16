@@ -166,7 +166,7 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 
-# Ejemplo: [Homicidios en Quindío]((/temas/06-Datos-Ordenados-tidyr/data/homicidios.csv) 
+# Ejemplo: Homicidios en Quindío
 
 <br>
 <br>
