@@ -163,6 +163,19 @@ class: inverse, center, middle
 
 ---
 class: inverse, center, middle
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+# Ejemplo: [Homicidios en Quindío]((/temas/06-Datos-Ordenados-tidyr/data/homicidios.csv) 
+
+<br>
+<br>
+<br>
+<br>
+# [Consultar datos abiertos *homicidios departamento del Quindío 1990-2017*](https://www.datos.gov.co/Estad-sticas-Nacionales/Tasas-de-homicidios-seg-n-municipios-por-cien-mil-/7n7b-qavj)
+
+---
+class: inverse, center, middle
 
 # ¡Gracias!
 
