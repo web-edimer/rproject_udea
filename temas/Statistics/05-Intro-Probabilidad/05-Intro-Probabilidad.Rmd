@@ -163,49 +163,6 @@ Dos eventos de un espacio muestral $\Omega$ se consideran **independientes** si 
 
 ---
 
-# Técnicas de conteo
-
-.panelset[
-
-.panel[.panel-name[Regla de la multiplicación]
-
-Si un proceso consta de $k$ partes, donde la primera parte se puede hacer de $n_1$ formas, la segunda parte de $n_2$ formas, ..., y la $k-ésima$ parte de $n_k$ formas, entonces el proceso puede realizar de: $$n_1\ * n_2\ *...*n_k$$
-
-]
-
-.panel[.panel-name[Combinaciones]
-
-
-¿Cuántos subconjuntos de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
-
-$${n \choose r}=\frac{{n!}}{r!(n-r)!}$$
-
-**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas?
-
-$${4 \choose 2}=\frac{{4!}}{2!(4-2)!}=6$$
-
-- **Nota:** en una combinación no importa el orden, a diferencia de una permutación.
-
-]
-
-.panel[.panel-name[Permutaciones]
-
-¿Cuántos subconjuntos **ordenados** de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
-
-$${n \choose r}=\frac{{n!}}{(n-r)!}$$
-
-**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas, si el primero en ser elegido será presidente y el segundo el vicepresidente?
-
-$${4 \choose 2}=\frac{{4!}}{(4-2)!}=12$$
-
-- **Nota:** en una permutación sí importa el orden, a diferencia de una combinación.
-
-]
-
-]
-
----
-
 # Probablidad
 
 .panelset[
@@ -251,6 +208,49 @@ $$P(A)=\frac{{Número\ de\ veces\ que\ se\ presentó\ A}}{Número\ de\ veces\ qu
   - Subjetivo:
   
 $$P(A)\ =\ Criterio\ de\ un\ experto$$
+
+]
+
+]
+
+---
+
+# Técnicas de conteo
+
+.panelset[
+
+.panel[.panel-name[Regla de la multiplicación]
+
+Si un proceso consta de $k$ partes, donde la primera parte se puede hacer de $n_1$ formas, la segunda parte de $n_2$ formas, ..., y la $k-ésima$ parte de $n_k$ formas, entonces el proceso puede realizar de: $$n_1\ * n_2\ *...*n_k$$
+
+]
+
+.panel[.panel-name[Combinaciones]
+
+
+¿Cuántos subconjuntos de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
+
+$${n \choose r}=\frac{{n!}}{r!(n-r)!}$$
+
+**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas?
+
+$${4 \choose 2}=\frac{{4!}}{2!(4-2)!}=6$$
+
+- **Nota:** en una combinación no importa el orden, a diferencia de una permutación.
+
+]
+
+.panel[.panel-name[Permutaciones]
+
+¿Cuántos subconjuntos **ordenados** de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
+
+$${n \choose r}=\frac{{n!}}{(n-r)!}$$
+
+**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas, si el primero en ser elegido será presidente y el segundo el vicepresidente?
+
+$${4 \choose 2}=\frac{{4!}}{(4-2)!}=12$$
+
+- **Nota:** en una permutación sí importa el orden, a diferencia de una combinación.
 
 ]
 
