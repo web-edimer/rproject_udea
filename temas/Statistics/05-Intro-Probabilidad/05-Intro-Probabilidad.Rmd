@@ -1,0 +1,301 @@
+---
+title: "Estadística"
+subtitle: "Probabilidad: Introducción<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Introducción a la probabilidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://thumbs.gfycat.com/SecondTartCygnet-max-1mb.gif"/>
+</center>
+
+---
+
+# Probabilidad...
+
+.pull-left[
+
+<center>
+<img src="https://www.stat.cmu.edu/~larry/Larry.jpg" width = 250/>
+</center>
+
+> *“Probabilidad es el lenguaje matemático para cuantificar la incertidumbre.”* — Larry Wasserman
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://ciudaddelasideas.com/wp-content/uploads/2018/10/CDI2008_AmirAczel.png" width = 290/>
+</center>
+
+> *“La teoría de las probabilides es la menos intuitiva de todas las ramas de las matemáticas”* — Amir Aczel
+
+]
+
+---
+
+# Método Científico
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png" width = 600/>
+</center>
+
+---
+
+# Tipos de experimentos
+
+
+- **Experimento determinístico:** aquél que produce los mismos resultados al repetirse bajo las mismas condiciones.
+
+- **Experimento aleatorio:** aquél que cuando se repite bajo las mismas
+condiciones produce resultados diferentes y no pueden ser predichos con absoluta certeza.
+
+<center>
+<img src="https://media1.tenor.com/images/36b4c0e9a413e5895a8b562abe125dd8/tenor.gif?itemid=7885436" width = 500/>
+</center>
+
+---
+
+# Conceptos básicos
+
+.panelset[
+
+.panel[.panel-name[Espacio muestral]
+
+- La teoría de la probabilidad es la rama de las matemáticas que estudia los fenómenos o experimentos aleatorios. Inicialmente no es posible conocer los posibles resultados de un experimento aleatorio, por tanto, es conveniente agrupar en un **conjunto** a todos los resultados posibles.
+
+- El **espacio muestral** de un experimento aleatorio es el conjunto de todos los posibles resultados del experimento, denotado comunmente por la letra griega omega mayúscula $\Omega$ o con la letra $S$. 
+
+- **Ejemplo:** Si el experimento aleatorio consiste en lanzar un dado y observar el resultado, el espacio muestral $S$ es: $$S=\{1,2,3,4,5,6\}$$
+
+]
+
+.panel[.panel-name[Eventos o sucesos]
+
+Se denomina **suceso** o **evento** a cualquier subconjunto del conjunto $\Omega$. Se denota conmunmente por la letra omega minúscula $\omega$.
+
+**Ejemplo:** continuando con el ejemplo de lanzar un dado y observar el resultado, un evento  podría ser: $$A=\{2,4,6\}$$ 
+
+### Eventos mutuamente excluyentes e Independientes
+
+Dos eventos de un espacio muestral $\Omega$ se consideran **mutuamente excluyentes** si no contienen elementos en común, es decir, $A \cap B=\emptyset$
+
+Dos eventos de un espacio muestral $\Omega$ se consideran **independientes** si el resultado de uno no influye en la aparación del otro.
+
+]
+
+.panel[.panel-name[Operaciones entre eventos]
+
+  - Unión $A \cup B$
+  - Intersección $A \cap B$
+  - Diferencia $A-B$ o $B-A$
+  - Complemento $A^c$
+
+<br>
+
+.pull-left[
+
+.pull-left[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-6-1.png"/>
+</center>
+
+]
+
+.pull-right[
+
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-5-1.png"/>
+</center>
+
+]
+
+]
+
+.pull-right[
+
+.pull-left[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-7-1.png"/>
+</center>
+
+
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-4-1.png"/>
+</center>
+
+
+]
+
+]
+
+]
+
+]
+
+---
+
+# Técnicas de conteo
+
+.panelset[
+
+.panel[.panel-name[Regla de la multiplicación]
+
+Si un proceso consta de $k$ partes, donde la primera parte se puede hacer de $n_1$ formas, la segunda parte de $n_2$ formas, ..., y la $k-ésima$ parte de $n_k$ formas, entonces el proceso puede realizar de: $$n_1\ * n_2\ *...*n_k$$
+
+]
+
+.panel[.panel-name[Combinaciones]
+
+
+¿Cuántos subconjuntos de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
+
+$${n \choose r}=\frac{{n!}}{r!(n-r)!}$$
+
+**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas?
+
+$${4 \choose 2}=\frac{{4!}}{2!(4-2)!}=6$$
+
+- **Nota:** en una combinación no importa el orden, a diferencia de una permutación.
+
+]
+
+.panel[.panel-name[Permutaciones]
+
+¿Cuántos subconjuntos **ordenados** de tamaño $r$ se pueden formar de un conjunto de tamaño $n$?
+
+$${n \choose r}=\frac{{n!}}{(n-r)!}$$
+
+**Ejemplo:** ¿cuántos subconjuntos de tamaño 2 se puede obtener de un conjunto de cuatro personas, si el primero en ser elegido será presidente y el segundo el vicepresidente?
+
+$${4 \choose 2}=\frac{{4!}}{(4-2)!}=12$$
+
+- **Nota:** en una permutación sí importa el orden, a diferencia de una combinación.
+
+]
+
+]
+
+---
+
+# Probablidad
+
+.panelset[
+
+.panel[.panel-name[Concepto]
+
+Dado un experimento aleatorio con un espacio muestral de $n$ sucesos o eventos elementales $\Omega$, la probabilidad del suceso $A$, que se designa mediante $P(A)$, es el cociente entre la cantidad de casos favorables para la ocurrencia de $A$ y la de casos posibles. La probabilidad de ocurrencia de cada suceso elemental es $1/n$, por tanto, se denominan equiprobables.
+
+  - $0\ \leq\ P(A) \leq\ 1$
+  - $P(\Omega)=1$
+  - Si $A1,\ A2,\ A3\,...$ es una colección infinita de eventos mutuamente excluyentes, entonces:
+
+$$P(A_1 \cup A_2\  \cup A_3...)=\sum\nolimits_{i=1}^\infty P(A_i)$$
+
+]
+
+
+.panel[.panel-name[Propiedades]
+
+- $0 \leq P(E) \leq 1$
+- $P(\emptyset)=0$ (suceso imposible)
+- $P(E^c)=1-P(E)$
+- Si $A \subseteq B$, entonces, $P(A) \leq\ P(B)$
+- $P(A-B)=P(A)-P(A \cap B)$
+- $P(A \cup B)=P(A)+P(B)-P(A \cap B)$ 
+
+]
+
+.panel[.panel-name[Cálculo de probabilidades]
+
+  - Clásico: 
+
+$$P(A)=\frac{{n_A}}{n}$$
+
+<br>
+
+  - Frecuentista:
+
+$$P(A)=\frac{{Número\ de\ veces\ que\ se\ presentó\ A}}{Número\ de\ veces\ que\ se\ observó\ el\ experimento}$$
+
+<br>
+
+  - Subjetivo:
+  
+$$P(A)\ =\ Criterio\ de\ un\ experto$$
+
+]
+
+]
+
+---
+
+# Ejemplos
+
+.panelset[
+.panel[.panel-name[Lanzamiento de una moneda]
+
+<center>
+<img src="https://pbs.twimg.com/media/Ds5BWAjWkAAqEAV.jpg"  width = 650/>
+</center>
+
+.center[
+### ¿Probabilidad de $\frac{1}{2}$? 
+]
+
+]
+
+.panel[.panel-name[Lanzamiento de un dado]
+
+<center>
+<img src="https://image.freepik.com/vector-gratis/dos-dados-blancos-aislados-blanco_154797-37.jpg" width = 350/>
+</center>
+
+.center[
+### ¿Probabilidad de $\frac{1}{6}$? 
+]
+
+]
+
+]
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
