@@ -42,16 +42,17 @@ intro_image_hide_on_mobile: true
     + [04-Estadística Descriptiva: tablas y gráficos](/temas/Statistics/04-Estad-Descriptiva-R2/04-Estad-Descriptiva-R2.html)
 
 - **Unidad 2: Probabilidad**
-    + [04-Probabilidad](/temas/Statistics/)
+    + [04-Probabilidad: Introducción](/temas/Statistics/05-Intro-Probabilidad/05-Intro-Probabilidad.html)
+    + [05-Probabilidad: Distribuciones de probabilidad](/temas/Statistics/)
 
 - **Unidad 3: Inferencia Estadística**
-    + [05-Inferencia](/temas/Statistics/)
+    + [06-Inferencia](/temas/Statistics/)
 
 - **Unidad 4: Diseño de Experimentos**
-    + [06-Diseño de Experimentos](/temas/Statistics/)
+    + [07-Diseño de Experimentos](/temas/Statistics/)
 
 - **Unidad 5: Diseños Factoriales**
-    + [07-Diseños Factoriales](/temas/Statistics/)
+    + [08-Diseños Factoriales](/temas/Statistics/)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [08-Correlación y Regresión Lineal](/temas/Statistics/)
+    + [09-Correlación y Regresión Lineal](/temas/Statistics/)
