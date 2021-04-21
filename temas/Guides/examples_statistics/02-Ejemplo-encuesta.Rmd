@@ -154,11 +154,104 @@ encuesta %>%
   geom_boxplot()
 ```
 
+- Gráfico cuantil-cuantil:
+
+```{r}
+encuesta %>% 
+  ggplot(mapping = aes(sample = promedio_academico)) +
+  geom_qq() +
+  geom_qq_line()
+```
+
+- Gráfico cuantil-cuantil por trabajo:
+
+```{r}
+encuesta %>% 
+  ggplot(mapping = aes(sample = promedio_academico)) +
+  facet_wrap(facets = ~trabajo) +
+  geom_qq() +
+  geom_qq_line()
+```
+
+## Proporciones
+
+```{r}
+encuesta %>% 
+  count(lectura) %>% 
+  mutate(proporcion = n / sum(n)) %>% 
+  ggplot(mapping = aes(x = lectura, y = proporcion)) +
+  geom_col() +
+  geom_label(mapping = aes(label = round(proporcion, digits = 2)))
+```
+
+## Relaciones X-Y
+
+### Diagramas de dispersión
+
+- se: error estándar (TRUE o FALSE)
+
+```{r}
+encuesta %>% 
+  ggplot(mapping = aes(x = horas_internet, y = horas_estudiar)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, color = "red")
+```
+
+- Gráfico anterior de forma interactiva:
+
+```{r}
+ggplotly(
+  encuesta %>% 
+  ggplot(mapping = aes(x = horas_internet, y = horas_estudiar)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, color = "red")
+)
+```
+
+### Correlograma
+
+- Matriz de correlaciones:
+
+```{r}
+encuesta %>% 
+  select(where(is.numeric)) %>% 
+  cor()
+```
+
+- Gráfico inicial:
+
+```{r}
+library(corrplot)
+encuesta %>% 
+  select(where(is.numeric)) %>% 
+  cor() %>% 
+  corrplot()
+```
+
+- Gráfico mejorado:
+
+```{r}
+encuesta %>% 
+  select(where(is.numeric)) %>% 
+  cor() %>% 
+  corrplot(
+    diag = FALSE,
+    type = "lower",
+    tl.srt = 25,
+    tl.col = "black",
+    method = "pie"
+  )
+```
+
+
+
 # Biblioteca esquisse
 
 ```{r}
 library(esquisse)
-#esquisser(viewer = "browser")
+# esquisser(viewer = "browser")
 ```
 
 
