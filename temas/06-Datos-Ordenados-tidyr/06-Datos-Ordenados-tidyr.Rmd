@@ -176,6 +176,18 @@ class: inverse, center, middle
 
 ---
 class: inverse, center, middle
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+# Ejemplo: Accidentes de tránsito
+
+<br>
+<br>
+<br>
+<br>
+# [Accidentes de tránsito Florencia, Caquetá 2011](https://www.datos.gov.co/Estad-sticas-Nacionales/Accidentes-de-transporte-tasas-de-lesiones-por-100/6fck-pt5v)
+
+---
+class: inverse, center, middle
 
 # ¡Gracias!
 
