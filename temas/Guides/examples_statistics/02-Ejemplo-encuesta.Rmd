@@ -245,11 +245,135 @@ encuesta %>%
   )
 ```
 
+## Incertidumbre
+
+### Barras
+
+```{r}
+encuesta %>%
+  group_by(trabajo) %>% 
+  summarise(
+    promedio = mean(promedio_academico),
+    de = sd(promedio_academico)
+  ) %>% 
+  ggplot(mapping = aes(x = trabajo, y = promedio)) +
+  geom_col() +
+  geom_errorbar(mapping = aes(ymin = promedio - de,
+                              ymax = promedio + de),
+                width = 0.05)
+```
+
+### Puntos
+
+```{r}
+encuesta %>%
+  group_by(trabajo) %>% 
+  summarise(
+    promedio = mean(promedio_academico),
+    de = sd(promedio_academico)
+  ) %>% 
+  ggplot(mapping = aes(x = trabajo, y = promedio)) +
+  geom_point() +
+  geom_errorbar(mapping = aes(ymin = promedio - de,
+                              ymax = promedio + de),
+                width = 0.05) +
+  coord_flip()
+```
+
+# Ejemplo homicidios
+
+```{r}
+library(readr)
+homicidios1 <- read_csv("homicidios.csv")
+
+homicidios1 %>% 
+  group_by(year) %>% 
+  summarise(
+    promedio = mean(homicidios)
+  ) %>% 
+  ggplot(mapping = aes(x = year, y = promedio)) +
+  geom_line()
+```
+
+- Serie temporal para cada municipio:
+
+```{r}
+homicidios1 %>% 
+  ggplot(mapping = aes(x = year, y = homicidios, color = Municipio)) +
+  geom_line()
+```
+
+- Agregando interactividad al gráfico anterior:
+
+```{r}
+library(plotly)
+ggplotly(
+  homicidios1 %>% 
+  ggplot(mapping = aes(x = year, y = homicidios, color = Municipio)) +
+  geom_line()
+)
+```
+
+# Tablas de frecuencias
+
+## Frecuencias absolutas
+
+```{r}
+table(encuesta$color_favorito)
+```
+
+```{r}
+encuesta %>% 
+  count(color_favorito) %>% 
+  arrange(desc(n))
+```
+
+```{r}
+xtabs(formula = ~encuesta$color_favorito)
+```
+
+```{r}
+table(encuesta$lectura, encuesta$trabajo)
+```
+
+## Frecuencias relativas
+
+```{r}
+prop.table(table(encuesta$color_favorito))
+
+prop.table(table(encuesta$color_favorito)) * 100
+```
+
+- Con la biblioteca janitor:
+
+```{r}
+library(janitor)
+tabyl(encuesta$color_favorito)
+```
+
+## Gráfico con gplots
+
+```{r}
+tabla <- table(encuesta$trabajo, encuesta$lectura)
+
+library(gplots)
+balloonplot(tabla)
+
+balloonplot(prop.table(tabla))
+```
 
 
 # Biblioteca esquisse
 
 ```{r}
+library(ggplot2)
+
+ggplot(ejemplo) +
+ aes(x = year, y = homicidios) +
+ geom_point(shape = "circle", size = 1.5, colour = "#112446") +
+ geom_smooth(span = 0.75) +
+ theme_minimal()
+
 library(esquisse)
 # esquisser(viewer = "browser")
 ```
