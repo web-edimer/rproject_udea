@@ -129,7 +129,7 @@ moda <- function(x) {
 - En distribuciones con sesgo a la izquierda (sesgo negativo) la media tiede a ser menor que la mediana y la moda.
 
 <center>
-<img src ="https://www.vizzingdata.com/wp-content/uploads/2018/05/Capture-1.png" width = 750 />
+<img src ="img/rel_med_prom_moda.png" width = 750 />
 </center>
 
 ---
