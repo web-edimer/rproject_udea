@@ -438,3 +438,280 @@ hurtos <- c(40, 50, 20, 15)
 departamentos[hurtos > 20]
 ```
 
+# Manejo de texto con stringr
+
+## Concatenación de texto
+
+```{r}
+library(stringr)
+mi_nombre <- "Edimer"
+str_c("Hola ", mi_nombre, " ¿Cómo estás?")
+```
+
+- Concatenar dos vectores de texto:
+
+```{r}
+deptos <- c("Antioquia", "Santander")
+mpios <- c("Medellín", "Bucaramanga")
+str_c(deptos, "-", mpios)
+```
+
+## Conteo de caracteres
+
+```{r}
+texto4 <- "Este es mi texto"
+str_length(texto4)
+
+texto5 <- c("Mi texto", "antioquia", "cali")
+str_length(texto5)
+```
+
+## Reemplazando texto
+
+```{r}
+numero_malo <- c("2,20")
+as.numeric(numero_malo)
+
+numero_bien <- str_replace_all(string = numero_malo,
+                               pattern = ",",
+                               replacement = ".")
+
+as.numeric(numero_bien)
+```
+
+## Ordenar cadenas de texto
+
+```{r}
+texto6 <- c("1Felipe", "3Ramiro", "4Mauricio", "1Dora", "2Paola")
+str_sort(texto6, decreasing = TRUE)
+
+str_sort(texto6, decreasing = FALSE) # por defecto
+```
+
+## De mayúsculas a minúsculas
+
+```{r}
+texto7 <- c("EDIMER", "UNIVERSIDAD", "R")
+str_to_lower(texto7)
+
+texto8 <- c("Perro", "perro", "PERRO")
+str_to_lower(texto8)
+```
+
+## De minúsculas a mayúsculas
+
+```{r}
+texto9 <- c("antioquia", "santander", "cundinamarca")
+str_to_upper(texto9)
+```
+
+## Primera letra en mayúscula
+
+```{r}
+texto10 <- c("ANTIOQUIA", "valle del cauca")
+str_to_sentence(texto10)
+```
+
+## Primeras letras en mayúscula
+
+```{r}
+str_to_title(texto10)
+```
+
+## Eliminar espacios en blanco
+
+```{r}
+texto12 <- c("Raza A", "Raza A      ", "     Raza A")
+str_trim(texto12)
+```
+
+# Matrices
+
+- Podemos crear una matriz con la función matrix():
+
+```{r}
+matriz1 <- matrix(c(2, 3, 4, 5))
+matriz1
+```
+
+- Podemos controlar las dimensiones de la matriz:
+
+```{r}
+matriz2 <- matrix(c(10, 20, 30, 40), nrow = 2, ncol = 2)
+matriz2
+```
+
+- Podemos controlar que sean generadas por filas:
+
+```{r}
+matriz3 <- matrix(c(100, 200, 300, 400), nrow = 2, ncol = 2,
+                  byrow = TRUE)
+matriz3
+```
+
+- Podemos consultar las dimensiones con la función dim():
+
+```{r}
+dim(matriz3)
+dim(matriz1)
+dim(iris) # sobre una base de datos
+```
+
+- Consultar sólo el número de filas con nrow():
+
+```{r}
+nrow(matriz1)
+nrow(iris) # sobre una base de datos
+```
+
+- Consultar el número de columnas con ncol():
+
+```{r}
+ncol(matriz1)
+ncol(iris) # sobre una base de datos
+```
+
+## Subconjuntos
+
+- Ejercicio obtener primera columna:
+
+```{r}
+matriz4 <- matrix(c(1, 5, 50, 500, 200, 1000), ncol = 2, nrow = 3)
+matriz4
+
+matriz4[ , 1] # primera columna
+matriz4[1, ] # primera fila
+
+matriz4[c(1, 3), 2] # Queremos el 500 y el 1000
+```
+
+## Operaciones con matrices
+
+```{r}
+matriz5 <- matrix(c(10, 20, 30, 40), ncol = 2)
+matriz5 + 1 # suma con escalar
+matriz5 * 5 # multiplicación con escalar
+
+matriz6 <- matrix(c(2, 4, 6, 8), ncol = 2)
+matriz6
+
+matriz5 %*% matriz6 # multiplicación de matrices
+
+diag(matriz5) # diagonal
+solve(matriz5) # inversa
+```
+
+# Listas
+
+```{r}
+lista1 <- list(1, "A", TRUE)
+lista1
+```
+
+- Las listas tienen el atributo nombre:
+
+```{r}
+lista2 <- list(p1 = "Universidad", p2 = 1234, p3 = c(TRUE, FALSE))
+lista2
+```
+
+- Consultando el elemento 3 de la lista2:
+
+```{r}
+lista2$p3
+class(lista2)
+class(lista2$p3)
+
+lista2[3]
+lista2[[3]]
+
+lista2$p3[2]
+```
+
+# Agregando nuevos datos
+
+## Vector
+
+```{r}
+vector8 <- c(1, 20, 50)
+vector8[4] <- 100
+vector8
+```
+
+## Matriz
+
+```{r}
+matriz7 <- matrix(c(10, 20, 30, 40), ncol = 2)
+matriz7
+
+# Agregando columnas
+matriz8 <- cbind(matriz7, c(100, 200))
+matriz8
+
+# Agregando filas
+rbind(matriz7, c(1000, 2000))
+
+# Agregando filas de otra naturaleza
+rbind(matriz7, c("A", "B"))
+```
+
+## Listas
+
+```{r}
+lista3 <- list(e1 = 1, e2 = "A", e3 = TRUE)
+lista3
+
+# Agregando nuevo dato
+lista3$e4 <- NA
+lista3
+
+names(lista3)
+length(lista3)
+```
+
+# Bases de datos
+
+## Importación
+
+### Formatos planos
+
+- Separados por comas:
+
+```{r}
+library(readr)
+datos_comas <- read_csv(file = "encuesta_comas.csv")
+datos_comas
+```
+
+- Separados por punto y comas:
+
+```{r}
+datos_pcomas <- read_csv2(file = "encuesta_puntocomas.csv")
+```
+
+- Separados por tabulaciones (espacios en blanco):
+
+```{r}
+datos_tabulacion <- read_tsv(file = "encuesta_espacios.csv")
+```
+
+- Separados por otro delimitador (en este caso es /):
+
+```{r}
+datos_otro <- read_delim(file = "encuesta_delim.csv", delim = "/")
+```
+
+### Archivos de excel
+
+```{r}
+library(readxl)
+datos_excel <- read_excel(path = "encuesta_excel.xlsx")
+datos_excel
+```
+
+- Consultar los nombres de las hojas del archivo de excel:
+
+```{r}
+excel_sheets(path = "encuesta_excel.xlsx")
+```
+
