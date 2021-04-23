@@ -715,3 +715,65 @@ datos_excel
 excel_sheets(path = "encuesta_excel.xlsx")
 ```
 
+## Funciones básicas
+
+```{r}
+names(datos_excel) # nombres de columnas
+
+nrow(datos_excel) # número de filas
+
+ncol(datos_excel) # número de columnas
+
+dim(datos_excel) # Dimensiones (filas y columnas)
+
+class(datos_excel$promedio_academico) # Clase de una variable
+
+library(dplyr)
+glimpse(datos_excel)
+```
+
+## Subconjuntos
+
+- Filtrar sólo las primeras 20 filas de la base de datos:
+
+```{r}
+datos_excel[1:20, ]
+```
+
+- Filtrar sólo las filas 1, 10, 20 y 30
+
+```{r}
+datos_excel[c(1, 10, 20, 30), ]
+```
+
+- Filtrar sólo las filas 1 y 10 con las variables color_favorito y horas_dormir.
+
+```{r}
+datos_excel[c(1, 10), c("color_favorito", "horas_dormir")]
+```
+
+- Filtrar datos de estudiantes que superan la mediana del promedio académico:
+
+```{r}
+mediana <- median(datos_excel$promedio_academico)
+
+datos_excel[datos_excel$promedio_academico > mediana, ]
+```
+
+- Filtrar datos de estudiantes que superan la mediana del promedio acádemico y cuyo color favorito es el Negro
+
+```{r}
+datos_excel[datos_excel$promedio_academico > mediana
+            & datos_excel$color_favorito == "Negro", ]
+```
+
+## Data frame manual
+
+```{r}
+departamento <- c("Antioquia", "Santander", "Cundinamarca")
+casos_covid <- c(1234, 2340, 4580)
+
+mis_datos <- data.frame(depto = departamento, covid = casos_covid)
+mis_datos
+```
+
