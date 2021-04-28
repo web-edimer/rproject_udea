@@ -18,7 +18,8 @@ intro_image_hide_on_mobile: true
 
 - [01-Ejemplo R Markdown](https://rpubs.com/Edimer/740944) ([Descargar .Rmd](/temas/Guides/examples_statistics/ejemplo_rmarkdown.Rmd))
 - [02-Ejemplos estadística descriptiva (métricas, tablas y gráficos)](https://rpubs.com/Edimer/750443) ([Descargar .Rmd](/temas/Guides/examples_statistics/01-estad-descriptiva.Rmd))
-- [03-Ejemplo encuesta](https://rpubs.com/Edimer/754939) ([Descargar .Rmd](/temas/Guides/examples_statistics/02-Ejemplo-encuesta.Rmd))
+- [03-Ejemplos gráficos](https://rpubs.com/Edimer/754939) ([Descargar .Rmd](/temas/Guides/examples_statistics/02-Ejemplo-encuesta.Rmd))
+- [04-Ejemplos probabilidad](https://rpubs.com/Edimer/761553) ([Descargar .Rmd](/temas/Guides/examples_statistics/03-Probabilidad.Rmd))
 
 <br>
 

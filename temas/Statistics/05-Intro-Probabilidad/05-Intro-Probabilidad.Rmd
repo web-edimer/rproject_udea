@@ -3,7 +3,7 @@ title: "Estadística"
 subtitle: "Probabilidad: Introducción<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "`r Sys.Date()`"
+date: "2021-04-20"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]

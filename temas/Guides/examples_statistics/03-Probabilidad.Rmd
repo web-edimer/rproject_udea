@@ -1,0 +1,102 @@
+---
+title: "Probabilidad"
+author: "Edimer David Jaramillo"
+date: "21/4/2021"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Ejemplo moneda
+
+- ¿Realmente es 0.5 la probabilidad de obtener cara (o sello) al lanzar una moneda?
+
+```{r}
+# Opciones de la moneda
+moneda <- c("cara", "sello")
+
+# Un lanzamiento aleatorio
+sample(x = moneda, size = 1)
+```
+
+- Vamos a lanzar la moneda 10 veces:
+
+```{r}
+set.seed(1) # semilla para garantizar replicabilidad
+lanzamientos <- replicate(n = 10, expr = sample(x = moneda, size = 1))
+```
+
+- Calculamos la frecuencia relativa de la "cara":
+
+```{r}
+prop.table(table(lanzamientos))[1]
+```
+
+- Replicar los pasos anteriores desde 1 lanzamiento hasta 100 lanzamientos:
+
+```{r}
+experimento <- c()
+for(i in 1:100){
+  muestra <- replicate(n = i, expr = sample(x = moneda, size = 1))
+  experimento[i] <- prop.table(table(muestra))[1]
+}
+```
+
+- Imprimir la variable "experimento":
+
+```{r}
+experimento
+```
+
+- Gráfico sistema base de R:
+
+```{r}
+plot(experimento, type = "l")
+abline(h = 0.5, col = "red")
+```
+
+- Gráfico con ggplot2:
+
+```{r}
+library(tidyverse)
+
+enframe(experimento, name = "lanzamiento", value = "frecuencia") %>% 
+  ggplot(mapping = aes(x = lanzamiento, y = frecuencia)) +
+  geom_line() +
+  geom_hline(yintercept = 0.5, color = "red")
+```
+
+# Ejemplo moneda 2500 lanzamientos
+
+- Replicar los pasos anteriores desde 1 lanzamiento hasta 2500 lanzamientos:
+
+```{r}
+experimento <- c()
+for(i in 1:2500){
+  muestra <- replicate(n = i, expr = sample(x = moneda, size = 1))
+  experimento[i] <- prop.table(table(muestra))[1]
+}
+```
+
+- Gráfico sistema base de R:
+
+```{r}
+plot(experimento, type = "l")
+abline(h = 0.5, col = "red")
+```
+
+- Gráfico con ggplot2:
+
+```{r}
+library(tidyverse)
+
+enframe(experimento, name = "lanzamiento", value = "frecuencia") %>% 
+  ggplot(mapping = aes(x = lanzamiento, y = frecuencia)) +
+  geom_line() +
+  geom_hline(yintercept = 0.5, color = "red")
+```
