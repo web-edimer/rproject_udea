@@ -3,7 +3,7 @@ title: "Uso de R en experimentación animal:"
 subtitle: "Datos ordedados con tidyr<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "`r Sys.Date()`"
+date: "2021-04-22"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
@@ -21,7 +21,7 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 <center>
-<img src="https://www.measureevaluation.org/resources/newsroom/news-images/tidy-data/image"; height= 350/>
+<img src="https://unal-semilleror-facca.github.io/Actividades/2021_01/img/no_tidy.jpeg"; height= 350/>
 </center>
 
 > [“Todos los set de datos ordenados se parecen unos a otros, pero cada set de datos desordenado lo es a su manera” — Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
