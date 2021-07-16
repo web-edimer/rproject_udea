@@ -1,0 +1,179 @@
+---
+title: "Datos ordenados con R"
+author: "Edimer David Jaramillo"
+date: "09/07/2021"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Ejemplo Homicidios
+
+## Lectura de datos
+
+```{r}
+library(tidyverse)
+homicidios1 <- read_csv("Tasas_de_homicidios_seg_n_municipios_por_cien_mil_habitantes._A_os_1990_-_2017.csv")
+
+homicidios1
+```
+
+## Formato ancho a largo
+
+- Ctrl + Shift + M: operador de tubería (%>%)
+- Argumentos de pivot_longer():
+  - cols: columnas que participan en la conversión de formato.
+  - names_to: nombre de los encabezados o columnas. En este caso lo nombramos como "year".
+  - values_to: nombre de los valores (celdas).
+
+```{r}
+homicidios_largo <- homicidios1 %>% 
+  pivot_longer(cols = -Municipio,
+               names_to = "year",
+               values_to = "homicidio")
+
+homicidios_largo
+```
+
+## Exportando datos
+
+### Formato csv
+
+```{r}
+# Exportando datos separados por comas
+write_csv(x = homicidios_largo, file = "ejemplo.csv")
+```
+
+### Formato de R (.rds)
+
+```{r}
+write_rds(x = homicidios_largo, file = "ejemplo.rds", compress = "xz")
+```
+
+- El formato .rds puede ser importado a R con la función read_rds():
+
+```{r}
+ejemplo <- read_rds("ejemplo.rds")
+```
+
+## Formato largo a ancho
+
+- Argumentos de la función pivot_wider():
+  - names_from: columna que pasará a los encabezados (nombres de variables)
+  - values_from: valores que ocuparán cada celda
+
+```{r}
+homicidios_ancho <- homicidios_largo %>% 
+  pivot_wider(names_from = year, values_from = homicidio)
+
+homicidios_ancho
+```
+
+# Accidentes de tránsito Caquetá
+
+- Para darle el formato correcto a la base de datos ejecutamos los siguientes procesos:
+  - Importar la base de datos
+  - Limpiar los nombres con la función clean_names() de la biblioteca janitor.
+  - Eliminar la última fila de la base de datos.
+  - Eliminar las variables de nombre "total_casos" y "total_tasa".
+  - Pasar del formato ancho al formato largo. Participan en la conversión todas las variables excepto la columna edad.
+  - Separar (fragmentar) la columna de nombre "variable" en dos nuevas columnas.
+  - Pasar al formato ancho la variable de nombre "tipo" con los valores de nombre "valores".
+  
+## Importación  
+  
+```{r}
+accidentes1 <- read_csv("Accidentes_de_transporte__tasas_de_lesiones_por_100.000_habitantes__seg_n_edad_y_sexo__Colombia__2011.csv")
+
+accidentes1
+```
+
+## Limpieza de nombres
+
+```{r}
+library(janitor)
+
+accidentes2 <- accidentes1 %>% 
+  clean_names()
+
+accidentes2
+```
+
+## Eliminar última fila
+
+```{r}
+ultima_fila <- nrow(accidentes2)
+
+accidentes3 <- accidentes2[-ultima_fila, ]
+
+accidentes3
+```
+
+## Eliminar variables
+
+```{r}
+variables_eliminar <- c(6, 7)
+
+accidentes4 <- accidentes3[, -variables_eliminar]
+
+accidentes4
+```
+
+## Conversión de ancho a largo
+
+```{r}
+accidentes5 <- accidentes4 %>% 
+  pivot_longer(cols = -edad_anos,
+               names_to = "variable",
+               values_to = "valores")
+
+accidentes5
+```
+
+## Separación de columna
+
+- Vamos a utilizar la función separate(). Esta función requiere de los siguientes argumentos:
+  - col: la columna que vamos a fragmentar. En este caso "variable".
+  - into: nombre de las nuevas columnas producto de la separación.
+  - sep: separador que permitirá la fragmentación. En este caso el guión bajo "_".
+
+
+```{r}
+accidentes6 <- accidentes5 %>% 
+  separate(col = variable,
+           into = c("genero", "tipo"),
+           sep = "_")
+
+accidentes6
+```
+
+## Formato largo a ancho
+
+```{r}
+accidentes7 <- accidentes6 %>%
+  pivot_wider(names_from = tipo,
+              values_from = valores)
+
+accidentes7
+```
+
+- Con esta base es fácil calcular promedios por género para los casos y la tasa de accidentes de tránsito:
+
+```{r}
+accidentes7 %>% 
+  group_by(genero) %>%
+  summarise(promedio_casos = mean(casos),
+            promedio_tasa = mean(tasa))
+```
+
+## Concatenando procesos
