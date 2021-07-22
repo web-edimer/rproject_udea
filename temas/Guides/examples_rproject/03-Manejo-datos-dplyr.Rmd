@@ -1,0 +1,91 @@
+---
+title: "Manejo de datos con R (dplyr)"
+author: "Edimer David Jaramillo"
+date: "16/07/2021"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Lectura de datos
+
+```{r}
+library(tidyverse)
+datos <- read_csv("ejemplo.csv")
+datos
+```
+
+# Operaciones por filas
+
+## filter()
+
+- Ejemplo: filtrando sólo el año (year) 2000.
+
+```{r}
+# Con corchetes: datos[datos$year == 2000, ]
+
+datos %>% 
+  filter(year == 2000)
+```
+
+- Ejemplo: filtrando sólo el año 2000 y homicidios mayores a 70.
+
+```{r}
+datos %>% 
+  filter(year == 2000 & homicidio > 70)  
+```
+
+## slice()
+
+- La diferencia de slice() con filter() es que la primera filtra filas en  función de la posición. La segunda filtra filas en función de una o más condiciones.
+- Ejemplo: filtramos sólo las filas 1, 10 y 20.
+
+```{r}
+datos %>% 
+  slice(1, 10, 20)
+```
+
+## arrange()
+
+- La función arrange() permite ordenar las filas de manera ascendente (por defecto) o descendente.
+- Ejemeplo: ordenando las filas por la variable "homicidio".
+
+```{r}
+datos %>% 
+  arrange(homicidio)
+```
+
+- Ejemplo: ordenando las filas por la variable "homicidio" de forma descendente. Se utiliza la función "desc()".
+
+```{r}
+datos %>% 
+  arrange(desc(homicidio))
+```
+
+## distinct()
+
+- Permite filtrar filas únicas. Por defecto sólo selecciona la columna implicada en el filtro de filas únicas o distintas.
+- Ejemplo: filtrando municipios diferentes o únicos
+
+```{r}
+datos %>% 
+  distinct(Municipio)
+```
+
+- Podemos mantener las demás columnas a través del argumento .keep_all = TRUE.
+
+```{r}
+datos %>% 
+  distinct(Municipio, .keep_all = TRUE)
+```
+

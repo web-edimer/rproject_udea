@@ -11,6 +11,7 @@ intro_image_hide_on_mobile: true
 - [01-Ejemplo R Markdown](https://rpubs.com/Edimer/742067) ([Descargar .Rmd](/temas/Guides/examples_rproject/ejemplo_rmarkdown.Rmd))
 - [02-Ejemplo tipos de datos en R](https://rpubs.com/Edimer/754932) ([Descargar .Rmd](/temas/Guides/examples_rproject/01-tipos-datos.Rmd))
 - [03-Ejemplo datos ordenados en R](https://rpubs.com/Edimer/759323) ([Descargar .Rmd](/temas/Guides/examples_rproject/02-Datos-Ordenados.Rmd))
+- [04-Ejemplo manipulación de datos en R](https://rpubs.com/Edimer/792751) ([Descargar .Rmd](/temas/Guides/examples_rproject/03-Manejo-datos-dplyr.Rmd))
 
 <br>
 
