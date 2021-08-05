@@ -11,6 +11,7 @@
 
 <meta name="author" content="Edimer David Jaramillo" />
 
+<meta name="date" content="2021-08-05" />
 
 <title>R Project en Experimentación Animal</title>
 
@@ -1499,7 +1500,7 @@ window.onload = function() {
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -1545,6 +1546,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 
 
@@ -1657,61 +1659,56 @@ summary {
 <h1 class="title toc-ignore">R Project en Experimentación Animal</h1>
 <h3 class="subtitle">Actividad 2</h3>
 <h4 class="author">Edimer David Jaramillo</h4>
-<h4 class="date">28/10/2020</h4>
+<h4 class="date">2021-08-05</h4>
 
 </div>
 
 
 <div id="actividad" class="section level1">
 <h1>Actividad</h1>
-<div id="base-de-datos-actividad-1" class="section level2">
-<h2>Base de datos actividad 1</h2>
-<p>Construya un documento R Markdown para responder a las siguientes preguntas:</p>
+<div id="ejercicio-1" class="section level2">
+<h2>Ejercicio 1</h2>
 <ul>
-<li><ol style="list-style-type: decimal">
-<li>¿Cuál es el individuo bajo estudio para la base de datos seleccionada en la <a href="https://rproject-udea.netlify.app/actividades/actividad-01/actividad-01">actividad 1</a>?</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: decimal">
-<li>Definir si la base de datos seleccionada en la actividad 1 posee la estructura de <em>datos ordenados</em>. Mencione las razones por las cuales cumple o no dicha condición.</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: decimal">
-<li>Si la respuesta al numeral anterior es negativa, es decir, que su base de datos no cumple con los principios del <em>tidy data</em>, con R transforme sus datos al formato adecuado.</li>
-</ol></li>
-<li><ol start="4" style="list-style-type: decimal">
-<li>¿La información contenida en la base de datos es suficiente para responder las consultas planteadas en la actividad 1?</li>
-</ol></li>
-<li><ol start="5" style="list-style-type: decimal">
-<li>Importe la base de datos a R y seleccione sólo las variables que considere necearias para responder a sus consultas.</li>
-</ol></li>
-<li><ol start="6" style="list-style-type: decimal">
-<li>¿Qué métricas estadísticas le sirven para dar respuesta a las consultas? Obtenga con R los estadísticos descriptivos que considere necesarios.</li>
-</ol></li>
-<li><ol start="7" style="list-style-type: decimal">
-<li>Además de las métricas estadísticas, ¿qué gráficos considera pertinentes para dilucidar la información de su base de datos? Construirlos manualmente (borrador en papel o paint) e incorporarlos al documento R Markdown.</li>
-</ol></li>
-<li><ol start="8" style="list-style-type: decimal">
-<li>Imprima en su documento la base de datos final.</li>
-</ol></li>
-<li><strong>Nota:</strong> no olvide validar que sus datos sean correctos, es decir, que no hayan valores errados, que el tipo de información sea correctamente tipificada en R, que los nombres de las variables sean pertinentes para el manejor a través del software, etc.</li>
+<li>Ingrese a la página web de <a href="https://www.datos.gov.co/browse?sortBy=newest">datos abiertos del gobierno de Colombia</a> y encuentre una base de datos que cumpla con una o más características para ser considerada como <strong>no ordenada</strong>. Haciendo uso de R usted va a estructurar la base de datos bajo el formato correcto (<em>tidy data</em>). Debe mencionar cuáles son las características que corrigió y mostrar el código que implementó.</li>
 </ul>
 </div>
-<div id="ejercicio-hipotético" class="section level2">
-<h2>Ejercicio hipotético</h2>
-<p>Usted ha sido encargado por el ministerio de agricultura para recopilar información de un experimento en cítricos. Le es suministrada la siguiente información:</p>
+<div id="ejercicio-2" class="section level2">
+<h2>Ejercicio 2</h2>
 <ul>
-<li>Hay tres tratamientos bajo análisis y un cuarto grupo denominado “control”.</li>
-<li>El ensayo se realizará en tres zonas diferentes del país.</li>
-<li>Se tomarán datos durante 3 meses con periodicidad de 1 mes.</li>
-<li>En cada zona hay 5 predios productores de naranja que harán parte de esta investigación.</li>
-<li>Las variables bajo análisis son rendimiento/hectárea y % de fruta desperdiciada (clasificado como desperdicio bajo, moderado y alto).</li>
+<li>Con la base de datos de <a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Alimentos-del-tr-pico-para-alimentaci-n-animal-Ali/6arb-d547">Alimentos del trópico para alimentación animal - AlimenTro</a> responda las siguientes consultas:
+<ul>
+<li>¿Cuál es el ingrediente con mayor proteína cruda promedio?</li>
+<li>¿Cuáles son los 10 departamentos con mayor número de muestras (registros)?</li>
+<li>En el departamento de Antioquia, ¿Cuáles son los 3 ingredientes con mayor hemicelulosa?</li>
+<li>¿Cuáles departamentos superan la mediana del porcentaje de ceniza?</li>
+</ul></li>
 </ul>
-<p>Con esta información usted deberá proponer la plantila de base de datos que utilizará el ministerio de agricultura para recopilar los registros. <strong>Es una obligación para el ministerio de agricultura que los datos estén en formado <em>tidy.</em> </strong></p>
+</div>
+<div id="ejercicio-3" class="section level2">
+<h2>Ejercicio 3</h2>
+<ul>
+<li>El siguiente código intenta resumir con métricas estadísticas la información contenida en la base de datos <code>diamonds</code> (incorporada en la biblioteca <code>ggplot2</code>) y luego aplica un filtro para obtener un subconjunto de datos. Identifique los errores y obtenga el resultado que se muestra a continuación:</li>
+</ul>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["cut"],"name":[1],"type":["ord"],"align":["right"]},{"label":["color"],"name":[2],"type":["ord"],"align":["right"]},{"label":["promedio_depth"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["promedio_peso"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["mediana_precio"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["total_diamantes"],"name":[6],"type":["int"],"align":["right"]}],"data":[{"1":"Fair","2":"G","3":"64.33981","4":"1.023822","5":"3057.0","6":"314"},{"1":"Fair","2":"H","3":"64.58515","4":"1.219175","5":"3816.0","6":"303"},{"1":"Fair","2":"I","3":"64.22057","4":"1.198057","5":"3246.0","6":"175"},{"1":"Fair","2":"J","3":"64.35714","4":"1.341176","5":"3302.0","6":"119"},{"1":"Good","2":"I","3":"62.47510","4":"1.057222","5":"3639.5","6":"522"},{"1":"Good","2":"J","3":"62.39577","4":"1.099544","5":"3733.0","6":"307"},{"1":"Very Good","2":"I","3":"61.93455","4":"1.046952","5":"3888.0","6":"1204"},{"1":"Very Good","2":"J","3":"61.90206","4":"1.133215","5":"4113.0","6":"678"},{"1":"Premium","2":"H","3":"61.32203","4":"1.016449","5":"4511.0","6":"2360"},{"1":"Premium","2":"I","3":"61.32864","4":"1.144937","5":"4640.0","6":"1428"},{"1":"Premium","2":"J","3":"61.39010","4":"1.293094","5":"5063.0","6":"808"},{"1":"Ideal","2":"J","3":"61.82199","4":"1.063594","5":"4096.0","6":"896"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code># Código con errores (por corregir)
+library(tidyverse)
+diamonds %&gt;% 
+  Group_by(cut, Color) %&gt;% 
+  summarise(promedio_depth = mean(depth),
+            promedio_peso = mean(carat),
+            mediana precio = mean(price),
+            total_diamantes = N()) %&gt;% 
+  filter(promedio_peso &gt; &quot;1&quot;)</code></pre>
 </div>
 </div>
 <div id="fecha-de-entrega" class="section level1">
 <h1>Fecha de entrega</h1>
 <ul>
-<li>Máximo el 15 de noviembre de 2020 antes de las 11:59 pm.</li>
+<li>Máximo el 22 de agosto de 2021 antes de las 11:59 pm.</li>
 </ul>
 </div>
 
@@ -1724,7 +1721,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

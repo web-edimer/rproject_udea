@@ -2,7 +2,7 @@
 title: "R Project en Experimentación Animal"
 subtitle: "Actividad 2"
 author: "Edimer David Jaramillo"
-date: "28/10/2020"
+date: "`r Sys.Date()`"
 output:
   html_document:
     theme: readable
@@ -15,33 +15,48 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Actividad
 
-## Base de datos actividad 1
+## Ejercicio 1
 
-Construya un documento R Markdown para responder a las siguientes preguntas:
+- Ingrese a la página web de [datos abiertos del gobierno de Colombia](https://www.datos.gov.co/browse?sortBy=newest) y encuentre una base de datos que cumpla con una o más características para ser considerada como **no ordenada**. Haciendo uso de R usted va a estructurar la base de datos bajo el formato correcto (*tidy data*). Debe mencionar cuáles son las características que corrigió y mostrar el código que implementó.
 
-- 1. ¿Cuál es el individuo bajo estudio para la base de datos seleccionada en la [actividad 1](https://rproject-udea.netlify.app/actividades/actividad-01/actividad-01)?
-- 2. Definir si la base de datos seleccionada en la actividad 1 posee la estructura de *datos ordenados*. Mencione las razones por las cuales cumple o no dicha condición. 
-- 3. Si la respuesta al numeral anterior es negativa, es decir, que su base de datos no cumple con los principios del *tidy data*, con R transforme sus datos al formato adecuado.
-- 4. ¿La información contenida en la base de datos es suficiente para responder las consultas planteadas en la actividad 1? 
-- 5. Importe la base de datos a R y seleccione sólo las variables que considere necearias para responder a sus consultas.
-- 6. ¿Qué métricas estadísticas le sirven para dar respuesta a las consultas? Obtenga con R los estadísticos descriptivos que considere necesarios.
-- 7. Además de las métricas estadísticas, ¿qué gráficos considera pertinentes para dilucidar la información de su base de datos? Construirlos manualmente (borrador en papel o paint) e incorporarlos al documento R Markdown.
-- 8. Imprima en su documento la base de datos final.
-- **Nota:** no olvide validar que sus datos sean correctos, es decir, que no hayan valores errados, que el tipo de información sea correctamente tipificada en R, que los nombres de las variables sean pertinentes para el manejor a través del software, etc.
+## Ejercicio 2
 
-## Ejercicio hipotético
+- Con la base de datos de [Alimentos del trópico para alimentación animal - AlimenTro](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Alimentos-del-tr-pico-para-alimentaci-n-animal-Ali/6arb-d547) responda las siguientes consultas:
+  - ¿Cuál es el ingrediente con mayor proteína cruda promedio?
+  - ¿Cuáles son los 10 departamentos con mayor número de muestras (registros)?
+  - En el departamento de Antioquia, ¿Cuáles son los 3 ingredientes con mayor hemicelulosa?
+  - ¿Cuáles departamentos superan la mediana  del porcentaje de ceniza?
 
-Usted ha sido encargado por el ministerio de agricultura para recopilar información de un experimento en cítricos. Le es suministrada la siguiente información:
+## Ejercicio 3
 
-- Hay tres tratamientos bajo análisis y un cuarto grupo denominado "control".
-- El ensayo se realizará en tres zonas diferentes del país.
-- Se tomarán datos durante 3 meses con periodicidad de 1 mes.
-- En cada zona hay 5 predios productores de naranja que harán parte de esta investigación.
-- Las variables bajo análisis son rendimiento/hectárea y % de fruta desperdiciada (clasificado como desperdicio bajo, moderado y alto).
+- El siguiente código intenta resumir con métricas estadísticas la información contenida en la base de datos `diamonds` (incorporada en la biblioteca `ggplot2`) y luego aplica un filtro para obtener un subconjunto de datos. Identifique los errores  y obtenga el resultado que se muestra a continuación:
 
-Con esta información usted deberá proponer la plantila de base de datos que utilizará el ministerio de agricultura para recopilar los registros. **Es una obligación para el ministerio de agricultura que los datos estén en formado *tidy.* ** 
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(promedio_depth = mean(depth),
+            promedio_peso = mean(carat),
+            mediana_precio = median(price),
+            total_diamantes = n()) %>% 
+  ungroup() %>% 
+  filter(promedio_peso > 1)
+```
+
+
+```{r, eval=FALSE, echo=TRUE}
+# Código con errores (por corregir)
+library(tidyverse)
+diamonds %>% 
+  Group_by(cut, Color) %>% 
+  summarise(promedio_depth = mean(depth),
+            promedio_peso = mean(carat),
+            mediana precio = mean(price),
+            total_diamantes = N()) %>% 
+  filter(promedio_peso > "1")
+```
 
 
 # Fecha de entrega
 
-- Máximo el 15 de noviembre de 2020 antes de las 11:59 pm.
+- Máximo el 22 de agosto de 2021 antes de las 11:59 pm.
