@@ -1,7 +1,7 @@
 ---
 title: "Manejo de datos con R (dplyr)"
 author: "Edimer David Jaramillo"
-date: "16/07/2021"
+date: "`r Sys.Date()`"
 output: 
   html_document:
     toc: yes
@@ -33,7 +33,6 @@ datos
 
 ```{r}
 # Con corchetes: datos[datos$year == 2000, ]
-
 datos %>% 
   filter(year == 2000)
 ```
@@ -87,5 +86,174 @@ datos %>%
 ```{r}
 datos %>% 
   distinct(Municipio, .keep_all = TRUE)
+```
+
+# Operaciones por columnas
+
+## rename()
+
+- Permite renombrar una o más variables.
+- Ejemplo: cambiar el nombre del municipio a minúscula.
+
+```{r}
+# Ejemplo con la función names()
+prueba <- datos
+names(prueba) <- c("municipio", "year", "homicidio")
+prueba
+```
+
+- Ahora utilizamos rename(): al lado derecho del igual está el nombre original y al lado izquierdo el nuevo nombre.
+
+```{r}
+datos %>% 
+  rename(municipio = Municipio)
+```
+
+## set_names()
+
+- Permite cambiar el nombre a todas las columnas a través de un vector de caracteres. Similar a lo que hace names(), sin embargo, set_names() es compatible con el operador de tubería.
+
+```{r}
+datos %>% 
+  set_names(c("var1", "var2", "var3"))
+```
+
+## select()
+
+- Permite seleccionar columnas a través del nombre o la posición.
+
+```{r}
+datos %>% 
+  select(year, homicidio)
+```
+
+- Este código arroja el mismo resultado anterior:
+
+```{r}
+datos %>% 
+  select(-Municipio)
+```
+
+- Seleccionar sólo las variables numéricas:
+
+```{r}
+datos %>% 
+  select(is.numeric)
+```
+
+- Seleccionar las variables tipo caracter y además el homicidio:
+
+```{r}
+datos %>% 
+  select(is.character, homicidio)
+```
+
+- También se puede usar el número de la columna:
+
+```{r}
+datos %>% 
+  select(1, 3)
+```
+
+# mutate()
+
+- mutate() permite editar columnas o crear nuevas variables.
+- Ejemplo: crear una nueva columna de nombre "pais" con la etiqueta "Colombia"
+
+```{r}
+datos %>% 
+  mutate(pais = "Colombia")
+```
+
+- Se aplica coerción sobre la variable "Municipio", de character a factor:
+
+```{r}
+datos %>% 
+  mutate(Municipio = as.factor(Municipio))
+```
+
+- Se resta el número 10 a la columna homicidio:
+
+```{r}
+datos %>% 
+  mutate(homicidio2 = homicidio - 10)
+```
+
+- Puedo aplicar más de una edición o incluso crear y editar en la misma sentencia:
+
+```{r}
+datos %>% 
+  mutate(Municipio = as.factor(Municipio),
+         homicidio2 = homicidio - 10)
+```
+
+# Resumen de datos
+
+## count()
+
+- Esta función permite contar observaciones (filas) en función de una o más variables
+
+```{r}
+datos %>% 
+  count(year)
+```
+
+- Conteo de registros (filas) por municipio y año
+
+```{r}
+datos %>% 
+  count(Municipio, year, name = "total")
+```
+
+## group_by() + summarise()
+
+- Ejemplo: obtener resumen numérico por año que conste de promedio, desviación estándar, mínimo y máximo para la tasa de homicidio.
+
+```{r}
+datos %>% 
+  group_by(year) %>% 
+  summarise(
+    promedio_homicidio = mean(homicidio),
+    desv_homicidio = sd(homicidio),
+    minimo_homicidio = min(homicidio),
+    maximo_homicidio = max(homicidio)
+  ) 
+```
+
+## ungroup()
+
+- Después de utilizar group_by() y summarise() se recomienda usar la función ungroup().
+
+```{r}
+df_agrupada <- datos %>% 
+  group_by(year)
+
+# Consultando la clase de df_agrupada
+class(df_agrupada)
+
+# Tabla desagrupada
+df_desagrupada <- df_agrupada %>% 
+  ungroup()
+
+# Consultando la clase de df_desagrupada
+class(df_desagrupada)
+```
+
+- Se recomienda utilizar ungroup() después del group_by() + summarise():
+
+```{r}
+datos %>% 
+  group_by(Municipio) %>% 
+  summarise(promedio = mean(homicidio)) %>% 
+  ungroup()
+```
+
+## group_by() + mutate()
+
+```{r}
+datos %>% 
+  group_by(Municipio) %>% 
+  mutate(promedio = mean(homicidio)) %>% 
+  ungroup()
 ```
 

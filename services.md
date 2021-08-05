@@ -23,8 +23,8 @@ intro_image_hide_on_mobile: true
 <br>
 
 - **Unidad 3: Visualizaciones**
-    + [08-Introducción a la visualización de datos]()
-    + [09-Visualizaciones con ggplot2]()
+    + [08-Introducción a la visualización de datos](/temas/08-Intro-Graphics/08-Intro-Graphics.html)
+    + [09-Visualizaciones con ggplot2](/temas/09-Graphics-ggplot2/09-Graphics-ggplot2.html)
     + [10-Construcción de mapas con R]()
 
 - **Unidad 4: Análisis estadístico de experimentos**

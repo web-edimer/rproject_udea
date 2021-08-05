@@ -1,0 +1,164 @@
+---
+title: "Ejemplos con dplyr"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+# Ejemplo encuesta
+
+- Importar los datos de la encuesta sin depurar.
+- Consultar la tipificación que asignó R a las columnas de la base de datos.
+
+## Importando datos
+
+```{r}
+library(readxl)
+encuesta_mal <- read_excel("encuesta.xlsx")
+encuesta_mal
+```
+
+## Tipificación de datos
+
+```{r}
+library(tidyverse)
+glimpse(encuesta_mal)
+```
+
+## Depuración
+
+- Edición de nombres.
+- Seleccionar todas las variables excepto la fecha.
+- Conversión de formatos. Por ejemplo pasamos la variable "promedio_academico" de caracter a numérico.
+- Extracción de números con la función "parse_number()".
+- Unificación de texto en la variable "color_favorito".
+
+```{r}
+# Vector de nombres
+nombres <- c("fecha", "promedio_academico", "color_favorito",
+             "horas_estudiar", "horas_dormir", "redes_sociales",
+             "redsocial_favorita", "bachiller_universidad",
+             "lectura", "horas_internet", "trabajo")
+
+encuesta_bien <- encuesta_mal %>% 
+  set_names(nombres) %>% 
+  select(-fecha) %>% 
+  mutate(
+    promedio_academico = as.numeric(promedio_academico),
+    horas_estudiar = parse_number(horas_estudiar),
+    horas_dormir = parse_number(horas_dormir),
+    horas_internet = parse_number(horas_internet),
+    color_favorito = str_to_lower(color_favorito),
+    color_favorito = str_to_sentence(color_favorito)
+  )
+
+encuesta_bien
+```
+
+## Exportando datos
+
+### csv por comas
+
+```{r}
+write_csv(encuesta_bien, "encuesta_bien.csv")
+```
+
+### Excel
+
+```{r}
+library(writexl)
+write_xlsx(encuesta_bien, "encuesta_bien_excel.xlsx")
+```
+
+
+# Ejemplo frutales
+
+- **Objetivo:** unir bases de datos de área sembrada, área cosechada, producción y rendimiento de frutales en el Valle del Cauca.
+
+## Área sembrada
+
+- Importar datos
+- Editar nombres de algunas variables.
+- Convertir de formato ancho a formato largo. Esto lo hacemos con la finalidad de tener una variable para el cultivo y otra para el área sembrada.
+
+```{r}
+library(tidyverse)
+
+area_sembrada <- read_csv("Superficie_Sembrada_con_Frutales_en_el_departamento_del_Valle_del_Cauca.csv") %>% 
+  rename(Year = Año,
+         Guanábana = `Guana bana`,
+         Cítricos = Citricos) %>% 
+  pivot_longer(cols = -c(Municipios, Year),
+               names_to = "Cultivo",
+               values_to = "area_sembrada")
+
+area_sembrada
+```
+
+
+## Área cosechada
+
+- Importar datos
+- Editar los nombres de algunas variables. Debemos tener en cuenta que los nombres coincidan con los nombres de la base de datos anterior.
+- Filtrar filas con información errada. Por ejemplo "Year" igual a "año".
+- Convertir de formato ancho a formato largo. Esto lo hacemos con la finalidad de tener una variable para el cultivo y otra para el área cosechada.
+
+```{r}
+area_cosechada <- read_csv("Superficie_Cosechada_con_Frutales_en_el_Valle_del_Cauca_del_A_o_2000_al_2018.csv") %>% 
+  rename(Year = año,
+         Cítricos = Citricos,
+         Guanábana = `Guana bana`,
+         `Melón A` = `Melón a`,
+         `Melón B` = `Melon b`) %>% 
+  filter(Year != "año") %>% 
+  mutate(
+    across(c(Year:Vid), as.numeric)
+  ) %>% 
+  pivot_longer(cols = -c(Municipios, Year),
+               names_to = "Cultivo",
+               values_to = "area_cosechada")
+
+area_cosechada
+```
+
+## Producción
+
+- Importar datos
+- Editar nombres de algunas variables.
+- Filtrar filas con etiquetas erradas.
+
+```{r}
+read_csv(
+  "Producci_n_de_Frutales_en_el_departamento_del_valle_del_cauca_del_a_o_2000_al_2018.csv"
+) %>%
+  rename(
+    Year = año,
+    Cítricos = Citricos,
+    Guanábana = `Guana bana`,
+    `Melón A` = `Melón a`,
+    `Melón B` = `Melon b`
+  ) %>%
+  filter(Year != "año") %>%
+  mutate(across(
+    .cols = c(Year:Vid),
+    .fns = ~ str_replace_all(
+      string = .x,
+      pattern = ",",
+      replacement = "."
+    )
+  ))  
+```
+
