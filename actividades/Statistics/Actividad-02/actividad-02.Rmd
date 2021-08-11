@@ -1,0 +1,38 @@
+---
+title: "Estadística"
+subtitle: "Actividad 02"
+author: "Edimer David Jaramillo"
+date: "Agosto de 2021"
+output:
+  html_document:
+    css: estilo.css
+    theme: readable
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Primera parte (30%)
+
+## Ejercicio 1
+
+  - En un sistema de producción de hortalizas se detectan tres plagas. El 25% de las plantas tiene la enfermedad A, el 20% B y el 30% C. El 12% la A y B, el 10% la A y C, el 11% B y C y el 5% tiene las tres enfermedades. Obtener:
+    - El diagrama de Venn para representar el enunciado.
+    - La probabilidad de que una planta posea alguna de las enfermedades. (**Rta: 0.47**)
+    - La probabilidad de que una planta posea la enfermedad A pero no la B.  (**Rta: 0.13**)
+    - La probabilidad de que una planta posea la enfermedad B y C pero no la A.  (**Rta: 0.06**)
+
+## Ejercicio 2
+
+- Se tiene un lote de 200 animales, de los cuales 88 requieren se vacunados y lo están, 28 necesitan la vacuna pero no lo están, 4 no necesitan la vacuna pero están vacunados, 80 no necesitan la vacuna y no están vacunados. Construya una tabla que represente el problema y determine las probabilidades para los siguientes eventos:
+  - El animal requiere ser vacunado  (**Rta: 0.58**)
+  - El animal requiere ser vacunado pero no lo está (**Rta: 0.14**)
+  - El animal está vacunado, sea que lo requiera o no.  (**Rta: 0.46**)
+
+# Segunda parte (70%)
+
+# Fecha de entrega
+
+- Pendiente

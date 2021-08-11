@@ -22,6 +22,7 @@ intro_image_hide_on_mobile: true
 - [02-Ejemplos estadística descriptiva (métricas, tablas y gráficos)](https://rpubs.com/Edimer/750443) ([Descargar .Rmd](/temas/Guides/examples_statistics/01-estad-descriptiva.Rmd))
 - [03-Ejemplos gráficos](https://rpubs.com/Edimer/754939) ([Descargar .Rmd](/temas/Guides/examples_statistics/02-Ejemplo-encuesta.Rmd))
 - [04-Ejemplos probabilidad](https://rpubs.com/Edimer/761553) ([Descargar .Rmd](/temas/Guides/examples_statistics/03-Probabilidad.Rmd))
+- [05-Solución ejercicios de probabilidad](https://rpubs.com/Edimer/798438) ([Descargar .Rmd](/temas/Guides/examples_statistics/04-solucion-probabilidad.Rmd))
 
 <br>
 

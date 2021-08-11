@@ -1,0 +1,125 @@
+---
+title: "Solución ejercicios de probabilidad"
+author: "Edimer David Jaramillo"
+date: "10/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Ejercicio 1
+
+Si lanzas una moneda justa (no cargada) 7 veces al aire, ¿cuál es la probabilidad de obtener exactamente 2 sellos?
+
+## Solución
+
+- Cuántos grupos o combinaciones posibles existen de tamaño 2 de un conjunto de tamaño 7.
+
+```{r}
+numerador <- choose(n = 7, k = 2)
+numerador
+```
+
+- Calculamos el total de resultados posibles al lanzar la moneda 7 veces:
+
+```{r}
+denominador <- 2 ^ 7
+denominador
+```
+
+- Calculamos la probabilidad:
+
+```{r}
+numerador / denominador
+```
+
+# Ejercicio 2
+
+En un salón de clase con 7 estudiantes hay 5 niños y 2 niñas. Si el maestro escoge al azar un grupo de 4 estudiantes, ¿cuál es la probabilidad que el grupo tenga solo 2 niños? 
+
+## Solución
+
+- Total de grupos o combinaciones de tamaño 4 de un conjunto de 7:
+
+```{r}
+denominador <- choose(n = 7, k = 4)
+denominador
+```
+
+- Total de grupos en donde podrían estar 2 niños:
+
+```{r}
+numerador <- choose(n = 5, k = 4)
+numerador
+```
+
+- Calculamos la probabilidad:
+
+```{r}
+numerador / denominador
+```
+
+# Ejercicio 3
+
+En una granja que se dedica a la producción bovina de exposición (toros) hay 6 toros de la raza A y 9 toros de la raza B. Para un evento de exposición se deben escoger de forma aleatoria 5 toros, ¿cuál es la probabilidad que el grupo de toros seleccionado esté conformado por 3 toros de la raza A y 2 toros de la raza B?
+
+## Solución
+
+- Calculamos el total de subconjuntos de tamaño 5 a partir de un conjunto de tamaño 15:
+
+```{r}
+denominador <- choose(n = 15, k = 5)
+denominador
+```
+
+- Calculamos el total de subconjuntos de tamaño 3 a partir de un conjunto de tamaño 6 (raza A):
+
+```{r}
+toros_a <- choose(n = 6, k = 3)
+toros_a
+```
+
+- Calculamos el total de subconjuntos de tamaño 2 a partir de un conjunto de tamaño 9 (raza B):
+
+```{r}
+toros_b <- choose(n = 9, k = 2)
+toros_b
+```
+
+- Calculamos la probabilidad:
+
+```{r}
+(toros_a * toros_b) / denominador
+```
+
+# Ejercicio 4
+
+Se realizó una encuesta sobre medios de transporte y se encontró que el 70% de los encuestados usan transporte público, el 40% usa transporte particular y el 30% usa ambos tipos de transporte.
+
+- Dibujar el diagrama de Venn que represente el resultado de la encuesta.
+
+## Diagrama de Venn
+
+- Podemos definir dos conjuntos:
+  - Conjunto A: transporte público
+  - Conjunto B: transporte particular
+
+![](ejercicio4.png)
+
+## Solución probabilidad
+
+Si se escoge al azar un encuestado, ¿cuál es la probabilidad de que esa persona use algún tipo de transporte?
+
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B) \\ 
+= 0.7 + 0.4 - 0.3 \\
+= 0.8$$ 
+
+
+
+
+
+  
+
+
