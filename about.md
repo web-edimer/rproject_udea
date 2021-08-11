@@ -15,6 +15,7 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 
 # Estadística con R
 
+- [Estadística básica edulcorada](https://bookdown.org/aquintela/EBE/)
 - [Modelos Estadísticos](https://bookdown.org/j_morales/librostat/)
 - [Modelos de Regresión con R](https://fhernanb.github.io/libro_regresion/)
 - [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/)
