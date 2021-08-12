@@ -136,23 +136,11 @@ class: inverse, center, middle
 # Gráficos engañosos: Colombia
 
 <center>
-<img src="img/img1.PNG"; height= 250/>
+<img src="img/encuesta1.PNG"; height= 250/>
 </center>
 
 <center>
-<img src="img/img2.PNG"; height= 250/>
-</center>
-
----
-
-# Gráficos engañosos: Colombia
-
-<center>
-<img src="img/img3.PNG"; height= 250/>
-</center>
-
-<center>
-<img src="img/img4.PNG"; height= 250/>
+<img src="img/encuesta2.PNG"; height= 250/>
 </center>
 
 ---
@@ -160,23 +148,11 @@ class: inverse, center, middle
 # Gráficos engañosos: Colombia
 
 <center>
-<img src="img/img5.PNG"; height= 250/>
+<img src="img/encuesta3.PNG"; height= 250/>
 </center>
 
 <center>
-<img src="img/img6.PNG"; height= 250/>
-</center>
-
----
-
-# Gráficos engañosos: Colombia
-
-<center>
-<img src="img/img7.PNG"; height= 250/>
-</center>
-
-<center>
-<img src="img/img8.PNG"; height= 250/>
+<img src="img/encuesta4.PNG"; height= 250/>
 </center>
 
 ---
@@ -184,7 +160,31 @@ class: inverse, center, middle
 # Gráficos engañosos: Colombia
 
 <center>
-<img src="img/img9.PNG"; height= 250/>
+<img src="img/encuesta5.PNG"; height= 250/>
+</center>
+
+<center>
+<img src="img/encuesta6.PNG"; height= 250/>
+</center>
+
+---
+
+# Gráficos engañosos: Colombia
+
+<center>
+<img src="img/encuesta7.PNG"; height= 250/>
+</center>
+
+<center>
+<img src="img/encuesta8.PNG"; height= 250/>
+</center>
+
+---
+
+# Gráficos engañosos: Colombia
+
+<center>
+<img src="img/img9.png"; height= 250/>
 </center>
 
 <center>

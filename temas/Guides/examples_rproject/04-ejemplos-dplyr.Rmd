@@ -139,9 +139,12 @@ area_cosechada
 - Importar datos
 - Editar nombres de algunas variables.
 - Filtrar filas con etiquetas erradas.
+- Reemplazar las comas (",") por el punto (".") para llevar a cabo la conversión a numérico.
+- Conversión a numérico de variables cuantitativas.
+- Conversión de formato ancho a formato largo. Esto lo hacemos con la finalidad de tener una variable para el cultivo y otra para la producción.
 
 ```{r}
-read_csv(
+produccion <- read_csv(
   "Producci_n_de_Frutales_en_el_departamento_del_valle_del_cauca_del_a_o_2000_al_2018.csv"
 ) %>%
   rename(
@@ -159,6 +162,139 @@ read_csv(
       pattern = ",",
       replacement = "."
     )
-  ))  
+  )) %>% 
+  mutate(across(c(Year:Vid), as.numeric)) %>% 
+  pivot_longer(cols = -c(Municipios, Year),
+               names_to = "Cultivo",
+               values_to = "produccion")
+
+produccion
+```
+
+- Otra forma de llegar al mismo resultado anterior se muestra a continuación:
+
+```{r}
+# Invertir pasos
+read_csv(
+  "Producci_n_de_Frutales_en_el_departamento_del_valle_del_cauca_del_a_o_2000_al_2018.csv"
+) %>%
+  rename(
+    Year = año,
+    Cítricos = Citricos,
+    Guanábana = `Guana bana`,
+    `Melón A` = `Melón a`,
+    `Melón B` = `Melon b`
+  ) %>%
+  filter(Year != "año") %>% 
+  pivot_longer(cols = -c(Municipios, Year),
+               names_to = "Cultivo",
+               values_to = "produccion") %>% 
+  mutate(Year = as.numeric(Year),
+         produccion = str_replace_all(string = produccion, pattern = ",",
+                                      replacement = "."),
+         produccion = as.numeric(produccion))
+```
+
+## Rendimiento
+
+- Importar datos
+- Editar nombres de algunas variables
+- Conversión de formato ancho a formato largo. Esto lo hacemos con la finalidad de tener una variable para el cultivo y otra para el rendimiento.
+
+```{r}
+rendimiento <- read_csv("Rendimiento_de_Superficie_Sembrada_con_Frutales_en_el_Departamento_del_Valle_del_Cauca.csv") %>% 
+  rename(
+    Year = año,
+    Cítricos = Citricos,
+    Guanábana = `Guana bana`,
+    `Melón A` = `Melón a`,
+    `Melón B` = `Melon b`
+  ) %>% 
+  pivot_longer(cols = -c(Municipios, Year),
+               names_to = "Cultivo",
+               values_to = "rendimiento")
+
+rendimiento
+```
+
+## Unión de datos
+
+- Vamos a unir las cuatro bases de datos a través de la función inner_join() del paquete dplyr. **Nota:** podemos unir sólo dos bases de datos en una misma función.
+
+```{r}
+frutales <- inner_join(x = area_sembrada, y = area_cosechada,
+           by = c("Municipios", "Year", "Cultivo")) %>% 
+  inner_join(y = produccion, by = c("Municipios", "Year", "Cultivo")) %>% 
+  inner_join(y = rendimiento, by = c("Municipios", "Year", "Cultivo"))
+
+frutales
+```
+
+# Ejemplo caudal río Chinchiná
+
+- Importar datos
+- (opcional) Limpiar los nombres de las variables
+- Filtrar filas que son un resultado (total, promedio, mínimo, máximo) y no una observación.
+- Conversión de formato ancho a largo. Este proceso lo realizamos para tener en una columna el mes y en otra el caudal.
+- Crear un nueva columna con información del año.
+- Añadir un punto (".") a la columa mes. Esto lo hacemos con la finalidad de garantizar que el formato sea compatible con la tipificación de fechas en R. Ejemplo: "ene."
+- Unir las columnas "year", "mes" y "dia" en una sola de nombre "fecha". Con formato Date en R.
+- Conversión al formato Date de la variable fecha, a través de la función ymd().
+- **Nota:** para reordenar las columnas se puede utilizar la función relocate() del paquete dplyr. El uso de la función auxiliar everything() es de gran utilidad junto a relocate(). Ejemplo: `relocate(year, everything())`
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(lubridate) # manejo de fechas
+
+datos_caudal <- read_csv("Caudal_Rio_Chinchina_2016.csv") %>% 
+  clean_names() %>% 
+  slice(1:31) %>% 
+  pivot_longer(cols = -dia, names_to = "mes", values_to = "caudal") %>% 
+  mutate(year = "2016",
+         mes = str_c(mes, ".")) %>% 
+  unite(year, mes, dia, sep = "-", col = "fecha") %>% 
+  mutate(fecha = ymd(fecha))
+
+datos_caudal  
+```
+
+# Gráficos ejemplo
+
+## graphics
+
+```{r}
+plot(x = datos_caudal$fecha, y = datos_caudal$caudal)
+```
+
+## ggplot2
+
+```{r}
+datos_caudal %>% 
+  ggplot(mapping = aes(x = fecha, y = caudal)) +
+  geom_line()
+```
+
+# Manipulación de fechas
+
+```{r}
+ejemplo <- "2020-01-01"
+ejemplo_fecha <- ymd(ejemplo)
+
+class(ejemplo)
+
+class(ejemplo_fecha)
+
+weekdays(ejemplo_fecha)
+week(ejemplo_fecha)
+month(ejemplo_fecha, label = TRUE, abbr = FALSE)
+day(ejemplo_fecha)
+year(ejemplo_fecha)
+
+# Error
+ejemplo2 <- "2016-ene.-1"
+ymd(ejemplo2)
+
+str_c("ene", ".")
 ```
 
