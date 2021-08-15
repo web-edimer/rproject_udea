@@ -13,6 +13,7 @@ intro_image_hide_on_mobile: true
 - [03-Ejemplo datos ordenados en R](https://rpubs.com/Edimer/759323) ([Descargar .Rmd](/temas/Guides/examples_rproject/02-Datos-Ordenados.Rmd))
 - [04-Ejemplo manipulación de datos en R](https://rpubs.com/Edimer/792751) ([Descargar .Rmd](/temas/Guides/examples_rproject/03-Manejo-datos-dplyr.Rmd))
 - [05-Ejemplos con dplyr](https://rpubs.com/Edimer/798751) ([Descargar .Rmd](/temas/Guides/examples_rproject/04-ejemplos-dplyr.Rmd))
+- [06-Visualización con ggplot2](https://rpubs.com/Edimer/799561) ([Descargar .Rmd](/temas/Guides/examples_rproject/05-graficos-ggplot2.Rmd))
 
 <br>
 
