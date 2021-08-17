@@ -1,0 +1,711 @@
+---
+title: "Estadística"
+subtitle: "Distribuciones de Probabilidad<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Distribuciones de probabilidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img1.png" width = 700/>
+</center>
+
+---
+
+# Funciones importantes en R
+
+<center>
+<img src="img/img2.png" width = 300/>
+</center>
+
+<br>
+
+- **`r_`**: prefijo `r` (*random*) para generación de números aleatorios de alguna distribución específica (ejemplo: `rbinom()`, `rnorm()`, `rexp()`).
+- **`d_`**: prefijo `d` (*density*) permite obtener la función de densidad.
+- **`p_`**: prefijo `p` (*probability*) permite obtener probabilidades acumuladas.
+- **`q_`**: prefijo `q` (*quantile*) permite obtener el valor asociado a determinada probabilidad.
+
+---
+
+class: inverse, center, middle
+
+# Distribuciones Discretas
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img4.png" width = 700/>
+</center>
+
+---
+
+# Distribución Bernoulli
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+En determinados experimentos suele ocurrir que existen sólo dos resultados posibles:
+
+  - Presencia o ausencia
+  - Sí o no
+  - Defectuoso o no defectuoso
+  - Ganó o perdió
+  - Hembra o macho
+
+<center>
+<img src = "img/img3.PNG" width = 400 />
+</center>
+
+]
+
+.panel[.panel-name[Notación]
+
+- Probabilidad de éxito $(p)$
+ - Probabilidd del fracaso $(q = 1 - p)$
+ - $p + q = 1$
+  
+Una variable aleatoria X tiene distribución Bernoulli si su función de densidad  (f.m.p.) es: $$f(x)=p^xq^{1-x}, x=0,1$$
+
+Note que: 
+
+  - $P(x=0)=f(0)=p^0q^{1-0}=q$
+  - $P(x=1)=f(1)=p^1q^{1-1}=p$
+
+Notación: $$X \sim Bernoulli(p)$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+- **Esperanza matemática:** 
+  
+$$E[X]=1\ \times p\ + 0\ \times (1-p) = p$$
+$$E[X^2]=1^2\ \times p\ + 0^2\ \times (1-p) = p$$ 
+
+- **Varianza:**
+  
+$$Var[X]=E[X^2]-[E(x)]^2=p\ - p^2 = p  \times (1-p)=p \times q$$
+
+]
+
+]
+
+---
+
+# Distribución Binomial
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+Ocurre cuando se cumple lo siguiente:
+
+  - Se realizan o repiten $n$ ensayos Bernoulli
+  - El parámetro $p$ se mantiene constante entre ensayos
+  - Los ensayos son independientes entre sí
+  
+**Objetivo:** el problema de interés radica en el número de "éxitos" en $n$ casos estudiados (el éxito no necesariamente implica que sea bueno, sólo determina la ocurrencia del evento).
+
+Una variable aleatoria $X$ tiene distibución Binomial si su función de densidad (f.m.p.) es:
+
+$$f(x)=\binom{n}{x}p^x(1-p)^{n-x}; con\ x = 0, 1, 2, ..., n$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+$$X \sim B(n, p)$$
+Donde:
+
+  - $n$: número de ensayos
+  - $p$: probabilidad de éxito
+
+**Esperanza matemática y varianza:**
+
+  - $E[X]=n \times p$
+  - $Var[X]=n \times p \times q = n \times p \times (1-p)$
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+
+- `rbinom()`: generar números aleatorios bajo la distribución Binomial.
+- `dbinom()`: función masa de probabilidad.
+- `pbinom()`: función de distribución acumulada.
+- `qbinom()`: obtener cuantiles.
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- **Ejemplo:** Suponga que se toman 10 semillas de un tipo de pasto y se registran los eventos "germinó" o "no germinó" después de cinco días de la siembra. Las semillas están lo suficientemente aisladas como para garantizar respuestas independientes. Si la probabilidad de la germinación es $0.25$ (cada semilla), obtener:
+      1. Probabilidad de que germinen 7 de las 10 semillas
+      2. Probabilidad de que germinen al menos 3 de las 10 semillas
+      3. Probabilidad de que germinen máximo 5 semillas
+      4. La esperanza de esta variable aleatoria
+      5. La varianza
+
+]
+
+]
+
+---
+
+# Distribución Poisson
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+La distribución Poisson da un modelo para el número de eventos (conteos) por intervalo.
+
+  - Número de huevos de un insecto en una oviposición
+  - Número de bacterias en una muestra de agua
+  - Número de insectos por $m^2$
+  - Número de clientes por hora
+  - Llamadas por hora
+
+Una variable aleatoria $X$ tiene distribución Poisson si su función de densidad es:
+$$f(x)=\frac{e^{-\lambda} \lambda^x}{x!};  x = 0, 1, 2, ...$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+Notación: 
+$$X \sim Poisson(\lambda)$$
+
+- **Esperanza $(E[X])$ y varianza $(Var[X])$**:
+  - $E[X]= \lambda$
+  - $Var[X]= \lambda$
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+- `rpois()`: generar números bajo la distribución Poisson
+- `dpois()`: función masa de probabilidad
+- `ppois()`: función de distribución acumulada 
+- `qpois()`: obtener cuantiles.
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- **Ejemplo:** Si el número promedio de picaduras de una plaga cualquiera por semilla es $0.2$ (es decir, que en promedio, de cada 100 semillas, 20 tienen picadura). Obtener:
+      1. ¿Cuántas de 100 semillas no tendrán picadura?
+      2. ¿Cuántas tendrán una sola picadura?
+      3. ¿Cuántas tendrán más de 1 picadura?
+
+]
+
+]
+
+---
+
+# Distribución Geométrica
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+De gran utilidad cuando el problema de interés es modelar la distribución del número de ensayos necesarios para encontrar el **primer éxito**.
+
+Una variable aleatoria $X$ tiene distribución Geométrica si su función de densidad (f.m.p) es:
+$$f(x) = p(1-p)^{x-1};\ x = 1, 2, 3, ...$$
+
+Notación:
+$$X \sim Geo(p)$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+**Esperanza $(E[X])$ y varianza $(Var[X])$:**
+
+  - $E[x] = \frac{1}{p}$
+  - $Var[x]= \frac{1-p}{p^2}$
+
+#### Diferencias Binomial y Geométrica
+  
+- **Binomial (1):** número fijo de ensayos $n$
+- **Geométrica (1):** número aleatorio de ensayos $n$
+- **Binomial (2):** número de aleatorio de éxitos $X$
+- **Geométrica (2):** número fijo de éxitos $X$ (en este caso, igual a 1)  
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+- `rgeom()`: generar números bajo la distribución Geométrica
+- `dgeom()`: función masa de probabilidad
+- `pgeom()`: función de distribución acumulada 
+- `qgeom()`: obtener cuantiles.
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- **Ejemplo:** Suponga que de registros históricos en una fábrica dedicada a producir bombillos, se conoce que la probabilidad de que un bombillo esté dañado es 0.01. Se asume que los bombillos evaluados son independientes. Obtener:
+    - La probabilidad de que se necesite analizar exactamente 125 bombillos para encontrar uno defectuoso.
+    - La probabilidad de que se necesite analizar máximo 50 bombillos para encontrar uno defectuoso.
+    - La esperanza matemática.
+
+]
+
+]
+
+---
+
+# Distribución Binomial Negativa
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+Ciertos fenómenos de interés centran su atención en el número de ensayos hasta que ocurran $k$ éxitos (por primera vez). Se puede considerar como una extensión de la distribución geométrica; si el número de éxitos fuese 1, estaríamos en el caso de dicha distribución.
+
+Una variable aleatoria $X$ tiene distribución Binomial Negativa si su función de densidad es: $$f(x) = \binom{x-1}{k-1}p^k(1-p)^{x-k};\ x = k,\ k+1,\ k+2,...$$
+
+Notación:
+$$X \sim BN(k, p)$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+**Esperanza $(E[X])$ y varianza $(Var[X])$:**
+
+  - $E[X] = \frac{k}{p}$
+  - $Var[X] = \frac{k(1-p)}{p^2}$
+
+
+#### Diferencias Binomial y Binomial Negativa
+  
+- **Binomial (1):** número fijo de ensayos $n$
+- **B. Negativa (1):** número aleatorio de ensayos
+- **Binomial (2):** número aleatorio de éxitos 
+- **B. Negativa (2):** número fijo de éxitos $k$
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+- `rnbinom()`: generar números bajo la distribución Binomial Negativa
+- `dnbinom()`: función masa de probabilidad
+- `pnbinom()`: función de distribución acumulada 
+- `qnbinom()`: obtener cuantiles.
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- Una pareja desea intentar tener hijos hasta que tengan dos niñas. Si la probabilidad de nacer mujer es igual a $0.5$, obtener:  
+  - La probabilidad de que la pareja lo logre en exactamente 2 nacimientos  
+  - La probabilidad de que la pareja lo logre en cuatro o más nacimientos  
+  - Promedio de nacimientos para lograr tener 2 hijas 
+
+]
+
+]
+
+---
+
+# Distribución Hipergeométrica
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+- Esta distribución está sujeta a condiciones de **muestreo sin reemplazo** en las que cada elemento es diferente y será elegido hasta completar la muestra, sin restituir los elementos extraídos.
+- El tamaño de la población del cual proviene la muestra es conocido.
+- Permite responder a la probabilidad de obtener $k$ éxitos en una muestra con $n$ elementos, proveniente de una población de tamaño $N$.
+
+
+
+]
+
+.panel[.panel-name[Notación]
+
+Una variable aleatoria $X$ tiene distribución Hipergeométrica si su función de densidad es: $$f(x) = \frac{\binom{k}{x} \binom{N-k}{n-x}}{\binom{N}{n}};\ x = 0, 1, ..., k$$  
+
+donde:
+
+  - *N*: tamaño de la población
+  - *n*: tamaño de la muestra extraída
+  - *k*: número de elementos en la población original que pertenecen al evento deseado
+  - *x*: número de elementos en la muestra que pertenecen al evento deseado
+  
+Notación:
+$$X \sim h(n, k, N)$$
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+**Esperanza $(E[X])$ y varianza $(Var[X])$:**
+
+  - $E[X] = np$
+  - $Var[X] = np(1-p) \frac{N-n}{N-1}$
+
+Donde:
+
+  - $p = \frac{k}{N}$
+  - $\frac{N-n}{N-1}$: es el factor de corrección para poblaciones finitas
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+- `rhyper()`: generar números bajo la distribución Hipergeométrica
+- `dhyper()`: función masa de probabilidad
+- `phyper()`: función de distribución acumulada
+- `qhyper()`: obtener cuantiles.
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+**Ejemplo:** Un lote de bovinos contiene 100 animales alimentados con la dieta A y 200 animales alimentados con la dieta B. Si se escogen 4 animales al azar, sin reemplazo. Obtener:
+
+  1. La probabilidad de que todos los bovinos sean alimentados con la dieta A.
+  2. La probabilidad de que dos o más bovinos sean alimentados con la dieta A.
+
+]
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Distribuciones Continuas
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img4.png" width = 700/>
+</center>
+
+---
+
+# Distribución Exponencial
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+- De gran utilidad para modelar fenómenos relacionados con tiempos de espera.
+- Múltiples aplicaciones:
+  - Calcular la probabilidad de que un instrumento electrónico falle en determinado período de tiempo.
+  - El tiempo necesario para que ocurra un accidente de tránsito en una ruta en una vía con probabilidad $P$.
+  - El tiempo que puede transcurrir en un servicio de urgencias para que llegue el próximo paciente.
+  - Teoría de colas
+  - Problemas de confiabilidad
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+Una variable aleatoria $X$ tiene distribución Exponencial si su función de densidad es: $$f(x) = \lambda e^{-\lambda x}$$
+
+Notación:
+$$X \sim Exp(\lambda)$$
+
+  - **Esperanza Matemática:**
+
+$$E[X]=\frac{1}{\lambda}$$
+
+- **Varianza:**
+
+$$Var[X]=\frac{1}{\lambda^2}$$
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+
+- `rexp()`: generar números bajo la distribución Exponencial
+- `dexp()`: función de densidad
+- `pexp()`: probabilidad acumulada.
+- `qexp()`: obtener cuantiles
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- **Ejemplo:** de registros históricos se sabe que en promedio, un rayo causa la muerte a tres personas cada año en determinado país. Obtener:
+  - La probabilidad de que el tiempo hasta la próxima muerte sea menor a un año.
+  - La probabilidad de que el tiempo hasta la próxima muerte sea mayor a 18 meses.
+
+]
+
+]
+
+---
+
+# Distribución Normal
+
+.panelset[
+
+.panel[.panel-name[Descripción]
+
+- De gran utilidad para múltiples fenómenos de la vida real
+  - Agronómicos
+  - Biológicos
+  - Químicos
+  - Físicos
+  - Antropológicos
+- Centralizada en la media
+- La curva tiene su máximo absoluto en $\mu$
+- La curva es simétrica a través de $\mu$
+- Se aproxima al eje horizontal sin tocarlo (curva asintótica)
+- El área total bajo la curva es 1
+
+
+]
+
+.panel[.panel-name[Esperanza y Varianza]
+
+Una variable aleatoria $X$ tiene distribución Normal si su función de densidad es: $$f(x) = \frac{1}{\sqrt{2 \pi \sigma}}e^{-\frac{(x - \mu)^2}{2 \sigma^2}};\ con\ \sigma > 0$$
+
+Notación:
+$$X \sim N(\mu,\ \sigma^2)$$
+
+  - **Esperanza Matemática:**
+
+$$E[X]=\mu$$
+
+  - **Varianza:**
+
+$$Var[X]=\sigma^2$$
+
+
+]
+
+.panel[.panel-name[Funciones con R]
+
+
+- `rnorm()`: generar números bajo la distribución Exponencial
+- `dnorm()`: función de densidad
+- `pnorm()`: función de densidad (probabilidades)
+- `qnorm()`: obtener cuantiles
+
+]
+
+.panel[.panel-name[Normal Estándar]
+
+Notación:
+$$Z \sim N(\mu=0,\ \sigma^2=1)$$
+
+- **Estandarización:**
+
+$$z = \frac{X - \mu}{\sigma}$$
+
+- **Tabla Z:**
+
+[Tabla Z - Distribución normal estándar.](https://bioestadistica.github.io/Temas/Z.pdf)
+
+]
+
+]
+
+---
+
+# Probabilidades con la Normal
+
+.panelset[
+
+.panel[.panel-name[Menor o igual a X]
+
+- Obtener la probabilidad de que una variable aleatoria $X$ tome valores menores a un valor determinado.
+
+```{r, echo=FALSE, fig.align="center", fig.height=6}
+x <- seq(-4, 4, length = 200)
+y <- dnorm(x)
+plot(x,y,type = "l", lwd = 2, col = "red")
+x <- seq(-4, 1, length = 200)
+y <- dnorm(x)
+polygon(c(-4, x, 1), c(0, y, 0), col = "gray")
+```
+
+]
+
+.panel[.panel-name[Mayor o igual a X]
+
+- Obtener la probabilidad de que una variable aleatoria $X$ tome valores mayores a un valor determinado.
+
+```{r, echo=FALSE, fig.align="center", fig.height=6}
+x <- seq(-4, 4, length = 200)
+y <- dnorm(x)
+plot(x,y,type = "l", lwd = 2, col = "red")
+x <- seq(4, 1, length = 200)
+y <- dnorm(x)
+polygon(c(4, x, 1), c(0, y, 0), col = "gray")
+```
+
+]
+
+.panel[.panel-name[Entre dos valores]
+
+- Obtener la probabilidad de que una variable aleatoria $X$ tome valores entre dos valores determinados.
+
+```{r, echo=FALSE, fig.align="center", fig.height=6}
+x <- seq(-4, 4, length = 200)
+y <- dnorm(x)
+plot(x,y,type = "l", lwd = 2, col = "red")
+x <- seq(-2, 2, length = 200)
+y <- dnorm(x)
+polygon(c(-2, x, 2), c(0, y, 0), col = "gray")
+```
+
+]
+
+]
+
+---
+
+# Consideraciones con la Normal
+
+.panelset[
+
+.panel[.panel-name[Localización]
+
+```{r, echo=FALSE, fig.height=6, fig.width=8, fig.align='center'}
+mu<-c(0,2,4,-5);
+curve(dnorm(x),xlim=c(-10,10),main=expression('Distribución Normal '*sigma==1),lwd=2,
+     ylab='Densidad')
+curve(dnorm(x,2,1),col=2,lwd=2,add=T)
+curve(dnorm(x,4,1),col=3,lwd=2,add=T)
+curve(dnorm(x,-5,1),col=4,lwd=2,add=T)
+for(i in 1:4){polygon(c(mu[i],mu[i]),c(0,dnorm(mu[i],mu[i],1)),border=i,lty=4,lwd=2)}
+legend('toprigh',lty=1,col=1:4,lwd=2,legend=c(expression(mu==0),expression(mu==2),
+                                              expression(mu==4),expression(mu==-5)), bty = "n")
+```
+
+]
+
+.panel[.panel-name[Dispersión]
+
+```{r, echo=FALSE, fig.height=6, fig.width=8, fig.align='center'}
+sig<-c(1,0.7,2);sig<-cbind(-sig,sig)
+curve(dnorm(x),lwd=2,ylim=c(0,0.6),xlim = c(-5,5),ylab='Densidad',
+     main=expression('Distribución Normal '*mu==0))
+curve(dnorm(x,0,sig[2,2]),col=2,lwd=2,add=T)
+curve(dnorm(x,0,sig[3,2]),col=3,lwd=2,add=T)
+for(i in 1:3){polygon(sig[i,],dnorm(sig[i,],0,sig[i,2]),border = i,lty=4,lwd=2)}
+legend('toprigh',lty=1,col=1:3,lwd=2,legend=c(expression(sigma==1),expression(sigma==0.7),
+                                              expression(sigma==2)), bty = "n")
+```
+
+]
+
+.panel[.panel-name[Probabilidades]
+
+<center>
+<img src="img/img5.PNG" width = 700/>
+</center>
+
+]
+
+.panel[.panel-name[Ejemplo]
+
+- **Ejemplo:** Si $X$ sigue una distribución normal con media igual a 10 y sigma igual a 2. ¿Cuál es la probabilidad de que la medida de la variable aleatoria $X$ esté entre 9 y 11?
+
+]
+
+]
+
+---
+
+# Distribuciones derivadas de la Normal
+
+.panelset[
+
+.panel[.panel-name[t-student]
+
+- Deriva de la distribución normal
+- Surge con la dificultad de estimar la media de una población con distribución normal cuando el tamaño de muestra es pequeño.
+- Notación: $X \sim t(v)$
+- Es de media cero y varianza $\frac{v}{v-2};\ con\ v > 2$
+- Simétrica respecto a la media
+- La varianza decrece hasta uno cuando el número de grados de libertad aumenta
+- [Tabla *t*](https://bioestadistica.github.io/Temas/t.pdf)
+
+```{r, echo=FALSE, fig.height=3.5, fig.align='center'}
+curve(dnorm(x),xlim=c(-5,5),main='Distribución t-Student',ylab='Densidad',lwd=2)
+curve(dt(x,df = 1),col=2,add=T,lwd=2)
+curve(dt(x,df = 2),col=3,add=T,lwd=2)
+curve(dt(x,df = 5),col=4,add=T,lwd=2)
+legend('toprigh',lty=1,col=1:4,lwd=2,cex=0.9,
+       legend=c('Normal (0,1)','Cauchy','t(v=2)','t(v=5)'), bty = "n")
+```
+
+]
+
+.panel[.panel-name[F-Snedecor]
+
+- Llamada la distribución F de Fisher o F de Snedecor.
+- Generalmente es la distribución nula de una prueba estadística (análisis de varianza)
+- Notación: $X \sim F_(k_1,\ k_2)$
+- Útil en comparación de varianzas
+- [Tabla F](https://bioestadistica.github.io/Temas/F.pdf)
+
+La distribución F surge como resultado de la siguiente operación entre variables aleatorias: $$F = \frac{Y_1/k_1}{Y_2/k_2}$$
+
+Donde:
+
+- $Y_1$ y $Y_2$ siguen una distribución $\chi^2$ con $k_1$ y $k_2$ grados de libertad, respectivamente.
+- $Y_1$ y $Y_2$ son independientes
+
+]
+
+.panel[.panel-name[Chi-Cuadrado]
+
+- Llamada también *ji cuadrada (o)* o distribución de Pearson
+- Aplicación considerable en la teoría y metodología estadística
+- Componente importante de las pruebas de hipótesis e inferencia estadística
+- Relacionada con las distribuciones T de Student y F de Snedecor
+
+Una variable aleatoria $X$ tiene distribución chi cuadrado si su función de densidad es: $$\frac{1}{2^{\frac{k}{2}}\Gamma(k/2)}x^{(k/2)-1}e^{-x/2}$$
+
+Notación: $$X \sim \chi^2(k)$$
+
+- **Esperanza Matemática y Varianza:**
+
+  - $E[X] = k$
+  - $Var[X] = 2k$
+
+]
+
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
