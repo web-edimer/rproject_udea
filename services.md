@@ -47,7 +47,7 @@ intro_image_hide_on_mobile: true
     + [07-Probabilidad: Distribuciones de probabilidad](/temas/Statistics/07-Distribuciones-Probabilidad/06-Distribuciones-Probabilidad.html)
     
 - **Unidad 3: Inferencia Estadística**
-    + [08-Inferencia](/temas/Statistics/)
+    + [08-Inferencia: introducción](/temas/Statistics/08-Inferencia-Intro/08-Inferencia-Intro.html)
 
 - **Unidad 4: Diseño de Experimentos**
     + [09-Diseño de Experimentos](/temas/Statistics/)
