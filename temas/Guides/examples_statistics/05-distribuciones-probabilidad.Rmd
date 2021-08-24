@@ -1,0 +1,107 @@
+---
+title: "Distribuciones de Probabilidad"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Distribuciones discretas
+
+## Binomial
+
+- Suponga que se toman 10 semillas de un tipo de pasto y se registran los eventos "germinó" o "no germinó" después de cinco días de la siembra. Las semillas están lo suficientemente aisladas como para garantizar respuestas independientes. Si la probabilidad de la germinación es 0.25 (cada semilla), obtener:
+
+### Punto 1
+
+- Probabilidad de que germinen 7 de las 10 semillas. $P(X = 7)$
+
+```{r}
+choose(n = 10, k = 7) * 0.25^7 * (1 - 0.25)^(10-7)
+```
+
+- Con R se puede calcular a través de la función dbinom():
+
+```{r}
+dbinom(x = 7, size = 10, prob = 0.25)
+```
+
+### Punto 2
+
+- Probabilidad de que germinen al menos 3 de las 10 semillas. $P(X \geq 3)$
+
+```{r}
+# Una opción 
+sum(dbinom(x = 3:10, size = 10, prob = 0.25))
+
+# Otra opción 
+1 - sum(dbinom(x = 0:2, size = 10, prob = 0.25))
+
+# Otra opción
+1 - pbinom(q = 2, size = 10, prob = 0.25)
+```
+
+### Punto 3
+
+- Probabilidad de que germinen máximo 5 semillas. $P(X \leq 5)$
+
+```{r}
+pbinom(q = 5, size = 10, prob = 0.25, lower.tail = TRUE)
+```
+
+### Punto 4
+
+- La esperanza matemática de esta variable aleatoria:
+
+```{r}
+n <- 10
+p <- 0.25
+
+n * p
+```
+
+### Punto 5
+
+- La varianza
+
+```{r}
+q <- 1 - p
+
+n * p * q
+```
+
+### Simulación
+
+- Distribución binomial cuando p es pequeño:
+
+```{r}
+library(tidyverse)
+set.seed(2021)
+rbinom(n = 100, size = 20, prob = 0.1) %>% 
+  table() %>% 
+  barplot()
+```
+
+- Distribución binomial cuando p es grande:
+
+```{r}
+set.seed(2021)
+rbinom(n = 100, size = 20, prob = 0.9) %>% 
+  table() %>% 
+  barplot()
+```
+
+- Distribución binomial cuando p y q son similares:
+
+```{r}
+set.seed(2021)
+rbinom(n = 100, size = 20, prob = 0.5) %>% 
+  table() %>% 
+  barplot()
+```
+
