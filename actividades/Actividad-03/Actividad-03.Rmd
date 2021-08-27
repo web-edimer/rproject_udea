@@ -2,7 +2,7 @@
 title: "R Project en Experimentación Animal"
 subtitle: "Actividad 3"
 author: "Edimer David Jaramillo"
-date: "25/11/2020"
+date: "`r Sys.Date()`"
 output:
   html_document:
     theme: readable
@@ -10,17 +10,67 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
 # Actividad
 
-- Ingrese a la [página web del censo pecuario 2020](https://www.ica.gov.co/areas/pecuaria/servicios/epidemiologia-veterinaria/censos-2016/censo-2018.aspx) y elija tres especies sobre las cuales desee trabajar. **Nota:** no puede utilizar la base de datos del *censo bovino* porque fue abordada previamente en clase.
-- Ordene las bases de datos haciendo uso de la biblioteca *tidyr*.
-- Concatene las tres bases de datos en una sola a través de la biblioteca *dplyr*.
-- Con la base de datos final proponga una consulta (**objetiva, lógica y con resolución cuantitativa**) que involucre las especies bajo análisis.
-- Proponga y construya un gráfico (**sólo uno**) para responder a la consulta.
+- **Nota:** las bases de datos suministradas en cada punto pueden estar estructuradas de manera incorrecta, de ser así, usted deberá dar solución a las dificultades que identifique en cada conjunto de datos.
+
+## Punto 1 (25%)
+
+- Formule mínimo 3 consultas o preguntas a la base de datos de [Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/p5fp-pay3) y utilice un gráfico en cada una de ellas para mostrar la solución. Es importante que las tres consultas tengan alguna relación.
+
+## Punto 2 (25%)
+
+- Descargue la base de datos de [PIB Tasa de Crecimiento del Valor Agregado Segun Actividad Economica](https://www.datos.gov.co/Econom-a-y-Finanzas/PIB-Tasa-de-Crecimiento-del-Valor-Agregado-Segun-A/kdg6-42a4) y replique el siguiente gráfico:
+
+```{r, echo = FALSE, fig.width=9, fig.align="center"}
+library(tidyverse)
+library(janitor)
+datos <- read_csv("https://www.datos.gov.co/api/views/kdg6-42a4/rows.csv?accessType=DOWNLOAD") %>% 
+  clean_names()
+
+datos %>% 
+  pivot_longer(cols = -actividades_economicas,
+               names_to = "year") %>% 
+  mutate(year = parse_number(year),
+         actividades_economicas = str_to_lower(actividades_economicas),
+         actividades_economicas = str_to_title(actividades_economicas)) %>% 
+  filter(actividades_economicas %in% c("Pib Colombia", "Pib Total Departamental",
+                                       "Construccion", "Comercio", "Impuestos")) %>% 
+  ggplot(aes(x = year, y = value, color = actividades_economicas)) +
+  geom_point() +
+  geom_line(aes(group = actividades_economicas)) +
+  labs(x = "Año", y = "Crecimiento del PIB (%)") +
+  theme_minimal()
+```
+
+
+## Punto 3 (25%)
+
+- Con la base de datos de las [1000 Empresas mas grandes del país](https://www.datos.gov.co/Econom-a-y-Finanzas/1000-Empresas-mas-grandes-del-pa-s/8hn7-rpp8) construya un gráfico donde muestre cuáles son las 10 empresas con mayor ingreso operacional del 2018 y cuánto representa ese ingreso (en términos porcentuales) del total de ingresos operaciones para el mismo año.
+
+## Punto 4 (25%)
+
+- Con la base de datos [Copacabana - Accidentes por lugar y tipo](https://www.datos.gov.co/Transporte/Copacabana-Accidentes-por-lugar-y-tipo/ggfx-n9ra) replique el siguiente gráfico:
+
+```{r, echo=FALSE, fig.align="center", fig.width=9}
+read_csv("https://www.datos.gov.co/api/views/ggfx-n9ra/rows.csv?accessType=DOWNLOAD") %>% 
+  clean_names() %>% 
+  select(year = ano, danos:muertos) %>% 
+  pivot_longer(cols = -year) %>% 
+  group_by(year, name) %>% 
+  summarise(total = sum(value, na.rm = TRUE)) %>% 
+  mutate(name = str_replace_all(name, "n", "ñ"),
+         name = str_to_sentence(name)) %>% 
+  ggplot(aes(x = year, y = total, color = name)) +
+  geom_point() +
+  geom_line() +
+  facet_wrap(~name, scales = "free")
+```
+
 
 # Fecha de entrega
 
-- Máximo el 06 de diciembre de 2020 antes de las 11:59 pm.
+- Máximo el 10 de septiembre de 2021 antes de las 11:59 pm.
