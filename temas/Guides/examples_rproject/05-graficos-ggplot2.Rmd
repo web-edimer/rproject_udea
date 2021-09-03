@@ -66,6 +66,483 @@ datos_final %>%
   geom_col()
 ```
 
+- Mejorando el gráfico:
+
+```{r}
+datos_final %>% 
+  count(cultivo) %>% 
+  arrange(desc(n)) %>% 
+  slice(1:10) %>% 
+  ggplot(mapping = aes(x = cultivo, y = n)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "Cultivo", y = "Total",
+       title = "Frecuencia absoluta por cultivo",
+       subtitle = "10 Mayores")
+```
+
+
+- Otra manera de mejorar el gráfico:
+
+```{r}
+datos_final %>% 
+  count(cultivo) %>% 
+  arrange(desc(n)) %>% 
+  slice(1:10) %>% 
+  ggplot(mapping = aes(x = fct_reorder(cultivo, n), y = n)) +
+  geom_col(color = "black", fill = "red") +
+  coord_flip() +
+  labs(x = "Cultivo", y = "Total",
+       title = "Frecuencia absoluta por cultivo",
+       subtitle = "10 Mayores")
+```
+
+## Cantidad puntos
+
+- ¿Cuáles son los 5 municipios con mayor rendimiento promedio para el cultivo de papa?
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(municipio) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  arrange(desc(promedio_rto)) %>% 
+  slice(1:5) %>% 
+  ggplot(mapping = aes(x = fct_reorder(municipio, promedio_rto), y = promedio_rto)) +
+  geom_point(color = "green3", size = 3) +
+  coord_flip() +
+  labs(x = "Municipio", y = "Rendimiento",
+       title = "Redimiento promedio (t/ha)",
+       subtitle = "5 municipios de mayor rendimiento") +
+  theme_minimal()
+```
+
+## Cantidades agrupadas
+
+- ¿Cómo es el comportamiento promedio del rendimiento por municipio y semestre, para el cultivo de papa? Nota: sólo necesitamos representar el semestre A y el semestre B. 
+
+```{r, fig.width=8, fig.height=30}
+datos_final %>% 
+  filter(semestre %in% c("A", "B")) %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(municipio, semestre) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = municipio, y = promedio_rto, fill = semestre)) +
+  geom_col(position = "dodge") +
+  coord_flip()
+```
+
+# Proporciones
+
+## Individuales
+
+- ¿Cuál es la proporción de área sembrada en cada municipio para el cultivo de arveja en el año 2019 y el semestre A?
+
+```{r, fig.width=8, fig.height=7}
+datos_final %>% 
+  filter(cultivo == "ARVEJA") %>% 
+  filter(year == 2019) %>%  
+  filter(semestre == "A") %>% 
+  group_by(municipio) %>% 
+  summarise(total_area = sum(area_sembrada_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(total_depto = sum(total_area, na.rm = TRUE),
+         proporcion = total_area / total_depto,
+         proporcion = proporcion * 100,
+         proporcion = round(proporcion, digits = 2)) %>% 
+  arrange(desc(proporcion)) %>% 
+  slice(1:25) %>% 
+  ggplot(mapping = aes(x = fct_reorder(municipio, proporcion),
+                       y = proporcion,
+                       label = str_c(proporcion, "%"))) +
+  geom_col() +
+  geom_label() +
+  coord_flip() +
+  xlab("Municipio") +
+  ylab("Proporción") +
+  ggtitle("25 municipios de mayor participación en área sembrada") +
+  theme_minimal()
+```
+
+## Agrupadas
+
+```{r, fig.width=8, fig.height=30}
+datos_final %>% 
+  filter(cultivo == "ARVEJA") %>% 
+  filter(year == 2019) %>% 
+  group_by(municipio, semestre) %>% 
+  summarise(total_area = sum(area_sembrada_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(semestre) %>% 
+  mutate(total_depto = sum(total_area, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(proporcion = total_area / total_depto) %>% 
+  ggplot(mapping = aes(x = municipio, y = total_area, fill = semestre)) +
+  geom_col(position = "fill") +
+  coord_flip()
+```
+
+# Distribuciones
+
+## Histogramas
+
+- ¿Cómo es la distribución del rendimiento para el cultivo de papa en el año 2019?
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = rendimiento_t_ha)) +
+  geom_histogram(color = "black")
+```
+
+- Graficando todos los años:
+
+```{r, fig.width=8}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  ggplot(mapping = aes(x = rendimiento_t_ha)) +
+  geom_histogram(color = "black") +
+  facet_wrap(facets = ~year, scales = "free")
+```
+
+## Densidades individual
+
+- ¿Cómo es la distribución del rendimiento para el cultivo de papa en el año 2019?
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  filter(year == 2019) %>%
+  ggplot(mapping = aes(x = rendimiento_t_ha)) +
+  geom_density()
+```
+
+## Densidades agrupadas
+
+- Comparar a través de densidades la distribución de la variable rendimiento para los años 2017, 2018 y 2019 en el cultivo de papa.
+
+```{r}
+datos_final %>% 
+  filter(year %in% c(2017, 2018, 2019)) %>% 
+  filter(cultivo == "PAPA") %>% 
+  ggplot(mapping = aes(x = rendimiento_t_ha, fill = as.factor(year))) +
+  geom_density(alpha = 0.5) +
+  labs(x = "Rendimiento", y = "Densidad", fill = "Año") +
+  scale_fill_manual(values = c("red", "yellow2", "blue")) +
+  theme_minimal()
+```
+
+## Boxplot
+
+```{r}
+datos_final %>% 
+  filter(year %in% c(2017, 2018, 2019)) %>% 
+  filter(cultivo == "PAPA") %>% 
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha)) +
+  geom_boxplot(color = "forestgreen", fill = "forestgreen", alpha = 0.4)
+```
+
+- El mismo gráfico anterior con interactividad:
+
+```{r}
+library(plotly)
+
+ggplotly(
+  datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha)) +
+  geom_boxplot(color = "forestgreen", fill = "forestgreen", alpha = 0.4)
+)
+```
+
+- EJemplo estático:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>%
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha,
+                       fill = semestre)) +
+  geom_boxplot()
+```
+
+- EJemplo interactivo:
+
+```{r}
+ggplotly(
+  datos_final %>% 
+  filter(cultivo == "PAPA") %>%
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha,
+                       fill = semestre)) +
+  geom_boxplot()
+) %>% 
+  layout(boxmode='group')
+```
+
+- Ejemplo:
+
+```{r}
+ggplotly(
+  datos_final %>% 
+  filter(year %in% c(2017, 2018, 2019)) %>% 
+  filter(cultivo == "PAPA") %>% 
+  ggplot(mapping = aes(x = rendimiento_t_ha, fill = as.factor(year))) +
+  geom_density(alpha = 0.5) +
+  labs(x = "Rendimiento", y = "Densidad", fill = "Año") +
+  scale_fill_manual(values = c("red", "yellow2", "blue")) +
+  theme_minimal()
+)
+```
+
+## Violín
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>%
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha,
+                       fill = semestre)) +
+  geom_violin()
+```
+
+## Boxplot + Violín
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>%
+  ggplot(mapping = aes(x = as.factor(year), y = rendimiento_t_ha)) +
+  geom_violin() +
+  geom_boxplot(width = 0.3)
+```
+
+# Relaciones x-y
+
+## Diagrama de dispersión
+
+- ¿Los departamentos que mayor área cosechada presentan también son los de mayor rendimiento, para el cultivo de papa en el año 2019?
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha)) +
+  geom_point()
+```
+
+- Podemos agregar una línea de tendencia (modelo lineal) al gráfico anterior:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+- Otro ejemplo:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_sembrada_ha, y = area_cosechada_ha)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+  
+```
+
+- Relación de área cosechada y rendimiento  por cultivo.
+
+```{r, fig.width=8, fig.height=8}
+cultivos_ejemplo <- levels(as.factor(datos_final$cultivo))[1:20]
+datos_final %>% 
+  filter(cultivo %in% cultivos_ejemplo) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha)) +
+  geom_point() +
+  facet_wrap(facets = ~cultivo, scales = "free", ncol = 4) +
+  geom_smooth(method = "lm")
+```
+
+- Ejemplo con tres variables (size):
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "ARRACACHA") %>%
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha,
+                       size = produccion_t)) +
+  geom_point() +
+  geom_smooth(method = "lm", show.legend = FALSE)
+```
+
+- Ejemplo con tres variables (color):
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "ARRACACHA") %>%
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha,
+                       color = produccion_t)) +
+  geom_point() +
+  geom_smooth(method = "lm", show.legend = FALSE) +
+  scale_color_viridis_c()
+```
+
+- Diagrama de dispersión con grupos:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "ARRACACHA") %>%
+  filter(year == 2019) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha,
+                       color = semestre)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+
+## Densidad 2D
+
+```{r}
+datos_final %>%
+  filter(area_cosechada_ha < 5000) %>% 
+  ggplot(mapping = aes(x = area_cosechada_ha, y = rendimiento_t_ha)) +
+  geom_bin2d() +
+  geom_smooth(method = "lm", color = "red")
+```
+
+## Y vs tiempo
+
+- Comportamiento promedio del cultivo de papa para la variable rendimiento a través de los años:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(year) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = year, y = promedio_rto)) +
+  geom_point() +
+  scale_x_continuous(breaks = c(2011:2019)) +
+  geom_line()
+```
+
+- El mismo gráfico anterior con grupos (semestre):
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(year, semestre) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = year, y = promedio_rto, color = semestre)) +
+  geom_point() +
+  scale_x_continuous(breaks = c(2011:2019)) +
+  geom_line()
+```
+
+# Correlograma
+
+- La correlación se puede calcular con la función cor():
+
+```{r}
+cor(x = datos_final$area_sembrada_ha, y = datos_final$rendimiento_t_ha,
+    use = "pairwise.complete.obs")
+```
+
+- Matriz de correlaciones para el cultivo aguacate en el año 2019:
+
+```{r}
+# Base de datos para matriz de correlaciones
+aguacate <- datos_final %>% 
+  filter(cultivo == "AGUACATE") %>% 
+  filter(year == 2019) %>% 
+  select(area_sembrada_ha:rendimiento_t_ha)
+
+# Matriz de correlaciones
+matriz_cor <- aguacate %>% cor()
+matriz_cor
+```
+
+- Graficando correlaciones con el paquete corrplot:
+
+```{r}
+library(corrplot)
+matriz_cor %>% 
+  corrplot()
+```
+
+- Mejorando el gráfico anterior:
+  - Eliminar la diagonal porque es la correlación de la variable con ella misma.
+  - Mantener sólo una de las dos diagonales porque la matriz es simétrica.
+  - Cambiar el círculo por diagramas de pastel
+  - Cambiar color del texto
+  - Rotar el texto
+  
+```{r}
+matriz_cor %>% 
+  corrplot(
+    diag = FALSE,
+    type = "lower",
+    method = "pie",
+    tl.col = "black",
+    tl.srt = 25
+  )
+```
+
+# Incertidumbre
+
+## Bandas de confianza
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(year) %>% 
+  summarise(mediana_rto = median(rendimiento_t_ha, na.rm = TRUE),
+            percentil5 = quantile(rendimiento_t_ha, probs = 0.05, na.rm = TRUE),
+            percentil95 = quantile(rendimiento_t_ha, probs = 0.95, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = year, y = mediana_rto,
+                       ymin = percentil5, ymax = percentil95)) +
+  geom_ribbon(fill = "blue", alpha = 0.5) +
+  geom_line(color = "blue") +
+  scale_x_continuous(breaks = c(2011:2019))
+```
+
+## Barras con errores
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(semestre) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE),
+            desv_rto = sd(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = semestre, y = promedio_rto,
+                       ymin = promedio_rto - desv_rto,
+                       ymax = promedio_rto + desv_rto)) +
+  geom_col() +
+  geom_errorbar(width = 0.1)
+```
+
+- El mismo gráfico anterior con puntos:
+
+```{r}
+datos_final %>% 
+  filter(cultivo == "PAPA") %>% 
+  group_by(semestre) %>% 
+  summarise(promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE),
+            desv_rto = sd(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = semestre, y = promedio_rto,
+                       ymin = promedio_rto - desv_rto,
+                       ymax = promedio_rto + desv_rto)) +
+  geom_point() +
+  geom_errorbar(width = 0.1)
+```
+
 
 # Anexos
 
@@ -80,4 +557,5 @@ levels(as.factor(datos_inicial$MUNICIPIO))
 ```{r}
 length(levels(as.factor(datos_inicial$MUNICIPIO)))
 ```
+
 
