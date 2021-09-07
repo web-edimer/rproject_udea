@@ -48,12 +48,13 @@ intro_image_hide_on_mobile: true
     
 - **Unidad 3: Inferencia Estadística**
     + [08-Inferencia: introducción](/temas/Statistics/08-Inferencia-Intro/08-Inferencia-Intro.html)
+    + [09-Distribución de medias muestrales](/temas/Statistics/09-Estadisticos-Muestrales/09-Estadisticos-Muestrales.html)
 
 - **Unidad 4: Diseño de Experimentos**
-    + [09-Diseño de Experimentos](/temas/Statistics/)
+    + [10-Diseño de Experimentos](/temas/Statistics/)
 
 - **Unidad 5: Diseños Factoriales**
-    + [10-Diseños Factoriales](/temas/Statistics/)
+    + [11-Diseños Factoriales](/temas/Statistics/)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [11-Correlación y Regresión Lineal](/temas/Statistics/)
+    + [12-Correlación y Regresión Lineal](/temas/Statistics/)

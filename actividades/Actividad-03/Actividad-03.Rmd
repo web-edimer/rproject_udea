@@ -41,7 +41,7 @@ datos %>%
                                        "Construccion", "Comercio", "Impuestos")) %>% 
   ggplot(aes(x = year, y = value, color = actividades_economicas)) +
   geom_point() +
-  geom_line(aes(group = actividades_economicas)) +
+  geom_line() +
   labs(x = "Año", y = "Crecimiento del PIB (%)") +
   theme_minimal()
 ```
