@@ -14,6 +14,7 @@ intro_image_hide_on_mobile: true
 - [04-Ejemplo manipulación de datos en R](https://rpubs.com/Edimer/792751) ([Descargar .Rmd](/temas/Guides/examples_rproject/03-Manejo-datos-dplyr.Rmd))
 - [05-Ejemplos con dplyr](https://rpubs.com/Edimer/798751) ([Descargar .Rmd](/temas/Guides/examples_rproject/04-ejemplos-dplyr.Rmd))
 - [06-Visualización con ggplot2](https://rpubs.com/Edimer/799561) ([Descargar .Rmd](/temas/Guides/examples_rproject/05-graficos-ggplot2.Rmd))
+- [07-Mapas con R](https://rpubs.com/Edimer/806736) ([Descargar .Rmd](/temas/Guides/examples_rproject/06-mapas.Rmd))
 
 <br>
 

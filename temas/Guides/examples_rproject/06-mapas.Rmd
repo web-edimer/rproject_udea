@@ -1,0 +1,116 @@
+---
+title: "Mapas con R"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Mapas con raster
+
+## Colombia
+
+- La nomenclatura para acceder a los mapas de Colombia es "COL".
+
+```{r}
+library(raster)
+colombia_pais <- getData(name = "GADM", country = "COL", level = 0)
+class(colombia_pais)
+```
+
+- Graficando mapa:
+
+```{r}
+plot(colombia_pais)
+```
+
+## Colombia - departamentos 
+
+```{r}
+colombia_depto <- getData(name = "GADM", country = "COL", level = 1)
+plot(colombia_depto)
+```
+
+## Colombia - municipios
+
+```{r}
+colombia_muni <- getData(name = "GADM", country = "COL", level = 2)
+plot(colombia_muni)
+```
+
+# Departamentos importado
+
+```{r}
+colombia_depto2 <- readRDS("gadm36_COL_1_sp.rds")
+plot(colombia_depto2)
+```
+
+- Conversión a tipo sf:
+
+```{r}
+library(sf)
+prueba <- st_as_sf(colombia_depto2)
+prueba
+```
+
+# Ejemplo 1
+
+- Vamos a resumir los datos de evaluaciones agropecuarias para el cultivo de aguacate en el año 2020 por departamento.
+
+```{r}
+# Código para resumir datos de evaluaciones agropecuarias
+library(tidyverse)
+library(janitor)
+datos <-
+  read_csv("Evaluaciones_Agropecuarias_Municipales___EVA._2019_-_2020.csv") %>% 
+  clean_names() %>% 
+  filter(cultivo == "Aguacate") %>% 
+  filter(ano == 2020) %>% 
+  group_by(departamento) %>%
+  summarise(total_area_sembrada = sum(area_sembrada_ha, na.rm = TRUE),
+            total_area_cosechada = sum(area_cosechada_ha, na.rm = TRUE),
+            total_produccion = sum(produccion_t, na.rm = TRUE),
+            promedio_rto = mean(rendimiento_t_ha, na.rm = TRUE)) %>% 
+  ungroup()
+
+datos
+```
+
+- Editamos el nombre del departamento en la base de datos "prueba" y luego unimos la información del aguacate por departamento: 
+
+```{r}
+prueba %>% 
+  rename(departamento = NAME_1) %>% 
+  left_join(y = datos, by = "departamento") %>% 
+  ggplot(mapping = aes(fill = promedio_rto)) +
+  geom_sf()
+```
+
+- Mejorando el mapa anterior:
+
+```{r}
+library(scales)
+prueba %>% 
+  rename(departamento = NAME_1) %>% 
+  left_join(y = datos, by = "departamento") %>% 
+  ggplot(mapping = aes(fill = promedio_rto)) +
+  geom_sf(color = "white") +
+  scale_fill_viridis_c(
+    trans = "log10",
+    breaks = trans_breaks(trans = "log10",
+                          inv = function(x) round(10 ^ x, digits = 1))
+  ) +
+  theme_void()
+```
+
