@@ -1,0 +1,62 @@
+---
+title: "Simulación intervalos de confianza para la media"
+subtitle: "Ejemplo con una muestra"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Simulado población
+
+- Vamos a simular una población de tamaño 1000 bajo la distribución normal, con media igual a 45.2 y desviación estándar igual a 11.2
+
+```{r}
+set.seed(123)
+poblacion <- rnorm(n = 1000, mean = 45.2, sd = 11.2)
+```
+
+# Extracción de una muestra
+
+- La extracción de la muestra la hacemos a través de la función sample(). Importante que sea muestreo con reemplazo.
+
+```{r}
+set.seed(123)
+muestra <- sample(x = poblacion, size = 100, replace = TRUE)
+```
+
+- Calculamos el estadístico muestral, es decir, el promedio en la muestra:
+
+```{r}
+mean(muestra)
+```
+
+# Etapas
+
+## Juego de hipótesis
+
+- Queremos contrastar si el promedio de la muestra es igual o diferente a 45.2
+
+$$H_0: \mu = 45.2  \\
+H_1: \mu \neq 45.2$$
+
+## Nivel de significancia
+
+- El nivel de significancia $\alpha = 0.05$, es decir, que tenemos un nivel de confianza del 95%.
+
+## Calcular el valor P
+
+- En este caso vamos a implementar la prueba t-student para contrastar el juego de hipótesis.
+
+```{r}
+t.test(x = muestra,
+       mu = 45.2,
+       alternative = "two.sided",
+       conf.level = 0.95)
+```
+

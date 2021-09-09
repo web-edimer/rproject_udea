@@ -105,3 +105,235 @@ rbinom(n = 100, size = 20, prob = 0.5) %>%
   barplot()
 ```
 
+## Distribución Poisson
+
+Si el número promedio de picaduras de una plaga cualquiera por semilla es 
+0.2 (es decir, que en promedio, de cada 100 semillas, 20 tienen picadura). 
+
+### Punto 1
+
+- ¿Cuántas de 100 semillas no tendrán picadura? $P(X=0)$
+
+```{r}
+(0.2^0 *  exp(1)^-0.2) / factorial(0)
+```
+
+- En R:
+
+```{r}
+dpois(x = 0, lambda = 0.2)
+```
+
+### Punto 2
+
+- ¿Cuántas tendrán una sola picadura? $P(X =1)$
+
+```{r}
+dpois(x = 1, lambda = 0.2)
+```
+
+### Punto 3
+
+- ¿Cuántas tendrán más de 1 picadura? $P(X > 1)$
+
+```{r}
+# Una opción:
+1 - sum(dpois(x = 0:1, lambda = 0.2))
+
+# Otra opción:
+1 - ppois(q = 1, lambda = 0.2, lower.tail = TRUE)
+
+# Otra opción:
+ppois(q = 1, lambda = 0.2, lower.tail = FALSE)
+```
+
+## Distribución geométrica
+
+Suponga que de registros históricos en una fábrica dedicada a producir bombillos, se conoce que la probabilidad de que un bombillo esté dañado es 0.01. Se asume que los bombillos evaluados son independientes.
+
+### Punto 1
+
+- La probabilidad de que se necesite analizar exactamente 125 bombillos para encontrar uno defectuoso. $P(X = 125)$
+
+```{r}
+0.01 * (1 - 0.01)^(125 - 1)
+```
+
+- Con R:
+
+```{r}
+dgeom(x = 125, prob = 0.01)
+```
+
+### Punto 2
+
+- La probabilidad de que se necesite analizar máximo 50 bombillos para encontrar uno defectuoso.
+
+```{r}
+pgeom(q = 50, prob = 0.01, lower.tail = TRUE)
+```
+
+### Punto 3
+
+- La esperanza matemática.
+
+```{r}
+1 / 0.01
+```
+
+## Distribución binomial negativa
+
+- Una pareja desea intentar tener hijos hasta que tengan dos niñas. Si la probabilidad de nacer mujer es igual a 0.5, calcular:
+
+### Punto 1
+
+- La probabilidad de que la pareja lo logre en exactamente 2 nacimientos
+
+```{r}
+dnbinom(x = 0, size = 2, prob = 0.5)
+```
+
+### Punto 2
+
+- La probabilidad de que la pareja lo logre en cuatro o más nacimientos
+
+```{r}
+1 - sum(dnbinom(x = 0:1, size = 2, prob = 0.5))
+```
+
+
+### Punto 3
+
+- Promedio de nacimientos para lograr tener 2 hijas
+
+```{r}
+2 / 0.5
+```
+
+## Distribución hipergeométrica
+
+Un lote de bovinos contiene 100 animales alimentados con la dieta A y 200 animales alimentados con la dieta B. Si se escogen 4 animales al azar, sin reemplazo. Obtener:
+
+### Punto 1
+
+- La probabilidad de que todos los bovinos sean alimentados con la dieta A.
+  - x: valor que toma la variable aleatoria
+  - m: k para la dieta A (100)
+  - n: k para la dieta B (200)
+  - k: tamaño de la muestra
+  
+```{r}
+dhyper(x = 4, m = 100, n = 200, k = 4)
+```
+
+### Punto 2
+
+- La probabilidad de que dos o más bovinos sean alimentados con la dieta A.
+
+```{r}
+sum(dhyper(x = 2:4, m = 100, n = 200, k = 4))
+```
+
+# Distribuciones continuas
+
+## Distribución exponencial
+
+- De registros históricos se sabe que en promedio, un rayo causa la muerte a tres personas cada año en determinado país. Obtener:
+
+### Punto 1
+
+- La probabilidad de que el tiempo hasta la próxima muerte sea menor a un año. $P(X<1)$
+
+```{r}
+pexp(q = 1, rate = 3, lower.tail = TRUE)
+```
+
+### Punto 2 
+
+- La probabilidad de que el tiempo hasta la próxima muerte sea mayor a 18 meses $P(X>1.5)$
+
+```{r}
+1- pexp(q = 1.5, rate = 3, lower.tail = FALSE)
+```
+
+- Simulando la distribución exponencial con lambda igual a 3.
+
+```{r}
+set.seed(123)
+plot(density(rexp(n = 100, rate = 3)))
+```
+
+## Distribución normal
+
+### Manual
+
+ Si X sigue una distribución normal con media igual a 10 y sigma igual a 2. ¿Cuál es la probabilidad de que la medida de la variable aleatoria X esté entre 9 y 11?
+
+```{r}
+# Estandarización x=9
+(9 - 10 ) / 2
+
+# Estandarización x=11
+(11 - 10) / 2
+```
+
+- En la tabla Z el valor para un z = -0.5 es 0.3085 y para un valor de z = 0.5 es 0.6915.
+
+$$0.6915 - 0.3085 = 0.383$$
+
+### Con R
+
+- Con la distribución normal estándar (media = cero y sd = 1):
+
+```{r}
+pnorm(q = -0.5, mean = 0, sd = 1)
+pnorm(q = 0.5, mean = 0, sd = 1)
+```
+
+- Con la distribución normal original (media = 10, sd = 2):
+
+```{r}
+pnorm(q = 9, mean = 10, sd = 2)
+pnorm(q = 11, mean = 10, sd = 2)
+```
+
+### Simulación
+
+```{r}
+set.seed(123)
+poblacion <- rnorm(n = 1000000, mean = 34.5, sd = 4.3)
+```
+
+- Calcular la media y la desviación estándar de la población simulada:
+
+```{r}
+media <- mean(poblacion)
+desviacion <- sd(poblacion)
+```
+
+- Calculando porcentajes entre -1 y +1 desviación estándar:
+
+```{r}
+mas1_de <- media + desviacion
+menos1_de <- media - desviacion
+
+sum(poblacion > menos1_de & poblacion < mas1_de) / length(poblacion)
+```
+
+- Calculando porcentajes entre -2 y +2 desviación estándar:
+
+```{r}
+mas2_de <- media + (desviacion * 2)
+menos2_de <- media - (desviacion * 2)
+
+sum(poblacion > menos2_de & poblacion < mas2_de) / length(poblacion)
+```
+
+- Calculando porcentajes entre -3 y +3 desviación estándar:
+
+```{r}
+mas3_de <- media + (desviacion * 3)
+menos3_de <- media - (desviacion * 3)
+
+sum(poblacion > menos3_de & poblacion < mas3_de) / length(poblacion)
+```
