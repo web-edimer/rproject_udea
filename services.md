@@ -28,9 +28,8 @@ intro_image_hide_on_mobile: true
     + [10-Construcción de mapas con R](/temas/10-Mapas/10-Mapas-R.html)
 
 - **Unidad 4: Análisis estadístico de experimentos**
-    + [11-Visualización y análisis estadístico de experimentos]()
-    + [12-Análisis de varianza]()  
-    + [13-Regresión Lineal]()  
+    + [11-Métodos estadísticos con R](/temas/11-Metodos-Estadisticos/11-Metodos-Estadisticos.html)
+    + [12-Correlación y regresión lineal](/temas/12-RegLineal/12-RegLineal.html)  
 
 # Temas Estadística
 
