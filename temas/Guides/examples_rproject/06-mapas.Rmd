@@ -114,3 +114,85 @@ prueba %>%
   theme_void()
 ```
 
+# Mapa Antioquia
+
+- Conversión del objeto "colombia_muni" a tipo "sf" a través de la función st_as_sf():
+
+```{r}
+municipios_sf <- st_as_sf(colombia_muni)
+municipios_sf
+```
+
+- Filtrando sólo datos para Antioquia:
+
+```{r}
+antioquia_sf <- municipios_sf %>% 
+  filter(NAME_1 == "Antioquia")
+antioquia_sf
+```
+
+- Graficamos el mapa de Antioquia con sus municipios:
+
+```{r}
+antioquia_sf %>% 
+  ggplot() +
+  geom_sf()
+```
+
+# Mapa Apartadó
+
+```{r}
+antioquia_sf %>% 
+  filter(NAME_2 == "Apartadó") %>% 
+  ggplot() + 
+  geom_sf()
+```
+
+# Ejemplo 2: Covid-19
+
+- Importar el archivo shape (.shp) con los datos de covid 19 actualizados al 09 de septiembre de 2021: 
+
+```{r}
+covid <- read_sf("Colombia_COVID19_Coronavirus_Departamento/Colombia_COVID19_Coronavirus_Departamento.shp")
+covid
+```
+
+- Graficamos el mapa de casos de covid-19 en Colombia:
+
+```{r}
+covid %>% 
+  ggplot(mapping = aes(fill = Casos_Conf)) +
+  geom_sf()
+```
+
+- Mejorando el mapa anterior:
+
+```{r}
+covid %>% 
+  ggplot(mapping = aes(fill = Casos_Conf)) +
+  geom_sf() +
+  scale_fill_viridis_c(
+    trans = "log10",
+    breaks = trans_breaks(trans = "log10",
+                          inv = function(x) round(10 ^ x, digits = 0))
+  ) +
+  labs(fill = "Casos Covid-19") +
+  theme_void()
+```
+
+- El mismo mapa anterior con otra paleta de colores:
+
+```{r}
+covid %>% 
+  ggplot(mapping = aes(fill = Casos_Conf)) +
+  geom_sf() +
+  scale_fill_viridis_c(
+    option = "C",
+    trans = "log10",
+    breaks = trans_breaks(trans = "log10",
+                          inv = function(x) round(10 ^ x, digits = 0))
+  ) +
+  labs(fill = "Casos Covid-19") +
+  theme_void()
+```
+

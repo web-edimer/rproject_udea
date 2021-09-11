@@ -16,6 +16,10 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
                       warning = FALSE, message = FALSE)
 ```
 
+# Parte 1 (50%)
+
+# Parte 2 (50%)
+
 # Fecha y formato de entrega
 
 - **Fecha:** máximo el 01 de octubre de 2021 hasta de las 11:59 pm.
