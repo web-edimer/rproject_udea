@@ -1,0 +1,106 @@
+---
+title: "Simulaciones del Teorema del Límite Central (TLC)"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Simulación granos defectuosos
+
+- Conformando la bolsa completa de granos defectuosos y no defectuosos. En este caso vamos a asumir que la bolsa tiene 500 granos, de los cuales el 4.6% son defectuosos.
+
+```{r}
+# Conformando la bolsa de granos
+total_granos <- 500
+porcentaje_defectuosos <- 4.6 / 100
+total_defectuosos <- total_granos * porcentaje_defectuosos
+total_buenos <- total_granos - total_defectuosos
+
+bolsa_granos <- c(rep("Defectuoso", total_defectuosos),
+                  rep("Bueno", total_buenos))
+```
+
+- Calculando la proporción de granos defectuosos y buenos:
+
+```{r}
+prop.table(table(bolsa_granos))
+```
+
+- Tomamos una muestra de tamaño 15:
+
+```{r}
+set.seed(123)
+muestra_ejemplo <- sample(x = bolsa_granos, size = 15, replace = TRUE)
+prop.table(table(muestra_ejemplo))
+```
+
+- Vamos a realizar el mismo experimento 25 veces y calculamos el promedio de la proporción:
+
+```{r}
+library(tidyverse)
+set.seed(2021)
+simulacion1 <- tibble(repeticion = 1:25) %>% 
+  mutate(muestra = map(.x = repeticion, .f = ~sample(
+    x = bolsa_granos,
+    size = 15,
+    replace = TRUE
+  )),
+  proporcion = map(.x = muestra, .f = ~prop.table(table(.x))[2])) %>% 
+  unnest(proporcion)
+
+# Promedio
+mean(simulacion1$proporcion, na.rm = TRUE)
+```
+
+- Replicamos el muestreo anterior 100 veces, con tamaño muestral de 80:
+
+```{r}
+promedio <- c()
+set.seed(2021)
+for (i in 1:100) {
+  simulacion1 <- tibble(repeticion = 1:25) %>%
+    mutate(
+      muestra = map(
+        .x = repeticion,
+        .f = ~ sample(
+          x = bolsa_granos,
+          size = 80,
+          replace = TRUE
+        )
+      ),
+      proporcion = map(.x = muestra, .f = ~ prop.table(table(.x))[2])
+    ) %>%
+    unnest(proporcion)
+  
+  # Promedio
+  promedio[i] <- mean(simulacion1$proporcion, na.rm = TRUE)
+}
+```
+
+- Observamos el resultado de las 100 iteraciones:
+
+```{r}
+promedio
+```
+
+- Calculamos el promedio de las medias muestrales:
+
+```{r}
+mean(promedio)
+```
+
+- Graficamos la distribución de las medias muestrales:
+
+```{r}
+enframe(x = promedio, name = "replica", value = "proporcion") %>% 
+  ggplot(mapping = aes(x = proporcion)) +
+  geom_density() +
+  geom_vline(xintercept = 0.046, color = "red")
+```
+

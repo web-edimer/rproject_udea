@@ -28,6 +28,7 @@ intro_image_hide_on_mobile: true
 - [05-Solución ejercicios de probabilidad](https://rpubs.com/Edimer/798438) ([Descargar .Rmd](/temas/Guides/examples_statistics/04-solucion-probabilidad.Rmd))
 - [06-Distribuciones de probabilidad](https://rpubs.com/Edimer/801814) ([Descargar .Rmd](/temas/Guides/examples_statistics/05-distribuciones-probabilidad.Rmd))
 - [07-Simulación intervalos de confianza para la media](https://rpubs.com/Edimer/806674) ([Descargar .Rmd](/temas/Guides/examples_statistics/06-simulacion-intervalos-media.Rmd))
+- [08-Simulaciones Teorema del Límite Central](https://rpubs.com/Edimer/809899) ([Descargar .Rmd](/temas/Guides/examples_statistics/07-simulaciones-TLC.Rmd))
 <br>
 
 # Guías
