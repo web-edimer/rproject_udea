@@ -1,6 +1,6 @@
 ---
 title: "R Project en Experimentación Animal"
-subtitle: "Borrador"
+subtitle: "Actividad 04"
 author: "Edimer David Jaramillo"
 date: "`r Sys.Date()`"
 output:
