@@ -1,0 +1,26 @@
+---
+title: "R Project en Experimentación Animal"
+subtitle: "Actividad 4"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    highlight: pygments
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
+                      warning = FALSE, message = FALSE)
+```
+
+# Parte 1 (50%)
+
+# Parte 2 (50%)
+
+# Fecha y formato de entrega
+
+- **Fecha:** máximo el 01 de octubre de 2021 hasta de las 11:59 pm.
+- **Formato:** documento *HTML*

@@ -1,6 +1,6 @@
 ---
 title: "R Project en Experimentación Animal"
-subtitle: "Actividad 4"
+subtitle: "Borrador"
 author: "Edimer David Jaramillo"
 date: "`r Sys.Date()`"
 output:
@@ -12,15 +12,73 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.align = "center",
+knitr::opts_chunk$set(echo = TRUE, fig.align = "center",
                       warning = FALSE, message = FALSE)
 ```
 
-# Parte 1 (50%)
+# Ejercicio 1
 
-# Parte 2 (50%)
+- En la base de datos `Soils` del paquete `car` hay información de muestras de suelo provenientes de cuatro áreas diferentes (`Block`), en tres tipos de contornos (`Top`, `Slope`, y `Depression`) y tomadas a cuatro profundidades (`0-10`, `10-30`, `30-60`, `60-90`). Realizar los siguientes procedimientos:
+  - Construya un gráfico que permita comparar los tres tipos de topografías para las variables pH, Ca y N.
+  - Grafique el correlograma con las variables numéricas de la base de datos e interprete los resultados.
+  - Ejecute un modelo de regresión lineal simple donde la variable respuesta es el calcio y la variable predictora es el pH. Interprete los resultados del modelo. 
 
+```{r}
+library(car)
+Soils
+```
+
+# Ejercicio 2
+
+- Se realizó un experimento donde se midió la producción de vainas de fríjol por cada planta, en 12 unidades experimentales bajo las mismas condiciones. La muestra está compuesta por las siguientes observaciones:
+
+```{r}
+vainas_frijol <- c(18, 11, 17, 10, 20, 25, 13, 16, 25, 20, 19, 20)
+```
+
+- Verifique a través de gráficos y contraste de hipótesis si esta variable se distribuye de forma normal. Utilice un nivel de significancia $\alpha$ del 5%.
+- El proveedor que suministró las semillas para el experimento aseguró que en promedio se espera una producción de 25 vainas por planta. A través de una prueba estadística verifique si lo que sugiere el proveedor es cierto.
+
+# Ejercicio 3
+
+- Con la base de datos [Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/p5fp-pay3) replique el siguiente gráfico y concluya en cuáles departamentos se podría admitir que la variable rendimiento en toneladas por hectárea  (para el año 2020 y el cultivo de aguacate) se distribuye de forma normal.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=8}
+library(tidyverse)
+library(janitor)
+datos <- read_csv("https://www.datos.gov.co/api/views/p5fp-pay3/rows.csv?accessType=DOWNLOAD") %>% 
+  clean_names()
+
+datos %>% 
+  filter(cultivo == "Aguacate") %>% 
+  filter(ano == 2020) %>% 
+  ggplot(aes(sample = rendimiento_t_ha)) +
+  facet_wrap(~departamento, ncol = 5, scales = "free") +
+  geom_qq() +
+  geom_qq_line()
+  
+```
+
+# Ejercicio 4
+
+- La base de datos `PlantGrowth` contiene información de un experimento en el que se analizó el rendimiento (medido por el peso seco de las plantas) y se compararon tres tratamientos. Ejecute el análisis de varianza y contraste la siguiente hipótesis con un nivel de significancia del 10%. **Nota:** interprete los resultados.
+
+$$H_0: \mu_{control} = \mu_{T1} = \mu_{T2} \\
+H_1: \mu_i \neq \mu_j$$
+
+```{r}
+# Cargar base de datos
+PlantGrowth
+```
+
+# Ejercicio 5
+
+- Obtenga una base de datos (puede ser de internet, de un experimento previo, de un ejemplo en clase, etc.) a partir de la cual pueda implementar los siguientes procedimientos:
+  - Analice la normalidad de una variable de interés
+  - Ejecute una prueba estadística adecuada (tenga en cuenta el resultado del punto anterior) para verificar diferencias entre dos grupos.
+  - Suministre un gráfico que permita intuir la posible diferencia entre los dos grupos.
+  
 # Fecha y formato de entrega
 
 - **Fecha:** máximo el 01 de octubre de 2021 hasta de las 11:59 pm.
-- **Formato:** documento *HTML*
+- **Formato:** documento *HTML*  
