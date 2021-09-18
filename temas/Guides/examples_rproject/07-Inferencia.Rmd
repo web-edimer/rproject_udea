@@ -68,3 +68,144 @@ library(car)
 qqPlot(x = datos$promedio_academico)
 ```
 
+## Pruebas de normalidad
+
+### Juego de hipótesis
+
+- El juego de hipótesis para contrastar la normalidad es el siguiente:
+
+$$H_0: Sí\ hay\ normalidad = X \sim N(\mu, \sigma)  \\
+H_1: No\ hay\ normalidad = X \nsim N(\mu, \sigma)$$
+
+### Nivel de significancia
+
+- En este caso vamos a usar un nivel de significancia $\alpha$ del 1%, es decir, 0.01.
+
+### Shapiro-Wilk
+
+- **Conclusión:** como el valor p es mayor que el nivel de significancia del 1%, no existe evidencia para rechazar la hipótesis nula, es decir, que la variable se distribuye de forma normal.
+
+```{r}
+shapiro.test(x = datos$promedio_academico)
+```
+
+### Anderson-Darling
+
+```{r}
+library(nortest)
+ad.test(x = datos$promedio_academico)
+```
+
+# t-student una población
+
+- En este caso estamos interesados en verificar si el promedio del promedio académico de los encuestados difiere estadísticamente de 3.5.
+
+## Juego de hipótesis
+
+$$H_0: \mu= 3.5 \\
+H_1: \mu \neq 3.5$$
+
+## Nivel de significancia
+
+- En este caso usamos un nivel de significancia del 5%.
+
+## Prueba t.test
+
+- `x`: la muestra de datos (variable)
+- `mu`: valor promedio de referencia
+- `alternative`: tipo de contraste de hipótesis, puede ser bilateral ("two.sided") o unilateral ("less" o "greater").
+- `conf.level`: nivel de confianza. Es igual a $1- \alpha= 1-0.05 = 0.95$
+
+```{r}
+t.test(x = datos$promedio_academico,
+       mu = 3.5,
+       alternative = "two.sided",
+       conf.level = 0.95)
+```
+
+- Conclusiones:
+  - Como el valor p (0.0001415) es menor que el nivel de significancia, existe evidencia para rechazar la hipótesis nula, es decir, que el verdadero promedio del promedio académico es diferente de 3.5.
+  - La estimación puntual del promedio es 3.699
+  - Con un nivel de confianza del 95% se espera que el verdadero promedio esté entre 3.60 y 3.79.
+  
+# Wilcoxon una población
+
+- **Nota:** en caso de que la variable no se distribuya de forma normal, es posible implementar la prueba no paramétrica de Wilcoxon.
+
+$$H_0: El\ promedio\ académico\ está\ localizado\ en\ 3.5 \\
+H_1: El\ promedio\ académico\ no\ está\ localizado\ en\ 3.5$$
+
+```{r}
+wilcox.test(x = datos$promedio_academico,
+            mu = 3.5,
+            alternative = "two.sided",
+            conf.level = 0.95)
+```
+
+- Conclusión: como el valor p (0.0001826) es menor que el nivel de significancia (5%), existe evidencia para rechazar la hipótesis nula, es decir, que el promedio académico no está localizado en 3.5.
+
+# t-student dos poblaciones
+
+- En este caso estamos interesados en comparar si el promedio académico difiere estadísticamente entre los estudiantes que trabajan y los que no lo hacen.
+
+## Nivel de significancia
+
+- Tanto para las pruebas de normalidad como para la prueba t-student vamos a utilizar un nivel de significancia del 1%.
+
+## Pruebas de normalidad
+
+- Tenemos que comprobar que la normalidad se cumple en cada grupo (sí trabajan y los que no trabajan)
+
+```{r}
+datos %>% 
+  ggplot(mapping = aes(sample = promedio_academico, color = trabajo)) +
+  facet_wrap(facets = ~trabajo, scales = "free") +
+  geom_qq(show.legend = FALSE) +
+  geom_qq_line(show.legend = FALSE)
+```
+
+- Una base de datos para cada grupo:
+
+```{r}
+si_trabajan <- datos %>% filter(trabajo == "Sí")
+no_trabajan <- datos %>% filter(trabajo == "No")
+```
+
+- Pruebas de Shapiro Wilk para cada grupo:
+
+```{r}
+shapiro.test(x = si_trabajan$promedio_academico)
+shapiro.test(x = no_trabajan$promedio_academico)
+```
+
+- Conclusión: no existe evidencia para rechazar la hipótesis de normalidad en ninguno de los dos grupos, ya que en ambos el valor p es mayor que el nivel de significancia.
+
+## Prueba t.test
+
+$$H_0: \mu_{si} = \mu_{no} \\
+H_1: \mu_{si} \neq \mu_{no}$$
+
+El juego de hipótesis anterior también puede ser planteado de la siguiente manera:
+
+$$H_0: \mu_{si} - \mu_{no} = 0\\
+H_1: \mu_{si} - \mu_{no} \neq 0$$
+
+```{r}
+t.test(datos$promedio_academico ~ datos$trabajo,
+       alternative = "two.sided",
+       conf.level = 0.99)
+```
+
+- Conclusiones:
+  - Como el valor p (0.1284) es mayor que el nivel de significancia, no existe evidencia para rechazar la hipótesis nula, es decir, que la diferencia para el promedio académico entre los estudiantes que sí trabajan y no trabajan, no es estadísticamente significativa.
+  - La estimación puntual para el grupo que no trabaja es 3.75 y para los que sí trabajan es 3.60
+  - Como el intervalo de confianza contiene al cero ([-0.1171464, 0.4125531]), no existe evidencia para rechazar la hipótesis nula, es decir, que la diferencia para el promedio académic de los que sí trabajan y no lo hacen, no es diferente de cero.
+
+# Wilcoxon dos poblaciones
+
+```{r}
+wilcox.test(datos$promedio_academico ~ datos$trabajo,
+            alternative = "two.sided",
+            conf.level = 0.99)
+```
+
