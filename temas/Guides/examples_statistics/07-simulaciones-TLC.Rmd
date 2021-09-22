@@ -104,3 +104,84 @@ enframe(x = promedio, name = "replica", value = "proporcion") %>%
   geom_vline(xintercept = 0.046, color = "red")
 ```
 
+# Simulación con distribución Gaussiana
+
+```{r}
+set.seed(2021)
+poblacion_gaussiana <- rnorm(n = 1000, mean = 130.90, sd = 15.5)
+```
+
+- Realizar extracción de muestras de tamaño 20, 100 veces.
+
+```{r}
+set.seed(2021)
+muestras_gaussianas <- tibble(repeticion = 1:100) %>% 
+  mutate(muestra = map(.x = repeticion, .f = ~sample(
+    x = poblacion_gaussiana,
+    size = 20,
+    replace = TRUE
+  )),
+  promedio = map_dbl(.x = muestra, .f = mean))
+
+muestras_gaussianas
+```
+
+- Calculamos el promedio de los promedios muestrales:
+
+```{r}
+mean(muestras_gaussianas$promedio)
+```
+
+- Graficamos la distribución de las medias muestrales:
+
+```{r}
+muestras_gaussianas %>% 
+  ggplot(mapping = aes(x = promedio)) +
+  geom_density() +
+  geom_vline(xintercept = 130.90, color = "red")
+```
+
+# Simulación distribución Binomial
+
+```{r}
+set.seed(2021)
+poblacion_binomial <- rbinom(n = 1000, size = 20, prob = 0.2)
+```
+
+- El promedio de la población binomial es *n* (*size*) por la probabilidad del éxito (*prob*):
+
+```{r}
+promedio_binomial <- 20 * 0.2
+promedio_binomial
+```
+
+- Extracción de muestras de tamaño 30, 100 veces:
+
+```{r}
+set.seed(2021)
+muestras_binomiales <- tibble(repeticion = 1:100) %>% 
+  mutate(muestra = map(.x = repeticion, .f = ~sample(
+    x = poblacion_binomial,
+    size = 30,
+    replace = TRUE
+  )),
+  promedio = map_dbl(.x = muestra, .f = mean))
+
+muestras_binomiales
+```
+
+- Calculamos el promedio de las medias muestrales:
+
+```{r}
+mean(muestras_binomiales$promedio)
+```
+
+- Graficamos la distribución de las medias muestrales:
+
+```{r}
+muestras_binomiales %>% 
+  ggplot(mapping = aes(x = promedio)) +
+  geom_density() +
+  geom_vline(xintercept = 4, color = "red")
+```
+
