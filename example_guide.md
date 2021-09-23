@@ -42,3 +42,4 @@ intro_image_hide_on_mobile: true
 - [Encuesta (depurada)](/temas/data/encuesta_depurada.xlsx) - [Código depuración.](https://rpubs.com/Edimer/744653)
 - [Encuesta (sin depurar)](/temas/data/encuesta.xlsx)
 - [Datos homicidios departamento del Quindío](/temas/data/homicidios.csv)
+- [Datos experimento con pan](/temas/data/crecimiento_pan.xlsx)
