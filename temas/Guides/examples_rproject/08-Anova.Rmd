@@ -1,0 +1,117 @@
+---
+title: "Ejemplo de análisis de varianza"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    number_sections: yes
+    theme: cerulean
+    highlight: pygments
+    df_print: paged
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Datos de experimento
+
+```{r}
+library(readxl)
+library(tidyverse)
+datos <- read_excel("crecimiento_pan.xlsx")
+datos
+```
+
+- Convertimos la variable tiempo a factor:
+
+```{r}
+datos <- datos %>% 
+  mutate(Tiempo = as.factor(Tiempo))
+datos
+```
+
+# Descriptivos básicos
+
+```{r}
+datos %>% 
+  group_by(Tiempo) %>% 
+  summarise(promedio = mean(Altura),
+            desviacion = sd(Altura))
+```
+
+# Boxplot
+
+```{r}
+datos %>% 
+  ggplot(mapping = aes(x = Tiempo, y = Altura)) +
+  geom_boxplot()
+```
+
+# Análisis de varianza
+
+## Hipótesis
+
+$$H_0: \mu_{35} = \mu_{40} = \mu_{45} \\
+H_1: \mu_i \neq \mu_j$$
+
+## Nivel de significancia
+
+En este caso vamos a utilizar un nivel de significancia del 5% (0.05).
+
+## Modelo
+
+$$y_{ij} = \mu + \beta_j + \epsilon_{ij}$$
+
+## Ajuste del modelo
+
+```{r}
+modelo <- aov(formula = Altura ~ Tiempo, data = datos)
+summary(modelo)
+```
+
+- **Conclusión:** como el valor p (0.042) es menor que el nivel de significancia (0.05) existe evidencia para rechazar la hipótesis nula, es decir, que al menos un par de tratamientos difieren estadísticamente entre sí.
+
+## Diagnósticos del modelo
+
+### Normalidad
+
+$$H_0: \epsilon \sim N(\mu, \sigma) \\
+H_1: \epsilon \nsim N(\mu, \sigma)$$
+
+- Podemos obtener los residuales del modelo con la función residuals():
+
+```{r}
+residuales <- residuals(modelo)
+```
+
+- Gráfico cuantil-cuantil:
+
+```{r}
+library(ggpubr)
+ggqqplot(data = residuales)
+```
+
+- Prueba de shapiro wilk sobre los residuales:
+
+```{r}
+shapiro.test(x = residuales)
+```
+
+- **Conclusión:** como el valor p (0.4046) es mayor que el nivel de significancia (0.05), no existe evidencia para rechazar la hipótesis nula, es decir, que los residuales se distribuyen de forma normal
+
+### Homocedasticidad
+
+$$H_0: Sí\ hay\ homocedasticidad \\
+H_1: No\ hay\ homocedasticidad$$
+
+- Prueba de Bartlett:
+
+```{r}
+bartlett.test(residuales ~ datos$Tiempo)
+```
+
+- **Conclusión:** como el valor p (0.4787) es mayor que el nivel de significancia (0.05) no existe evidencia para rechazar la hipótesis nula, es decir, que los residuales tienen varianza constante (son homocedásticos)

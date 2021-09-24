@@ -16,6 +16,7 @@ intro_image_hide_on_mobile: true
 - [06-Visualización con ggplot2](https://rpubs.com/Edimer/799561) ([Descargar .Rmd](/temas/Guides/examples_rproject/05-graficos-ggplot2.Rmd))
 - [07-Mapas con R](https://rpubs.com/Edimer/806736) ([Descargar .Rmd](/temas/Guides/examples_rproject/06-mapas.Rmd))
 - [08-Inferencia estadística con R](https://rpubs.com/Edimer/810356) ([Descargar .Rmd](/temas/Guides/examples_rproject/07-Inferencia.Rmd))
+- [09-Análisis de varianza con R](https://rpubs.com/Edimer/813598) ([Descargar .Rmd](/temas/Guides/examples_rproject/08-Anova.Rmd))
 
 <br>
 
