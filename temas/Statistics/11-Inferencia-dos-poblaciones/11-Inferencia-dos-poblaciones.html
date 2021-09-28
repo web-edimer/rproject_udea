@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Estadística</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Edimer David Jaramillo" />
+    <meta name="date" content="2021-09-28" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Estadística
+## Inferencia sobre dos poblaciones
+<html>
+<div style="float:left">
+
+</div>
+<hr color='#EB811B' size=1px width=800px>
+</html>
+### Edimer David Jaramillo
+### Universidad de Antioquia
+### 2021-09-28
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Inferencia sobre `\(\mu_1 - \mu_2\)`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# `\(\mu_1 - \mu_2\)`, `\(\sigma\)` desconocidas e iguales
+
+- Comprobar la normalidad.
+- Definir la hipótesis nula y alternativa.
+- Calcular el estadístico
+`$$t = \frac{\bar{x_1}-\bar{x_2}-\delta_0}{S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$`
+
+Donde: 
+`$$S_p = \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$$`
+
+- Definir el error tipo I `\(\alpha\)`
+- Calcular el valor P en una distribución `\(t-student\)` con `\(n_1+n_2-2\)` grados de libertad
+- Comparar el valor P con `\(\alpha\)` y concluir.
+
+---
+
+# `\(\mu_1 - \mu_2\)`, `\(\sigma\)` desconocidas y diferentes
+
+- Comprobar la normalidad y la homocedasticidad (igualdad de varianzas)s.
+- Definir la hipótesis nula y alternativa.
+- Calcular el estadístico
+`$$t = \frac{\bar{x_1}-\bar{x_2}-\delta_0}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}$$`
+
+Donde `\(t \sim t_v\)`, con grados de libertad `\(v\)`:
+
+&lt;center&gt;
+&lt;img src="img/v.png" width="250px" /&gt;
+&lt;/center&gt;
+
+- Definir el error tipo I `\(\alpha\)`
+- Calcular el valor P y concluir
+
+
+---
+
+# Intervalos de confianza para `\(\mu_1 - \mu_2\)`
+
+.panelset[
+
+.panel[.panel-name[Varianzas conocidas]
+
+Si `\(\bar{X_1}\)` y `\(\bar{X_2}\)` son las medias muestrales de dos muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)` de poblaciones normales con varianzas conocidas `\(\sigma^2_1\)` y `\(\sigma^2_2\)`, respectivamente, un intervalo de confianza del `\((1-\alpha)100\%\)` para `\(\mu_1-\mu_2\)` está dado por la siguiente expresión:
+
+&lt;img src="img/difmedia.png" width="650px" height="170px" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[V. Desconocidas e iguales]
+
+Si `\(\bar{X_1}\)` y `\(\bar{X_2}\)` son las medias muestrales de dos muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)` de poblaciones normales con varianzas desconocidas e iguales, un intervalo de confianza del `\((1-\alpha)100\%\)` para `\(\mu_1-\mu_2\)` está dado por la siguiente expresión:
+
+&lt;img src="img/difmedia2.png" width="670px" height="180px" style="display: block; margin: auto;" /&gt;
+
+Donde `\(v = n_1 + n_2 - 2\)` y `\(S_p\)`:
+
+`$$S_p = \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$$`
+
+]
+
+.panel[.panel-name[V. Desconocidas y diferentes]
+
+Si `\(\bar{X_1}\)` y `\(\bar{X_2}\)` son las medias muestrales de dos muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)` de poblaciones normales con varianzas diferentes y desconocidas, un intervalo de confianza del `\((1-\alpha)100\%\)` para `\(\mu_1-\mu_2\)` está dado por la siguiente expresión:
+
+&lt;img src="img/descarga.png" width="650px" height="180px" style="display: block; margin: auto;" /&gt;
+
+Donde `\(v\)`:
+
+&lt;img src="img/v.png" width="320px" height="110px" style="display: block; margin: auto;" /&gt;
+
+]
+
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Inferencia sobre `\(\hat{p_1}-\hat{p_2}\)`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# Prueba de hipótesis para `\(\hat{p_1}-\hat{p_2}\)`
+
+1. Definir la hipóteis nula y alternativa
+3. Calcular el estadístico
+`$$z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}}$$`
+4. Definir el error tipo I `\(\alpha\)`
+5. Calcular el valor P en una distribución `\(t-student\)` con `\(n-1\)` grados de libertad
+6. Comparar el valor P con `\(\alpha\)` y concluir.
+
+---
+
+# Intervalo de confianza para `\(\hat{p_1}-\hat{p_2}\)`
+
+Si `\(\hat{p_1}\)` y `\(\hat{p_2}\)` son las proporciones de éxito de dos muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)`, entonces un intervalo del `\((1-\alpha)100\%\)` para `\(\hat{p_1}-\hat{p_2}\)` está dado por la siguiente expresión:
+
+&lt;img src="img/difp.png" width="580px" height="120px" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse, center, middle
+
+# Inferencia sobre `\(\sigma_1^2/\sigma_2^2\)`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# Prueba de hipótesis para `\(\sigma_1^2/\sigma_2^2\)`
+
+**Previamente:**
+
+  - Comprobar normalidad
+  - Comprobar homogeneidad de varianzas
+
+**Luego:**
+
+- Definir la hipótesis nula y alternativa 
+- Calcular el estadístico
+
+`$$F = \frac{S_1^2}{S_2^2}$$`
+
+- Definir el error tipo I `\(\alpha\)`
+- Calcular el valor P
+- Comparar el valor P con `\(\alpha\)` y concluir
+
+---
+
+# Intervalo de confianza para `\(\sigma^2_1/\sigma^2_2\)`
+
+Si `\(S^2_1\)` y `\(S^2_2\)` son las varianzas muestrales de muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)` de poblaciones normales, un intervalo de confianza del `\((1-\alpha)100\%\)` para `\(\sigma^2_1/\sigma^2_2\)` está dado por la siguiente expresión:
+
+&lt;img src="img/difvar.png" width="680px" height="140px" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+# Ejemplos
+
+---
+class: inverse, center, middle
+
+# [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/index.html)
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/19dafd10a53785f1407566a1f3a09b29a6bab847/1e5f0/images/logos/book_cover.png" width = 300/&gt;
+&lt;/center&gt;
+
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/gracias.gif"/&gt;
+&lt;/center&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -49,12 +49,13 @@ intro_image_hide_on_mobile: true
     + [08-Inferencia: introducción](/temas/Statistics/08-Inferencia-Intro/08-Inferencia-Intro.html)
     + [09-Distribución de medias muestrales](/temas/Statistics/09-Estadisticos-Muestrales/09-Estadisticos-Muestrales.html)
     + [10-Inferencia sobre una población](/temas/Statistics/10-Inferencia-una-poblacion/10-Inferencia-una-poblacion.html)
+    + [11-Inferencia sobre dos poblaciones](/temas/Statistics/11-Inferencia-dos-poblaciones/11-Inferencia-dos-poblaciones.html)
 
 - **Unidad 4: Diseño de Experimentos**
-    + [11-Diseño de Experimentos](/temas/Statistics/)
+    + [12-Diseño de Experimentos](/temas/Statistics/)
 
 - **Unidad 5: Diseños Factoriales**
-    + [12-Diseños Factoriales](/temas/Statistics/)
+    + [13-Diseños Factoriales](/temas/Statistics/)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [13-Correlación y Regresión Lineal](/temas/Statistics/)
+    + [14-Correlación y Regresión Lineal](/temas/Statistics/)
