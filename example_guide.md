@@ -30,6 +30,8 @@ intro_image_hide_on_mobile: true
 - [06-Distribuciones de probabilidad](https://rpubs.com/Edimer/801814) ([Descargar .Rmd](/temas/Guides/examples_statistics/05-distribuciones-probabilidad.Rmd))
 - [07-Simulación intervalos de confianza para la media](https://rpubs.com/Edimer/806674) ([Descargar .Rmd](/temas/Guides/examples_statistics/06-simulacion-intervalos-media.Rmd))
 - [08-Simulaciones Teorema del Límite Central](https://rpubs.com/Edimer/809899) ([Descargar .Rmd](/temas/Guides/examples_statistics/07-simulaciones-TLC.Rmd))
+- [09-Pruebas de normalidad con R](https://rpubs.com/Edimer/815320) ([Descargar .Rmd](/temas/Guides/examples_statistics/08-Pruebas-Normalidad.Rmd))
+- [10-Ejemplos de inferencia estadística](https://rpubs.com/Edimer/815316) ([Descargar .Rmd](/temas/Guides/examples_statistics/09-Ejemplos-Inferencia.Rmd))
 <br>
 
 # Guías

@@ -1,0 +1,72 @@
+---
+title: "Ejemplos de inferencia estadística"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Datos de encuesta
+
+```{r}
+library(readxl)
+library(tidyverse)
+datos <- read_excel("encuesta_depurada.xlsx")
+datos
+```
+
+# Inferencia sobre una población
+
+## Inferencia sobre la media
+
+### Normalidad de la variable
+
+- Se comprobó previamente que la variable promedio_académico se distribuye de forma normal.
+
+### Juego de hipótesis
+
+$$H_0: \mu = 3.5 \\
+H_1: \mu \neq 3.5$$
+
+### Nivel de significancia
+
+- Vamos a utilizar un nivel de significancia del 5% ($\alpha = 0.05$)
+
+### Calcular el estadístico observado
+
+- En este caso calculamos el estadístico T:
+
+$$T = \frac{\bar{X} - \mu}{S/\sqrt{n}}$$
+
+```{r}
+x_barra <- mean(datos$promedio_academico)
+mu_referencia <- 3.5
+desviacion_muestral <- sd(datos$promedio_academico)
+raiz_n <- sqrt(nrow(datos))
+```
+
+$$T = \frac{3.699 - 3.5}{0.2488643/5.477226} = 4.379768$$
+
+```{r}
+(x_barra - mu_referencia) / (desviacion_muestral / raiz_n)
+```
+
+### Región de rechazo
+
+<center>
+<img src = "pruebat1.png" />
+</center>
+
+- Podemos obtener los límites critícos con R:
+
+```{r}
+qt(p = 0.025, df = 29, lower.tail = TRUE)
+qt(p = 0.025, df = 29, lower.tail = FALSE)
+```
+
+- **Conclusión:** como el estadístico calculado (4.379768) está dentro de las regiones de rechazo, existe evidencia para rechazar la hipótesis nula, es decir, que se rechaza que el promedio del promedio_académico sea igual a 3.5. Esto se concluye con un nivel de significancia del 5%.
