@@ -85,6 +85,21 @@ datos_mango
 $$H_0: \mu_{2019} = \mu_{2020} \\ 
 H_0: \mu_{2019} < \mu_{2020}$$
 
+# Ejercicio 8
+
+- Con la base de datos `Soils`, para la variable `pH`, concluya respecto al siguiente juego de hipótesis:
+
+$$H_0: \mu = 4.87 \\
+H_1: \mu \neq 4.87$$
+
+- Para cargar la base de datos `Soils` utilice el siguiente código:
+
+```{r}
+library(car) # Necesario tener instalada esta biblioteca
+Soils
+```
+
+
 # Fecha de entrega
 
 - Máximo 13 de octubre de 2021.
