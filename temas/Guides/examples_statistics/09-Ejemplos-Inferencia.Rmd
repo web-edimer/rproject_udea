@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 output:
   html_document:
     toc: yes
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -70,3 +71,117 @@ qt(p = 0.025, df = 29, lower.tail = FALSE)
 ```
 
 - **Conclusión:** como el estadístico calculado (4.379768) está dentro de las regiones de rechazo, existe evidencia para rechazar la hipótesis nula, es decir, que se rechaza que el promedio del promedio_académico sea igual a 3.5. Esto se concluye con un nivel de significancia del 5%.
+
+### Intervalo de confianza para $\mu$
+
+- Límite inferior del intervalo de confianza:
+
+$$\bar{X} - t_{\alpha/2, n-1} \times \frac{s}{\sqrt{n}}$$
+
+```{r}
+x_barra - (2.045 * (desviacion_muestral / raiz_n))
+```
+
+
+- Límite superior del intervalo de confianza:
+
+$$\bar{X} + t_{\alpha/2, n-1} \times \frac{s}{\sqrt{n}}$$
+
+```{r}
+x_barra + (2.045 * (desviacion_muestral / raiz_n))
+```
+
+- **Conclusión:** como el valor de referencia (3.5) no está dentro del intervalo de confianza, existe evidencia para rechazar la hipótesis nula, es decir, que se rechaza que el promedio del promedio_académico sea igual a 3.5. Esto se concluye con un nivel de significancia del 5%.
+
+### Valor p
+
+- Calcular el área que deja un valor de 4.371917 a la izquierda:
+
+```{r}
+pt(q = -4.371917, df = 29, lower.tail = TRUE)
+```
+
+- Calcular el área que deja un valor de 4.371917 a la derecha:
+
+```{r}
+pt(q = 4.371917, df = 29, lower.tail = FALSE)
+```
+
+- El valor p es la suma de las dor áreas anteriores:
+
+```{r}
+7.228808e-05 + 7.228808e-05
+```
+
+- **Conclusión:** como el valor p (0.0001445762) es menor que el nivel de significancia (0.05) existe evidencia para rechazar la hipótesis.
+
+### Solución con R
+
+- Utilizamos la función t.test() con los siguientes argumentos:
+  - `x:` la variable sobre la cual estamos haciendo inferencia. En este caso el promedio_académico
+  - `alternative`: tipo de hipótesis alternativa. En este es una prueba bilateral usamos "two.sided"
+  - `conf.level`: nivel de confianza (1 - nivel de significancia = 1 - 0.05 = 0.95)
+  - `mu`: valor promedio de referencia. En este caso es 3.5
+
+```{r}
+t.test(x = datos$promedio_academico,
+       alternative = "two.sided",
+       conf.level = 0.95,
+       mu = 3.5)
+```
+
+- Presentando resultados de la prueba anterior, de forma ordenada (tidy):
+
+```{r}
+prueba_t1 <- t.test(
+  x = datos$promedio_academico,
+  alternative = "two.sided",
+  conf.level = 0.95,
+  mu = 3.5
+)
+
+library(broom)
+prueba_t1 %>% tidy()
+```
+
+
+## Inferencia sobre una proporción
+
+- **Ejemplo:** En este caso estamos interesados en la proporción de estudiantes que trabajan.
+
+### Juepo de hipótesis
+
+$$H_0: p = 0.5 \\
+H_1: p \neq 0.5$$
+
+### Nivel de significancia
+
+- En este caso usamos un nivel de significancia del 5%
+
+### Calcular el estadístico
+
+- Calculamos la proporción de los estudiantes que trabajan
+
+```{r}
+prop.table(table(datos$trabajo))[[2]]
+```
+
+### Solución con R
+
+- Usamos la función prop.test() con los siguientes argumentos:
+  - `x`: el número de éxitos para el evento de interés. En este caso son estudiantes que trabajan (n = 11) 
+  - `n`: total de ensayos (observaciones). En este caso equivale a 30.
+  - `p`: proporción de referencia. En este caso es 0.5
+  - `alternative`: tipo de hipótesis alternativa. En este caso es "two.sided"
+  - `conf.level`: nivel de confianza. En este caso es 1 - 0.05 = 0.95
+
+```{r}
+prop.test(
+  x = 11,
+  n = 30,
+  p = 0.5,
+  alternative = "two.sided",
+  conf.level = 0.95
+)
+```
+
