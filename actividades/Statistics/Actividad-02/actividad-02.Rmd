@@ -94,7 +94,7 @@ H_1: \mu \neq 4.87$$
 
 - Para cargar la base de datos `Soils` utilice el siguiente código:
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(car) # Necesario tener instalada esta biblioteca
 Soils
 ```
