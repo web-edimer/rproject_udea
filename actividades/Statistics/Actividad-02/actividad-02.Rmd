@@ -8,15 +8,14 @@ output:
     css: estilo.css
     theme: readable
     toc: true
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Primera parte (30%)
-
-## Ejercicio 1
+# Ejercicio 1
 
   - En un sistema de producción de hortalizas se detectan tres plagas. El 25% de las plantas tiene la enfermedad A, el 20% B y el 30% C. El 12% la A y B, el 10% la A y C, el 11% B y C y el 5% tiene las tres enfermedades. Obtener:
     - El diagrama de Venn para representar el enunciado.
@@ -24,15 +23,68 @@ knitr::opts_chunk$set(echo = TRUE)
     - La probabilidad de que una planta posea la enfermedad A pero no la B.  (**Rta: 0.13**)
     - La probabilidad de que una planta posea la enfermedad B y C pero no la A.  (**Rta: 0.06**)
 
-## Ejercicio 2
+# Ejercicio 2
 
 - Se tiene un lote de 200 animales, de los cuales 88 requieren se vacunados y lo están, 28 necesitan la vacuna pero no lo están, 4 no necesitan la vacuna pero están vacunados, 80 no necesitan la vacuna y no están vacunados. Construya una tabla que represente el problema y determine las probabilidades para los siguientes eventos:
   - El animal requiere ser vacunado  (**Rta: 0.58**)
   - El animal requiere ser vacunado pero no lo está (**Rta: 0.14**)
   - El animal está vacunado, sea que lo requiera o no.  (**Rta: 0.46**)
 
-# Segunda parte (70%)
+# Ejercicio 3
+
+- Si se extrae al azar un estudiante encuestado, ¿Cuál es la probabilidad de que el estudiante tenga un promedio académico entre 3.7 y 3.9?
+
+
+# Ejercicio 4
+
+- Con una de las muestras que obtuvo con el experimento de los granos defectuosos, responda con un nivel de significancia del 5% al siguiente juego de hipótesis:
+
+$$H_0: p = 0.06 \\
+H_1: p \neq 0.06$$
+
+# Ejercicio 5
+
+- **Ejercicio de clase:** realizar simulación para el teorema del límite central con alguna de las distribuciones de probabilidad que abordamos en clase. No debe utilizar ninguna de las que se usaron como ejemplos (distribución normal y distribución binomial).
+
+# Ejercicio 6
+
+- Con la base de datos [Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/p5fp-pay3), para el cultivo de *Mango*, contraste el siguiente juego de hipótesis para la variable *rendimiento (t/ha)*:
+
+$$H_0: \sigma_{2019} / \sigma_{2020} = 1 \\ 
+H_1: \sigma_{2019} / \sigma_{2020} \neq 1$$
+
+- ¿Existen diferentes estadísticas en la variabilidad del año 2019 respecto al 2020? **Nota:** recuerde validar el supuesto de normalidad antes de ejecutar la prueba que le permite responder a esta pregunta.
+
+
+```{r, echo=TRUE, eval=FALSE}
+library(tidyverse)
+library(janitor)
+datos_mango <- read_csv("Evaluaciones_Agropecuarias_Municipales___EVA._2019_-_2020.csv") %>% 
+  clean_names() %>% 
+  filter(cultivo == "Mango") %>% 
+  rename(year = ano)
+datos_mango
+
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(janitor)
+datos_mango <- read_csv("https://www.datos.gov.co/api/views/p5fp-pay3/rows.csv?accessType=DOWNLOAD") %>% 
+  clean_names() %>% 
+  filter(cultivo == "Mango") %>% 
+  rename(year = ano)
+datos_mango
+```
+
+# Ejercicio 7
+
+- Con los datos del *ejercicio 6* concluya con un nivel de significancia del 10% al siguiente juego de hipótesis para la variable *rendimiento (t/ha)*:
+
+$$H_0: \mu_{2019} = \mu_{2020} \\ 
+H_0: \mu_{2019} < \mu_{2020}$$
 
 # Fecha de entrega
 
-- Pendiente
+- Máximo 13 de octubre de 2021.
