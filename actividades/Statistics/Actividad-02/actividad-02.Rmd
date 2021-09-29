@@ -2,7 +2,7 @@
 title: "Estadística"
 subtitle: "Actividad 02"
 author: "Edimer David Jaramillo"
-date: "Agosto de 2021"
+date: "Septiembre de 2021"
 output:
   html_document:
     css: estilo.css
