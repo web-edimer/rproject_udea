@@ -185,3 +185,152 @@ prop.test(
 )
 ```
 
+- **Conclusión:**
+  - como el valor p (0.2012) es mayor que el nivel de significancia (0.05), no existe evidencia para rechazar la hipótesis nula, es decir, que la proporción de estudiantes que trabajan es igual a 50% (0.5)
+  - como el intervalo de confianza (LI: 0.2054281, LS: 0.5609198) contiene el valor de referencia, no existe evidencia para rechazar la hipótesisis.
+  
+# Inferencia sobre 2 poblaciones
+
+## Inferencia sobre $\sigma^2$
+
+### Datos
+
+```{r}
+datos_cebada <- read_excel("datos_cebada.xlsx") %>% 
+  mutate(year = as.factor(year))
+datos_cebada
+```
+
+### Hipótesis
+
+$$H_0: \sigma^2_{1931} / \sigma^2_{1932} = 1 \\
+H_1: \sigma^2_{1931} / \sigma^2_{1932} \neq 1$$
+
+### Nivel de significancia
+
+En este caso vamos a usar un nivel de significancia del 5%.
+
+### Analizando la normalidad
+
+- Gráfico:
+
+```{r}
+library(ggpubr)
+ggqqplot(data = datos_cebada$yield)
+```
+
+- Prueba de shapiro wilk:
+
+```{r}
+shapiro.test(x = datos_cebada$yield) 
+```
+
+### Solución con R
+
+- Vamos a usar la función var.test() con los siguientes argumentos:
+  - `formula`: y ~ x. En este caso "y" es la variable produccion y el "x" es el año.
+  - `ratio`: es el resultado del cociente de las dos varianzas. En este caso asumimos en la hipótesis nula el valor de "1".
+  - `alternative`: tipo de prueba. En este es bilateral ("two.sided") 
+  - `conf.level`: nivel de confianza. En este caso es 0.95 (1 - 0.5)
+
+```{r}
+var.test(datos_cebada$yield ~ datos_cebada$year,
+         ratio = 1,
+         alternative = "two.sided",
+         conf.level = 0.95)
+```
+
+- **Conclusión:**
+  - Como el valor p (0.375) es mayor que el nivel de significancia (0.05), no existe evidencia para rechazar la hipótesis, es decir, que la varianza para la producción del año 1931 es igual a la varianza para la producción del año 1932.
+  - Como el intervalo de confianza (LI: 0.6640874, LS: 2.9314037) contiene el valor de referencia ("1"), no existe evidencia para rechazar la hipótesis.
+
+### Prueba de Bartlett
+
+- Esta prueba es recomendada para comparar varianzas cuando la normalidad se cumple.
+
+```{r}
+bartlett.test(datos_cebada$yield ~ datos_cebada$year)
+```
+
+### Prueba de Levene
+
+- Esta prueba es recomendada para comparar varianzas cuando la normalidad **no se cumple**:
+
+```{r}
+library(car)
+leveneTest(datos_cebada$yield ~ datos_cebada$year)
+```
+
+
+
+## Inferencia sobre $\mu_1 - \mu_2$
+
+### Datos
+
+```{r}
+datos_trigo <- read_excel("datos_trigo.xlsx")
+datos_trigo
+```
+
+
+### Hipótesis
+
+$$H_0: \mu_{bajo} = \mu_{alto} \\
+H1: \mu_{bajo} \neq \mu_{alto}$$
+
+El juego de hipótesis anterior es equivalente al siguiente:
+
+$$H_0: \mu_{bajo} - \mu_{alto} = 0 \\
+H1: \mu_{bajo} - \mu_{alto} \neq 0$$
+
+### Nivel de significancia
+
+- El nivel de significancia será del 5%.
+
+### Igualdad de varianzas
+
+- Como el valor p ( 0.0001657) es menor que el nivel de significancia, existe evidencia para manifestas que las varianzas son diferentes para el grupo de nitrógeno alto y bajo.
+
+```{r}
+var.test(datos_trigo$yield ~ datos_trigo$nitro)
+```
+
+### Normalidad
+
+- Para la prueba t-student sobre dos poblaciones (medias) se debe garantizar que las variable (en cada grupo) se distribuye de forma normal.
+
+```{r}
+nitro_bajo <- datos_trigo %>% filter(nitro == "L")
+nitro_alto <- datos_trigo %>% filter(nitro == "H")
+
+ggqqplot(nitro_bajo$yield)
+ggqqplot(nitro_alto$yield)
+```
+
+- Pruebas de shapiro wilk:
+
+```{r}
+shapiro.test(nitro_alto$yield)
+shapiro.test(nitro_bajo$yield)
+```
+
+
+### Solución con R
+
+- Usamos la función t.test() con los siguientes argumentos:
+  - `formula`: y ~ x. En este caso "y" es la producción y "x" es el nivel de fertilización con nitrógeno (bajo, alto)
+  - `alternative`: tipo de hipótesis alternativa. En este caso es bilateral.
+  - `conf.level`: nivel de confianza. En este caso es del 95%
+  - `var.equal`: toma valores TRUE o FALSE para cuando las varianzas son iguales o diferentes, respectivamente.
+- **Nota:** los supuestos matemáticos necesarios no se cumplen, por tal motivo se debe optar por algún método no paramétrico.
+
+```{r}
+t.test(datos_trigo$yield ~ datos_trigo$nitro,
+       alternative = "two.sided",
+       conf.level = 0.95,
+       var.equal = FALSE)
+```
+
+- **Conclusión:**
+  - Como el valor p (0.004254) es menor que el nivel de significancia (0.05), existe evidencia para rechazar la hipótesis nula, es decir, que el promedio de producción de bajo nitrógeno es diferente al promedio de producción de alto nitrógeno.
+  - Como el intervalo de confianza no contiene al cero, entonces existe evidencia para rechazar la hipótesis nula. Además, como el intervalo de confianza está a la derecha del cero, quiere decir que en promedio el grupo de alta dosificación estará por encima del promedio de baja dosificación en nitrógeno.
