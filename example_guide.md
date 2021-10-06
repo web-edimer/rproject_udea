@@ -47,4 +47,6 @@ intro_image_hide_on_mobile: true
 - [Datos homicidios departamento del Quindío](/temas/data/homicidios.csv)
 - [Datos experimento con pan](/temas/data/crecimiento_pan.xlsx)
 - [Datos experimento con cebada](/temas/data/datos_cebada.xlsx)
-- [Datos experimento con trigo](/temas/data/datos_trigo.xlsx) 
+- [Datos experimento con trigo](/temas/data/datos_trigo.xlsx)
+- [Datos de comparación de fármacos](/temas/data/datos_medicamentos.xlsx)
+- [Datos califiaciones académicas](/temas/data/datos_parciales.xlsx)
