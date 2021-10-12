@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Estadística</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Edimer David Jaramillo" />
+    <meta name="date" content="2021-10-12" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Estadística
+## Diseño y análisis de experimentos
+<html>
+<div style="float:left">
+
+</div>
+<hr color='#EB811B' size=1px width=800px>
+</html>
+### Edimer David Jaramillo
+### Universidad de Antioquia
+### 2021-10-12
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Modelos Estadísticos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# Tipos de modelos
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src = "img/img0.png" /&gt;
+&lt;/center&gt;
+
+---
+
+# Métodos estadísticos
+
+&lt;center&gt;
+&lt;img src = "img/img3.png" /&gt;
+&lt;/center&gt;
+
+| Tipo de análisis | Método Paramétrico | Método no Paramétrico |
+| :--- | :----------------: | :----: |
+| Comparar medias (1 o 2 grupos) | *t-Student* | *Wilcoxon* |
+| Comparar medias (&gt; 2 grupos) | *Anova*  | *Kruskal-Wallis* |
+
+
+---
+
+class: inverse, center, middle
+
+# Diseño de Experimentos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/fisher.jpg"; height= 550/&gt;
+&lt;/center&gt;
+
+---
+
+# El arte de la experimentación
+
+.panelset[
+
+.panel[.panel-name[Principios]
+
+.pull-left[ 
+
+#### ¿Por qué hacer un experimento?
+
+- Determinar las principales causas de variación en una respuesta medida
+- Encontrar las condiciones que dan lugar a una respuesta máxima o mínima
+- Obtener un modelo matemático para predecir respuestas futuras
+
+#### Técnicas fundamentales
+
+- Replicación `-&gt;`  Incrementa precisión
+- Bloqueo `-&gt;` Incrementa precisión
+- Aleatorización `-&gt;` Reduce el sesgo
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src = "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-319-52250-0" width = 280/&gt;
+&lt;/center&gt;
+
+
+]
+
+
+]
+
+.panel[.panel-name[Conceptos]
+
+- Réplica
+- Repetición
+- Unidad experimental
+- Factor (fuente de variación)
+- Tratamiento
+- Bloque
+- Efectos aditivos
+- Efectos multiplicativos (interacción)
+
+]
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Análisis de Varianza
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/new2.jpg"; height= 300/&gt;
+&lt;/center&gt;
+
+---
+
+# Descripción del análisis de varianza
+
+- Conjunto de modelos estadísticos usados para analizar diferencias de medias entre grupos en una muestra.
+- Basado en la [ley de la varianza total](https://en.wikipedia.org/wiki/Law_of_total_variance), donde la varianza observada de una variable bajo análisis es particionada en componentes atribuibles a diferentes **fuentes de variación**.
+- Permite generalizar la prueba *t-student* más allá de dos medias.
+- La lógica general del análisis de varianza está fundamentada en la descomposición de la suma de cuadrados total en sumas de cuadrados entre (*tratamientos*) e intra (*error*) grupos:
+
+`$$SS_{Total} = SS_{Tratamientos} + SS_{Error}$$`
+- Visto como un función matemática podría expresarse de la siguiente forma:
+
+`$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$`
+Donde:
+- `\(y_{ij}\)`: variable respuesta o dependiente
+- `\(\mu\)`: media general (intercepto)
+- `\(\tau_i\)`: efecto del `\(j-ésimo\)` tratamiento
+- `\(\epsilon_{ij}\)`: error aleatorio experimental, se debe garantizar que `\(\epsilon_{ij} \sim N(\mu=0,\sigma^2)\)`
+
+---
+
+# Supuestos del análisis de varianza
+
+.pull-left[
+
+Los residuales del modelo `\((\epsilon)\)` deben cumplir con:
+- **Normalidad:** se puede verificar a través de histogramas, gráficos cuantil cuantil o con la prueba de *Shapiro-Wilk*.
+- **Homocedasticidad:** se puede verificar a través valores ajustados (eje x) vs residuales (eje y) o con las pruebas de *Bartlett* o *Levene*. La primera es útil cuando la normalidad se cumple, de lo contrario es mejor usar la segunda.
+- **Independencia**
+
+- `\(\epsilon \sim N(\mu=0,\ \sigma^2)\)`
+
+]
+
+.pull-right[
+
+- **Normalidad:**
+
+![](12-Diseño-Experimentos_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+- **Homocedasticidad:**
+
+![](12-Diseño-Experimentos_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+]
+
+---
+
+# Homocedasticidad y heterocedasticidad
+
+&lt;center&gt;
+&lt;img src="img/new3.gif"; height= 520/&gt;
+&lt;/center&gt;
+
+---
+
+class: inverse, center, middle
+
+# Pruebas *post-hoc*
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/img7.png"; height= 500/&gt;
+&lt;/center&gt;
+
+---
+
+# Comparaciones múltiples
+
+- Probabilidad de al menos un falso positivo
+  - Holm
+  - Hochberg
+  - Hommel
+  - Bonferroni
+- Proporción esperada de falsos positivos
+  - Duncan
+  - Tukey
+  - Dunnet
+  
+### Comparaciones múltiples con R
+
+
+```r
+pairwise.t.test()
+pairwise.wilcox.test()
+TukeyHSD()
+...
+...
+...
+```
+
+---
+
+class: inverse, center, middle
+
+# Tamaño del efecto `-&gt;` [Consultar artículo](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3763001/)
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/img8.png"; height= 300/&gt;
+&lt;/center&gt;
+
+## [Significancia estadística vs Significancia práctica]()
+
+
+---
+
+# Interpretación y cálculo con R
+
+&lt;center&gt;
+&lt;img src="img/img9.png"; width = 550/&gt;
+&lt;/center&gt;
+
+
+```r
+library(effectsize)
+eta_squared()
+cohens_f()
+```
+
+&lt;br&gt;
+
+.footnote[
+[1] [The Other Half of the Story: Effect Size Analysis in Quantitative Research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3763001/)]
+
+---
+class: inverse, center, middle
+
+# No olvidar que...
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/new4.jpg"; height= 350/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# No cometer este error...
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/new5.jpg"; height= 350/&gt;
+&lt;/center&gt;
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/gracias.gif"/&gt;
+&lt;/center&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
