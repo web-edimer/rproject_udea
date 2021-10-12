@@ -52,7 +52,7 @@ intro_image_hide_on_mobile: true
     + [11-Inferencia sobre dos poblaciones](/temas/Statistics/11-Inferencia-dos-poblaciones/11-Inferencia-dos-poblaciones.html)
 
 - **Unidad 4: Diseño de Experimentos**
-    + [12-Diseño de Experimentos](/temas/Statistics/12-Diseño-Experimentos.html)
+    + [12-Diseño de Experimentos](/temas/Statistics/12-Diseño-Experimentos/12-Diseño-Experimentos.html)
 
 - **Unidad 5: Diseños Factoriales**
     + [13-Diseños Factoriales](/temas/Statistics/)
