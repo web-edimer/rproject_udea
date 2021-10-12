@@ -59,3 +59,4 @@ intro_image_hide_on_mobile: true
 
 - **Unidad 6: Correlación y Regresión Lineal**
     + [14-Correlación y Regresión Lineal](/temas/Statistics/)
+    
