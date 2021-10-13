@@ -50,3 +50,4 @@ intro_image_hide_on_mobile: true
 - [Datos experimento con trigo](/temas/data/datos_trigo.xlsx)
 - [Datos de comparación de fármacos](/temas/data/datos_medicamentos.xlsx)
 - [Datos califiaciones académicas](/temas/data/datos_parciales.xlsx)
+- [Datos experimento con café](/temas/data/datos_café.xlsx)
