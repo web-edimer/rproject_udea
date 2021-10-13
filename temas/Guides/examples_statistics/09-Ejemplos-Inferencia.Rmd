@@ -334,3 +334,233 @@ t.test(datos_trigo$yield ~ datos_trigo$nitro,
 - **Conclusión:**
   - Como el valor p (0.004254) es menor que el nivel de significancia (0.05), existe evidencia para rechazar la hipótesis nula, es decir, que el promedio de producción de bajo nitrógeno es diferente al promedio de producción de alto nitrógeno.
   - Como el intervalo de confianza no contiene al cero, entonces existe evidencia para rechazar la hipótesis nula. Además, como el intervalo de confianza está a la derecha del cero, quiere decir que en promedio el grupo de alta dosificación estará por encima del promedio de baja dosificación en nitrógeno.
+  
+## Inferencia sobre p1-p2
+
+### Hipótesis
+
+$$H_0: p1 = p2 \\
+H_1: p1 \neq p2$$
+
+O de forma equivalente:
+
+$$H_0: p1 - p2 = 0 \\
+H_1: p1 - p2 \neq 0$$
+
+### Nivel de significancia
+
+En este caso usaremos un nivel de significancia del 5% (0.05)
+
+### Calculando proporciones
+
+- En este caso queremos comaparar la proporción de estudiantes que trabajan vs los que no trabajan.
+
+```{r}
+table(datos$trabajo)
+```
+
+### Solución con R
+
+- Usamos la función prop.test() con los siguientes argumentos:
+  - `x`: el número de éxitos para el evento de interés. En este caso son estudiantes que trabajan (n = 11) y no trabajan (n = 19) 
+  - `n`: total de ensayos (observaciones). En este caso equivale a 30.
+  - `alternative`: tipo de hipótesis alternativa. En este caso es "two.sided"
+  - `conf.level`: nivel de confianza. En este caso es 1 - 0.05 = 0.95
+
+```{r}
+prop.test(x = c(11, 19),
+          n = c(30, 30),
+          alternative = "two.sided",
+          conf.level = 0.95)
+```
+
+- **Conclusión:**
+  - Como el valor p (0.0707) es mayor que el nivel de significancia (0.05), no existe evidencia para rechazar la hipótesis nula, es decir, que la proporción de estudiantes que trabajan y no trabajan es la misma.
+  - Como el intervalo de confianza para la diferencia de proporciones ([LI: -0.5438677 , LS: 0.0105344]) contiene al cero, entonces no existe evidencia para rechazar la hipótesis nula.
+
+## T-student medias pareadas
+
+### Datos
+
+```{r}
+calificaciones <- read_excel("datos_parciales.xlsx")
+calificaciones
+```
+
+
+### Juego de hipótesis
+
+$$H_0: \mu_{post} - \mu_{pre} = 0 \\
+H_0: \mu_{post} - \mu_{pre} = 0$$
+
+### Nivel de significancia
+
+En este caso vamos a usar un nivel de significancia del 5% (0.5)
+
+### Diferencia de medias
+
+```{r}
+diferencia <- calificaciones$Post - calificaciones$Pre
+diferencia
+```
+
+### Normalidad
+
+- **Gráfico:**
+
+```{r}
+ggqqplot(data = diferencia)
+```
+
+- **Shapiro Wilk:** la normalidad se cumple (0.725)
+ 
+```{r}
+shapiro.test(x = diferencia)
+```
+
+### Igualdad de varianzas
+
+- Existe igualdad de varianzas (0.2795)
+
+```{r}
+var.test(x = calificaciones$Pre, y = calificaciones$Post,
+         ratio = 1, alternative = "two.sided")
+```
+
+### Prueba t-student
+
+```{r}
+t.test(x = calificaciones$Pre, y = calificaciones$Post,
+       alternative = "two.sided",
+       conf.level = 0.95,
+       paired = TRUE,
+       var.equal = TRUE)
+```
+
+- **Conclusión:**
+  - Como el valor p (0.004395) es menor que el nivel de significancia, existe evidencia para rechazar la hipótesis nula, es decir, que el promedio del "post" es diferente al promedio para el "pre".
+  - Como el intervalo de confianza está a la izquierda del cero ([-3.3778749, -0.7221251]), existe evidencia para rechazar la hipótesis nula. Además, el promedio del "pre" podría estar desde 0.72 hasta 3.37 puntos por debajo del "post".
+
+
+# Métodos no paramétricos
+
+## 2 Muestras pareadas
+
+```{r}
+datos <- read_excel("datos_medicamentos.xlsx")
+datos
+```
+
+### Hipótesis inicial
+
+$$H_0: \mu_{A} = \mu_{B} \\
+H_1: \mu_{A} \neq \mu_{B}$$
+
+### Nivel de significancia
+
+- En este caso vamos a usar un nivel de significancia del 5% (0.05)
+
+### Analizando normalidad
+
+```{r}
+ggqqplot(data = datos$Droga.A)
+ggqqplot(data = datos$Droga.B)
+```
+
+- Pruebas de Shapiro Wilk:
+
+```{r}
+shapiro.test(x = datos$Droga.A)
+shapiro.test(x = datos$Droga.B)
+```
+
+- Evaluar la normalidad sobre la diferencia de medias:
+
+```{r}
+diferencia2 <- datos$Droga.B - datos$Droga.A
+ggqqplot(data = diferencia2)
+```
+
+```{r}
+shapiro.test(diferencia2)
+```
+
+### Analizando homocedasticidad
+
+```{r}
+datos2 <- datos %>% 
+  pivot_longer(cols = -Paciente)
+
+leveneTest(datos2$value ~ datos2$name)
+```
+
+### Prueba t-student
+
+- En este caso vamos a ejecutar sólo para contrastar los resultados con el método no paramétrico.
+
+```{r}
+t.test(x = datos$Droga.A, 
+       y = datos$Droga.B,
+       alternative = "two.sided",
+       conf.level = 0.95,
+       var.equal = TRUE,
+       paired = TRUE)
+```
+
+### Prueba de Wilcoxon
+
+$$H_0: La\ localización\ de\ Droga_{A} = Localización\ de\ Droga_{B} \\
+H_1: La\ localización\ de\ Droga_{A} \neq Localización\ de\ Droga_{B}$$
+
+```{r}
+wilcox.test(x = datos$Droga.A,
+            y = datos$Droga.B,
+            alternative = "two.sided",
+            conf.level = 0.95,
+            paired = TRUE,
+            conf.int = TRUE)
+```
+
+- Conclusión:
+  - Como el valor p (0.01669) es menor que el nivel de significancia, existe evidencia para rechazar la hipótesis, es decir, que las localizaciones de la población "droga A" y "droga B", son estadísticamente diferentes.
+  - Como el intervalo de confianza (-2.4499547 -0.6000132) no contiene al cero, existe evidencia para rechazar que las drogas tengan la misma localización para el tiempo que inhiben el dolor. Además, como el intervalo está a la izquierda del cero, podemos afirmar que el tiempo de inhibición del dolor en la droga A es inferior al de la droga B.
+
+## 2 Muestras independientes  
+
+### Hipótesis
+
+$$H_0: La\ localización\ de\ N_{bajo} = Localización\ de\ N_{alto} \\
+H_1: La\ localización\ de\ N_{bajo} \neq Localización\ de\ N_{alto}$$
+
+### Nivel de significancia
+
+- 5% (0.05)
+
+### Prueba de Wilcoxon
+
+```{r}
+wilcox.test(x = nitro_bajo$yield,
+            y = nitro_alto$yield,
+            alternative = "two.sided",
+            conf.level = 0.95,
+            paired = FALSE,
+            conf.int = TRUE)
+```
+
+
+## 1 Muestra
+
+### Hipótesis
+
+$$H_0: La\ localización\ de\ Promedio = 3.5 \\
+H_1: La\ localización\ de\ Promedio \neq 3.5$$
+
+```{r}
+datos_encuesta <- read_excel("encuesta_depurada.xlsx")
+wilcox.test(x = datos_encuesta$promedio_academico,
+            alternative = "two.sided",
+            conf.level = 0.95,
+            mu = 3.5,
+            conf.int = TRUE)
+```
+
