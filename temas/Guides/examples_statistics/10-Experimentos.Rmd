@@ -1,0 +1,109 @@
+---
+title: "Análisis estadístico de experimentos"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Experimento con 1 factor
+
+## Datos
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+datos_cafe <- read_excel("datos_café.xlsx") %>% 
+  clean_names() %>% 
+  mutate(mycorrhizal_colonization = as.numeric(mycorrhizal_colonization))
+datos_cafe
+```
+
+## Resumen descriptivo básico
+
+```{r}
+datos_cafe %>% 
+  group_by(system) %>% 
+  summarise(promedio = mean(mycorrhizal_colonization),
+            desviacion = sd(mycorrhizal_colonization),
+            N = n())
+```
+
+## Boxplot
+
+```{r}
+datos_cafe %>% 
+  ggplot(mapping = aes(x = system, y = mycorrhizal_colonization)) +
+  geom_boxplot()
+```
+
+## Hipótesis
+
+$$H_0: \mu_{Conventional} = \mu_{Agroecological} = \mu_{Forest} \\
+H_1: \mu_i \neq \mu_j$$
+
+## Nivel de significancia
+
+- En este caso vamos a usar el 5%.
+
+## Anova
+
+- En R podemos usar la función "aov()" para ejecutar análisis de varianza.
+- También podemos utilizar la función "lm()" para ejecutar análisis de varianza.
+
+```{r}
+modelo_cafe <- aov(formula = mycorrhizal_colonization ~ system,
+                   data = datos_cafe)
+
+# Resumen del modelo
+summary(modelo_cafe)
+```
+
+- **Conclusión:** como el valor p (0.0062) es menor que el nivel de significancia (0.05), existe evidencia para rechazar la hipótesis nula, es decir, que al menos un par de sistemas difieren estadísticamente para la colonización micorrizal.
+
+## Análisis de residuales
+
+- Podemos obtener los residuales del modelo con la función "residuals()":
+
+```{r}
+residuales_cafe <- residuals(modelo_cafe)
+residuales_cafe
+```
+
+### Normalidad
+
+```{r}
+library(ggpubr)
+ggqqplot(residuales_cafe)
+```
+
+- Prueba de shapiro wilk: la normalidad no se cumple, sin embargo, los desvíos que se observan en el gŕafico parecen ser pequeños.
+
+```{r}
+shapiro.test(residuales_cafe)
+```
+
+### Homocedasticidad
+
+- La homocedasticidad sí se cumple.
+
+```{r}
+library(car)
+leveneTest(residuales_cafe ~ datos_cafe$system)
+```
+
+- Gráfico de ajustados vs residuales:
+
+```{r}
+ajustados_cafe <- fitted(modelo_cafe)
+
+plot(x = ajustados_cafe, y = residuales_cafe)
+```
+

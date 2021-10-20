@@ -32,6 +32,7 @@ intro_image_hide_on_mobile: true
 - [08-Simulaciones Teorema del Límite Central](https://rpubs.com/Edimer/809899) ([Descargar .Rmd](/temas/Guides/examples_statistics/07-simulaciones-TLC.Rmd))
 - [09-Pruebas de normalidad con R](https://rpubs.com/Edimer/815320) ([Descargar .Rmd](/temas/Guides/examples_statistics/08-Pruebas-Normalidad.Rmd))
 - [10-Ejemplos de inferencia estadística](https://rpubs.com/Edimer/815316) ([Descargar .Rmd](/temas/Guides/examples_statistics/09-Ejemplos-Inferencia.Rmd))
+- [11-Ejemplos de análisis de experimentos](https://rpubs.com/Edimer/824945) ([Descargar .Rmd](/temas/Guides/examples_statistics/10-Experimentos.Rmd))
 <br>
 
 # Guías
@@ -51,3 +52,4 @@ intro_image_hide_on_mobile: true
 - [Datos de comparación de fármacos](/temas/data/datos_medicamentos.xlsx)
 - [Datos califiaciones académicas](/temas/data/datos_parciales.xlsx)
 - [Datos experimento con café](/temas/data/datos_café.xlsx)
+- [Datos en cebada forrajera](/temas/data/fertilidad.xlsx)
