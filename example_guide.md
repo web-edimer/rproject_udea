@@ -52,5 +52,5 @@ intro_image_hide_on_mobile: true
 - [Datos de comparación de fármacos](/temas/data/datos_medicamentos.xlsx)
 - [Datos califiaciones académicas](/temas/data/datos_parciales.xlsx)
 - [Datos experimento con café](/temas/data/datos_café.xlsx)
-- [Datos en cebada forrajera](/temas/data/fertilidad.xlsx)naranja.xlsx
+- [Datos en cebada forrajera](/temas/data/fertilidad.xlsx)
 - [Datos de vitamina C en jugo de naranja](/temas/data/naranja.xlsx)
