@@ -44,6 +44,17 @@ datos_cafe %>%
   geom_boxplot()
 ```
 
+## Modelo estadístico
+
+$$y_{ij} = \mu + \beta_j +  \epsilon_{ij}$$
+
+Donde:
+
+- $y_{ij}$: variable respuesta. En este caso es la colonización micorrizal.
+- $\mu$: media general para la variable respuesta.
+- $\beta_j$: efecto del $j-ésimo$ sistema sobre la variable colonización micorrizal. Donde $j = 1, 2, 3$
+- $\epsilon_{ij}$: error experimental
+
 ## Hipótesis
 
 $$H_0: \mu_{Conventional} = \mu_{Agroecological} = \mu_{Forest} \\
@@ -105,5 +116,117 @@ leveneTest(residuales_cafe ~ datos_cafe$system)
 ajustados_cafe <- fitted(modelo_cafe)
 
 plot(x = ajustados_cafe, y = residuales_cafe)
+```
+
+- Gráficos de residuales por defecto con la función "plot()":
+
+```{r}
+par(mfrow = c(2, 2))
+plot(modelo_cafe)
+```
+
+## Estimaciones
+
+### Promedios
+
+- Con la función "model.tables()" podemos obtener los promedios estimados:
+
+```{r}
+model.tables(x = modelo_cafe,
+             type = "means",
+             se = TRUE)
+```
+
+### Efectos
+
+- Los efectos (positivos o negativos) pueden ser obtenidos con la misma función "model.tables()"
+
+```{r}
+model.tables(x = modelo_cafe,
+             type = "effects",
+             se = TRUE)
+```
+
+### Promedios e IC
+
+- En este caso vamos a usar la biblioteca ggeffects:
+
+```{r}
+library(ggeffects)
+ggeffect(model = modelo_cafe)
+```
+
+## Comparaciones múltiples
+
+- Podemos utilizar métodos con y sin ajuste del valor p.
+
+### Sin ajuste
+
+```{r}
+pairwise.t.test(x = datos_cafe$mycorrhizal_colonization,
+                g = datos_cafe$system,
+                p.adjust.method = "none", 
+                alternative = "two.sided")
+```
+
+
+### Con ajuste
+
+- Bonferroni:
+
+```{r}
+pairwise.t.test(x = datos_cafe$mycorrhizal_colonization,
+                g = datos_cafe$system,
+                p.adjust.method = "bonferroni", 
+                alternative = "two.sided")
+```
+
+- Holm:
+
+```{r}
+pairwise.t.test(x = datos_cafe$mycorrhizal_colonization,
+                g = datos_cafe$system,
+                p.adjust.method = "holm", 
+                alternative = "two.sided")
+```
+
+### Tukey
+
+```{r}
+TukeyHSD(x = modelo_cafe)
+```
+
+## Reporte de resultados
+
+### Gráficos
+
+- Medias estimadas e intervalos de confianza:
+
+```{r}
+g1 <- ggeffect(model = modelo_cafe)
+plot(g1)
+```
+
+- Gráfico de comparación de medias con Tukey:
+
+```{r}
+library(broom)
+g2 <- TukeyHSD(x = modelo_cafe) %>% tidy()
+g2 %>% 
+  ggplot(mapping = aes(x = contrast, y = estimate)) +
+  geom_point() +
+  geom_errorbar(mapping = aes(ymin = conf.low, ymax = conf.high),
+                width = 0.2) +
+  geom_hline(yintercept = 0, lty = 2, color = "red") +
+  coord_flip()
+```
+
+### Tamaño del efecto
+
+- En este caso el tamaño del efecto es moderado o medio.
+
+```{r}
+library(effectsize)
+eta_squared(model = modelo_cafe)
 ```
 
