@@ -1,0 +1,52 @@
+---
+title: "Estadística"
+subtitle: "Actividad 03"
+author: "Edimer David Jaramillo"
+date: "Octubre de 2021"
+output:
+  html_document:
+    css: estilo.css
+    theme: readable
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+# Punto 1
+
+- Con la base de datos `genxenv` que está disponible en la biblioteca `agricolae`, responda lo siguiente:
+  - ¿Existen diferencias estadísticas entre los ambientes (ENV) para la variable producción (YLD)?
+  - ¿Existen diferencias estadísticas entre los genotipos (GEN) para la variable producción (YLD)?
+  - Estime las medias de cada ambiente junto al intervalo de confianza del 95%.
+  - Ejecute pruebas de comparaciones múltiples para la fuente de variación ambientes (ENV) e informe los resultados.
+  - **Nota:** independientemente del modelo que utilice, recuerde reportar el diagnóstico de los residuales.
+
+```{r}
+library(agricolae)
+library(tidyverse)
+data(genxenv)
+genxenv %>% 
+  head()
+```
+
+# Punto 2
+
+- Ingrese al portal de [datos abiertos](https://www.datos.gov.co/browse?limitTo=datasets&sortBy=newest&utf8=%E2%9C%93) de Colombia y seleccione una base de datos con la cual pueda construir un modelo de regresión lineal simple. **Nota:** recuerde reportar el diagnóstico de los residuales.
+
+# Punto 3
+
+- Suponga que va a planificar un experimento en un tema de alta relevancia para usted, puede ser cualquier caso hipotético (cultivos, animales, agroindustria, etc.), informe lo siguiente:
+  - ¿Cuál o cuáles son las fuentes de variación que va a evaluar en su experimento?. ¿Cuáles niveles tienen?
+  - Reporte cuál es su variable respuesta y tentativamente en qué unidades estaría medida.
+  - ¿Quién es su unidad experimental?
+  - ¿Cómo va a realizar las mediciones?
+  - ¿Cuántas repeticiones tendría para cada tratamiento?
+  - ¿Existen factores de ruido que puedan ser bloqueados?
+
+# Fecha de entrega
+
+- Máximo 05 de noviembre de 2021.

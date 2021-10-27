@@ -33,11 +33,5 @@ A continuación se describen las actividades evaluativas para el curso:
 - [Actividad 2 (30%) - Unidad 2 y 3](/actividades/Statistics/Actividad-02/actividad-02.html)
 <br>
 
-- [Actividad 3 (20%) - Unidad 4](/actividades/Statistics/)
-<br>
-
-- [Actividad 4 (20%) - Unidad 5](/actividades/Statistics/)
-<br>
-
-- [Actividad 5 (20%) - Unidad 6](/actividades/Statistics/)
+- [Actividad 3 (60%) - Unidad 4, 5 y 6](/actividades/Statistics/Actividad-03/actividad-03.html)
 <br>

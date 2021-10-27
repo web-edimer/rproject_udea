@@ -51,12 +51,9 @@ intro_image_hide_on_mobile: true
     + [10-Inferencia sobre una población](/temas/Statistics/10-Inferencia-una-poblacion/10-Inferencia-una-poblacion.html)
     + [11-Inferencia sobre dos poblaciones](/temas/Statistics/11-Inferencia-dos-poblaciones/11-Inferencia-dos-poblaciones.html)
 
-- **Unidad 4: Diseño de Experimentos**
-    + [12-Diseño de Experimentos](/temas/Statistics/12-Diseño-Experimentos/12-Diseño-Experimentos.html)
-
-- **Unidad 5: Diseños Factoriales**
-    + [13-Diseños Factoriales](/temas/Statistics/)
+- **Unidad 4 y 5: Diseño de Experimentos**
+    + [12-Diseño de Experimentos: DCA, DBCA y Factoriales](/temas/Statistics/12-Diseño-Experimentos/12-Diseño-Experimentos.html)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [14-Correlación y Regresión Lineal](/temas/Statistics/)
+    + [14-Correlación y Regresión Lineal](/temas/Statistics/13-RegLineal/12-RegLineal.html)
     
