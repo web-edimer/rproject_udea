@@ -53,4 +53,4 @@ intro_image_hide_on_mobile: true
 - [Datos califiaciones académicas](/temas/data/datos_parciales.xlsx)
 - [Datos experimento con café](/temas/data/datos_café.xlsx)
 - [Datos en cebada forrajera](/temas/data/fertilidad.xlsx)
-- [Datos de vitamina C en jugo de naranja](/temas/data/naranja.xlsx)
+- [Datos de vitamina C en jugo de naranja](/temas/data/experimento_vitamC.csv)
