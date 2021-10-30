@@ -230,3 +230,502 @@ library(effectsize)
 eta_squared(model = modelo_cafe)
 ```
 
+# DBCA
+
+- DBCA: Diseño en Bloques Completamente Aleatorizados
+
+## Datos
+
+```{r}
+fertilidad <- read_excel("fertilidad.xlsx") %>%
+  mutate(
+    tratamiento = factor(
+      tratamiento,
+      levels = c("Control", "CaNO32", "CONH22",
+                 "NaNO3", "NH42SO4", "NH4NO3")
+    ),
+    nombre = factor(
+      nombre,
+      levels = c(
+        "Sin nitrógeno",
+        "Nitrato de calcio",
+        "Urea",
+        "Nitrato de sodio",
+        "Sulfato de amonio",
+        "Nitrato de amonio"
+      )
+    ),
+    tipo_suelo = factor(tipo_suelo,
+                        levels = c("I", "II", "III", "IV"))
+  )
+fertilidad
+```
+
+## Estadísticos descriptivos
+
+### Por Tratamiento
+
+```{r}
+fertilidad %>% 
+  group_by(nombre) %>% 
+  summarise(promedio = mean(produccion),
+            desviacion = sd(produccion),
+            N = n())
+```
+
+
+### Por Bloque
+
+
+```{r}
+fertilidad %>% 
+  group_by(tipo_suelo) %>% 
+  summarise(promedio = mean(produccion),
+            desviacion = sd(produccion),
+            N = n())
+```
+
+## Gráfico
+
+```{r}
+fertilidad %>% 
+  ggplot(mapping = aes(x = nombre, y = produccion, color = tipo_suelo)) +
+  geom_point() +
+  geom_line(aes(group = tipo_suelo)) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+## Modelo
+
+$$
+ y_{ij} = \mu + \alpha_i + \beta_j + \epsilon_{ij}, \qquad i = 1, 2, \cdots, 6, \quad j = 1, 2, \cdots, 4 \\
+  \epsilon_{ij} \sim \mathcal{N}(0,\sigma^2) \quad i.i.d.
+$$
+
+## Hipótesis
+
+### Principal
+
+
+$$
+  H_0: \alpha_1 = \alpha_2 = \alpha_3 = \alpha_4 = \alpha_5 = \alpha_6 = 0 \\
+  H_A: \textrm{Alguna } \alpha_i \textrm{ diferente de } 0
+$$
+
+### Verificación
+
+
+$$
+  H_0: \beta_1 = \beta_2 = \beta_3 = \beta_4 = 0 \\
+  H_A: \textrm{Alguna } \beta_i \textrm{ diferente de } 0
+$$
+
+## Nivel de significancia
+
+- En este caso vamos a usar el 5% (0.05)
+
+## Anova
+
+- Conclusiones:
+  - Como el valor p (1.10e-05) para la fuente de variación "nombre" es menor que el nivel de significancia (0.05), existe evidencia para rechazar la hipótesis nula, es decir, que al menos un par de fuentes de nitrógeno discrepan estadísticamente.
+  - Como el valor p (1.22e-05 ) para la fuente de variación "tipo_suelo" es menor que el nivel de significancia (0.05), existe evidencia para rechazar la hipótesis nula (hipótesis de verificación), es decir, que al menos un par de tipos de suelo discrepan estadísticamente.
+
+```{r}
+modelo1 <- aov(produccion ~ nombre + tipo_suelo,
+               data = fertilidad)
+summary(modelo1)
+```
+
+## Análisis de residuales
+
+```{r}
+residuales <- residuals(modelo1)
+```
+
+### Normalidad
+
+- Conclusión: como el valor p (0.6013) es mayor que el nivel de significancia, no existe evidencia para rechazar que los residuales se distribuyen de forma normal.
+
+```{r}
+shapiro.test(residuales)
+```
+
+```{r}
+ggqqplot(residuales)
+```
+
+### Homocedasticidad
+
+- Tratamiento: sí se cumple la homocedasticidad.
+
+```{r}
+bartlett.test(residuales ~ fertilidad$nombre)
+```
+
+- Bloque: sí se cumple la homocedasticidad.
+
+```{r}
+bartlett.test(residuales ~ fertilidad$tipo_suelo)
+```
+
+## Estimaciones
+
+### Promedios
+
+```{r}
+model.tables(x = modelo1,
+             type = "means",
+             se = TRUE)
+```
+
+### Efectos
+
+```{r}
+model.tables(x = modelo1,
+             type = "effects",
+             se = TRUE)
+```
+
+
+### Promedios e IC
+
+- Conclusión:
+  - Dada la construcción matemática podemos afirmar con un nivel de confianza del 95%, que en esta muestra la media de producción para el tratamiento "sin nitrógeno" fue de 25.35 (estimación puntual), sin embargo, dada la variabilidad, podría esperar que la verdadera media de la producción para el tratamiento "sin nitrógeno" esté entre 23.49 y 27.21.
+
+```{r}
+ggeffect(model = modelo1)
+```
+
+## Comparaciones múltiples
+
+### Tukey
+
+- Nota: con "which" podemos establecer el nombre de la fuente de variación sobre la cual queremos aplicar las comparaciones pareadas.
+
+```{r}
+TukeyHSD(modelo1, which = "nombre") %>% tidy()
+```
+
+- Gráfico de diferencia estimada con intervalo de confianzacdel 95%:
+
+```{r}
+TukeyHSD(modelo1, which = "nombre") %>%
+  tidy() %>% 
+  ggplot(mapping = aes(x = contrast, y = estimate)) +
+  geom_point() +
+  geom_errorbar(mapping = aes(ymin = conf.low, ymax = conf.high),
+                width = 0.2) +
+  geom_hline(yintercept = 0, lty = 2, color = "red") +
+  coord_flip()
+```
+
+### Dunnet
+
+```{r}
+library(multcomp)
+PruebaDunnet <- glht(modelo1, linfct = mcp(nombre = "Dunnett"))
+summary(PruebaDunnet)
+```
+
+## Tamaño del efecto
+
+- Nota: cuando tenemos más de un factor, el eta cuadrado y el índice F de Cohen, son interpretados de manera parcial.
+
+```{r}
+eta_squared(modelo1)
+```
+
+
+## Consecuencias de no bloquear
+
+### Modelo
+
+```{r}
+modelo2 <- aov(produccion ~ nombre, data = fertilidad)
+summary(modelo2)
+```
+
+### Tukey
+
+```{r}
+TukeyHSD(modelo2) %>% tidy()
+```
+
+# Diseño factorial 2 vías
+
+## Datos
+
+```{r}
+naranja <- read_csv2("experimento_vitamC.csv") %>% 
+  mutate(dias = factor(dias)) 
+naranja
+```
+
+## Estadísticos descriptivos
+
+### Tipo de jugo
+
+```{r}
+naranja %>% 
+  group_by(tipoJugo) %>% 
+  summarise(promedio = mean(vitamC),
+            desviacion = sd(vitamC),
+            N = n())
+```
+
+
+### Días
+
+```{r}
+naranja %>% 
+  group_by(dias) %>% 
+  summarise(promedio = mean(vitamC),
+            desviacion = sd(vitamC),
+            N = n())
+```
+
+### Días y Tipo de jugo
+
+```{r}
+naranja %>% 
+  group_by(dias, tipoJugo) %>% 
+  summarise(promedio = mean(vitamC),
+            desviacion = sd(vitamC),
+            N = n())
+```
+
+
+## Gráfico 1
+
+```{r}
+naranja %>% 
+  ggplot(mapping = aes(x = dias, y = vitamC, color = tipoJugo, fill = tipoJugo)) +
+  geom_boxplot(alpha = 0.5)
+```
+
+## Gráfico 2
+
+```{r}
+naranja %>% 
+  group_by(dias, tipoJugo) %>% 
+  summarise(promedio = mean(vitamC)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x = dias, y = promedio, color = tipoJugo,
+                       group = tipoJugo)) +
+  geom_point(size = 2) +
+  geom_line()
+```
+
+## Modelo
+
+$$
+   y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha \beta)_{ij} + \epsilon_{ijk} \\
+   i = 1, 2, 3. \quad j = 1, 2, 3. \quad   \\
+   \epsilon_{ijk} \sim \mathcal{N}(0, \sigma^2) i.i.d.
+$$
+
+## Hipótesis
+
+### Tipo de jugo
+
+
+$$
+  H_0: \alpha_1 = \alpha_2 = \alpha_3 = 0 \\
+  H_1: \textrm{Alguna } \alpha \textrm{ diferente de 0}
+$$
+
+
+### Días
+
+
+$$
+  H_0: \beta_1 = \beta_2 = \beta_3 = 0 \\
+  H_1: \textrm{Algún } \beta \textrm{ diferente de 0}
+$$
+
+### Interacción
+
+$$
+ H_0: (\alpha\beta)_{11} = \cdots = (\alpha\beta)_{33} = 0 \\
+ H_1: \textrm{Algún } (\alpha\beta)_{ij} \textrm{ diferente de 0}
+$$
+
+## Nivel de significancia
+
+- En este caso usamos un valor de 1%.
+
+## Anova
+
+### Modelo 1
+
+```{r}
+m1 <- aov(vitamC ~ dias + tipoJugo + dias:tipoJugo, data = naranja)
+summary(m1)
+```
+
+### Modelo 2
+
+```{r}
+m2 <- aov(vitamC ~ dias + tipoJugo, data = naranja)
+summary(m2)
+```
+
+## Análisis de residuales
+
+```{r}
+residuales <- residuals(m2)
+```
+
+### Normalidad
+
+```{r}
+shapiro.test(residuales)
+```
+
+### Homocedasticidad
+
+- Tipo de jugo:
+
+```{r}
+bartlett.test(naranja$vitamC ~ naranja$tipoJugo)
+```
+
+- Bloque:
+
+```{r}
+bartlett.test(naranja$vitamC ~ naranja$dias)
+```
+
+## Estimaciones
+
+### Promedios
+
+```{r}
+model.tables(x = m2,
+             type = "means",
+             se = TRUE)
+```
+
+### Efectos
+
+```{r}
+model.tables(x = m2,
+             type = "effects",
+             se = TRUE)
+```
+
+
+### Promedios e IC
+
+```{r}
+ggeffect(model = m2)
+```
+
+## Comparaciones múltiples
+
+### Tukey
+
+```{r}
+TukeyHSD(m2) %>% tidy()
+```
+
+## Tamaño del efecto
+
+```{r}
+eta_squared(m2)
+```
+
+# Regresión Lineal Simple
+
+## Datos
+
+```{r}
+cerezos_negros <- trees
+cerezos_negros
+```
+
+## Objetivo y modelo
+
+- Objetivo: predecir el volumen de la madera en función del diámetro
+- Modelo: $y_i = \beta_0 + \beta_1 \times X + \epsilon_i$, donde $X: Diámetro$
+
+## Gráfico
+
+```{r}
+library(GGally)
+ggpairs(cerezos_negros)
+```
+
+## Nivel de significancia
+
+- En este caso usamos 5%.
+
+## Correlación
+
+### Hipótesis
+
+$$H_0:  \rho = 0 \\
+H_0:  \rho \neq 0 $$
+
+### Normalidad
+
+- Normalidad de diámetro:
+
+```{r}
+shapiro.test(cerezos_negros$Girth)
+```
+
+- Normalidad de volumen:
+
+```{r}
+shapiro.test(cerezos_negros$Volume)
+```
+
+### Spearman
+
+```{r}
+cor.test(x = cerezos_negros$Girth, y = cerezos_negros$Volume, method = "spearman",
+         conf.level = 0.95)
+```
+
+## Modelo
+
+```{r}
+modelo_regresion <- lm(Volume ~ Girth, data = cerezos_negros)
+summary(modelo_regresion)
+```
+
+## Residuales
+
+```{r}
+residuales <- residuals(modelo_regresion)
+```
+
+### Normalidad
+
+```{r}
+shapiro.test(residuales)
+```
+
+### Homocedasticidad
+
+```{r}
+library(lmtest)
+bptest(modelo_regresion)
+```
+
+## Predicción
+
+### Estimación puntual
+
+```{r}
+predict(object = modelo_regresion,
+        newdata = data.frame(Girth = 20.1))
+```
+
+### Estimación por intervalo
+
+```{r}
+predict(object = modelo_regresion,
+        newdata = data.frame(Girth = 20.1), interval = "confidence")
+```
