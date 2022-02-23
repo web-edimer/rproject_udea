@@ -19,7 +19,7 @@ output:
 
 <br>
 <center>
-<img src = "img/img17.png"/>
+<img src = "img/img17.PNG"/>
 </center>
 
 .footnote[
@@ -67,17 +67,11 @@ John Wiley & Sons, Inc.
 <br>
 
 - **Actividad 1:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (10 %)
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
 - **Actividad 2:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (10 %)
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (40 %)
 - **Actividad 3:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
-- **Actividad 4:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
-- **Actividad 5:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
-- **Actividad 6:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 % )   
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (40 %) 
 
 ---
 class: inverse, center, middle
@@ -132,7 +126,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/libro2.png";width = 500/>
+<img src = "img/libro2.PNG";width = 500/>
 </center>
 
 ---
@@ -141,7 +135,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/libro3.png"width = 350; height = 400/>
+<img src = "img/libro3.PNG"width = 350; height = 400/>
 </center>
 
 .footnote[

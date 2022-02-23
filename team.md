@@ -7,31 +7,15 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
-# Actividades R-Project
-
-A continuación se describen las actividades evaluativas para el curso:
-
-- [Actividad 1 (5%) - Unidad 1](https://rproject-udea.netlify.app/temas/04-vectores-r/04-vectores-r#9)
-<br>
-
-- [Actividad 2 (30%) - Unidad 2](/actividades/Actividad-02/Actividad-02.html)
-<br>
-  
-- [Actividad 3 (35%) - Unidad 3](/actividades/Actividad-03/Actividad-03.html)
-<br>
-
-- [Actividad 4 (30%) - Unidad 4](/actividades/Actividad-04/Actividad-04.html)
-<br>
-
 # Actividades Estadística
 
 A continuación se describen las actividades evaluativas para el curso:
 
-- [Actividad 1 (10%) - Unidad 1](/actividades/Statistics/Actividad-01/Actividad-01.html)
+- [Actividad 1 (20%) - Unidad 1 y 2](https://rproject-udea.netlify.app/)
 <br>
 
-- [Actividad 2 (30%) - Unidad 2 y 3](/actividades/Statistics/Actividad-02/actividad-02.html)
+- [Actividad 2 (40%) - Unidad 3 y 4](https://rproject-udea.netlify.app/)
 <br>
 
-- [Actividad 3 (60%) - Unidad 4, 5 y 6](/actividades/Statistics/Actividad-03/actividad-03.html)
+- [Actividad 3 (40%) - Unidad 5 y 6](https://rproject-udea.netlify.app/)
 <br>
