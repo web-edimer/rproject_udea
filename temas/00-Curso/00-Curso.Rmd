@@ -30,15 +30,11 @@ output:
 
 ---
 
-# Propósito y objetivo general del curso
-
-## Propósito
-
-- El curso procura apoyar el desempeño profesional de nuestros futuros egresados mediante la enseñanza de un programa computacional para el manejo de hojas de datos, operaciones matemáticas, análisis estadísticos y gráficos.
+# Objetivos del curso
 
 ## Objetivo general
 
-- Adquirir los elementos necesarios para el uso del programa R aplicado a análisis estadísticos y modelación en las ciencias animales.
+Suministrar conceptos fundamentales dentro del área de diseño de experimentos que permita potencializar la investigación y la interacción científica en el campo de las ciencias agrícolas, entre diferentes profesionales relacionados con el área.
 
 ---
 

@@ -1,0 +1,170 @@
+---
+title: "Diseño Experimental"
+subtitle: "Resumen e introducción<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+class: inverse, center, middle
+
+# Método Científico
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png" width = 520/>
+</center>
+
+---
+
+class: inverse, center, middle
+
+# ¿R, R Markdown, RStudio?
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://cdn.iconscout.com/icon/premium/png-256-thumb/frequently-ask-question-3584775-2993321.png"; width = 350/>
+</center>
+
+---
+
+# R y RStudio
+
+<center>
+<img src = "https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png"; width = 450/>
+</center>
+
+.pull-left[
+
+#### ¿Qué es R?
+
+<center>
+<img src = "https://setscholars.net/wp-content/uploads/2020/04/R_Machine_Learning.png"; width = 450/>
+</center>
+
+
+]
+
+.pull-right[
+
+#### ¿Qué es RStudio?
+
+- RStudio es un entorno de desarrollo integrado (IDE) para R. [Página oficial de RStudio.](https://rstudio.com/)
+
+#### Descargar R y RStudio
+
+- [Clic aquí para descargar R](https://cran.r-project.org/bin/windows/base/R-4.1.2-win.exe)
+- [Clic aquí para descargar RStudio](https://download1.rstudio.org/desktop/windows/RStudio-2022.02.0-443.exe)
+
+] 
+
+
+
+---
+
+# Tipos de gráficos
+
+.pull-left[
+
+
+
+#### Tipos de gráficos
+
+- Cantidades
+- Proporciones
+- Distribuciones
+- Relación *X* vs *Y*
+- Incertidumbre
+- Mapas
+
+<center>
+<img src = "https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png">
+</center>
+
+
+]
+
+.pull-right[
+
+#### `ggplot2`
+
+<center>
+<img src = "https://ggplot2.tidyverse.org/logo.png">
+</center>
+
+]
+
+
+---
+
+# Modelos lineales y no lineales
+
+.pull-left[
+
+
+#### Modelos lineales
+
+<center>
+<img src = "https://cdn-icons-png.flaticon.com/512/2103/2103601.png">
+</center>
+
+
+]
+
+.pull-right[
+
+#### Modelo no lineal
+
+<center>
+<img src = "https://cdn0.iconfinder.com/data/icons/business-consultant-glyph/64/trend-prediction-stat-regression-analysis-512.png">
+</center>
+
+]
+
+---
+
+# Histogramas y Boxplots
+
+.pull-left[
+
+
+#### Histogramas
+
+<center>
+<img src = "https://cdn-icons-png.flaticon.com/512/2709/2709749.png">
+</center>
+
+
+]
+
+.pull-right[
+
+#### Boxplots
+
+<center>
+<img src = "https://cdn4.iconfinder.com/data/icons/data-charts-and-graphs/100/BoxPlot-512.png">
+</center>
+
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
