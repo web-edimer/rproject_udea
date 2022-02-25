@@ -107,15 +107,21 @@ class: inverse, center, middle
 
 ---
 
-# Modelos lineales y no lineales
+# Ejemplos de gráficos
 
 .pull-left[
 
 
-#### Modelos lineales
+#### Relaciones lineales
 
 <center>
-<img src = "https://cdn-icons-png.flaticon.com/512/2103/2103601.png">
+<img src = "https://cdn-icons-png.flaticon.com/512/2103/2103601.png" width = 200>
+</center>
+
+#### Boxplots
+
+<center>
+<img src = "https://cdn4.iconfinder.com/data/icons/data-charts-and-graphs/100/BoxPlot-512.png" width = 200>
 </center>
 
 
@@ -123,39 +129,83 @@ class: inverse, center, middle
 
 .pull-right[
 
-#### Modelo no lineal
+#### Relaciones no lineales
 
 <center>
-<img src = "https://cdn0.iconfinder.com/data/icons/business-consultant-glyph/64/trend-prediction-stat-regression-analysis-512.png">
+<img src = "https://cdn0.iconfinder.com/data/icons/business-consultant-glyph/64/trend-prediction-stat-regression-analysis-512.png" width = 200>
+</center>
+
+#### Histogramas
+
+<center>
+<img src = "https://cdn-icons-png.flaticon.com/512/2709/2709749.png" width = 200>
 </center>
 
 ]
 
 ---
 
-# Histogramas y Boxplots
+# Proceso de análisis de datos
 
 .pull-left[
 
-
-#### Histogramas
-
+#### Fisher, Neyman, Pearson
+    
 <center>
-<img src = "https://cdn-icons-png.flaticon.com/512/2709/2709749.png">
-</center>
-
-
+<img src="img/img2.PNG" width = 230/>
+</center>    
+    
+    
+    
 ]
 
 .pull-right[
 
-#### Boxplots
+#### Tukey
+  
+<center>
+<img src="img/img3.PNG" width = 250/>
+</center>    
+  
+  
+]
+
+
+.footnote[
+[Fuente: Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/)
+]
+
+---
+
+class: inverse, center, middle
+
+# Modelos Generativos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 <center>
-<img src = "https://cdn4.iconfinder.com/data/icons/data-charts-and-graphs/100/BoxPlot-512.png">
+<img src="img/azar.jpg" width = 500/>
 </center>
 
-]
+---
+
+# Estadística y Diseño Experimental
+
+<br>
+
+<center>
+<img src="img/img4.PNG" width = 900/>
+</center>  
+
+---
+
+class: inverse, center, middle
+
+# Ejemplo `->` [Artículo](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237262)
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img1.PNG" width = 900/>
+</center>
 
 ---
 class: inverse, center, middle
