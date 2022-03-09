@@ -3,7 +3,7 @@ title: "Estadística:"
 subtitle: "Tipos de métricas estadísticas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "2021-03-24"
+date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
@@ -369,15 +369,7 @@ class: inverse, center, middle
 *`->` Función personalizada.
 ]
 
----
-class: inverse, center, middle
 
-# Ejemplo Encuesta
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-<center>
-<img src="https://goto.onlinesurveybureau.com/images/survey.gif"/>
-</center>
 
 ---
 class: inverse, center, middle
