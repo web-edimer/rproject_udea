@@ -1,0 +1,235 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Regresión Lineal<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Regresión Lineal
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://images.squarespace-cdn.com/content/v1/58e6894159cc68fb0d646b07/1508452497921-2KN81XMZVYOC3N531ZIK/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmrMDYraMJMCQwFxTSOIP7LpSBEQpA-g5k6VTjWbSuadHJq0dp98hg5AZvIaPb3DoM/Website-Icons-MLR-1.png"; height= 400/>
+</center>
+
+---
+
+# Regresión Lineal: origen
+
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/galton.jpg?raw=true"; height= 250/>
+</center>
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/galtondatos.PNG?raw=true"; height= 300/>
+</center>
+
+---
+
+# Regresión lineal: idea intuitiva
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/regression.gif?raw=true"; height= 350/>
+</center>
+
+- Regresión lineal interactiva:
+  - [Ordinary Least Squares Regression](https://setosa.io/ev/ordinary-least-squares-regression/)
+  - [Least Squares - Wolfram](https://demonstrations.wolfram.com/LeastSquaresCriteriaForTheLeastSquaresRegressionLine/)
+  - [Least Squares - GeoGebra](https://www.geogebra.org/m/XUkhCJRj)
+
+---
+
+# Regresión lineal: ajuste de parámetros
+
+- El propósito principal del análisis de regresión es estimar la función de regresión poblacional con base en la función de regresión muestral.
+
+$$Y_i = \beta_0\ +\ \beta_1X$$
+$$\hat{Y_i} = \hat{\beta_0}\ + \hat{\beta_1}X_i\ + \hat{\epsilon_i}$$
+
+- Función matemática:
+
+$$Y_i = E(Y|X_i)\ +\ \epsilon_i\\$$
+
+- Asumiendo que $E(Y|X_i)$ es lineal en $X_i$:
+
+$$Y_i = E(Y|X_i)\ +\ \epsilon_i\\
+Y_i = \beta_0 +\ \beta_1X_i\ +\ \epsilon_i$$
+
+---
+
+# Tipos de análisis
+
+.pull-left[
+
+#### Covarianza
+
+<center>
+<img src="https://www.biologyforlife.com/uploads/2/2/3/9/22392738/correlation_1.jpg?688"; height= 200/>
+</center>  
+
+
+
+#### Inferencial
+  
+<center>
+<img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png"; height= 200/>
+</center>  
+  
+]
+
+.pull-right[
+
+<br>
+<br>
+
+#### Predictivo
+
+<center>
+<img src="https://cdn.educba.com/academy/wp-content/uploads/2019/04/Predictive-Modeling.jpg"/>
+</center> 
+
+
+  
+]
+
+---
+
+# Correlación
+
+$$\rho_{(X,Y)} = \frac{Cov_{(X,Y)}}{\sigma_X\times\sigma_Y} = \frac{\sum_{i=1}^{n}(X_i-\mu_X)(Y_i-\mu_Y)}{\sigma_X\times\sigma_Y}$$
+
+.pull-left[
+
+<br>
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/corr.jpg?raw=true"; height= 200/>
+</center>
+
+- Juego de hipótesis:
+
+$$H_0: \rho = 0 \\
+H_1: \rho \neq 0$$
+
+
+]
+
+.pull-right[
+
+
+
+<br>
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/measurecor.png?raw=true"; height= 350/>
+</center>
+
+]
+
+---
+
+# Inferencial
+
+#### Supuestos matemáticos
+
+- Normalidad de los residuales con valor medio igual a cero: $E(\epsilon_i|X_i) = 0$.
+- Homocedasticidad o varianza constante de los errores $\epsilon_i$.
+- Linealidad en los parámetros.
+- Independencia de los errores (autocorrelación): $cov(\epsilon_i, \epsilon_j)=0$.
+
+$$\epsilon_i\ \overset{\text{i.i.d.}}\sim\ N(\mu = 0,\ \sigma^2 = 1)$$
+
+.pull-left[
+
+<center>
+<img src="https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/normalidad.PNG?raw=true"; height= 250/>
+</center>
+
+
+
+]
+
+.pull-right[
+
+
+<center>
+<img src="
+https://github.com/unal-semilleroR-FacCA/unal-semilleror-facca.github.io/blob/master/Actividades/images/homocedasticidad.PNG?raw=true?raw=true"; height= 250/>
+</center>
+
+]
+
+
+---
+
+# Predictivo
+
+<center>
+<img src="https://avatars.githubusercontent.com/u/29100987?s=280&v=4" height=100/>
+</center>
+
+<center>
+<img src="img/img1.png" height=130/>
+</center>
+
+.pull-left[
+
+#### Train - Test  
+
+<center>
+<img src="https://miro.medium.com/max/776/1*QSXxOderidihfo1itIE7cw.png"/>
+</center>  
+  
+  
+  
+]
+
+.pull-right[
+
+#### Métricas de error 
+
+- Coeficiente de determinación $(R^2)$
+- Error cuadrático medio (MSE)
+- Raíz del error cuadrático medio (RMSE)
+- [Consultar métricas para regresión](https://yardstick.tidymodels.org/reference/index.html)
+  
+]
+
+---
+
+# *Tidy Modeling with R*
+
+- [Libro Tidy Modeling with R](https://www.tmwr.org/)
+
+<center>
+<img src="https://www.tmwr.org/images/cover.png" height = 470/>
+</center>
+
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

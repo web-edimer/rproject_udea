@@ -37,3 +37,4 @@ intro_image_hide_on_mobile: true
 - **Unidad 1: Análisis de regresión lineal simple y múltiple**
     + [00-Presentación del curso](/temas/DisExperimental/00-Curso/00-Curso.html)
     + [01-Resumen e introducción](/temas/DisExperimental/01-ResumenIntro/01-ResumenIntro.html)   
+    + [02-Regresión lineal: enfoques](/temas/DisExperimental/02-RegLinealSimple/02-RegLinealSimple.html)   
