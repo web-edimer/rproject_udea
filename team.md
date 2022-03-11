@@ -30,5 +30,5 @@ A continuación se describen las actividades evaluativas para el curso:
 - [Actividad 2 (25%)](https://rproject-udea.netlify.app/)
 <br>
 
-- [Actividad 3 (50%)](https://rproject-udea.netlify.app/)
+- [Actividad 3 (50%)](/actividades/DisExperimental/Actividad-03/Actividad-03DE.html)
 <br>

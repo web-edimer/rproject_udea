@@ -23,3 +23,8 @@ intro_image_hide_on_mobile: true
 # Bases de datos
 
 - [Datos de calidad de leche y microbiota en bovinos.](/temas/data/Simpson-Calidad-Leche.xls)
+- [Datos caso 1 - Diseño Experimental](/temas/data/EVA-Depurada.csv)
+- [Datos caso 2 - Diseño Experimental](/temas/data/Suelos-Depurada.csv)
+- [Datos caso 3 - Diseño Experimental](/temas/data/Agricola-Depurada.csv)
+- [Datos caso 4 - Diseño Experimental](/temas/data/Alimentro-Depurada.csv)
+- [Datos caso 5 - Diseño Experimental](/temas/data/PapaCanadá-Depurada.csv)

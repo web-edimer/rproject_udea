@@ -1,0 +1,97 @@
+---
+title: "Diseño Experimental"
+subtitle: "Actividad 3"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+
+# Caso 1
+
+- [Fuente original: Evaluaciones Agropecuarias Municipales EVA 2007-2018](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA/2pnw-mmge)
+- [Fuente original: Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/p5fp-pay3)
+- **Número de filas:** 6064
+- **Número de columnas:** 8
+- En este caso usted analizará las *Evaluaciones Agropecuarias Municipales* para Colombia, desde el año 2007 hasta el año 2020. Se le ha proporcionado información para más de 20 departamentos y más de 300 municipios productores de 5 tipos de cítricos (Lima, Limón, Mandarina, Naranja, Tangelo). El estado físico de la producción es *fruto fresco* y el ciclo de cultivo es *permanente*. Se desea conocer cuáles variables podrían ser consideradas como fuente de variación importante para explicar la variabilidad del rendimiento en toneladas por hectárea. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial.
+  - **Propuesta de modelación** Deberá construir un modelo que permita explicar la variabilidad del rendimiento en toneladas por hectárea. Es libre de usar las variables que desee como predictoras; está permitido eliminar variables siempre y cuando exista alguna jusitificación para dicho proceso. Es necesario que valide los supuestos del modelo que decida utilizar. Será necesaria la comparación de varios modelos (mínimo 3).
+  - **Preguntas adicionales:**
+    - ¿Cómo calcular la proporción de área cosechada? 
+    - ¿Existe alguna relación entre la proporción de área cosechada y el rendimiento? 
+    - Si una persona del departamento de *"Caldas"*, para el cultivo de *Limón* sembró *38 ha* y cosechó *29 ha*, según su modelo, ¿cuál es el rendimiento esperado? ¿cuál es el rendimiento mínimo esperado? ¿cuál es el rendimiento máximo esperado?
+    
+# Caso 2
+
+- [Fuente original: Resultados de Análisis de Laboratorio Suelos en Colombia](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Resultados-de-An-lisis-de-Laboratorio-Suelos-en-Co/ch4u-f3i5)
+- **Número de filas:** 1964
+- **Número de columnas:** 24
+- En este caso usted analizará resultados de análisis de suelos para Colombia. Se le ha proporcionado información del cultivo de *Cacao* para más de 20 departamentos y 130 municipios. El estado del cultivo es *establecido*.
+- Teniendo en cuenta que para muchos productores es difícil acceder a análisis de suelos, usted ha sido encargado para  desarrollar una herramienta estadística que permita predecir algunos componentes. Tenga en cuenta que la herramienta debe tener sentido práctico, es decir, que podrá ser utilizada en la vida real por algún productor de *Cacao*, por tal motivo es perentorio que use como **variables predictoras** fuentes de fácil acceso en campo, por ejemplo, el tipo de topografía, drenaje, si usa o no riego, etc.  Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** para la construcción de modelos deberá primero identificar cuáles componentes del suelo son susceptibles de predicción, es decir, que deberá utilizar alguna técnica estadística que le permita sleccionar mínimo 3 componentes a predecir, por ejemplo, *Zinc, Cobre y Fósforo*. Para cada componente debe construir un modelo que permita predecirlo.
+  - **Preguntas adicionales:**
+    - Alguien que tiene experiencia en el cultivo de *Cacao* le ha planteado lo siguiente: *"...los valores de materia orgánica en este cultivo generalmente dependen del tiempo de establecido y del tipo de topografía..."*. Haciendo uso de herramientas estadísticas, ¿cómo validaría este planteamiento?
+    - Un productor del departamento de *Antioquia* que tiene un cultivo de *Cacao* establecido hace 3 años, con buen drenaje, está en topografía con pendiente, el pH tiene valor de 5.13 y no brinda información acerca de si aplica fertilizantes o no, está interesado en saber ¿cuál es el calcio esperado en el suelo?
+    
+# Caso 3
+
+- [Fuente original: Áreas cultivadas y producción agrícola en Antioquia desde 1990](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Areas-cultivadas-y-produccion-agr-cola-en-Antioqui/t2ca-uae5)
+- **Número de filas:** 2610
+- **Número de columnas:** 8
+- En este caso usted analizará evaluaciones agrícolas para el cultivo de *Café* en el departamento de Antioquia desde el año 1990 hasta 2020. Se pretende conocer si la variabilidad en el rendimiento en toneladas por hectárea está influenciada por la zona (subregión) y el período. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** tenga en cuenta que para construir el modelo primero deberá generar una de las variables respuesta, ya que no está de manera explícita en la base de datos. Para estas variables deberá construir mínimo tres modelos que permitan explicar y predecir lo que ocurrirá con la producción (volumen) y rendimiento desde 2021 hasta 2030, en cada una de las subregiones de Antioquia.
+  - **Preguntas adicionales:**
+    - ¿Cómo calcularía la proporción de área cosechada? ¿Esta variable es útil para predecir el volumen y el rendimiento?
+    - A usted se le ha pedido que construya un gráfico, use métricas y pruebas inferenciales para explicar si el área destinada para la producción de café presenta alguna diferencia para las décadas de 1990 a 2000, de 2001 a 2010 y de 2011 a 2020.
+
+# Caso 4
+
+- [Fuente original: Alimentos del trópico para alimentación animal - AlimenTro](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Alimentos-del-tr-pico-para-alimentaci-n-animal-Ali/6arb-d547)
+- **Número de filas:** 17472
+- **Número de columnas:** 25 
+- En este caso analizará la composición bromatológica de 5 gramíneas forrajeras con registros de 18 departamentos y 174 municipios de Colombia. Es de interés identificar factores (variables) que puedan ser considerados como importantes en la variabilidad de la composición bromatológica de las especies. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable *proteína*. 
+  - **Preguntas adicionales:**
+    - ¿Es posible predecir la *lignina* con base en la *altura* y *edad de corte*?
+    - ¿Existen interacciones en los modelos que construyó para la variable *proteína*?
+    - Si alguien está interesado en establecer cuál es la mejor *época de recolección*, ¿usted qué le diría en términos estadísticos?
+- Las especies forrajeras son las siguientes:
+  - *Megathyrsus maximus sp.*
+  - *Kikuyo - Cenchrus clandestinus*
+  - *Ryegrass perenne - Lolium perenne* 
+  - *Buffel - Cenchrus ciliaris* 
+  - *Rhodes - Chloris gayana*
+  
+# Caso 5
+
+- [Fuente original: *Site-specific machine learning predictive fertilization models for potato crops in Eastern Canada*](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230888#sec035)
+- **Número de filas:** 12991
+- **Número de columnas:** 32
+- En este caso analizará datos de producción de papa en Canadá, recolectados desde el año 1957 hasta 2017. Se pretende construir una herramienta que permita planes de fertilización sitio-específico, es decir, que para cada coordenadas (*LatDD* y *LonDD*) se logre establecer con precisión cómo y cuánto fertilizante aplicar. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable producción (*Yield*). 
+  - **Preguntas adicionales:**
+    - ¿Cuál podría ser considerada la variable más influyente sobre la producción?
+    - ¿Cómo mediría el nivel de variabilidad que ha tenido la producción (*Yield*) a través del tiempo?
+    - ¿Cuál de los tratamientos recomendaría usted y por qué?
+
+# Fechas
+
+- **Fecha de entrega de avances:** 12 de mayo de 2022.
+- **Fecha de entrega final:** 12 de junio de 2022.
+- **Fecha de exposición:** 17 de junio de 2022.
