@@ -23,6 +23,8 @@ intro_image_hide_on_mobile: true
 # Bases de datos
 
 - [Datos de calidad de leche y microbiota en bovinos.](/temas/data/Simpson-Calidad-Leche.xls)
+- [Datos de experimento con maíz (*.csv - separado por comas*)](/temas/data/ExperimentoMaiz.csv)
+- [Datos de experimento con maíz (*.xlsx - Excek*)](/temas/data/ExperimentoMaiz.xlsx)
 - [Datos caso 1 - Diseño Experimental](/temas/data/EVA-Depurada.csv)
 - [Datos caso 2 - Diseño Experimental](/temas/data/Suelos-Depurada.csv)
 - [Datos caso 3 - Diseño Experimental](/temas/data/Agricola-Depurada.csv)
