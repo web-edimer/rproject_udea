@@ -1,0 +1,264 @@
+---
+title: "Diseño Experimental"
+subtitle: "Datos empíricos y experimentales"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      smooth_scroll: false
+      collapsed: false
+    df_prind: paged
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.align = "center")
+```
+
+# Bibliotecas 
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
+
+# Datos
+
+```{r}
+datos <- read_excel("Simpson-Calidad-Leche.xls") %>% 
+  clean_names() %>% 
+  mutate(across(c(fat_g_100_ml, protein_g_100_ml, lactose_g_100_ml,
+                  inv_simpson), as.numeric))
+
+datos
+```
+
+# Tipos de datos
+
+```{r}
+datos %>% 
+  glimpse()
+```
+
+
+# Pregunta
+
+- **¿Qué variables inciden en la diversidad de la microbiota fecal?**
+
+```{r}
+datos %>% names()
+```
+
+# Alternativas de respuesta
+
+- Métricas estadísticas
+- Tablas
+- Gráficos **¿Qué tipo de gráficos?**
+
+# Gráfico 1
+
+- En el siguiente gráfico queremos mostrar cómo se distribuye la variable "inv_simpson" por raza:
+
+```{r}
+datos %>% 
+  ggplot(aes(x = inv_simpson, fill = race)) +
+  geom_density(alpha = 0.5)
+```
+
+# Gráfico 2
+
+- En el gráfico anterior observamos la distribución de la variable "inv_simpson" en función de la raza, sin embargo, podríamos estar interesados en representar dos métricas, por ejemplo, el promedio y la desviación estándar, para cada raza.
+
+```{r}
+datos %>%
+  group_by(race) %>%
+  summarise(promedio = mean(inv_simpson),
+            desviacion = sd(inv_simpson)) %>%
+  ungroup() %>%
+  ggplot(aes(
+    x = race,
+    y = promedio,
+    ymin = promedio - desviacion,
+    ymax = promedio + desviacion
+  )) +
+  geom_point() +
+  geom_errorbar(width = 0.1) 
+```
+
+- Al gráfico anterior podemos agregar el promedio general de la variable "inv_simpson":
+
+
+```{r}
+promedio_general <- datos %>%
+  pull(inv_simpson) %>%
+  mean()
+
+datos %>%
+  group_by(race) %>%
+  summarise(promedio = mean(inv_simpson),
+            desviacion = sd(inv_simpson)) %>%
+  ungroup() %>%
+  ggplot(aes(
+    x = race,
+    y = promedio,
+    ymin = promedio - desviacion,
+    ymax = promedio + desviacion
+  )) +
+  geom_point() +
+  geom_errorbar(width = 0.1) +
+  geom_hline(yintercept = promedio_general, lty = 2, color = "red")
+```
+
+
+# Gráfico 3
+
+- Podemos explorar la interacción de la raza y el tipo de alimentación:
+
+```{r}
+datos %>% 
+  group_by(race, alimentation) %>% 
+  summarise(promedio = mean(inv_simpson, na.rm = TRUE)) %>% 
+  ggplot(aes(x = race, y = promedio, color = alimentation)) +
+  geom_point() +
+  geom_line(aes(group = alimentation))
+```
+
+# Gráfico 4
+
+- Hasta ahora hemos explorado la relación de la variable "inv_simpson" (**numérica**) con la raza (**categórica**) y el tipo de alimentación (**categórica**).
+- **¿Qué gráfico o métrica podemos usar para representar la relación de dos variables numéricas?**
+- **¿Qué gráfico o métrica podemos usar para representar la relación de más de dos variables numéricas?**
+
+```{r}
+datos %>% 
+  ggplot(aes(x = fat_g_100_ml, y = inv_simpson)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+# Modelo lineal
+
+$$y = mX + b$$
+
+$$y = \beta_0 + \beta_1 X + \epsilon$$
+
+## Modelo manual: sumas de cuadrados
+
+$$m = \frac{\sum_{i = 1}^{n}(x_i - \bar{x})(y_i - \bar{y)}}{\sum_{i=1}^{n}(x_i - \bar{x})^2}$$
+
+$$b = \bar{y} - m\ \bar{x}$$
+```{r}
+promedio_x <- datos %>% pull(fat_g_100_ml) %>% mean()
+promedio_y <- datos %>% pull(inv_simpson) %>% mean()
+
+numerador <- sum( (datos$fat_g_100_ml - promedio_x) * (datos$inv_simpson - promedio_y) )
+denominador <- sum( (datos$fat_g_100_ml - promedio_x)^2 )
+
+pendiente <- numerador / denominador
+pendiente
+```
+
+- Ahora calculamos el intercepto:
+
+```{r}
+intercepto <- promedio_y - (pendiente * promedio_x)
+intercepto
+```
+
+- También podemos calcular la pendiente de la siguiente manera:
+
+```{r}
+cor(datos$fat_g_100_ml, datos$inv_simpson) * (sd(datos$inv_simpson) / sd(datos$fat_g_100_ml) )
+```
+
+## Modelo manual: Álgebra
+
+$$y = \beta X + \epsilon$$
+
+$$y = \beta_0 + \beta_1 X + \epsilon$$
+
+$$\beta = (X^{T}X)^{-1}X^{T}y$$
+
+```{r}
+variable_x <- datos %>% pull(fat_g_100_ml) 
+mtx_intercepto <- rep(1, length(variable_x))
+matriz_x <- cbind(mtx_intercepto, variable_x)
+
+variable_y <- datos %>% pull(inv_simpson)
+
+betas <- solve((t(matriz_x) %*% matriz_x)) %*% t(matriz_x) %*% variable_y
+betas
+```
+
+## Modelo con R : lm()
+
+```{r}
+modelo <- lm(inv_simpson ~ fat_g_100_ml, data = datos)
+summary(modelo)
+```
+
+## Modelo final
+
+$$Inverso \ Simpson = 47.324354 + 2.989569 \times Fat + \epsilon$$
+
+# Enfoques
+
+- Covarianza: correlación
+- Inferencial: contrastes de hipótesis (correlación, pendiente $\beta_1$). **Explicar e interpretar**. Son muy importantes los supuestos matemáticos.
+- Predictivo:  es muy importante la precisión del modelo. La validación de supuestos aunque no es estrictamente necesario, podría ser indicativo de la consistencia del modelo.
+
+## Correlación o Covarianza
+
+- ¿Hay normalidad en las variables?
+  - H0: sí hay normalidad
+  - H1: no hay normalidad
+
+```{r}
+shapiro.test(datos$fat_g_100_ml)
+shapiro.test(datos$inv_simpson)
+```
+
+- Calculamos la correlación no paramétrica de Spearman:
+
+```{r}
+cor(datos$fat_g_100_ml, datos$inv_simpson, method = "spearman")
+```
+
+## Inferencial
+
+### Correlación
+
+- Para la correlación se aplica una prueba de significancia estadística:
+
+```{r}
+cor.test(datos$fat_g_100_ml, datos$inv_simpson, method = "spearman")
+```
+
+### Regresión
+
+$$H_0: \beta_1 = 0 \\
+H_1: \beta_1 \neq 0$$
+
+```{r}
+modelo <- lm(inv_simpson ~ fat_g_100_ml, data = datos)
+summary(modelo)
+```
+
+- Podemos obtener los intervalos de confianza para los coeficientes del modelo:
+
+```{r}
+confint(modelo, level = 0.95)
+```
+
+
+## Predictivo
+
+$$R^2 = \frac{\sum_{i=1}^{n}(\hat{y_i} - \bar{y})^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}$$
+
+$$MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i)^2}$$
+
+$$RMSE = \sqrt{MSE}$$
