@@ -1,6 +1,6 @@
 ---
 title: "Estadística:"
-subtitle: "Gráficos y Tablas<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Tablas y Gráficos<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
@@ -13,6 +13,17 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Tablas de frecuencias: `table()`, `prop.table()`, `xtabs()` y `count()`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://ekuatio.com/wp-content/uploads/tabla-de-frecuencias-29.png" width = 550/>
+</center>
+
 ---
 
 class: inverse, center, middle
@@ -164,21 +175,11 @@ Tomado de [*hoja de referencia `ggplot2`*](https://www.rstudio.com/wp-content/up
 ---
 class: inverse, center, middle
 
-# Tablas de frecuencias: `table()`, `prop.table()`, `xtabs()` y `tabyl()`
+# Ejemplo [EVA 2019-2020](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/p5fp-pay3)
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 <center>
-<img src="https://ekuatio.com/wp-content/uploads/tabla-de-frecuencias-29.png" width = 550/>
-</center>
-
----
-class: inverse, center, middle
-
-# Ejemplo Encuesta
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-<center>
-<img src="https://goto.onlinesurveybureau.com/images/survey.gif"/>
+<img src="https://www.upra.gov.co/documents/10184/213756/20211019_banner_PortadaEVA.jpg/ff8060a6-8ca4-4cad-9874-dce3e5ac2d45?t=1634779338117"/>
 </center>
 
 ---
