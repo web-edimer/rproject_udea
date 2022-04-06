@@ -11,7 +11,7 @@ intro_image_hide_on_mobile: true
 
 A continuación se describen las actividades evaluativas para el curso:
 
-- [Actividad 1 (20%) - Unidad 1 y 2](https://rproject-udea.netlify.app/)
+- [Actividad 1 (20%) - Unidad 1 y 2](/actividades/Statistics/01Actividad-2022/01-Actividad-Descriptiva.html)
 <br>
 
 - [Actividad 2 (40%) - Unidad 3 y 4](https://rproject-udea.netlify.app/)
