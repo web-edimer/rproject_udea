@@ -17,6 +17,7 @@ intro_image_hide_on_mobile: true
 # Ejemplos Diseño Experimental
 
 - [01-Ejemplo de introducción al diseño de experimentos](https://rpubs.com/Edimer/876323) [Descargar .Rmd](/temas/Guides/examples_experimental_design/01-Ejemplo-PaperMicrobiota.zip)
+- [Función para gráficos 3D](/temas/Guides/examples_experimental_design/plot3d_regresion.R)
 
 # Guías
 
