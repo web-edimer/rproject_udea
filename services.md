@@ -39,3 +39,5 @@ intro_image_hide_on_mobile: true
     + [01-Resumen e introducción](/temas/DisExperimental/01-ResumenIntro/01-ResumenIntro.html)   
     + [02-Regresión lineal: enfoques](/temas/DisExperimental/02-RegLinealSimple/02-RegLinealSimple.html)
     + [03-Regresión lineal múltiple](/temas/DisExperimental/03-RegLineal-Multiple/03-RegLineal-Multiple.html)
+- **Unidad 2: Introducción al diseño de experimentos**
+    + [04-Introducción](/temas/DisExperimental/04-IntroExperimentos/04-IntroExperimentos.html)

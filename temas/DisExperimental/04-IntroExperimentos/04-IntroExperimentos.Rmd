@@ -1,0 +1,131 @@
+---
+title: "Diseño Experimental"
+subtitle: "Inferencia Estadística<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Inferencia Estadística
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png" />
+</center>
+
+---
+
+# Parámetros de interés
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Proporción poblacional | $p$ | $\hat{p}$  | Proporción muestral | $$H_0: p = \theta \\ H_1: p \neq \theta$$ |
+| Media poblacional | $\mu$ | $\bar{x}$  | Media muestral | $$H_0: \mu = \theta \\ H_1: \mu \neq \theta$$ |
+| Diferencia de proporciones poblacionales | $p_1 - p_2$ | $\hat{p_1} - \hat{p_2}$  | Diferencia de proporciones muestrales | $$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$ |
+| Diferencia de medias poblacionales | $\mu_1 - \mu_2$ | $\bar{x_1} - \bar{x_2}$  | Diferencia de medias muestrales | $$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$ |
+
+---
+
+# Parámetros de interés en la regresión
+
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$
+
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Pendiente de regresión poblacional | $\beta_i$ | $\hat{\beta_i}$  | Pendiente de regresión muestral | $$H_0: \beta_i = 0 \\ H_1: \beta_i \neq 0$$ |
+
+
+
+.pull-left[
+
+#### Supuestos matemáticos de modelos lineales
+
+- Normalidad
+- Homocedasticidad
+- Independencia
+- Linealidad
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" width = 250/>
+</center>
+
+
+
+]
+
+---
+
+# Algunas preguntas de interés...
+
+.pull-left[
+
+- ¿Cuál es la proporción de semillas germinadas para la marca *X*?
+- ¿Existen diferencias en la proporción de frutas afectadas para dos casas comerciales que proveen un producto que inhibe el efecto de plagas?
+- ¿Cuál es el promedio del rendimiento (en toneladas por hectárea) para el cultivo de café en Colombia?
+- ¿Existen diferencias en el promedio de producción de leche al suministrar el *aditivo A* vs *aditivo B* en la dieta de las vacas?
+- ¿Existe alguna relación entre la cantidad de forraje verde consumido vs la producción de leche?
+- ¿Existe alguna relación entre la edad de parto y el peso de los animales?
+
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png"/>
+</center>
+
+
+
+]
+
+---
+
+# ¿Cómo comparar más de 2 grupos?
+
+$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$
+
+Donde:
+- $y_{ij}$: variable respuesta o dependiente
+- $\mu$: media general
+- $\tau_{J}$: efecto del $j-ésimo$ tratamiento
+- $\epsilon_{ij}$: error aleatorio experimental, se debe garantizar que $\epsilon_{ij} \sim N(\mu=0,\sigma^2)$
+
+<center>
+<img src = "img/prueba.png" />
+</center>
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
