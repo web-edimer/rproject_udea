@@ -16,7 +16,7 @@ intro_image_hide_on_mobile: true
     + [04-Estadística Descriptiva: tablas y gráficos](/temas/Statistics/04-Estad-Descriptiva-R2/04-Estad-Descriptiva-R2.html)
 
 - **Unidad 2: Probabilidad**
-    + [05-Probabilidad: Introducción](https://rproject-udea.netlify.app/)
+    + [05-Probabilidad: Introducción](/temas/Statistics/05-Intro-Probabilidad/05-Intro-Probabilidad.html)
     + [06-Probabilidad: Variables aleatorias](https://rproject-udea.netlify.app/)
     + [07-Probabilidad: Distribuciones de probabilidad](https://rproject-udea.netlify.app/)
     

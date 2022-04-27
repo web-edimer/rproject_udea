@@ -3,7 +3,7 @@ title: "Estadística"
 subtitle: "Probabilidad: Introducción<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "2021-04-20"
+date: "2022-04-27"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
@@ -45,7 +45,7 @@ class: inverse, center, middle
 .pull-right[
 
 <center>
-<img src="https://ciudaddelasideas.com/wp-content/uploads/2018/10/CDI2008_AmirAczel.png" width = 290/>
+<img src="https://www.buridan.es/img/m/17.jpg" width = 290/>
 </center>
 
 > *“La teoría de las probabilides es la menos intuitiva de todas las ramas de las matemáticas”* — Amir Aczel
@@ -215,6 +215,38 @@ $$P(A)\ =\ Criterio\ de\ un\ experto$$
 
 ---
 
+# Ejemplos
+
+.panelset[
+.panel[.panel-name[Lanzamiento de una moneda]
+
+<center>
+<img src="https://pbs.twimg.com/media/Ds5BWAjWkAAqEAV.jpg"  width = 650/>
+</center>
+
+.center[
+### ¿Probabilidad de $\frac{1}{2}$? 
+]
+
+]
+
+.panel[.panel-name[Lanzamiento de un dado]
+
+<center>
+<img src="https://image.freepik.com/vector-gratis/dos-dados-blancos-aislados-blanco_154797-37.jpg" width = 350/>
+</center>
+
+.center[
+### ¿Probabilidad de $\frac{1}{6}$? 
+]
+
+]
+
+]
+
+
+---
+
 # Técnicas de conteo
 
 .panelset[
@@ -255,38 +287,6 @@ $${4 \choose 2}=\frac{{4!}}{(4-2)!}=12$$
 ]
 
 ]
-
----
-
-# Ejemplos
-
-.panelset[
-.panel[.panel-name[Lanzamiento de una moneda]
-
-<center>
-<img src="https://pbs.twimg.com/media/Ds5BWAjWkAAqEAV.jpg"  width = 650/>
-</center>
-
-.center[
-### ¿Probabilidad de $\frac{1}{2}$? 
-]
-
-]
-
-.panel[.panel-name[Lanzamiento de un dado]
-
-<center>
-<img src="https://image.freepik.com/vector-gratis/dos-dados-blancos-aislados-blanco_154797-37.jpg" width = 350/>
-</center>
-
-.center[
-### ¿Probabilidad de $\frac{1}{6}$? 
-]
-
-]
-
-]
-
 
 ---
 class: inverse, center, middle
