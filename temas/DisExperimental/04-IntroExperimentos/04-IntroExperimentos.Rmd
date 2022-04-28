@@ -121,6 +121,18 @@ Donde:
 ---
 class: inverse, center, middle
 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+# Variación del muestreo: *Bootstrapping*
+
+<center>
+<img src = "https://miro.medium.com/max/1400/1*9x2lAp3QF2FyIyQNaePkVA.png" width = 700 />
+</center>
+
+---
+class: inverse, center, middle
+
 # ¡Gracias!
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
