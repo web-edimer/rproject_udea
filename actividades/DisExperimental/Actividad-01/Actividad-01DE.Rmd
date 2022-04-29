@@ -1,0 +1,29 @@
+---
+title: "Diseño Experimental"
+subtitle: "Actividad 1"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+# Descripción
+
+- En esta actividad el propósito fundamental está orientado a la construcción, diagnóstico, comparación y selección de modelos de regresión lineal múltiple para [predicción de vitamina C en frutos de durazno](https://www.kaggle.com/competitions/reto-duraznos-udea/overview#). Es de vital importancia realizar análisis estadístico de tipo descriptivo e inferencial. Además de construir los modelos, al final del reto deberá presentar un documento corto donde muestre los resultados más relevantes que encontró durante el desarrollo de su análisis. Este documento debe contener como mínimo los siguientes tópicos:
+  - Análisis descriptivo y exploratorio
+  - Descripción general del marco metodológico adoptado para construir el modelo que utilizó en *Kaggle*
+  - Resultado de diagnósticos del modelo (análisis de residuales)
+  - Expresión matemática del modelo final (Ejemplo: $y_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_k x_k + \epsilon_i$)
+  - Métricas de error en *train* y *test*
+  - Conclusiones
+
+# Fecha de entrega
+
+- **Fecha de finalización del reto:** 30 de abril de 2022.
+- **Fecha máxima de entrega del documento:** 07 de mayo de 2022.
