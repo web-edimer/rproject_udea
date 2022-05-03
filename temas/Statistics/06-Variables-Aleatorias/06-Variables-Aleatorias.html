@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Estadística</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Edimer David Jaramillo" />
+    <meta name="date" content="2022-05-03" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Estadística
+]
+.subtitle[
+## Variables Aleatorias
+<html>
+<div style="float:left">
+
+</div>
+<hr color='#EB811B' size=1px width=800px>
+</html>
+]
+.author[
+### Edimer David Jaramillo
+]
+.institute[
+### Universidad de Antioquia
+]
+.date[
+### 2022-05-03
+]
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Variable Aleatoria
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://miro.medium.com/max/600/0*BI0-oi3-44reoh_z.png" width = 400/&gt;
+&lt;/center&gt;
+
+---
+
+# Variable aleatoria
+
+.panelset[
+
+.panel[.panel-name[Concepto]
+
+- Un evento `\(A\)` al cual atribuimos una probabilidad será llamado **evento aleatorio**.
+- Una variable aleatoria (v.a.) es una función que asocia a cada elemento del espacio muestral `\(\Omega\)` un número real. Se denota usualmente con letras mayúsculas (X, Y, Z).
+
+&lt;center&gt;
+&lt;img src = "img/experimento.png" width = 500 /&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Representación]
+
+&lt;center&gt;
+&lt;img src = "img/variablea.png" width =900 /&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Tipos]
+
+- **Discretas:** aquellas que sólo pueden tomar valores en un conjunto finito numerable.
+- **Continuas:** aquellas que toman valores en uno o varios intervalos de la recta de los reales, en cuyo caso, el conjunto es no numerable.
+  
+### Distribución de una variable aleatoria
+
+- Una variable aleatoria se define como un descriptor de eventos o sucesos aleatorios y su **función** de distribución asigna probabilidades a esos eventos.
+- Variable aleatoria discreta:
+    - Función masa de probabilidad (f.m.p.)
+    - Función de distribución acumulada (f.d.a.)
+- Variable aleatoria continua:
+    - Función de densidad.
+    - Función de distribución acumulada
+
+]
+
+
+
+
+
+]
+
+---
+class: inverse, center, middle
+
+# Variable aleatoria discreta
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;img src="06-Variables-Aleatorias_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Variable aleatoria discreta
+
+.panelset[
+
+.panel[.panel-name[Función masa de probabilidad (f.m.a.)]
+
+La función masa de probabilidad (f.m.p) de una variable aleatoria discreta es un gráfico, tabla o fórmula que específica la probabilidad asociada a cada resultado del espacio muestral. `$$f(x)=P(X=x)$$`
+
+&lt;center&gt;
+&lt;img src = "img/discretav.png" width = 240/&gt;
+&lt;/center&gt;
+
+Para la f.m.p se satisfacen las siguientes condiciones o propiedades:
+
+  - `\(f(x_i) \geq 0\)`
+  - `\(\sum\nolimits_{i=1}^xf(x_i) = 1\)`
+  - `\(f(x_i) = P(X=x_i)\)`
+
+]
+
+.panel[.panel-name[Función de distribución acumulada (f.d.a.)]
+
+Describe un evento particular, donde se asocia una probabilidad a los puntos muestrales de la variable aleatoria con un valor menor o igual que `\(x\)`. $$f(x)=P(X \leq x) = \sum P(x_i);  \ \forall\ x \in R $$
+
+Para la f.d.a se satisfacen las siguientes condiciones:
+
+  - `\(f(a)=P(X \leq a) = \sum\nolimits_{x=-\infty}^a P(x)\)`
+  - `\(f(-\infty)=0\)`
+  - `\(f(\infty)=1\)`
+
+]
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+# Variable aleatoria continua
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;img src="06-Variables-Aleatorias_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Variable aleatoria continua
+
+.panelset[
+
+.panel[.panel-name[Función de densidad]
+
+La función de densidad de probablidad `\(f(x)\)` describe la distribución de probabilidad de una variable aleatoria continua.
+
+&lt;center&gt;
+&lt;img src = "img/continua.png" width = 700/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Función de densidad]
+
+La probabilidad está determinada por el área bajo la curva desde un punto `\(a\)` hasta el punto `\(b\)`. `$$P(a &lt; X &lt; b) =\ área\ bajo\ la\ curva$$`
+
+&lt;center&gt;
+&lt;img src = "img/curva.png" width = 700/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Función de densidad]
+
+$$P(a &lt; X &lt; b) = \int_{a}^{b} f(x)dx;  \ \forall\ a,b \in R $$
+
+La función de densidad de una v.a. continua satisface las siguientes propiedaes:
+
+  - `\(f(x)&gt;0\)`
+  - `\(\int_{-\infty}^{\infty} f(x) = 1\)`
+
+]
+
+.panel[.panel-name[F.D.A.]
+
+De la definición de función de densidad de una variable aleatoria continua, se deduce que la función de distribución acumulada de esta variable puede ser obtenida a través de la siguiente expresión: `$$P(X \leq x) = \int_{-\infty}^{x} f(x)dx$$`
+
+&lt;center&gt;
+&lt;img src = "http://www.dataanalysisclassroom.com/wp-content/uploads/2017/11/cdf_area_lesson41.png" width = 500/&gt;
+&lt;/center&gt;
+
+
+
+]
+
+]
+
+---
+class: inverse, center, middle
+
+# Medidas de resumen de una variable aleatoria
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Matem%C3%A1tica_m%C3%A9dica.png" width = 500/&gt;
+&lt;/center&gt;
+
+
+
+---
+
+# Medidas de resumen
+
+.panelset[
+
+.panel[.panel-name[Localización diferente]
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src = "img/distribucion1.png" width = 900/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Variación diferente]
+
+&lt;center&gt;
+&lt;img src = "img/distribucion2.png" width = 900/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Igual localización y diferente variación]
+
+&lt;center&gt;
+&lt;img src = "img/distribucion3.png" width = 900/&gt;
+&lt;/center&gt;
+
+]
+
+]
+
+---
+
+# Esperanza matemática y varianza
+
+.panelset[
+
+.panel[.panel-name[Características]
+
+1. A cada variable aleatoria se asocia una función de distribución.
+2. El análisis del comportamiento de una variable se puede realizar mediante la descripción de su distribución, utilizando ciertos valores o parámetros que la caracterizan.
+3. Si un experimento aleatorio es realizado y una variable aleatoria es definida, se puede determinar el **valor esperado** y la **varianza** de dicha variable aleatoria.
+
+]
+
+.panel[.panel-name[Esperanza matemática]
+
+La esperanza matemática de una variable aleatoria se puede definir desde un punto de vista intuitivo, como el promedio de los valores asumidos por la variable, donde cada valor es "ponderado" por su probabilidad de ocurrencia.
+
+- **Esperanza matemática de una variable aleatoria discreta:** `$$E(X) = \mu = \sum\nolimits_{i=1}^n x_if(x_i)$$`
+- **Esperanza matemática de una variable aleatoria continua:** `$$E(X) = \mu = \int_{-\infty}^{\infty} xf(x)dx$$`
+
+**Nota:** esta integral no siempre existe, en cuyo caso, se dirá que la variable aleatoria no tiene esperanza matemática.
+
+]
+
+.panel[.panel-name[Varianza]
+
+La esperanza matemática de una varible aleatoria sólo proporciona información parcial acerca de su distribución, indicando dónde está posicionada, sin embargo, dos o más distribuciones pueden tener la misma medida de posición y aún así, ser diferentes. Por ello surge la necesidad de una medida que indique similitud entre los valores de la variable aleatoria.
+
+- **Varianza de una variable aleatoria discreta:** `$$Var(X) = \sigma^2 = \sum\nolimits_{x_i}^n (x_i - \mu)^2 f(x_i)$$`
+- **Varianza de una variable aleatoria continua:** $$Var(X) = E[(x - \mu)^2] = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) dx $$
+
+]
+
+]
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/gracias.gif"/&gt;
+&lt;/center&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

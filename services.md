@@ -17,8 +17,8 @@ intro_image_hide_on_mobile: true
 
 - **Unidad 2: Probabilidad**
     + [05-Probabilidad: Introducción](/temas/Statistics/05-Intro-Probabilidad/05-Intro-Probabilidad.html)
-    + [06-Probabilidad: Variables aleatorias](https://rproject-udea.netlify.app/)
-    + [07-Probabilidad: Distribuciones de probabilidad](https://rproject-udea.netlify.app/)
+    + [06-Probabilidad: Variables aleatorias](/temas/Statistics/06-Variables-Aleatorias/06-Variables-Aleatorias.html)
+    + [07-Probabilidad: Distribuciones de probabilidad](/temas/Statistics/07-Distribuciones-Probabilidad/07-Distribuciones-Probabilidad.html)
     
 - **Unidad 3: Inferencia Estadística**
     + [08-Inferencia: introducción](https://rproject-udea.netlify.app/)
