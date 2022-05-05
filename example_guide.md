@@ -18,7 +18,7 @@ intro_image_hide_on_mobile: true
 
 - [01-Ejemplo de introducción al diseño de experimentos](https://rpubs.com/Edimer/876323) [Descargar .Rmd](/temas/Guides/examples_experimental_design/01-Ejemplo-PaperMicrobiota.zip)
 - [Función para gráficos 3D](/temas/Guides/examples_experimental_design/plot3d_regresion.R)
-- [02-Ejemplos de Bootstrapping](/temas/Guides/examples_experimental_design/02-Muestreo-Bootstrapping.zip)
+- [02-Ejemplos de Bootstrapping](https://rpubs.com/Edimer/898907) [Descargar .Rmd](/temas/Guides/examples_experimental_design/02-Muestreo-Bootstrapping.zip)
 
 # Guías
 
