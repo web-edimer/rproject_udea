@@ -33,6 +33,8 @@ intro_image_hide_on_mobile: true
 - [Datos de experimento con maíz (*.xlsx - Excel*)](/temas/data/ExperimentoMaiz.xlsx)
 - [Evaluaciones Agropecuarias 2019-2020](/temas/data/Evaluaciones_Agropecuarias_Municipales___EVA._2019_-_2020.csv)
 - [Datos exportaciones de café](/temas/data/DatosExportacionesPunto3.xlsx)
+- [Datos créditos agropecuarios 2021](/temas/data/creditos_colombia_genero.Rds)
+- [Datos pasto Guinea](/temas/data/pasto_guinea.Rds)
 - [Datos caso 1 - Diseño Experimental](/temas/data/EVA-Depurada.csv)
 - [Datos caso 2 - Diseño Experimental](/temas/data/Suelos-Depurada.csv)
 - [Datos caso 3 - Diseño Experimental](/temas/data/Agricola-Depurada.csv)
