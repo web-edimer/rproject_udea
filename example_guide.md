@@ -10,9 +10,10 @@ intro_image_hide_on_mobile: true
 
 # Ejemplos Estadística
 
-- [00-Ejemplo de R Markdown](/temas/Guides/examples_statistics/01-Ejemplo-rmarkdown.html) [Descargar .Rmd](/temas/Guides/examples_statistics/01-Ejemplo-rmarkdown.zip)
-- [01-Ejemplo de estadística descriptiva con R](https://rpubs.com/Edimer/881462) [Descargar .Rmd](/temas/Guides/examples_statistics/02-DescriptivaR1.zip)
-- [02-Ejemplo de tablas y gráficos con R](https://rpubs.com/Edimer/884435) [Descargar .Rmd](/temas/Guides/examples_statistics/)
+- [00-Ejemplo de R Markdown](/temas/Guides/examples_statistics/01-Ejemplo-rmarkdown.html) [(Descargar .Rmd)](/temas/Guides/examples_statistics/01-Ejemplo-rmarkdown.zip)
+- [01-Ejemplo de estadística descriptiva con R](https://rpubs.com/Edimer/881462) [(Descargar .Rmd)](/temas/Guides/examples_statistics/02-DescriptivaR1.zip)
+- [02-Ejemplo de tablas y gráficos con R](https://rpubs.com/Edimer/884435) [(Descargar .Rmd)](/temas/Guides/examples_statistics/03-TablasGraficos.zip)
+- [03-Ejemplo de probabilidades con R](https://rpubs.com/Edimer/900795) [(Descargar .Rmd)](/temas/Guides/examples_statistics/04-Simulaciones-Probabilidad.zip)
 
 # Ejemplos Diseño Experimental
 
