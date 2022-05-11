@@ -15,6 +15,7 @@ intro_image_hide_on_mobile: true
 - [02-Ejemplo de tablas y gráficos con R](https://rpubs.com/Edimer/884435) [(Descargar .Rmd)](/temas/Guides/examples_statistics/03-TablasGraficos.zip)
 - [03-Ejemplo de probabilidades con R](https://rpubs.com/Edimer/900795) [(Descargar .Rmd)](/temas/Guides/examples_statistics/04-Simulaciones-Probabilidad.zip)
 - [Función diagramas de Venn](/temas/Guides/examples_statistics/diagramas_venn.R)
+- [04-Ejemplos distribuciones de probabilidad](https://rpubs.com/Edimer/901198) [(Descargar .Rmd)](/temas/Guides/examples_statistics/05-distribuciones-probabilidad.zip)
 
 # Ejemplos Diseño Experimental
 
