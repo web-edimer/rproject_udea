@@ -14,7 +14,7 @@ intro_image_hide_on_mobile: true
 - [01-Ejemplo de estadística descriptiva con R](https://rpubs.com/Edimer/881462) [(Descargar .Rmd)](/temas/Guides/examples_statistics/02-DescriptivaR1.zip)
 - [02-Ejemplo de tablas y gráficos con R](https://rpubs.com/Edimer/884435) [(Descargar .Rmd)](/temas/Guides/examples_statistics/03-TablasGraficos.zip)
 - [03-Ejemplo de probabilidades con R](https://rpubs.com/Edimer/900795) [(Descargar .Rmd)](/temas/Guides/examples_statistics/04-Simulaciones-Probabilidad.zip)
-- [Función diagramas de Venn][(Descargar)](/temas/Guides/examples_statistics/diagramas_venn.R)
+- [Función diagramas de Venn](/temas/Guides/examples_statistics/diagramas_venn.R)
 
 # Ejemplos Diseño Experimental
 
