@@ -41,4 +41,4 @@ intro_image_hide_on_mobile: true
     + [03-Regresión lineal múltiple](/temas/DisExperimental/03-RegLineal-Multiple/03-RegLineal-Multiple.html)
 - **Unidad 2: Introducción al diseño de experimentos**
     + [04-Introducción](/temas/DisExperimental/04-IntroExperimentos/04-IntroExperimentos.html)
-    + [05-Potencia de pruebas y tamaño muestral](/temas/DisExperimental/04-IntroExperimentos/)
+    + [05-Potencia de pruebas y tamaño muestral](/temas/DisExperimental/05-SampleSize-PowerTest/05-SampleSize-PowerTest.html)

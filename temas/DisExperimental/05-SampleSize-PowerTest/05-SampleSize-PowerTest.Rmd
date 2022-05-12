@@ -1,0 +1,154 @@
+---
+title: "Diseño Experimental"
+subtitle: "Potencia de pruebas y tamaño muestral<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Tipos de error
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "img/img7.PNG" width = 700/>
+</center>
+
+---
+
+class: inverse, center, middle
+
+# Potencia de pruebas  y tamaño muestral 🤔 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://i.gifer.com/DDjw.gif" width = 700/>
+</center>
+
+---
+
+# Potencia de pruebas
+
+.panelset.sideways[
+  
+.panel[.panel-name[Concepto] 
+
+La *potencia* de una prueba estadística se define como la probabilidad de rechazar una hipótesis nula que es falsa, es decir, la probabilidad de no cometer el error tipo II.
+
+$$Potencia = 1 - Error\ tipo\ II$$
+
+#### ¿Qué es necesario para calcular la potencia de las pruebas?
+
+<center>
+<img src = "https://drek4537l1klr.cloudfront.net/kabacoff/Figures/10fig01.jpg" width = 200/>
+</center>
+<br>
+<br>
+<br>
+.footnote[
+[Fuente: R in Action - Chapter 10](https://livebook.manning.com/book/r-in-action/chapter-10/25)
+]
+           
+]
+  
+.panel[.panel-name[Tamaño muestral] 
+
+¿Cómo calcular el tamaño de muestra adecuado en mis experimentos?
+
+<center>
+<img src = "https://www.zohowebstatic.com/sites/default/files/survey/zslp-samplesize-what-sample.png" width = 350/>
+</center>
+           
+]
+  
+.panel[.panel-name[Potencia de pruebas con R] 
+
+| Prueba | Función |
+| :---- | :--------: |
+| Una proporción $(p_1)$ | `pwr.p.test()` |
+| Dos proporciones - balanceado $(p_1-p_2)$ | `pwr.2p.test()` |
+| Una media $(\mu_1)$ | `pwr.t.test()` |
+| Dos medias - balanceado $(\mu_1-\mu_2)$ | `pwr.t.test()` |
+| Medias pareadas $(\mu_{después}-\mu_{antes})$ | `pwr.t.test()` |
+| Anova de una vía $(\tau_i)$ | `pwr.anova.test()` |
+| Correlación $(\rho)$ | `pwr.r.test()` |
+| Regresión lineal simple $(\beta_1)$ | `pwr.f2.test()` |
+| Regresión lineal múltiple $(\beta_1, \beta_2, ...)$ | `pwr.f2.test()` |
+           
+]
+  
+.panel[.panel-name[Recursos de información general] 
+
+- [Understanding Statistics and Experimental Design](https://link.springer.com/chapter/10.1007/978-3-030-03499-3_7)
+
+<center>
+<img src = "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-03499-3" width = 150/>
+</center>
+
+- [Power and sample size - Nature Methods](https://www.nature.com/articles/nmeth.2738)
+- [Power failure: why small sample size undermines the reliability of neuroscience](https://www.nature.com/articles/nrn3475)
+- [Implications of sample size and acquired number of steps to investigate running biomechanics](https://www.nature.com/articles/s41598-021-82876-z)
+- [R in Action - Chapter 10. Power analysis](https://livebook.manning.com/book/r-in-action/chapter-10/)
+- [UCLA: Introduction to power analysis](https://stats.oarc.ucla.edu/other/mult-pkg/seminars/intro-power/)
+
+]
+
+.panel[.panel-name[Recursos de información con R] 
+
+- [Statistical Power Analysis Using R](https://advstats.psychstat.org/book/power/index.php)
+
+<center>
+<img src = "https://i5.walmartimages.com/asr/408387b4-5d93-4eca-ae00-873eabc29cfa_1.3861abc84d50afd81b08bf6e6d6b5da6.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" width = 200/>
+</center>
+
+
+
+- [R-tutorial: Power and sample size calculation](https://publicifsv.sund.ku.dk/~tag/Teaching/share/R-tutorials/Basic-statistics/Power.html)
+- [Power Analysis in R](https://slcladal.github.io/pwr.html#Introduction)
+
+- Software para cálculos de tamaño muestral:
+  - [G*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower)
+  - [Radiant - Shiny R](https://vnijs.shinyapps.io/radiant/?_ga=2.136871664.1191772279.1652373094-207201449.1652373094&SSUID=3e2195756c)
+  - [WebPower](https://webpower.psychstat.org/wiki/models/index)
+           
+]
+
+
+
+
+]
+
+---
+class: inverse, center, middle
+
+# Explicación intuitiva
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/VX_M3tIyiYk" frameborder="0" allowfullscreen></iframe>
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
