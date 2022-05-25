@@ -39,6 +39,7 @@ intro_image_hide_on_mobile: true
 - [Datos exportaciones de café](/temas/data/DatosExportacionesPunto3.xlsx)
 - [Datos créditos agropecuarios 2021](/temas/data/creditos_colombia_genero.Rds)
 - [Datos pasto Guinea](/temas/data/pasto_guinea.Rds)
+- [Encuestas presidenciales Colombia 2022](/temas/data/EncuestasColombia2022-Update.csv)
 - [Datos caso 1 - Diseño Experimental](/temas/data/EVA-Depurada.csv)
 - [Datos caso 2 - Diseño Experimental](/temas/data/Suelos-Depurada.csv)
 - [Datos caso 3 - Diseño Experimental](/temas/data/Agricola-Depurada.csv)
