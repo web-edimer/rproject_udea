@@ -1,0 +1,68 @@
+---
+title: "Estadística"
+subtitle: "Distribución de la media muestral<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Distribución de $\bar{X}$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img0.png" width = 800/>
+</center>
+
+---
+
+# Distribución de la media muestral
+
+<center>
+<img src="img/img1.PNG" width = 650/>
+</center>
+
+---
+
+# Distribución de la media muestral
+
+<center>
+<img src="img/img2.PNG" width = 650/>
+</center>
+
+- La variable aleatoria $\bar{X}$ toma valores $\bar{X_1}$, $\bar{X_2}$, ..., $\bar{X_j}$.
+- **Esperanza matemática:** $E[X] = \mu_{\bar{X}}$
+- **Varianza:** $Var[X] = \frac{\sigma}{\sqrt{n}}$
+
+---
+
+# Teorema del Límite Central 
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/46DgBP9VwtE" frameborder="0" allowfullscreen></iframe>
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

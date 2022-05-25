@@ -21,8 +21,8 @@ intro_image_hide_on_mobile: true
     + [07-Probabilidad: Distribuciones de probabilidad](/temas/Statistics/07-Distribuciones-Probabilidad/07-Distribuciones-Probabilidad.html)
     
 - **Unidad 3: Inferencia Estadística**
-    + [08-Inferencia: introducción](https://rproject-udea.netlify.app/)
-    + [09-Distribución de medias muestrales](https://rproject-udea.netlify.app/)
+    + [08-Distribución de medias muestrales](/temas/Statistics/08-Estadisticos-Muestrales/08-Estadisticos-Muestrales.html)
+    + [09-Inferencia: introducción](/temas/Statistics/09-Inferencia-Intro/09-Inferencia-Intro.html)
     + [10-Inferencia sobre una población](https://rproject-udea.netlify.app/)
     + [11-Inferencia sobre dos poblaciones](https://rproject-udea.netlify.app/)
 
