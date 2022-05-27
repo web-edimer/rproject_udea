@@ -23,6 +23,7 @@ intro_image_hide_on_mobile: true
 - [Función para gráficos 3D](/temas/Guides/examples_experimental_design/plot3d_regresion.R)
 - [02-Ejemplos de Bootstrapping](https://rpubs.com/Edimer/898907) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/02-Muestreo-Bootstrapping.zip)
 - [03-Ejemplos de potencia de pruebas](https://rpubs.com/Edimer/901843) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/03-Potencia-Pruebas.zip)
+- [04-Ejemplos de análisis de experimentos](https://rpubs.com/Edimer/907629) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/04-AnalisisExperimentos.zip)
 
 # Guías
 
@@ -40,6 +41,7 @@ intro_image_hide_on_mobile: true
 - [Datos créditos agropecuarios 2021](/temas/data/creditos_colombia_genero.Rds)
 - [Datos pasto Guinea](/temas/data/pasto_guinea.Rds)
 - [Encuestas presidenciales Colombia 2022](/temas/data/EncuestasColombia2022-Update.csv)
+- [Datos experimento en ratones](/temas/data/experimento_ratones.xlsx)
 - [Datos caso 1 - Diseño Experimental](/temas/data/EVA-Depurada.csv)
 - [Datos caso 2 - Diseño Experimental](/temas/data/Suelos-Depurada.csv)
 - [Datos caso 3 - Diseño Experimental](/temas/data/Agricola-Depurada.csv)
