@@ -16,7 +16,7 @@ intro_image_hide_on_mobile: true
 - [03-Ejemplo de probabilidades con R](https://rpubs.com/Edimer/900795) [(Descargar .Rmd)](/temas/Guides/examples_statistics/04-Simulaciones-Probabilidad.zip)
 - [Función diagramas de Venn](/temas/Guides/examples_statistics/diagramas_venn.R)
 - [04-Ejemplos distribuciones de probabilidad](https://rpubs.com/Edimer/901198) [(Descargar .Rmd)](/temas/Guides/examples_statistics/05-distribuciones-probabilidad.zip)
-- [05-Ejemplo de análisis de normalidad](https://rpubs.com/Edimer/901198) [(Descargar .Rmd)](/temas/Guides/examples_statistics/06-Pruebas-Normalidad.zip)
+- [05-Ejemplo de análisis de normalidad](https://rpubs.com/Edimer/909024) [(Descargar .Rmd)](/temas/Guides/examples_statistics/06-Pruebas-Normalidad.zip)
 - [06-Ejemplos de inferencia estadística]() [(Descargar .Rmd)]()
 
 # Ejemplos Diseño Experimental
