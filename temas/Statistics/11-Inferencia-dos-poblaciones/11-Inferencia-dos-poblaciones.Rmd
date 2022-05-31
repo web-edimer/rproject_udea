@@ -54,12 +54,6 @@ knitr::include_graphics("img/difvar.png")
 ```
 
 ---
-class: inverse, center, middle
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-# Ejemplo con experimento de cebada
-
----
 
 class: inverse, center, middle
 
@@ -151,11 +145,7 @@ knitr::include_graphics("img/v.png")
 
 ]
 
----
-class: inverse, center, middle
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
-# Ejemplo con experimento de trigo
 
 ---
 
@@ -185,11 +175,7 @@ Si $\hat{p_1}$ y $\hat{p_2}$ son las proporciones de éxito de dos muestras alea
 knitr::include_graphics("img/difp.png")
 ```
 
----
-class: inverse, center, middle
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
-# Ejemplos
 
 ---
 class: inverse, center, middle

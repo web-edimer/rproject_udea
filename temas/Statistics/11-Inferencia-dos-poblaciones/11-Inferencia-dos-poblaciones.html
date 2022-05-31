@@ -4,8 +4,8 @@
     <title>Estadística</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2021-09-29" />
-    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <meta name="date" content="2022-05-31" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="libs/panelset-0.2.6/panelset.js"></script>
@@ -15,7 +15,10 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Estadística
+]
+.subtitle[
 ## Inferencia sobre dos poblaciones
 <html>
 <div style="float:left">
@@ -23,9 +26,16 @@ class: center, middle, inverse, title-slide
 </div>
 <hr color='#EB811B' size=1px width=800px>
 </html>
+]
+.author[
 ### Edimer David Jaramillo
+]
+.institute[
 ### Universidad de Antioquia
-### 2021-09-29
+]
+.date[
+### 2022-05-31
+]
 
 ---
 
@@ -63,12 +73,6 @@ class: inverse, center, middle
 Si `\(S^2_1\)` y `\(S^2_2\)` son las varianzas muestrales de muestras aleatorias independientes de tamaño `\(n_1\)` y `\(n_2\)` de poblaciones normales, un intervalo de confianza del `\((1-\alpha)100\%\)` para `\(\sigma^2_1/\sigma^2_2\)` está dado por la siguiente expresión:
 
 &lt;img src="img/difvar.png" width="680px" height="140px" style="display: block; margin: auto;" /&gt;
-
----
-class: inverse, center, middle
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
-
-# Ejemplo con experimento de cebada
 
 ---
 
@@ -152,11 +156,7 @@ Donde `\(v\)`:
 
 ]
 
----
-class: inverse, center, middle
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
-# Ejemplo con experimento de trigo
 
 ---
 
@@ -184,11 +184,7 @@ Si `\(\hat{p_1}\)` y `\(\hat{p_2}\)` son las proporciones de éxito de dos muest
 
 &lt;img src="img/difp.png" width="580px" height="120px" style="display: block; margin: auto;" /&gt;
 
----
-class: inverse, center, middle
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
-# Ejemplos
 
 ---
 class: inverse, center, middle
@@ -261,6 +257,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

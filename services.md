@@ -23,8 +23,8 @@ intro_image_hide_on_mobile: true
 - **Unidad 3: Inferencia Estadística**
     + [08-Distribución de medias muestrales](/temas/Statistics/08-Estadisticos-Muestrales/08-Estadisticos-Muestrales.html)
     + [09-Inferencia: introducción](/temas/Statistics/09-Inferencia-Intro/09-Inferencia-Intro.html)
-    + [10-Inferencia sobre una población](https://rproject-udea.netlify.app/)
-    + [11-Inferencia sobre dos poblaciones](https://rproject-udea.netlify.app/)
+    + [10-Inferencia sobre una población](/temas/Statistics/10-Inferencia-una-poblacion/10-Inferencia-una-poblacion.html)
+    + [11-Inferencia sobre dos poblaciones](/temas/Statistics/11-Inferencia-dos-poblaciones/11-Inferencia-dos-poblaciones.html)
 
 - **Unidad 4 y 5: Diseño de Experimentos**
     + [12-Diseño de Experimentos: DCA, DBCA y Factoriales](https://rproject-udea.netlify.app/)
