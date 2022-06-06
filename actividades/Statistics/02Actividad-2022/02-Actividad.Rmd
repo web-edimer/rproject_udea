@@ -1,0 +1,70 @@
+---
+title: "Estadística"
+author: "Edimer David Jaramillo"
+date: "06 de junio de 2022"
+output:
+  html_document:
+    css: estilo.css
+    theme: readable
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Ejercicio 1
+
+  - En un sistema de producción de hortalizas se detectan tres plagas. El 25% de las plantas tiene la enfermedad A, el 20% B y el 30% C. El 12% la A y B, el 10% la A y C, el 11% B y C y el 5% tiene las tres enfermedades. Obtener:
+    - El diagrama de Venn para representar el enunciado.
+    - La probabilidad de que una planta posea alguna de las enfermedades. (**Rta: 0.47**)
+    - La probabilidad de que una planta posea la enfermedad A pero no la B.  (**Rta: 0.13**)
+    - La probabilidad de que una planta posea la enfermedad B y C pero no la A.  (**Rta: 0.06**)
+
+# Ejercicio 2
+
+- Se tiene un lote de 200 animales, de los cuales 88 requieren se vacunados y lo están, 28 necesitan la vacuna pero no lo están, 4 no necesitan la vacuna pero están vacunados, 80 no necesitan la vacuna y no están vacunados. Construya una tabla que represente el problema y determine las probabilidades para los siguientes eventos:
+  - El animal requiere ser vacunado  (**Rta: 0.58**)
+  - El animal requiere ser vacunado pero no lo está (**Rta: 0.14**)
+  - El animal está vacunado, sea que lo requiera o no.  (**Rta: 0.46**)
+
+# Ejercicio 3
+
+- Teniendo en cuenta que exite una población (*hipótetica*) simulada bajo la distribución normal, con media igual a 121.35 y desviación estándar igual a 5.87, ¿cuál es la probabilidad de que la variable aleatoria tome valores entre 101 y 115?
+
+# Ejercicio 4
+
+- Con la base de datos `Soils`, para la variable `pH`, concluya respecto al siguiente juego de hipótesis teniendo en cuenta un nivel de significancia del 5%:
+
+$$H_0: \mu = 5.32 \\
+H_1: \mu \neq 5.32$$
+
+- Para cargar la base de datos `Soils` utilice el siguiente código:
+
+```{r, warning=FALSE, message=FALSE}
+library(car) # Necesario tener instalada esta biblioteca
+Soils
+```
+
+# Ejercicio 5
+
+- Con la base de datos `genxenv` que está disponible en la biblioteca `agricolae`, construya un modelo de análisis de varianza que permita responder lo siguiente:
+  - ¿Existen diferencias estadísticas entre los ambientes (ENV) para la variable producción (YLD)?
+  - ¿Existen diferencias estadísticas entre los genotipos (GEN) para la variable producción (YLD)?
+  - Estime las medias de cada ambiente junto al intervalo de confianza del 95%.
+  - Ejecute pruebas de comparaciones múltiples para la fuente de variación ambientes (ENV) e informe los resultados.
+  - **Nota:** independientemente del modelo que utilice, recuerde reportar el diagnóstico de los residuales.
+
+```{r}
+library(agricolae)
+library(tidyverse)
+data(genxenv)
+genxenv %>% 
+  head()
+```
+
+
+# Fecha de entrega
+
+- Máximo 20 de junio de 2022.

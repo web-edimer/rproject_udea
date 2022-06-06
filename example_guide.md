@@ -30,6 +30,7 @@ intro_image_hide_on_mobile: true
 # Guías
 
 - [Instalar bibliotecas en R desde RStudio](/temas/Guides/01-InstallPackage.html)
+- [Creación de póster con R](/temas/Guides/examples_experimental_design/poster-plantilla.zip)
 
 <br>
 
