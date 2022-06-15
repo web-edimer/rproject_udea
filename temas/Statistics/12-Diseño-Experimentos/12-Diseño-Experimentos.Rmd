@@ -278,16 +278,6 @@ class: inverse, center, middle
 <img src="img/new5.jpg"; height= 350/>
 </center>
 
----
-class: inverse, center, middle
-
-# Ejemplo: [artículo con datos de café](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0209093#sec016)
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-<center>
-<img src="img/paper3.PNG"; width = 850/>
-</center>
 
 ---
 class: inverse, center, middle

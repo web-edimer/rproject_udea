@@ -18,6 +18,7 @@ intro_image_hide_on_mobile: true
 - [04-Ejemplos distribuciones de probabilidad](https://rpubs.com/Edimer/901198) [(Descargar .Rmd)](/temas/Guides/examples_statistics/05-distribuciones-probabilidad.zip)
 - [05-Ejemplo de análisis de normalidad](https://rpubs.com/Edimer/909024) [(Descargar .Rmd)](/temas/Guides/examples_statistics/06-Pruebas-Normalidad.zip)
 - [06-Ejemplos de inferencia estadística](https://rpubs.com/Edimer/909386) [(Descargar .Rmd)](/temas/Guides/examples_statistics/07-Inferencia.zip)
+- [07-Ejemplo anova y regresión]() [(Descargar .Rmd)](/temas/Guides/examples_statistics/08-Anova.zip)
 
 # Ejemplos Diseño Experimental
 

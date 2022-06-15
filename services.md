@@ -27,10 +27,10 @@ intro_image_hide_on_mobile: true
     + [11-Inferencia sobre dos poblaciones](/temas/Statistics/11-Inferencia-dos-poblaciones/11-Inferencia-dos-poblaciones.html)
 
 - **Unidad 4 y 5: Diseño de Experimentos**
-    + [12-Diseño de Experimentos: DCA, DBCA y Factoriales](https://rproject-udea.netlify.app/)
+    + [12-Diseño de Experimentos: DCA, DBCA y Factoriales](/temas/Statistics/12-Diseño-Experimentos/12-Diseño-Experimentos.html)
 
 - **Unidad 6: Correlación y Regresión Lineal**
-    + [14-Correlación y Regresión Lineal](https://rproject-udea.netlify.app/)
+    + [14-Correlación y Regresión Lineal](/temas/Statistics/13-RegLineal/13-RegLineal.html)
 
 # Temas Diseño Experimental
 
