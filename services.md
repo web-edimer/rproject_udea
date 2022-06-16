@@ -43,6 +43,8 @@ intro_image_hide_on_mobile: true
     + [04-Introducción](/temas/DisExperimental/04-IntroExperimentos/04-IntroExperimentos.html)
     + [05-Potencia de pruebas y tamaño muestral](/temas/DisExperimental/05-SampleSize-PowerTest/05-SampleSize-PowerTest.html)
 - **Unidad 3: Diseños Experimentales**
-    + [05-Análisis estadístico de experimentos](/temas/DisExperimental/06-DisenosExperimentales/06-DisenosExperimentales.html)    
+    + [05-Análisis estadístico de experimentos](/temas/DisExperimental/06-DisenosExperimentales/06-DisenosExperimentales.html)
+- **Unidad 4: Modelos Lineales Mixtos**
+    + [06-Modelos mixtos: introducción](/temas/DisExperimental/07-ModelosMixtos/07-ModelosMixtos.html)    
     
     

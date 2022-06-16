@@ -1,0 +1,117 @@
+---
+title: "Diseño Experimental"
+subtitle: "Modelos Lineales Mixtos<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+```
+
+
+class: inverse, center, middle
+
+# Modelos Mixtos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://stats.idre.ucla.edu/wp-content/uploads/2016/02/lmm01.svg" width = 600/>
+</center>
+
+---
+
+# Modelo Lineal - Modelo Lineal Mixto
+
+.panelset.sideways[
+  
+.panel[.panel-name[Modelo Lineal Mixto] 
+
+- Modelo lineal (regresión):
+
+$$y_i \sim N(\mu_i, \sigma^2) \\
+\mu_i = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + ...  + \beta_kX_{ki} \\
+\sigma^2 = constante$$
+
+Es decir:
+
+$$E(Y|X) = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + ...  + \beta_kX_{ki}$$
+
+
+- Modelo lineal mixto:
+
+$$Y_i\ |\ b_i \sim N(X_i\beta + Z_ib_i)$$
+
+           
+]
+  
+.panel[.panel-name[Efectos fijos - Aleatorios] 
+
+<center>
+<img src="https://environmentalcomputing.net/statistics/meta-analysis/meta-analysis-2/Fixed.png" width = 400/>
+</center>
+
+<center>
+<img src="https://environmentalcomputing.net/statistics/meta-analysis/meta-analysis-2/Random.png" width = 400/>
+</center>
+           
+]
+
+.panel[.panel-name[Efectos fijos - Aleatorios] 
+
+
+<center>
+<img src="https://www.e-ijd.org/articles/2014/59/2/images/IndianJDermatol_2014_59_2_134_127671_f3.jpg"/>
+</center>
+           
+]
+
+.panel[.panel-name[Medidas repetidas] 
+
+
+<center>
+<img src="https://blog.minitab.com/hubfs/Imported_Blog_Media/crossover_design.png"/>
+</center>
+           
+]
+
+
+
+]
+
+---
+class: inverse, center, middle
+
+# Ejemplo
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+#### [Randomized Block Experimental Designs Can Increase the Power and Reproducibility of Laboratory Animal Experiments](https://academic.oup.com/ilarjournal/article/55/3/472/645707?login=false)
+
+<center>
+<img src="img/img1.PNG"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

@@ -27,6 +27,7 @@ intro_image_hide_on_mobile: true
 - [02-Ejemplos de Bootstrapping](https://rpubs.com/Edimer/898907) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/02-Muestreo-Bootstrapping.zip)
 - [03-Ejemplos de potencia de pruebas](https://rpubs.com/Edimer/901843) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/03-Potencia-Pruebas.zip)
 - [04-Ejemplos de análisis de experimentos](https://rpubs.com/Edimer/907629) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/04-AnalisisExperimentos.zip)
+- [05-Ejemplo de modelo mixto](https://rpubs.com/Edimer/915518) [(Descargar .Rmd)](/temas/Guides/examples_experimental_design/05-ModelosMixtos.zip)
 
 # Guías
 
