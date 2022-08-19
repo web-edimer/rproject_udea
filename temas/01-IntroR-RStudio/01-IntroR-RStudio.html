@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Uso de R en experimentación animal:</title>
+    <title>R en experimentación animal:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2021-03-11" />
-    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <meta name="date" content="2022-08-19" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
@@ -13,7 +13,10 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Uso de R en experimentación animal:
+.title[
+# R en experimentación animal:
+]
+.subtitle[
 ## Introducción a R y RStudio
 <html>
 <div style="float:left">
@@ -21,9 +24,16 @@ class: center, middle, inverse, title-slide
 </div>
 <hr color='#EB811B' size=1px width=800px>
 </html>
+]
+.author[
 ### Edimer David Jaramillo
+]
+.institute[
 ### Universidad de Antioquia
-### 2021-03-11
+]
+.date[
+### 2022-08-19
+]
 
 ---
 
@@ -110,15 +120,26 @@ class: inverse, center, middle
 
 ---
 
-# Top Lenguajes 2020
+# Top Lenguajes 2021
 
-&lt;br&gt;
 &lt;center&gt;
-&lt;img src = "https://developer-tech.com/wp-content/uploads/sites/3/2020/07/tiobe-default-ranking-programming-languages-2020.jpg" height = 430px width = 450px/&gt;
+&lt;img src = "https://spectrum.ieee.org/media-library/list-of-top-10-ranked-programming-languages-ordered-from-top-python-java-c-c-javascript-c-r-go-html-and-swift.png?id=27277813&amp;width=866&amp;quality=80" width = 420 /&gt;
 &lt;/center&gt;
 
 .footnote[
-[1] [ieee.org](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020)
+[Fuente: IEEE Top 2021](https://spectrum.ieee.org/top-programming-languages-2021#toggle-gdpr)
+]
+
+---
+
+# ¿Cómo evolucionó R?
+
+&lt;center&gt;
+&lt;img src = "https://www.mdpi.com/life/life-12-00648/article_deploy/html/images/life-12-00648-g001-550.jpg" width = 310 /&gt;
+&lt;/center&gt;
+
+.footnote[
+[Fuente: The R Language: An Engine for Bioinformatics and Data Science](https://www.mdpi.com/2075-1729/12/5/648/htm)
 ]
 
 ---
@@ -288,39 +309,15 @@ class: inverse, center, middle
 &lt;iframe width="800" height="500" src="https://www.youtube.com/embed/6taIMlZysJQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 ---
-class: inverse, center, middle
 
-# Instalación de herramientas
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+# ¿Por qué RStudio?
 
----
-
-# R + RStudio
-
-&lt;br&gt;
-&lt;br&gt;
 &lt;center&gt;
 &lt;img src = "img/r-rstudio.png"/&gt;
 &lt;/center&gt;
 
-- [Descargar R (última versión) - Windows.](https://cran.r-project.org/bin/windows/base/R-4.0.4-win.exe)
-- [Descargar R (última versión) - MacOS.](https://cran.r-project.org/bin/macosx/R-4.0.4.pkg)
-- [Descargar RStudio (última versión) - Windows.](https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe)
-- [Descargar RStudio (última versión) - MacOS.](https://download1.rstudio.org/desktop/macos/RStudio-1.4.1106.dmg)
+### Proceso de análisis de datos
 
----
-class: inverse, center, middle
-
-# ¿Por qué RStudio?
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
-
----
-
-# Proceso de análisis de datos
-
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
 &lt;center&gt;
 &lt;img src = "img/programar.PNG"/&gt;
 &lt;/center&gt;
@@ -342,6 +339,16 @@ class: inverse, center, middle
 .footnote[
 [1] [Página web del *Tidyverse*.](https://www.tidyverse.org/)
 ]
+
+---
+class: inverse, center, middle
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+# [*R para Ciencia de Datos*](https://es.r4ds.hadley.nz/)
+
+&lt;center&gt;
+&lt;img src = "https://images-na.ssl-images-amazon.com/images/I/51U8H-yROqL._SX331_BO1,204,203,200_.jpg" width = 300 /&gt;
+&lt;/center&gt;
 
 ---
 class: inverse, center, middle
@@ -401,6 +408,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

@@ -1,5 +1,5 @@
 ---
-title: "Uso de R en experimentación animal:"
+title: "R en experimentación animal:"
 subtitle: "Introducción a R y RStudio <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
@@ -97,15 +97,26 @@ class: inverse, center, middle
 
 ---
 
-# Top Lenguajes 2020
+# Top Lenguajes 2021
 
-<br>
 <center>
-<img src = "https://developer-tech.com/wp-content/uploads/sites/3/2020/07/tiobe-default-ranking-programming-languages-2020.jpg" height = 430px width = 450px/>
+<img src = "https://spectrum.ieee.org/media-library/list-of-top-10-ranked-programming-languages-ordered-from-top-python-java-c-c-javascript-c-r-go-html-and-swift.png?id=27277813&width=866&quality=80" width = 420 />
 </center>
 
 .footnote[
-[1] [ieee.org](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020)
+[Fuente: IEEE Top 2021](https://spectrum.ieee.org/top-programming-languages-2021#toggle-gdpr)
+]
+
+---
+
+# ¿Cómo evolucionó R?
+
+<center>
+<img src = "https://www.mdpi.com/life/life-12-00648/article_deploy/html/images/life-12-00648-g001-550.jpg" width = 310 />
+</center>
+
+.footnote[
+[Fuente: The R Language: An Engine for Bioinformatics and Data Science](https://www.mdpi.com/2075-1729/12/5/648/htm)
 ]
 
 ---
@@ -275,39 +286,15 @@ class: inverse, center, middle
 <iframe width="800" height="500" src="https://www.youtube.com/embed/6taIMlZysJQ" frameborder="0" allowfullscreen></iframe>
 
 ---
-class: inverse, center, middle
 
-# Instalación de herramientas
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+# ¿Por qué RStudio?
 
----
-
-# R + RStudio
-
-<br>
-<br>
 <center>
 <img src = "img/r-rstudio.png"/>
 </center>
 
-- [Descargar R (última versión) - Windows.](https://cran.r-project.org/bin/windows/base/R-4.0.4-win.exe)
-- [Descargar R (última versión) - MacOS.](https://cran.r-project.org/bin/macosx/R-4.0.4.pkg)
-- [Descargar RStudio (última versión) - Windows.](https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe)
-- [Descargar RStudio (última versión) - MacOS.](https://download1.rstudio.org/desktop/macos/RStudio-1.4.1106.dmg)
+### Proceso de análisis de datos
 
----
-class: inverse, center, middle
-
-# ¿Por qué RStudio?
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
-
----
-
-# Proceso de análisis de datos
-
-<br>
-<br>
-<br>
 <center>
 <img src = "img/programar.PNG"/>
 </center>
@@ -329,6 +316,16 @@ class: inverse, center, middle
 .footnote[
 [1] [Página web del *Tidyverse*.](https://www.tidyverse.org/)
 ]
+
+---
+class: inverse, center, middle
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+# [*R para Ciencia de Datos*](https://es.r4ds.hadley.nz/)
+
+<center>
+<img src = "https://images-na.ssl-images-amazon.com/images/I/51U8H-yROqL._SX331_BO1,204,203,200_.jpg" width = 300 />
+</center>
 
 ---
 class: inverse, center, middle
