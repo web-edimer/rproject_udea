@@ -29,7 +29,7 @@ a, a > code {
   text-shadow: none;
 }
 .inverse h1, .inverse h2, .inverse h3 {
-  color: #f3f3f3;
+  color: #000000;
 }
 /* Two-column layout */
 .left-column {
@@ -200,8 +200,4 @@ position: absolute;
 
 .blue{
   color: #416AF5;
-}
-
-.white{
-  color: white;
 }
