@@ -1,5 +1,5 @@
 ---
-title: "Uso de R en experimentación animal:"
+title: "R en experimentación animal"
 subtitle: "IDE RStudio y elementos básicos de R <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
