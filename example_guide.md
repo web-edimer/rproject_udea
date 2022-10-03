@@ -15,6 +15,8 @@ intro_image_hide_on_mobile: true
 
 # Ejemplos Estadística
 
+- [Estadística descriptiva](https://rpubs.com/Edimer/951047)
+
 
 # Guías
 
