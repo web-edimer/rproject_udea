@@ -25,9 +25,6 @@ intro_image_hide_on_mobile: true
 
 A continuación se describen las actividades evaluativas para el curso:
 
-- [Actividad 1]()
-<br>
-
-- [Actividad 2]()
+- [Descripción de experimentos](https://rpubs.com/Edimer/954734)
 <br>
 

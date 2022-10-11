@@ -24,6 +24,7 @@ intro_image_hide_on_mobile: true
 - [Creación de póster con R](/temas/Guides/examples_experimental_design/poster-plantilla.zip)
 - [Plantilla R Markdown](/temas/Guides/00-plantila-rmarkdown.zip)
 - [Plantilla Quarto](/temas/Guides/plantilla-quarto.zip)
+- [Guía Arduino Science Journal](https://rpubs.com/Edimer/954711)
 
 <br>
 
