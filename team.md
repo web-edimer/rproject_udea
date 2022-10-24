@@ -26,6 +26,6 @@ intro_image_hide_on_mobile: true
 A continuación se describen las actividades evaluativas para el curso:
 
 - [Descripción de experimentos](https://rpubs.com/Edimer/954734)
-- [Hoja guía de experimentacións](https://rpubs.com/Edimer/961099)
+- [Hoja guía de experimentación](https://rpubs.com/Edimer/961099)
 <br>
 
