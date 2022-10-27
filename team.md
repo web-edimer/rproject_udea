@@ -9,16 +9,7 @@ intro_image_hide_on_mobile: true
 
 # Actividades R-Project
 
-- [Actividad 1 (25%)]()
-<br>
-
-- [Actividad 2 (25%)]()
-<br>
-
-- [Actividad 3 (25%)]()
-<br>
-
-- [Actividad 4 (25%)]()
+- [Actividad 1](https://rpubs.com/Edimer/962708)
 <br>
 
 # Actividades Estadística
