@@ -11,6 +11,7 @@ intro_image_hide_on_mobile: true
 # Ejemplos R-Project
 
 - [Fundamentos básicos de R](https://rpubs.com/Edimer/946766)
+- [Manipulación de datos con R](https://rpubs.com/Edimer/962884)
 
 
 # Ejemplos Estadística
