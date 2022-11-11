@@ -38,3 +38,5 @@ intro_image_hide_on_mobile: true
 - [Encuesta de clase](/temas/data/Encuesta-Respuestas.xlsx)
 - [Ejemplo aceleraciones (tiempo unix)](/temas/data/Aceleraciones Edimer tnormal.csv)
 - [Ejemplo aceleraciones (tiempo relativo)](/temas/data/Aceleraciones Edimer trelativo.csv)
+- [Datos de frutas](/temas/data/fruits.csv)
+- [Datos de vegetales](/temas/data/vegetables.csv)
