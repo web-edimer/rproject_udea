@@ -12,6 +12,7 @@ intro_image_hide_on_mobile: true
 
 - [Fundamentos básicos de R](https://rpubs.com/Edimer/946766)
 - [Manipulación de datos con R](https://rpubs.com/Edimer/962884)
+- [Asociación de variables](https://rpubs.com/Edimer/969460)
 
 
 # Ejemplos Estadística
