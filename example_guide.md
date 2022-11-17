@@ -30,6 +30,7 @@ intro_image_hide_on_mobile: true
 - [Plantilla Quarto](/temas/Guides/plantilla-quarto.zip)
 - [Guía Arduino Science Journal](https://rpubs.com/Edimer/954711)
 - [Análisis de aceleraciones (1)](https://rpubs.com/Edimer/966185)
+- [Plantillas R Markdown, Quarto  y Flexdashboard](/temas/Guides/plantillas-R-udea.zip)
 
 <br>
 
