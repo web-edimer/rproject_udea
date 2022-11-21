@@ -1,0 +1,357 @@
+---
+title: "Estadística"
+subtitle: "Probabilidad: Introducción"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "2022-04-27"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Introducción a la probabilidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://thumbs.gfycat.com/SecondTartCygnet-max-1mb.gif"/>
+</center>
+
+---
+
+# Probabilidad...
+
+.pull-left[
+
+<center>
+<img src="https://www.stat.cmu.edu/~larry/Larry.jpg" width = 250/>
+</center>
+
+> *“Probabilidad es el lenguaje matemático para cuantificar la incertidumbre.”* — Larry Wasserman
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://www.buridan.es/img/m/17.jpg" width = 290/>
+</center>
+
+> *“La teoría de las probabilides es la menos intuitiva de todas las ramas de las matemáticas”* — Amir Aczel
+
+]
+
+---
+
+# Método Científico
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png" width = 600/>
+</center>
+
+---
+
+# Tipos de experimentos
+
+
+- **Experimento determinístico:** aquél que produce los mismos resultados al repetirse bajo las mismas condiciones.
+
+- **Experimento aleatorio:** aquél que cuando se repite bajo las mismas
+condiciones produce resultados diferentes y no pueden ser predichos con absoluta certeza.
+
+<center>
+<img src="https://media1.tenor.com/images/36b4c0e9a413e5895a8b562abe125dd8/tenor.gif?itemid=7885436" width = 500/>
+</center>
+
+---
+
+# Conceptos básicos
+
+.panelset[
+
+.panel[.panel-name[Espacio muestral]
+
+- La teoría de la probabilidad es la rama de las matemáticas que estudia los fenómenos o experimentos aleatorios. Inicialmente no es posible conocer los posibles resultados de un experimento aleatorio, por tanto, es conveniente agrupar en un **conjunto** a todos los resultados posibles.
+
+- El **espacio muestral** de un experimento aleatorio es el conjunto de todos los posibles resultados del experimento, denotado comunmente por la letra griega omega mayúscula $\Omega$ o con la letra $S$. 
+
+- **Ejemplo:** Si el experimento aleatorio consiste en lanzar un dado y observar el resultado, el espacio muestral $S$ es: $$S=\{1,2,3,4,5,6\}$$
+
+]
+
+.panel[.panel-name[Eventos o sucesos]
+
+Se denomina **suceso** o **evento** a cualquier subconjunto del conjunto $\Omega$. Se denota conmunmente por la letra omega minúscula $\omega$.
+
+**Ejemplo:** continuando con el ejemplo de lanzar un dado y observar el resultado, un evento  podría ser: $$A=\{2,4,6\}$$ 
+
+### Eventos mutuamente excluyentes e Independientes
+
+Dos eventos de un espacio muestral $\Omega$ se consideran **mutuamente excluyentes** si no contienen elementos en común, es decir, $A \cap B=\emptyset$
+
+Dos eventos de un espacio muestral $\Omega$ se consideran **independientes** si el resultado de uno no influye en la aparación del otro.
+
+]
+
+.panel[.panel-name[Operaciones entre eventos]
+
+  - Unión $A \cup B$
+  - Intersección $A \cap B$
+  - Diferencia $A-B$ o $B-A$
+  - Complemento $A^c$
+
+<br>
+
+.pull-left[
+
+.pull-left[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-6-1.png"/>
+</center>
+
+]
+
+.pull-right[
+
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-5-1.png"/>
+</center>
+
+]
+
+]
+
+.pull-right[
+
+.pull-left[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-7-1.png"/>
+</center>
+
+
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://cdsantae.github.io/DoE/_site/prob_files/figure-html/unnamed-chunk-4-1.png"/>
+</center>
+
+
+]
+
+]
+
+]
+
+]
+
+---
+
+# Probablidad
+
+.panelset[
+
+.panel[.panel-name[Concepto]
+
+Dado un experimento aleatorio con un espacio muestral de $n$ sucesos o eventos elementales $\Omega$, la probabilidad del suceso $A$, que se designa mediante $P(A)$, es el cociente entre la cantidad de casos favorables para la ocurrencia de $A$ y la de casos posibles. La probabilidad de ocurrencia de cada suceso elemental es $1/n$, por tanto, se denominan equiprobables.
+
+  - $0\ \leq\ P(A) \leq\ 1$
+  - $P(\Omega)=1$
+  - Si $A1,\ A2,\ A3\,...$ es una colección infinita de eventos mutuamente excluyentes, entonces:
+
+$$P(A_1 \cup A_2\  \cup A_3...)=\sum\nolimits_{i=1}^\infty P(A_i)$$
+
+]
+
+
+.panel[.panel-name[Propiedades]
+
+- $0 \leq P(E) \leq 1$
+- $P(\emptyset)=0$ (suceso imposible)
+- $P(E^c)=1-P(E)$
+- Si $A \subseteq B$, entonces, $P(A) \leq\ P(B)$
+- $P(A-B)=P(A)-P(A \cap B)$
+- $P(A \cup B)=P(A)+P(B)-P(A \cap B)$ 
+
+]
+
+.panel[.panel-name[Cálculo de probabilidades]
+
+  - Clásico: 
+
+$$P(A)=\frac{{n_A}}{n}$$
+
+<br>
+
+  - Frecuentista:
+
+$$P(A)=\frac{{Número\ de\ veces\ que\ se\ presentó\ A}}{Número\ de\ veces\ que\ se\ observó\ el\ experimento}$$
+
+<br>
+
+  - Subjetivo:
+  
+$$P(A)\ =\ Criterio\ de\ un\ experto$$
+
+]
+
+]
+
+---
+class: inverse, center, middle
+
+# Variable Aleatoria
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://miro.medium.com/max/600/0*BI0-oi3-44reoh_z.png" width = 400/>
+</center>
+
+
+---
+class: inverse, center, middle
+
+# Variable aleatoria discreta
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=9}
+library(readxl)
+library(tidyverse)
+datos <- read_csv("data/EncuestaDepurada.csv")
+theme_set(theme_minimal())
+datos %>% 
+  ggplot(aes(x = medio_transporte)) +
+  geom_bar(color = "black") +
+  labs(x = "Medio de transporte", y = "Frecuencia")
+```
+
+
+---
+class: inverse, center, middle
+
+# Variable aleatoria continua
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=9}
+datos %>% 
+  ggplot(aes(x = promedio_academico)) +
+  geom_histogram(bins = 6, color = "black") +
+  labs(x = "Promedio académico", y = "Frecuencia")
+```
+
+---
+class: inverse, center, middle
+
+# Medidas de resumen de una variable aleatoria
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Matem%C3%A1tica_m%C3%A9dica.png" width = 500/>
+</center>
+
+
+
+---
+
+# Medidas de resumen
+
+.panelset[
+
+.panel[.panel-name[Localización diferente]
+
+<br>
+<br>
+
+<center>
+<img src = "img/distribucion1.png" width = 900/>
+</center>
+
+]
+
+.panel[.panel-name[Variación diferente]
+
+<center>
+<img src = "img/distribucion2.png" width = 900/>
+</center>
+
+]
+
+.panel[.panel-name[Igual localización y diferente variación]
+
+<center>
+<img src = "img/distribucion3.png" width = 900/>
+</center>
+
+]
+
+]
+
+
+---
+class: inverse, center, middle
+
+# Distribuciones de probabilidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img1.png" width = 700/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Distribución de $\bar{X}$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img0.png" width = 800/>
+</center>
+
+---
+
+# Teorema del Límite Central 
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/46DgBP9VwtE" frameborder="0" allowfullscreen></iframe>
+
+---
+
+# Funciones importantes en R
+
+<center>
+<img src="img/img2.png" width = 300/>
+</center>
+
+<br>
+
+- **`r_`**: prefijo `r` (*random*) para generación de números aleatorios de alguna distribución específica (ejemplo: `rbinom()`, `rnorm()`, `rexp()`).
+- **`d_`**: prefijo `d` (*density*) permite obtener la función de densidad.
+- **`p_`**: prefijo `p` (*probability*) permite obtener probabilidades acumuladas.
+- **`q_`**: prefijo `q` (*quantile*) permite obtener el valor asociado a determinada probabilidad.
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
