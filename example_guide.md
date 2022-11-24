@@ -43,3 +43,4 @@ intro_image_hide_on_mobile: true
 - [Ejemplo aceleraciones (tiempo relativo)](/temas/data/Aceleraciones Edimer trelativo.csv)
 - [Datos de frutas](/temas/data/fruits.csv)
 - [Datos de vegetales](/temas/data/vegetables.csv)
+- [Datos de suelos en Colombia](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
