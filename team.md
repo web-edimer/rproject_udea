@@ -10,6 +10,7 @@ intro_image_hide_on_mobile: true
 # Actividades R-Project
 
 - [Actividad 1](https://rpubs.com/Edimer/962708)
+- [Actividad 2](https://rpubs.com/Edimer/975113)
 <br>
 
 # Actividades Estadística
