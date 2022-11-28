@@ -40,6 +40,7 @@ intro_image_hide_on_mobile: true
 
 - [Evaluaciones Agropecuarias 2019-2021](/temas/data/Evaluaciones_Agropecuarias_Municipales___EVA._2019_-_2021._Base_Agr_cola.csv)
 - [Encuesta de clase](/temas/data/Encuesta-Respuestas.xlsx)
+- [Encuesta depurada](/temas/data/encuesta_depurada_excel.xlsx)
 - [Ejemplo aceleraciones (tiempo unix)](/temas/data/Aceleraciones Edimer tnormal.csv)
 - [Ejemplo aceleraciones (tiempo relativo)](/temas/data/Aceleraciones Edimer trelativo.csv)
 - [Datos de frutas](/temas/data/fruits.csv)
