@@ -14,6 +14,7 @@ intro_image_hide_on_mobile: true
 - [Manipulación de datos con R](https://rpubs.com/Edimer/962884)
 - [Asociación de variables](https://rpubs.com/Edimer/969460)
 - [Tablero de datos - Ejemplo Cacao](https://rpubs.com/Edimer/974713)
+- [Modelación con R](https://rpubs.com/Edimer/981724)
 
 
 # Ejemplos Estadística
