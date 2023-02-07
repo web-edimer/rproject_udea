@@ -1,0 +1,299 @@
+---
+title: "Diseño Experimental"
+subtitle: "Introducción"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+class: inverse, center, middle
+
+# Método Científico
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png" width = 520/>
+</center>
+
+---
+
+class: inverse, center, middle
+
+
+
+# ¿R, R Markdown, RStudio?
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://cdn.iconscout.com/icon/premium/png-256-thumb/frequently-ask-question-3584775-2993321.png"; width = 350/>
+</center>
+
+---
+
+# R y RStudio
+
+<center>
+<img src = "https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png"; width = 450/>
+</center>
+
+.pull-left[
+
+#### ¿Qué es R?
+
+<center>
+<img src = "https://setscholars.net/wp-content/uploads/2020/04/R_Machine_Learning.png"; width = 450/>
+</center>
+
+
+]
+
+.pull-right[
+
+#### ¿Qué es RStudio?
+
+- RStudio es un entorno de desarrollo integrado (IDE) para R. [Página oficial de RStudio.](https://rstudio.com/)
+
+#### Descargar R y RStudio
+
+- [Descargar e instalar R y RStudio](https://posit.co/download/rstudio-desktop/)
+
+] 
+
+
+---
+
+# Tipos de gráficos
+
+.pull-left[
+
+
+
+#### Tipos de gráficos
+
+- Cantidades
+- Proporciones
+- Distribuciones
+- Relación *X* vs *Y*
+- Incertidumbre
+- Mapas
+
+<center>
+<img src = "https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png">
+</center>
+
+
+]
+
+.pull-right[
+
+#### `ggplot2`
+
+<center>
+<img src = "https://ggplot2.tidyverse.org/logo.png">
+</center>
+
+]
+
+
+---
+
+# Ejemplos de gráficos
+
+.pull-left[
+
+
+#### Relaciones lineales
+
+<center>
+<img src = "https://cdn-icons-png.flaticon.com/512/2103/2103601.png" width = 200>
+</center>
+
+#### Boxplots
+
+<center>
+<img src = "https://cdn4.iconfinder.com/data/icons/data-charts-and-graphs/100/BoxPlot-512.png" width = 200>
+</center>
+
+
+]
+
+.pull-right[
+
+#### Relaciones no lineales
+
+<center>
+<img src = "https://cdn0.iconfinder.com/data/icons/business-consultant-glyph/64/trend-prediction-stat-regression-analysis-512.png" width = 200>
+</center>
+
+#### Histogramas
+
+<center>
+<img src = "https://cdn-icons-png.flaticon.com/512/2709/2709749.png" width = 200>
+</center>
+
+]
+
+---
+
+# Proceso de análisis de datos
+
+.pull-left[
+
+#### Fisher, Neyman, Pearson
+    
+<center>
+<img src="img/img2.PNG" width = 230/>
+</center>    
+    
+    
+    
+]
+
+.pull-right[
+
+#### Tukey
+  
+<center>
+<img src="img/img3.PNG" width = 250/>
+</center>    
+  
+  
+]
+
+
+.footnote[
+[Fuente: Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/)
+]
+
+---
+
+class: inverse, center, middle
+
+# Modelos Generativos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/azar.jpg" width = 500/>
+</center>
+
+---
+
+# Estadística y Diseño Experimental
+
+<br>
+
+<center>
+<img src="img/img4.PNG" width = 900/>
+</center>  
+
+---
+
+class: inverse, center, middle
+
+# Inferencia Estadística
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png" />
+</center>
+
+---
+
+# Parámetros de interés
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Proporción poblacional | $p$ | $\hat{p}$  | Proporción muestral | $$H_0: p = \theta \\ H_1: p \neq \theta$$ |
+| Media poblacional | $\mu$ | $\bar{x}$  | Media muestral | $$H_0: \mu = \theta \\ H_1: \mu \neq \theta$$ |
+| Diferencia de proporciones poblacionales | $p_1 - p_2$ | $\hat{p_1} - \hat{p_2}$  | Diferencia de proporciones muestrales | $$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$ |
+| Diferencia de medias poblacionales | $\mu_1 - \mu_2$ | $\bar{x_1} - \bar{x_2}$  | Diferencia de medias muestrales | $$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$ |
+
+---
+
+# Parámetros de interés en la regresión
+
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$
+
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Pendiente de regresión poblacional | $\beta_i$ | $\hat{\beta_i}$  | Pendiente de regresión muestral | $$H_0: \beta_i = 0 \\ H_1: \beta_i \neq 0$$ |
+
+
+
+.pull-left[
+
+#### Supuestos matemáticos de modelos lineales
+
+- Normalidad
+- Homocedasticidad
+- Independencia
+- Linealidad
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" width = 250/>
+</center>
+
+
+
+]
+
+---
+
+# Algunas preguntas de interés...
+
+.pull-left[
+
+- ¿Cuál es la proporción de semillas germinadas para la marca *X*?
+- ¿Existen diferencias en la proporción de frutas afectadas para dos casas comerciales que proveen un producto que inhibe el efecto de plagas?
+- ¿Cuál es el promedio del rendimiento (en toneladas por hectárea) para el cultivo de café en Colombia?
+- ¿Existen diferencias en el promedio de producción de leche al suministrar el *aditivo A* vs *aditivo B* en la dieta de las vacas?
+- ¿Existe alguna relación entre la cantidad de forraje verde consumido vs la producción de leche?
+- ¿Existe alguna relación entre la edad de parto y el peso de los animales?
+
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png"/>
+</center>
+
+
+
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

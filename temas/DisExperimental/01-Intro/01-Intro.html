@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Diseño Experimental
 ]
 .subtitle[
-## Presentación del curso
+## Introducción
 ]
 .author[
 ### Edimer David Jaramillo
@@ -32,116 +32,276 @@ class: center, middle, inverse, title-slide
 ---
 
 
+
+
 class: inverse, center, middle
 
-# Diseño Experimental
+# Método Científico
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
----
-
-# Objetivos y unidades
-
-### Objetivos
-
-- Proporcionar los elementos necesarios para el planteamiento teórico y práctico del diseño de experimentos.
-- Implementar técnicas estadísticas para el diseño y análisis de experimentos.
-- Comprender la importancia del diseño y análisis estadístico de experimentos en la implementación del método científico.
-- Usar herramientas técnológicas que faciliten el procesamiento de datos y la generación de conocimiento.
-
-### Unidades
-
-- **Unidad 1:** Análisis de regresión lineal simple y múltiple.
-- **Unidad 2:** Introducción al diseño de experimentos (elementos de inferencia estadística). 
-- **Unidad 3:** Diseños factoriales, cuadros latinos y parcelas divididas.
-- **Unidad 4:** Modelos lineales mixtos (medidas repetidas en el tiempo).
+&lt;center&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png" width = 520/&gt;
+&lt;/center&gt;
 
 ---
 
-# Evaluación del curso
-
-&lt;br&gt;
-
-- **Actividad 1:** 
-  - Trabajo escrito
-  - Resolución de ejercicios y problemas
-  - 25 %
-- **Actividad 2:** 
-  - Trabajo escrito
-  - Resolución de ejercicios y problemas
-  - 25 %
-- **Actividad 3:** 
-  - Exposición y trabajo escrito
-  - Ejemplo aplicado en un problema real bajo enfoque de Ciencia de Datos.
-  - 50 %
-  
-
----
 class: inverse, center, middle
 
-# Recursos de Información
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+
+# ¿R, R Markdown, RStudio?
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src = "https://cdn.iconscout.com/icon/premium/png-256-thumb/frequently-ask-question-3584775-2993321.png"; width = 350/&gt;
+&lt;/center&gt;
 
 ---
 
-# Design and Analysis of Experiments
+# R y RStudio
+
+&lt;center&gt;
+&lt;img src = "https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png"; width = 450/&gt;
+&lt;/center&gt;
+
+.pull-left[
+
+#### ¿Qué es R?
+
+&lt;center&gt;
+&lt;img src = "https://setscholars.net/wp-content/uploads/2020/04/R_Machine_Learning.png"; width = 450/&gt;
+&lt;/center&gt;
+
+
+]
+
+.pull-right[
+
+#### ¿Qué es RStudio?
+
+- RStudio es un entorno de desarrollo integrado (IDE) para R. [Página oficial de RStudio.](https://rstudio.com/)
+
+#### Descargar R y RStudio
+
+- [Descargar e instalar R y RStudio](https://posit.co/download/rstudio-desktop/)
+
+] 
+
+
+---
+
+# Tipos de gráficos
+
+.pull-left[
+
+
+
+#### Tipos de gráficos
+
+- Cantidades
+- Proporciones
+- Distribuciones
+- Relación *X* vs *Y*
+- Incertidumbre
+- Mapas
+
+&lt;center&gt;
+&lt;img src = "https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png"&gt;
+&lt;/center&gt;
+
+
+]
+
+.pull-right[
+
+#### `ggplot2`
+
+&lt;center&gt;
+&lt;img src = "https://ggplot2.tidyverse.org/logo.png"&gt;
+&lt;/center&gt;
+
+]
+
+
+---
+
+# Ejemplos de gráficos
+
+.pull-left[
+
+
+#### Relaciones lineales
+
+&lt;center&gt;
+&lt;img src = "https://cdn-icons-png.flaticon.com/512/2103/2103601.png" width = 200&gt;
+&lt;/center&gt;
+
+#### Boxplots
+
+&lt;center&gt;
+&lt;img src = "https://cdn4.iconfinder.com/data/icons/data-charts-and-graphs/100/BoxPlot-512.png" width = 200&gt;
+&lt;/center&gt;
+
+
+]
+
+.pull-right[
+
+#### Relaciones no lineales
+
+&lt;center&gt;
+&lt;img src = "https://cdn0.iconfinder.com/data/icons/business-consultant-glyph/64/trend-prediction-stat-regression-analysis-512.png" width = 200&gt;
+&lt;/center&gt;
+
+#### Histogramas
+
+&lt;center&gt;
+&lt;img src = "https://cdn-icons-png.flaticon.com/512/2709/2709749.png" width = 200&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+# Proceso de análisis de datos
+
+.pull-left[
+
+#### Fisher, Neyman, Pearson
+    
+&lt;center&gt;
+&lt;img src="img/img2.PNG" width = 230/&gt;
+&lt;/center&gt;    
+    
+    
+    
+]
+
+.pull-right[
+
+#### Tukey
+  
+&lt;center&gt;
+&lt;img src="img/img3.PNG" width = 250/&gt;
+&lt;/center&gt;    
+  
+  
+]
+
 
 .footnote[
-[1] [Design and Analysis of Experiments](https://antivirus.uclv.edu.cu/update/libros/Mathematics%20and%20Statistics/Design%20and%20Analysis%20of%20Experiments%20-%20Angela%20Dean%2C%20Daniel%20Voss%2C%20Danel%20Dragulji%2C%202nd%20ed.%202017%20-%20978-3-319-52250-0.pdf)
+[Fuente: Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/)
 ]
+
+---
+
+class: inverse, center, middle
+
+# Modelos Generativos
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/azar.jpg" width = 500/&gt;
+&lt;/center&gt;
+
+---
+
+# Estadística y Diseño Experimental
 
 &lt;br&gt;
+
 &lt;center&gt;
-&lt;img src = "img/libro0.png" width=310/&gt;
+&lt;img src="img/img4.PNG" width = 900/&gt;
+&lt;/center&gt;  
+
+---
+
+class: inverse, center, middle
+
+# Inferencia Estadística
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src = "https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png" /&gt;
 &lt;/center&gt;
 
 ---
 
-# Statistical Inference via Data Science
+# Parámetros de interés
 
-.footnote[
-[1] [Statistical Inference via Data Science](https://moderndive.com/)
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Proporción poblacional | `\(p\)` | `\(\hat{p}\)`  | Proporción muestral | `$$H_0: p = \theta \\ H_1: p \neq \theta$$` |
+| Media poblacional | `\(\mu\)` | `\(\bar{x}\)`  | Media muestral | `$$H_0: \mu = \theta \\ H_1: \mu \neq \theta$$` |
+| Diferencia de proporciones poblacionales | `\(p_1 - p_2\)` | `\(\hat{p_1} - \hat{p_2}\)`  | Diferencia de proporciones muestrales | `$$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$` |
+| Diferencia de medias poblacionales | `\(\mu_1 - \mu_2\)` | `\(\bar{x_1} - \bar{x_2}\)`  | Diferencia de medias muestrales | `$$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$` |
+
+---
+
+# Parámetros de interés en la regresión
+
+`$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$`
+
+
+`$$\beta = (X^TX)^{-1}X^Ty$$`
+
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Pendiente de regresión poblacional | `\(\beta_i\)` | `\(\hat{\beta_i}\)`  | Pendiente de regresión muestral | `$$H_0: \beta_i = 0 \\ H_1: \beta_i \neq 0$$` |
+
+
+
+.pull-left[
+
+#### Supuestos matemáticos de modelos lineales
+
+- Normalidad
+- Homocedasticidad
+- Independencia
+- Linealidad
+
 ]
+
+.pull-right[
 
 &lt;br&gt;
+
 &lt;center&gt;
-&lt;img src = "img/libro5.png" width=280/&gt;
+&lt;img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" width = 250/&gt;
 &lt;/center&gt;
+
+
+
+]
 
 ---
 
-# Design and Analysis of Experiments with R
+# Algunas preguntas de interés...
 
-.footnote[
-[1] [Design and Analysis of Experiments with R](http://www.ru.ac.bd/stat/wp-content/uploads/sites/25/2019/03/502_07_00_Lawson_Design-and-Analysis-of-Experiments-with-R-2017.pdf)
+.pull-left[
+
+- ¿Cuál es la proporción de semillas germinadas para la marca *X*?
+- ¿Existen diferencias en la proporción de frutas afectadas para dos casas comerciales que proveen un producto que inhibe el efecto de plagas?
+- ¿Cuál es el promedio del rendimiento (en toneladas por hectárea) para el cultivo de café en Colombia?
+- ¿Existen diferencias en el promedio de producción de leche al suministrar el *aditivo A* vs *aditivo B* en la dieta de las vacas?
+- ¿Existe alguna relación entre la cantidad de forraje verde consumido vs la producción de leche?
+- ¿Existe alguna relación entre la edad de parto y el peso de los animales?
+
+
 ]
 
+.pull-right[
+
+&lt;br&gt;
+
 &lt;center&gt;
-&lt;img src = "img/Libro1.png" width=280/&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png"/&gt;
 &lt;/center&gt;
 
----
 
-# Mixed Models: Theory and Applications with R
 
-.footnote[
-[1] [Mixed Models: Theory and Applications with R](https://www.isical.ac.in/~arnabc/linmod/demidenko.pdf)
 ]
-
-&lt;center&gt;
-&lt;img src = "img/libro2.png" width=290/&gt;
-&lt;/center&gt;
-
----
-
-# Modelos Mixtos con R
-
-.footnote[
-[1] [Modelos Mixtos con R](https://fhernanb.github.io/libro_modelos_mixtos/)
-]
-
-&lt;center&gt;
-&lt;img src = "img/libro3.jpg" width=410/&gt;
-&lt;/center&gt;
 
 ---
 class: inverse, center, middle
