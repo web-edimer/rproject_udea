@@ -7,17 +7,12 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
-# Actividades R-Project
+# Actividades Diseño Experimental
 
-- [Actividad 1](https://rpubs.com/Edimer/962708)
-- [Actividad 2](https://rpubs.com/Edimer/975113)
+- [Actividad 1 - G1]()
+- [Actividad 2 - G1]()
+- [Actividad 3 - G1]()
+- [Actividad 1 - G2]()
+- [Actividad 2 - G2]()
+- [Actividad 3 - G2]()
 <br>
-
-# Actividades Estadística
-
-A continuación se describen las actividades evaluativas para el curso:
-
-- [Descripción de experimentos](https://rpubs.com/Edimer/954734)
-- [Hoja guía de experimentación](https://rpubs.com/Edimer/961099)
-<br>
-
