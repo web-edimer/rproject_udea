@@ -3,7 +3,7 @@ title: "Diseño Experimental"
 subtitle: "Introducción"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "`r Sys.Date()`"
+date: "2023-02-07"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
