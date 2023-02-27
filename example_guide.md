@@ -10,6 +10,8 @@ intro_image_hide_on_mobile: true
 
 # Ejemplos Diseño Experimental
 
+- [Ejemplo de regresión lineal simple](https://rpubs.com/Edimer/1002486)
+
 # Guías
 
 - [Instalar bibliotecas en R desde RStudio](/temas/Guides/01-InstallPackage.html)
