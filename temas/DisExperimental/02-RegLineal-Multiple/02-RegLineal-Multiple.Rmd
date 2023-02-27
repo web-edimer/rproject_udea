@@ -1,0 +1,182 @@
+---
+title: "Diseño Experimental"
+subtitle: "Regresión Lineal Múltiple"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+```
+
+class: inverse, center, middle
+
+# Regresión Lineal Múltiple
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://learnche.org/pid/_images/least-squares-two-x-variables.png"; height= 500/>
+</center>
+
+---
+
+# Introducción
+
+.panelset.sideways[
+
+.panel[.panel-name[Modelos]
+
+#### Modelo Lineal
+
+$$y = b + mx \\$$
+
+#### Modelo Lineal (Estadística)
+
+$$y = \beta_0 + \beta_1X_i +  \epsilon \\ 
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_i +  \hat{\epsilon}$$
+
+#### Modelo Lineal Múltiple
+
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$
+
+]
+
+.panel[.panel-name[Aproximación Matricial]
+
+<center>
+<img src="img/img1.PNG"/>
+</center>
+
+- Estimación por mínimos cuadrados:
+
+<center>
+<img src="img/img2.PNG"/>
+</center>
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+]
+
+
+.panel[.panel-name[Hiperplano]
+
+<center>
+<img src="https://miro.medium.com/max/936/1*o_ZrNQXcd9sUEqfSRti8LQ.gif" width = 560/>
+</center>
+
+]
+
+.panel[.panel-name[Supuestos Matemáticos]
+
+- Normalidad
+- Homocedasticidad
+- Indepedencia
+- Linealidad
+
+<center>
+<img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" height = 350/>
+</center>
+
+
+
+]
+
+.panel[.panel-name[Predictores Numéricos]
+
+
+<center>
+<img src="https://nickmichalak.com/post/2019-12-11-logistic-regression-in-r/2019-12-11-logistic-regression-in-r_files/figure-html/unnamed-chunk-49-.gif" height = 500/>
+</center>
+
+]
+
+.panel[.panel-name[Predictores Categóricos]
+
+
+<center>
+<img src="https://stats.idre.ucla.edu/wp-content/uploads/2016/02/movie.gif" height = 500/>
+</center>
+
+]
+
+]
+
+---
+
+# Regresión con muchas variables
+
+.panelset.sideways[
+  
+.panel[.panel-name[Multicolinealidad]
+
+- ¿Cómo detectarla o inferirla?
+  - Matriz de correlación
+  - Pruebas estadísticas (Factor Inflacionario de Varianza - *VIF*)
+  - Valores de *VIF* mayores a 5 o 10 son indicios de sesgo en la estimación de los coeficientes.
+  
+$$VIF = \frac{1}{1-R^2_p}$$ 
+
+<center>
+<img src="img/img3.png"/>
+</center>
+         
+]
+  
+.panel[.panel-name[Selección de Predictores]
+
+- ¿Cómo comparar modelos?
+  - RMSE
+  - Criterios de información estadística:
+      - $LogLik$: logaritmo de la [verosimilitud](https://en.wikipedia.org/wiki/Likelihood_function)
+      - $AIC = -2 \times logLik + k + n$
+      - $BIC = AIC,\ con\ k = log(n)$
+
+#### Métodos paso a paso (*Stepwise*)
+
+<center>
+<img src="https://www.researchgate.net/profile/Stefan-Rueping/publication/28356272/figure/fig9/AS:669078956027909@1536532262110/Backward-selection-forward-selection-and-stepwise-selection.png" height = 280/>
+</center>
+         
+]
+  
+]
+
+---
+class: inverse, center, middle
+
+# Ejemplo
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/img4.PNG" height = 280/>
+</center>
+
+
+### <center>[Descargar datos de artículo](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249136#sec014) </center>
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
+

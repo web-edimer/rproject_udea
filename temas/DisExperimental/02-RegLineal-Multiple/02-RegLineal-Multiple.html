@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Diseño Experimental</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Edimer David Jaramillo" />
+    <meta name="date" content="2023-02-27" />
+    <script src="libs/header-attrs-2.20/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Diseño Experimental
+]
+.subtitle[
+## Regresión Lineal Múltiple
+]
+.author[
+### Edimer David Jaramillo
+]
+.institute[
+### Universidad de Antioquia
+]
+.date[
+### 2023-02-27
+]
+
+---
+
+
+
+
+
+class: inverse, center, middle
+
+# Regresión Lineal Múltiple
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://learnche.org/pid/_images/least-squares-two-x-variables.png"; height= 500/&gt;
+&lt;/center&gt;
+
+---
+
+# Introducción
+
+.panelset.sideways[
+
+.panel[.panel-name[Modelos]
+
+#### Modelo Lineal
+
+`$$y = b + mx \\$$`
+
+#### Modelo Lineal (Estadística)
+
+`$$y = \beta_0 + \beta_1X_i +  \epsilon \\ 
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_i +  \hat{\epsilon}$$`
+
+#### Modelo Lineal Múltiple
+
+`$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$`
+
+]
+
+.panel[.panel-name[Aproximación Matricial]
+
+&lt;center&gt;
+&lt;img src="img/img1.PNG"/&gt;
+&lt;/center&gt;
+
+- Estimación por mínimos cuadrados:
+
+&lt;center&gt;
+&lt;img src="img/img2.PNG"/&gt;
+&lt;/center&gt;
+
+`$$\beta = (X^TX)^{-1}X^Ty$$`
+
+]
+
+
+.panel[.panel-name[Hiperplano]
+
+&lt;center&gt;
+&lt;img src="https://miro.medium.com/max/936/1*o_ZrNQXcd9sUEqfSRti8LQ.gif" width = 560/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Supuestos Matemáticos]
+
+- Normalidad
+- Homocedasticidad
+- Indepedencia
+- Linealidad
+
+&lt;center&gt;
+&lt;img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" height = 350/&gt;
+&lt;/center&gt;
+
+
+
+]
+
+.panel[.panel-name[Predictores Numéricos]
+
+
+&lt;center&gt;
+&lt;img src="https://nickmichalak.com/post/2019-12-11-logistic-regression-in-r/2019-12-11-logistic-regression-in-r_files/figure-html/unnamed-chunk-49-.gif" height = 500/&gt;
+&lt;/center&gt;
+
+]
+
+.panel[.panel-name[Predictores Categóricos]
+
+
+&lt;center&gt;
+&lt;img src="https://stats.idre.ucla.edu/wp-content/uploads/2016/02/movie.gif" height = 500/&gt;
+&lt;/center&gt;
+
+]
+
+]
+
+---
+
+# Regresión con muchas variables
+
+.panelset.sideways[
+  
+.panel[.panel-name[Multicolinealidad]
+
+- ¿Cómo detectarla o inferirla?
+  - Matriz de correlación
+  - Pruebas estadísticas (Factor Inflacionario de Varianza - *VIF*)
+  - Valores de *VIF* mayores a 5 o 10 son indicios de sesgo en la estimación de los coeficientes.
+  
+`$$VIF = \frac{1}{1-R^2_p}$$` 
+
+&lt;center&gt;
+&lt;img src="img/img3.png"/&gt;
+&lt;/center&gt;
+         
+]
+  
+.panel[.panel-name[Selección de Predictores]
+
+- ¿Cómo comparar modelos?
+  - RMSE
+  - Criterios de información estadística:
+      - `\(LogLik\)`: logaritmo de la [verosimilitud](https://en.wikipedia.org/wiki/Likelihood_function)
+      - `\(AIC = -2 \times logLik + k + n\)`
+      - `\(BIC = AIC,\ con\ k = log(n)\)`
+
+#### Métodos paso a paso (*Stepwise*)
+
+&lt;center&gt;
+&lt;img src="https://www.researchgate.net/profile/Stefan-Rueping/publication/28356272/figure/fig9/AS:669078956027909@1536532262110/Backward-selection-forward-selection-and-stepwise-selection.png" height = 280/&gt;
+&lt;/center&gt;
+         
+]
+  
+]
+
+---
+class: inverse, center, middle
+
+# Ejemplo
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/img4.PNG" height = 280/&gt;
+&lt;/center&gt;
+
+
+### &lt;center&gt;[Descargar datos de artículo](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249136#sec014) &lt;/center&gt;
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/gracias.gif"/&gt;
+&lt;/center&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
