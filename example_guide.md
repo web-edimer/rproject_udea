@@ -12,6 +12,7 @@ intro_image_hide_on_mobile: true
 
 - [Ejemplo de regresión lineal simple](https://rpubs.com/Edimer/1002486)
 - [Ejemplo de regresión lineal múltiple (1)](https://rpubs.com/Edimer/1012573)
+- [Ejemplo de regresión lineal múltiple (2)](https://rpubs.com/Edimer/1015338)
 
 # Guías
 
