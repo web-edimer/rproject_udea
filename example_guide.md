@@ -13,6 +13,8 @@ intro_image_hide_on_mobile: true
 - [Ejemplo de regresión lineal simple](https://rpubs.com/Edimer/1002486)
 - [Ejemplo de regresión lineal múltiple (1)](https://rpubs.com/Edimer/1012573)
 - [Ejemplo de regresión lineal múltiple (2)](https://rpubs.com/Edimer/1015338)
+- [Ejemplo de análisis de normalidad](https://rpubs.com/Edimer/1020890)
+- [Ejemplos de inferencia estadística](https://rpubs.com/Edimer/1020897)
 
 # Guías
 
