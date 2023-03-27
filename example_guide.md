@@ -26,3 +26,9 @@ intro_image_hide_on_mobile: true
 <br>
 
 # Bases de datos
+
+- [Datos cebada](/temas/data/datos_cebada.xlsx)
+- [Datos encuesta](/temas/data/encuesta_depurada.xlsx)
+- [Datos medicamentos](/temas/data/datos_medicamentos.xlsx)
+- [Datos parciales](/temas/data/datos_parciales.xlsx)
+- [Datos trigo](/temas/data/datos_trigo.xlsx)
