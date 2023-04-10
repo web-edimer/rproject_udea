@@ -7,6 +7,8 @@
     <meta name="date" content="2023-04-10" />
     <script src="libs/header-attrs-2.20/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
     <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
   </head>
   <body>
@@ -17,7 +19,7 @@ class: center, middle, inverse, title-slide
 # Diseño Experimental
 ]
 .subtitle[
-## Inferencia Estadística
+## Potencia de pruebas y tamaño muestral
 ]
 .author[
 ### Edimer David Jaramillo
@@ -32,95 +34,127 @@ class: center, middle, inverse, title-slide
 ---
 
 
+
+
 class: inverse, center, middle
 
-# Inferencia Estadística
+# Tipos de error
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 &lt;center&gt;
-&lt;img src = "https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png" /&gt;
+&lt;img src = "img/img7.PNG" width = 700/&gt;
 &lt;/center&gt;
 
 ---
 
-# Algunas preguntas de interés...
+class: inverse, center, middle
 
-.pull-left[
-
-- ¿Cuál es la proporción de semillas germinadas para la marca *X*?
-- ¿Existen diferencias en la proporción de frutas afectadas para dos casas comerciales que proveen un producto que inhibe el efecto de plagas?
-- ¿Cuál es el promedio del rendimiento (en toneladas por hectárea) para el cultivo de café en Colombia?
-- ¿Existen diferencias en el promedio de producción de leche al suministrar el *aditivo A* vs *aditivo B* en la dieta de las vacas?
-- ¿Existe alguna relación entre la cantidad de forraje verde consumido vs la producción de leche?
-- ¿Existe alguna relación entre la edad de parto y el peso de los animales?
-
-
-]
-
-.pull-right[
-
-&lt;br&gt;
+# Potencia de pruebas  y tamaño muestral 🤔 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 &lt;center&gt;
-&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png"/&gt;
+&lt;img src = "https://i.gifer.com/DDjw.gif" width = 700/&gt;
 &lt;/center&gt;
-
-
-
-]
 
 ---
 
-# Parámetros de interés en la regresión
+# Potencia de pruebas
 
-`$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$`
+.panelset.sideways[
+  
+.panel[.panel-name[Concepto] 
 
+La *potencia* de una prueba estadística se define como la probabilidad de rechazar una hipótesis nula que es falsa, es decir, la probabilidad de no cometer el error tipo II.
 
-`$$\beta = (X^TX)^{-1}X^Ty$$`
+`$$Potencia = 1 - Error\ tipo\ II$$`
 
-
-| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
-| :--- | :----------------: | :----: | :-----: | :-------: |
-| Pendiente de regresión poblacional | `\(\beta_i\)` | `\(\hat{\beta_i}\)`  | Pendiente de regresión muestral | `$$H_0: \beta_i = 0 \\ H_1: \beta_i \neq 0$$` |
-
-
-
-.pull-left[
-
-#### Supuestos matemáticos de modelos lineales
-
-- Normalidad
-- Homocedasticidad
-- Independencia
-- Linealidad
-
-]
-
-.pull-right[
-
-&lt;br&gt;
+#### ¿Qué es necesario para calcular la potencia de las pruebas?
 
 &lt;center&gt;
-&lt;img src="https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png" width = 250/&gt;
+&lt;img src = "https://drek4537l1klr.cloudfront.net/kabacoff/Figures/10fig01.jpg" width = 200/&gt;
 &lt;/center&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.footnote[
+[Fuente: R in Action - Chapter 10](https://livebook.manning.com/book/r-in-action/chapter-10/25)
+]
+           
+]
+  
+.panel[.panel-name[Tamaño muestral] 
+
+¿Cómo calcular el tamaño de muestra adecuado en mis experimentos?
+
+&lt;center&gt;
+&lt;img src = "https://www.zohowebstatic.com/sites/default/files/survey/zslp-samplesize-what-sample.png" width = 350/&gt;
+&lt;/center&gt;
+           
+]
+  
+.panel[.panel-name[Potencia de pruebas con R] 
+
+| Prueba | Función |
+| :---- | :--------: |
+| Una proporción `\((p_1)\)` | `pwr.p.test()` |
+| Dos proporciones - balanceado `\((p_1-p_2)\)` | `pwr.2p.test()` |
+| Una media `\((\mu_1)\)` | `pwr.t.test()` |
+| Dos medias - balanceado `\((\mu_1-\mu_2)\)` | `pwr.t.test()` |
+| Medias pareadas `\((\mu_{después}-\mu_{antes})\)` | `pwr.t.test()` |
+| Correlación `\((\rho)\)` | `pwr.r.test()` |
+| Regresión lineal simple `\((\beta_1)\)` | `pwr.f2.test()` |
+| Regresión lineal múltiple `\((\beta_1, \beta_2, ...)\)` | `pwr.f2.test()` |
+           
+]
+  
+.panel[.panel-name[Recursos de información general] 
+
+- [Understanding Statistics and Experimental Design](https://link.springer.com/chapter/10.1007/978-3-030-03499-3_7)
+
+&lt;center&gt;
+&lt;img src = "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-03499-3" width = 150/&gt;
+&lt;/center&gt;
+
+- [Power and sample size - Nature Methods](https://www.nature.com/articles/nmeth.2738)
+- [Power failure: why small sample size undermines the reliability of neuroscience](https://www.nature.com/articles/nrn3475)
+- [Implications of sample size and acquired number of steps to investigate running biomechanics](https://www.nature.com/articles/s41598-021-82876-z)
+- [R in Action - Chapter 10. Power analysis](https://livebook.manning.com/book/r-in-action/chapter-10/)
+- [UCLA: Introduction to power analysis](https://stats.oarc.ucla.edu/other/mult-pkg/seminars/intro-power/)
+
+]
+
+.panel[.panel-name[Recursos de información con R] 
+
+- [Statistical Power Analysis Using R](https://advstats.psychstat.org/book/power/index.php)
+
+&lt;center&gt;
+&lt;img src = "https://i5.walmartimages.com/asr/408387b4-5d93-4eca-ae00-873eabc29cfa_1.3861abc84d50afd81b08bf6e6d6b5da6.jpeg?odnHeight=612&amp;odnWidth=612&amp;odnBg=FFFFFF" width = 200/&gt;
+&lt;/center&gt;
+
+
+
+- [R-tutorial: Power and sample size calculation](https://publicifsv.sund.ku.dk/~tag/Teaching/share/R-tutorials/Basic-statistics/Power.html)
+- [Power Analysis in R](https://slcladal.github.io/pwr.html#Introduction)
+
+- Software para cálculos de tamaño muestral:
+  - [G*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower)
+  - [Radiant - Shiny R](https://vnijs.shinyapps.io/radiant/?_ga=2.136871664.1191772279.1652373094-207201449.1652373094&amp;SSUID=3e2195756c)
+  - [WebPower](https://webpower.psychstat.org/wiki/models/index)
+           
+]
+
 
 
 
 ]
 
 ---
+class: inverse, center, middle
 
-# Otros parámetros de interés
+# Explicación intuitiva
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
-| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
-| :--- | :----------------: | :----: | :-----: | :-------: |
-| Proporción poblacional | `\(p\)` | `\(\hat{p}\)`  | Proporción muestral | `$$H_0: p = \theta \\ H_1: p \neq \theta$$` |
-| Media poblacional | `\(\mu\)` | `\(\bar{x}\)`  | Media muestral | `$$H_0: \mu = \theta \\ H_1: \mu \neq \theta$$` |
-| Diferencia de proporciones poblacionales | `\(p_1 - p_2\)` | `\(\hat{p_1} - \hat{p_2}\)`  | Diferencia de proporciones muestrales | `$$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$` |
-| Diferencia de medias poblacionales | `\(\mu_1 - \mu_2\)` | `\(\bar{x_1} - \bar{x_2}\)`  | Diferencia de medias muestrales | `$$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$` |
-
-
-
+&lt;iframe width="800" height="500" src="https://www.youtube.com/embed/VX_M3tIyiYk" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 ---
 class: inverse, center, middle

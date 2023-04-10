@@ -102,33 +102,8 @@ $$\beta = (X^TX)^{-1}X^Ty$$
 | Diferencia de proporciones poblacionales | $p_1 - p_2$ | $\hat{p_1} - \hat{p_2}$  | Diferencia de proporciones muestrales | $$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$ |
 | Diferencia de medias poblacionales | $\mu_1 - \mu_2$ | $\bar{x_1} - \bar{x_2}$  | Diferencia de medias muestrales | $$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$ |
 
----
-
-# ¿Cómo comparar más de 2 grupos?
-
-$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$
-
-Donde:
-- $y_{ij}$: variable respuesta o dependiente
-- $\mu$: media general
-- $\tau_{J}$: efecto del $j-ésimo$ tratamiento
-- $\epsilon_{ij}$: error aleatorio experimental, se debe garantizar que $\epsilon_{ij} \sim N(\mu=0,\sigma^2)$
-
-<center>
-<img src = "img/prueba.png" />
-</center>
-
----
-class: inverse, center, middle
 
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-# Variación del muestreo: *Bootstrapping*
-
-<center>
-<img src = "https://miro.medium.com/max/1400/1*9x2lAp3QF2FyIyQNaePkVA.png" width = 700 />
-</center>
 
 ---
 class: inverse, center, middle
