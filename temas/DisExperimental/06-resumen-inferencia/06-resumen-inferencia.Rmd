@@ -25,7 +25,7 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 <center>
-<img src="https://datatab.net/assets/tutorial/inferenz_deskriptiv_en.png" width = 700/>
+<img src="img/img01.PNG" width = 700/>
 </center>
 
 
