@@ -34,3 +34,5 @@ intro_image_hide_on_mobile: true
 - [Datos medicamentos](/temas/data/datos_medicamentos.xlsx)
 - [Datos parciales](/temas/data/datos_parciales.xlsx)
 - [Datos trigo](/temas/data/datos_trigo.xlsx)
+- [Datos créditos agropecuarios](/temas/data/creditos_colombia_genero.Rds)
+- [Datos pasto guinea](/temas/data/pasto_guinea.Rds)
