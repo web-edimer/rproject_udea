@@ -16,6 +16,7 @@ intro_image_hide_on_mobile: true
 - [Ejemplo de análisis de normalidad](https://rpubs.com/Edimer/1020890)
 - [Ejemplos de inferencia estadística](https://rpubs.com/Edimer/1020897)
 - [Ejemplos de Bootstrapping](https://rpubs.com/Edimer/1026730)
+- [Ejemplos de potencias de prueba y tamaño muestral](https://rpubs.com/Edimer/1030677)
 
 # Guías
 
@@ -37,3 +38,4 @@ intro_image_hide_on_mobile: true
 - [Datos trigo](/temas/data/datos_trigo.xlsx)
 - [Datos créditos agropecuarios](/temas/data/creditos_colombia_genero.Rds)
 - [Datos pasto guinea](/temas/data/pasto_guinea.Rds)
+- [Datos de calidad de leche](/temas/data/Simpson-Calidad-Leche.xls)
