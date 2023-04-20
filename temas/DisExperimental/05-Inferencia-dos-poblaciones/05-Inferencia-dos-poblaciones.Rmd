@@ -1,9 +1,9 @@
 ---
-title: "Estadística"
+title: "Diseño Experimental"
 subtitle: "Inferencia sobre dos poblaciones"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "`r Sys.Date()`"
+date: "2023-04-10`"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
