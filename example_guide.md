@@ -39,3 +39,6 @@ intro_image_hide_on_mobile: true
 - [Datos créditos agropecuarios](/temas/data/creditos_colombia_genero.Rds)
 - [Datos pasto guinea](/temas/data/pasto_guinea.Rds)
 - [Datos de calidad de leche](/temas/data/Simpson-Calidad-Leche.xls)
+- **Actividad 02:**
+  - [Datos ALIMENTRO](/temas/data/Alimentro-Depurada.csv)
+  - [Datos análisis de suelos](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
