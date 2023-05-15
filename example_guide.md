@@ -18,6 +18,7 @@ intro_image_hide_on_mobile: true
 - [Ejemplos de Bootstrapping](https://rpubs.com/Edimer/1026730)
 - [Ejemplos de potencias de prueba y tamaño muestral](https://rpubs.com/Edimer/1030677)
 - [Ejemplos DCA y DBCA](https://rpubs.com/Edimer/1037114)
+- [Ejemplos diseños factoriales](https://rpubs.com/Edimer/1041989)
 
 # Guías
 
