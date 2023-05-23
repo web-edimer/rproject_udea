@@ -20,6 +20,7 @@ intro_image_hide_on_mobile: true
 - **Unidad 3: Diseño y análisis de experimentos:**
   - [07-Potencia de pruebas y tamaño muestral](/temas/DisExperimental/07-SampleSize-PowerTest/07-SampleSize-PowerTest.html)
   - [08-Diseño y análisis de experimentos](/temas/DisExperimental/08-IntroExperimentos/08-IntroExperimentos.html)
+  - [09-Modelos lineales mixtos](/temas/DisExperimental/09-ModelosMixtos/09-ModelosMixtos.html)
   
 
   
