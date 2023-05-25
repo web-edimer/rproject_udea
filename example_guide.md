@@ -46,3 +46,5 @@ intro_image_hide_on_mobile: true
 - **Actividad 02:**
   - [Datos ALIMENTRO](/temas/data/Alimentro-Depurada.csv)
   - [Datos análisis de suelos](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
+- **Actividad 03:**
+  - [Datos actividad 03](/temas/data/datos-actividad-03.zip)

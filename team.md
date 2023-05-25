@@ -11,5 +11,5 @@ intro_image_hide_on_mobile: true
 
 - [Actividad 1 - G1 y G2](https://rpubs.com/Edimer/1012548)
 - [Actividad 2 - G1 y G2](https://rpubs.com/Edimer/1033009)
-- [Actividad 3 - G1 y G2]()
+- [Actividad 3 - G1 y G2](https://rpubs.com/Edimer/1045814)
 <br>
