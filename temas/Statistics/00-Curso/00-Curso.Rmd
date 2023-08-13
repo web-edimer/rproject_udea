@@ -1,6 +1,6 @@
 ---
 title: "Estadística:"
-subtitle: "Presentación del curso<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Presentación del curso"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"

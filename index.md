@@ -6,7 +6,7 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
-# Estadística y R-Project en Experimentación Animal
+# Estadística, Diseño Experimental y R-Project en Experimentación Animal
 
 <p style="text-align:justify">
 

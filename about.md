@@ -5,22 +5,20 @@ layout: 'page'
 
 En esta sección usted podrá encontrar material bibliogŕafico de apoyo para los temas abordados durante el semestre.
 
-# Documentación lenguaje R
-
-- [*R para principiantes*](https://cran.r-project.org/doc/contrib/rdebuts_es.pdf)
-- [*Métodos Estadísticos con R y R commander*](https://cran.r-project.org/doc/contrib/Saez-Castillo-RRCmdrv21.pdf)
-- [*Gráficos Estadísticos con R*](https://cran.r-project.org/doc/contrib/grafi3.pdf)
-- [*Statistics Using R with Biological Examples*](https://cran.r-project.org/doc/contrib/Seefeld_StatsRBio.pdf)
-- [*R for Biologists*](https://cran.r-project.org/doc/contrib/Martinez-RforBiologistv1.1.pdf)
-
 # Estadística con R
 
+- [*R para Ciencia de Datos*](https://es.r4ds.hadley.nz/)
 - [Estadística básica edulcorada](https://bookdown.org/aquintela/EBE/)
+- [*R Graphics Cookbook, 2nd edition*](https://r-graphics.org/)
+- [*Data Visualization - A practical introduction*](https://socviz.co/)
+- [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/)
 - [Modelos Estadísticos](https://bookdown.org/j_morales/librostat/)
 - [Modelos de Regresión con R](https://fhernanb.github.io/libro_regresion/)
 - [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/)
+- [*Modern Statistics for Modern Biology*](https://web.stanford.edu/class/bios221/book/)
 - [Beyond Multiple Linear Regression: Applied Generalized Linear Models and Multilevel Models in R](https://bookdown.org/roback/bookdown-BeyondMLR/)
 - [Statistics handbook for a data analyst](https://bookdown.org/mpfoley1973/statistics/)
+- [*Introduction to Data Science*](http://rafalab.dfci.harvard.edu/dsbook/)
 
 # Recursos web
 
@@ -37,20 +35,23 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 
 # Guías
 
-- [*RStudio IDE: español*](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/rstudio-entorno.pdf)
-- [*RStudio IDE: inglés*](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)
-- [*Introducción a R: español*](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/introduccion-a-r.pdf)
-- [*Introducción a R: inglés*](https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf)
-- [Importar datos con readr: español](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/data-import-Spanish_translation-2019.pdf)
-- [Importar datos con readr: inglés](https://d33wubrfki0l68.cloudfront.net/b7142a24f47a959b8a4b67910c67db8b41036f28/ac9a2/wp-content/uploads/2018/08/data-import.png)
-- [Manejo de datos con dplyr y tidyr: español](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/data-wrangling-cheatsheet_Spanish.pdf)
-- [Manejo de datos con dplyr y tidyr: inglés](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-- [Visualización ggplot2: español](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/ggplot2.pdf)
-- [Visualización ggplot2: inglés](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
-- [R Markdown: español](https://github.com/rstudio/cheatsheets/raw/master/translations/spanish/rmarkdown-2.0_Spanish.pdf)
-- [R Markdown: inglés](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [*RStudio IDE*](https://rstudio.github.io/cheatsheets/translations/spanish/rstudio-ide_es.pdf)
+- [*Introducción a R*](https://rstudio.github.io/cheatsheets/translations/spanish/introduccion-a-r.pdf)
+- [Importar datos con readr](https://rstudio.github.io/cheatsheets/translations/spanish/data-import_es.pdf)
+- [Manejo de datos con dplyr](https://rstudio.github.io/cheatsheets/translations/spanish/data-transformation_es.pdf)
+- [Manejo de datos con dplyr y tidyr](https://rstudio.github.io/cheatsheets/translations/spanish/data-wrangling_es.pdf)
+- [Visualización ggplot2](https://rstudio.github.io/cheatsheets/translations/spanish/data-visualization_es.pdf)
+- [R Markdown](https://rstudio.github.io/cheatsheets/translations/spanish/rmarkdown_es.pdf)
+- [Estadística descriptiva con R](https://rstudio.github.io/cheatsheets/translations/spanish/estadistica-descriptiva-con-R.pdf)
+- [Base R](https://rstudio.github.io/cheatsheets/translations/spanish/base-r_es.pdf)
+- [Manipulación de texto con stringr](https://rstudio.github.io/cheatsheets/translations/spanish/strings_es.pdf)
+- [Manejo de factores (variables categóricas) en R](https://rstudio.github.io/cheatsheets/translations/spanish/factors_es.pdf)
 
 # Recomendaciones
 
 - [Conferencia TED: "Las mejores estadísticas que jamás hayas visto"](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
 - [Proyecto Gapminder.org](https://www.gapminder.org/tools/)
+- [Página web Semillero RPyCol](https://semillerorpy.netlify.app/)
+- [Canal de Youtube: Estadística útil](https://www.youtube.com/@fhernanb1)
+- [Canal de Youtube: Dot CSV](https://www.youtube.com/@DotCSV)
+- [Canal de Youtube: RPyCol](https://www.youtube.com/@rpycol/videos)

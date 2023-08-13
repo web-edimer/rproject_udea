@@ -1,6 +1,6 @@
 ---
 title: "Estadística:"
-subtitle: "Introducción a la estadística descriptiva<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Introducción a la estadística descriptiva"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
 date: "`r Sys.Date()`"
