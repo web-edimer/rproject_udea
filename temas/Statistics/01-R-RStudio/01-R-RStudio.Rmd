@@ -81,8 +81,7 @@ class: inverse, center, middle
 
 #### Descargar R y RStudio
 
-- [Clic aquí para descargar R](https://cran.r-project.org/bin/windows/base/R-4.1.2-win.exe)
-- [Clic aquí para descargar RStudio](https://download1.rstudio.org/desktop/windows/RStudio-2022.02.0-443.exe)
+- [Clic aquí para descargar R y RStudio](https://posit.co/download/rstudio-desktop/)
 
 ]
 
