@@ -11,7 +11,7 @@ intro_image_hide_on_mobile: true
 # Ejemplos Estadística
 
 - [01-Datos ordenados con R](https://rpubs.com/Edimer/1085208)
-- [02-Estadística descriptiva con R](https://rpubs.com/Edimer/1085225)
+- [02-Estadística descriptiva con R](https://rpubs.com/Edimer/1088607)
 
 # Guías
 
