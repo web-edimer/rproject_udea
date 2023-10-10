@@ -12,7 +12,7 @@ intro_image_hide_on_mobile: true
 
 - [01-Datos ordenados con R](https://rpubs.com/Edimer/1085208)
 - [02-Estadística descriptiva con R (parte 1)](https://rpubs.com/Edimer/1094328)
-- [02-Estadística descriptiva con R (parte 2)]()
+- [02-Estadística descriptiva con R (parte 2)](https://rpubs.com/Edimer/1096192)
 
 # Guías
 
