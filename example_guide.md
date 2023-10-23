@@ -29,3 +29,5 @@ intro_image_hide_on_mobile: true
 
 - [Datos de Evaluaciones Agropecuarias 2019-2021](/temas/data/Evaluaciones_Agropecuarias_Municipales___EVA._2019_-_2021._Base_Agr_cola.csv)
 - [Análisis de suelos en Colombia](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
+- [Mapa Colombia - Departamentos](/temas/data/MGN2021_DPTO_POLITICO.rar)
+- [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
