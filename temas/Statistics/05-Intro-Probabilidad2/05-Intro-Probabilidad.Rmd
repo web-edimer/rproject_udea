@@ -3,7 +3,7 @@ title: "Estadística"
 subtitle: "Probabilidad: Introducción"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "2022-11-21"
+date: "2023-10-24"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
@@ -25,7 +25,7 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 <center>
-<img src="https://thumbs.gfycat.com/SecondTartCygnet-max-1mb.gif"/>
+<img src="https://cdn4.iconfinder.com/data/icons/academic-disciplines-color/64/theory-of-probability-512.png"/>
 </center>
 
 ---

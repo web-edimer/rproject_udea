@@ -22,6 +22,7 @@ intro_image_hide_on_mobile: true
 - [Plantilla Quarto](/temas/Guides/plantilla-quarto.zip)
 - [Guía Arduino Science Journal](https://rpubs.com/Edimer/954711)
 - [Plantillas R Markdown, Quarto  y Flexdashboard](/temas/Guides/plantillas-R-udea.zip)
+- [Plantillas tableros de datos](/temas/Guides/plantillas-tableros.zip)
 
 <br>
 
