@@ -3,7 +3,7 @@ title: "Estadística:"
 subtitle: "Presentación del curso"
 author: "Edimer David Jaramillo"
 institute: "Universidad de Antioquia"
-date: "2023-08-13"
+date: "2024-02-13"
 output:
   xaringan::moon_reader:
     css: ["mtheme_max.css", "metropolis-fonts"]
@@ -66,12 +66,12 @@ John Wiley & Sons, Inc.
 
 <br>
 
-- **Actividad 1:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (40 %)
+- **Talleres:** 
+  - Desarrollo de talleres en clase (50 %)
 - **Actividad 2:** 
   - Desarrollo de estudio de casos y resolución de ejercicios y problemas (20 %)
 - **Actividad 3:** 
-  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (40 %) 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (30 %) 
 
 ---
 class: inverse, center, middle
