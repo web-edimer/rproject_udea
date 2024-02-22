@@ -44,18 +44,17 @@ class: inverse, center, middle
 
 <br>
 
-- **Actividad 1:** 
-  - Trabajo escrito
+- **Talleres en clase:** 
   - Resolución de ejercicios y problemas
-  - 25 %
+  - 50 %
 - **Actividad 2:** 
   - Trabajo escrito
   - Resolución de ejercicios y problemas
-  - 25 %
+  - 20 %
 - **Actividad 3:** 
   - Exposición y trabajo escrito
   - Ejemplo aplicado en un problema real bajo enfoque de Ciencia de Datos.
-  - 50 %
+  - 30 %
   
 
 ---
