@@ -12,6 +12,8 @@ intro_image_hide_on_mobile: true
 
 # Ejemplos Diseño Experimental
 
+- [01-Resultados de encuesta](https://edimer.quarto.pub/resultados-encuesta/)
+
 # Guías
 
 - [Instalar bibliotecas en R desde RStudio](/temas/Guides/01-InstallPackage.html)
