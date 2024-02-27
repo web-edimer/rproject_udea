@@ -1,18 +1,10 @@
 ---
-title: Ejemplos, Guías y Datos
+title: Guías y Datos
 layout: services
 intro_image: "images/illustrations/prueba.svg"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
-
-<br>
-
-# Ejemplos Estadística
-
-# Ejemplos Diseño Experimental
-
-- [01-Resultados de encuesta](https://edimer.quarto.pub/resultados-encuesta/)
 
 # Guías
 

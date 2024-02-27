@@ -2,11 +2,10 @@
   {
     "title": "Statistical Inference via Data Science",
     "description": "Libro de Chester Ismay y Albert Y. Kim",
-    "image": "images/features/libro_r4ds.svg",
-    "url": "https://moderndive.com/"
+    "image": "images/features/libro_r4ds.svg"
   },
   {
-    "title": "[Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/)",
+    "title": "Modern Statistics for Modern Biology",
     "description": "Libro de Susan Holmes y Wolfgang Huber",
     "image": "images/features/libro2.svg"
   },
