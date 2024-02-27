@@ -1,0 +1,320 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Visualizaciones con ggplot2 - Introducción<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Introducción a `ggplot2`
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://ggplot2.tidyverse.org/logo.png"; height= 400/>
+</center>
+
+---
+
+# Estrategia de análisis
+
+<center>
+<img src="img/img0.png"; height= 550/>
+</center>
+
+
+---
+
+# Tipos de gráficos
+
+<center>
+<img src="img/img02.png"; height= 500/>
+</center>
+
+---
+
+# ¿Cómo funciona `ggplot2`?
+
+<center>
+<img src="img/img01.png"; height= 350/>
+</center>
+
+.pull-left[
+
+```r
+  ggplot(data = datos,
+         mapping = aes(x = mi_x, y = mi_y)) +
+* geom_point() +
+  labs(x = "Eje X", y = "Eje Y",
+       title = "Título", subtitle = "Subtítulo") 
+``` 
+
+]
+
+.pull-right[
+
+```r
+  datos %>% 
+    ggplot(mapping = aes(x = mi_x, y = mi_y)) +
+*   geom_point() +
+    labs(x = "Eje X", y = "Eje Y",
+         title = "Título", subtitle = "Subtítulo")
+``` 
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Directorio de gráficos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+.foot-note[
+
+[Imágenes tomadas de *Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/)
+
+<center>
+<img src="https://clauswilke.com/dataviz/cover.png"; height= 300/>
+</center>
+
+]
+
+---
+
+# Cantidades y Proporciones
+
+.pull-left[
+
+#### Cantidades (conteos) - Individuales:
+
+<center>
+<img src="img/img1.PNG"; height= 150/>
+</center>
+
+#### Proporciones - Individuales:
+
+<center>
+<img src="img/img5.PNG"; height= 150/>
+</center>
+
+]
+
+.pull-right[
+
+#### Cantidades (conteos) - Agrupaciones:
+
+<center>
+<img src="img/img2.PNG"; height= 150/>
+</center>
+
+#### Proporciones - Agrupaciones:
+
+<center>
+<img src="img/img6.PNG"; height= 150/>
+</center>
+
+]
+
+---
+
+# Distribuciones
+
+.pull-left[
+
+#### Distribuciones - Individuales:
+
+<center>
+<img src="img/img3.PNG"; height= 200/>
+</center>
+
+<br>
+
+<center>
+<img src="img/img00.PNG"; height= 120/>
+</center>
+
+]
+
+.pull-right[
+
+#### Distribuciones - Agrupaciones:
+
+<center>
+<img src="img/img4.PNG"; width= 350/>
+</center>
+
+]
+
+---
+
+# Relaciones *X - Y*
+
+.pull-left[
+
+#### Diagrama de dispersión (pocos datos):
+
+<center>
+<img src="img/img7.PNG"; height= 200/>
+</center>
+
+#### Diagrama de dispersión (muchos datos):
+
+<center>
+<img src="img/img8.PNG"; width= 300/>
+</center>
+
+]
+
+.pull-right[
+
+#### Correlograma:
+
+<center>
+<img src="img/corr.PNG"; width= 250/>
+</center>
+
+#### *Y* vs Tiempo:
+
+<center>
+<img src="img/img9.PNG"; width= 450/>
+</center>
+
+]
+
+---
+
+# Incertidumbre y Geoespacial
+
+.pull-left[
+
+#### Error estándar:
+
+<center>
+<img src="img/img10.PNG"; height= 200/>
+</center>
+
+#### Bandas de confianza:
+
+<center>
+<img src="img/img11.PNG"; height= 150/>
+</center>
+
+]
+
+.pull-right[
+
+#### Mapas:
+
+<center>
+<img src="img/img12.PNG"; height= 150/>
+</center>
+
+#### Tipos de datos geoespaciales:
+
+<center>
+<img src="https://1.bp.blogspot.com/-oOKzhCJawvk/VzynE_E_qMI/AAAAAAAAA0k/bhstuh4aV6oHqb5fJwK_8G2D_5jnLiyUwCLcB/s1600/RasterandVector.png"; height= 200/>
+</center>
+
+]
+
+---
+
+# Algunas funciones de `ggplot2`
+
+.pull-left[
+
+#### Mapeo estético y Objetos geométricos
+
+| Función | Descripción |
+| :--- | :----------------: |
+| `ggplot()` | Función principal  |
+| `geom_bar()` | Diagrama de barras |
+| `geom_col()` | Diagrama de barras |
+| `geom_histogram()` | Histogramas  |
+| `geom_density()` | Densidades |
+| `geom_boxplot()` | Boxplot  |
+| `geom_point()` | Capa de puntos |
+| `geom_line()` | Capa de líneas  |
+| `geom_smooth()` | Suavizaciones |
+| `geom_errorbar()` | Incertidumbre |
+
+]
+
+.pull-right[
+
+#### Otras funciones
+
+| Función | Descripción |
+| :--- | :----------------: |
+| `labs()` |  Etiquetas |
+| `xlab()` |  Etiqueta eje X |
+| `ylab()` |  Etiqueta eje Y |
+| `ggtitle()` | Título de gráfico  |
+| `geom_text()` | Añadir texto  |
+| `scale_color_manual()` | Manejo de colores |
+| `scale_fill_manual()` | Manejo de colores |
+| `coord_flip()` | Dar la vuelta |
+| `facet_wrap()` | Paneles o facetas |
+| `facet_grid()` | Paneles o facetas |
+
+]
+
+---
+class: inverse, center, middle
+
+# Colores en R
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://i.pinimg.com/originals/c5/5d/72/c55d724f878fb587e4d1ad15d0107b9e.gif"/>
+</center>
+
+---
+
+# Gestión del color en R
+
+- **Colores:**
+
+```{r}
+head(colors())
+```
+
+
+- **Paleta por defecto:**
+
+```{r}
+palette()
+```
+
+- **Otras paletas:**
+
+```{r}
+palette.pals()
+```
+
+
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

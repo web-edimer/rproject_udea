@@ -6,13 +6,12 @@
     "url": "https://moderndive.com/"
   },
   {
-    "title": "Modern Statistics for Modern Biology",
+    "title": "[Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/)",
     "description": "Libro de Susan Holmes y Wolfgang Huber",
-    "image": "images/features/libro2.svg",
-    "url": "https://web.stanford.edu/class/bios221/book/"
+    "image": "images/features/libro2.svg"
   },
   {
-    "title": "Advanced Data Science - tatistics and Prediction Algorithms Through Case Studies",
+    "title": "Advanced Data Science - Statistics and Prediction Algorithms Through Case Studies",
     "description": "Libro de Rafael A. Irizarry",
     "image": "images/features/libro3.svg"
   }

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Uso de R en experimentación animal:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Edimer David Jaramillo" />
+    <meta name="date" content="2021-04-22" />
+    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Uso de R en experimentación animal:
+## Datos ordedados con tidyr
+<html>
+<div style="float:left">
+
+</div>
+<hr color='#EB811B' size=1px width=800px>
+</html>
+### Edimer David Jaramillo
+### Universidad de Antioquia
+### 2021-04-22
+
+---
+
+
+class: inverse, center, middle
+
+# Datos ordenados `-&gt;` **Tidy Data**
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="https://unal-semilleror-facca.github.io/Actividades/2021_01/img/no_tidy.jpeg"; height= 350/&gt;
+&lt;/center&gt;
+
+&gt; [“Todos los set de datos ordenados se parecen unos a otros, pero cada set de datos desordenado lo es a su manera” — Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
+
+---
+
+# Propiedades de datos ordenados
+
+.pull-left[
+1. Cada variable debe tener su propia columna.
+2. Cada observación debe tener su propia fila.
+3. Cada valor debe tener su propia celda
+]
+
+.pull-rigth[
+&lt;center&gt;
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/476fa4025501dcec05be08248b32d390dd2337d5/574c6/css/images/hex/tidyr.png", height= 200/&gt;
+&lt;/center&gt;
+]
+
+
+&lt;center&gt;
+&lt;img src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/tidy-1.svg", height= 150/&gt;
+&lt;/center&gt;
+
+.pull-left[
+- Nombres de columnas son valores, no nombres de variables.
+- Múltiples variables almacenadas en una misma columna.
+- Variables son almacenadas tanto en filas como en columnas.
+]
+
+.pull-rigth[
+- Múltiples tipos de unidades observacionales  almacenadas en la misma tabla.
+- Una misma observación es almacenada en varias tablas o bases de datos.
+
+.foot-note[
+[Fuente: Tidy data (Hadley Wickham).](https://vita.had.co.nz/papers/tidy-data.pdf)
+]
+]
+
+
+---
+
+# Formatos y funciones de uso común
+
+
+
+.pull-left[
+
+&lt;center&gt; 
+&lt;img src="https://bookdown.org/Maxine/r4ds/images/12.png";width = 400/&gt; 
+&lt;/center&gt;
+
+| Función | Tarea |
+| :--- | :----: |
+| `pivot_longer()` | Formato ancho a largo |
+| `pivot_wider()` |  Formato largo a ancho |
+| `separate()` |  separar una columna en dos o más variables |
+| `unite()`  | unir dos o más columnas en una variable |
+
+]
+
+.pull-right[
+
+- **`pivot_longer(data, cols, ...)`**
+
+&lt;center&gt; 
+&lt;img src="img/gather.PNG"; height= 80/&gt; 
+&lt;/center&gt;
+
+- **`pivot_wider(data, id_cols, ...)`**
+
+&lt;center&gt; 
+&lt;img src="img/spread.PNG";height= 80/&gt; 
+&lt;/center&gt;
+
+- **`separate(data, col, into, sep, ...)`**
+
+&lt;center&gt; 
+&lt;img src="img/separate.PNG";width = 80/&gt; 
+&lt;/center&gt;
+
+- **`unite(data, col, sep, ...)`:**
+
+&lt;center&gt; 
+&lt;img src="img/unite.PNG";width = 80/&gt; 
+&lt;/center&gt;
+]
+
+---
+
+# Concatenando procesos (`%&gt;%`)
+
+.pull-left[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/c1c91484f898fe9d7d90a570900f1d5cd703fe2e/d7df4/css/images/hex/readr.png"; height= 150/&gt; 
+&lt;/center&gt;
+
+
+
+]
+
+.pull-rigth[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/476fa4025501dcec05be08248b32d390dd2337d5/574c6/css/images/hex/tidyr.png"; height=150/&gt; 
+&lt;/center&gt;
+
+]
+
+
+
+&lt;center&gt; 
+&lt;img src="https://magrittr.tidyverse.org/logo.png"; height= 190/&gt; 
+&lt;/center&gt;
+
+.pull-left[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/621a9c8c5d7b47c4b6d72e8f01f28d14310e8370/193fc/css/images/hex/dplyr.png"; height= 150/&gt; 
+&lt;/center&gt;
+
+
+
+]
+
+.pull-rigth[
+
+&lt;center&gt; 
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/0ab849ed51b0b866ef6895c253d3899f4926d397/dbf0f/images/hex-ggplot2.png"; height= 150/&gt; &lt;img src="https://pbs.twimg.com/media/DkBFpSsW4AIyyIN.png"; height= 150/&gt;
+&lt;/center&gt;
+
+
+
+]
+
+- **Tecla de acceso rápido:** Ctrl + Shift + M
+
+---
+class: inverse, center, middle
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+
+# Ejemplo: Homicidios en Quindío
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+# [Consultar datos abiertos *homicidios departamento del Quindío 1990-2017*](https://www.datos.gov.co/Estad-sticas-Nacionales/Tasas-de-homicidios-seg-n-municipios-por-cien-mil-/7n7b-qavj)
+
+---
+class: inverse, center, middle
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt;
+
+# Ejemplo: Accidentes de tránsito
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+# [Accidentes de tránsito Florencia, Caquetá 2011](https://www.datos.gov.co/Estad-sticas-Nacionales/Accidentes-de-transporte-tasas-de-lesiones-por-100/6fck-pt5v)
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src="img/gracias.gif"/&gt;
+&lt;/center&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+---
+title: "Uso de R en experimentación animal:"
+subtitle: "Matrices, listas y bases de datos<html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Tipos de datos en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/datos.PNG"; height= 400/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Matrices y listas en R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/matriz_listas.PNG"; height= 350/>
+</center>
+
+---
+
+# Matrices y listas
+
+.pull-left[
+
+### Matrices
+
+<center>
+<img src="img/matriz.PNG"; height= 150/>
+</center>
+
+- **Almacenan datos de un sólo tipo**
+- Se generan con la función `matrix()`
+- Las matrices poseen atributos como nombres y dimensiones
+  - `names()`, `rownames()`, `colnames()`, `dim()`, `dimnames()`, `nrow()`, `ncol()`
+- Subconjuntos `->` `[filas, columnas]`
+
+]
+
+
+.pull-right[
+
+### Listas
+
+<center>
+<img src="img/listas.PNG"; height= 100/>
+</center>
+
+- **Almacenan datos de diferente tipo**
+- Se generan con la función `list()`
+- Subconjuntos `->` `[]` o `[[]]` o `$`
+- Las listas poseen atributos como nombres `->` `names()`
+
+##### ¿Cómo añadir nuevos datos a un vector, matriz o lista? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 100/> </center>
+
+
+]
+
+---
+class: inverse, center, middle
+
+# Bases de datos
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://teachdatascience.com/post/tidyverse/tidyverse-package-workflow.png"; height= 300/>
+</center>
+
+<center>
+<img src="https://tidyverse.tidyverse.org/articles/tidyverse-logo.png"; height= 150/>
+</center>
+
+---
+
+# Data Frames
+
+.pull-left[
+
+<center>
+<img src="img/base.PNG"; height= 100/>
+</center>
+
+- Se generan manualmente con la función `data.frame()`
+- Subconjuntos `->` `[]` o `[[]]` o `$`
+- Poseen atributos como nombres y dimensiones `->` `names()`, `rownames()`, `colnames()`, `dim()`, `dimnames()`, `nrow()`, `ncol()`
+- Importación de datos `->` `read.csv()`, `read.csv2()`, `read.table()` 
+- Exportación de datos `->` `write.csv()`, `write.csv2()`, `write.table()` 
+
+##### ¿Tibble y Data Frames? `->` ¿"Iguales"? <center> <img src="https://img.icons8.com/bubbles/2x/question-mark.png"; height= 80/> </center>
+
+]
+
+.pull-right[
+
+<center>
+<img src="https://readr.tidyverse.org/logo.png"; height= 70/>
+</center>
+
+| Importar | Exportar | Separador |
+| :--- | :----------------: | :----: |
+| `read_csv()` | `write_csv()` | "," |
+| `read_csv2()` | `write_csv2()` | ";" |
+| `read_tsv()` | `write_tsv()`| " " |
+| `read_delim()` | `write_delim()` | "otro" |
+
+<center>
+<img src="https://readxl.tidyverse.org/logo.png"; height= 80/>
+</center>
+
+| Importar | Exportar |
+| :--- | :----------------: |
+| `read_xls()` | `WriteXLS()` (`WriteXLS`) |
+| `read_xlsx()` | `write_xlsx()` (`writexl`) |
+| `read_excel()` | 2 anteriores |
+
+]
+
+---
+class: inverse, center, middle
+
+# Datos Encuesta 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://goto.onlinesurveybureau.com/images/survey.gif"/>
+</center>
+
+---
+
+# Datos en varios formatos
+
+.pull-left[
+
+### Formatos planos
+
+  - [Encuesta - Separados por comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_comas.csv)
+  - [Encuesta - Separados por punto y comas (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_puntocomas.csv)
+  - [Encuesta - Separados por espacios o tabulaciones (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_espacios.csv)
+  - [Encuesta - Separados por otro delimitador (.csv o .txt)](/temas/05-Matriz-Listas-BDatos/data/encuesta_delim.csv)
+
+### Formato estructurado
+  - [Encuesta - Excel (.xlsx o .xls)](/temas/05-Matriz-Listas-BDatos/data/encuesta_excel.xlsx)
+
+]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src="https://cdn.shopify.com/s/files/1/0344/6401/files/high-cri-led-datasheet-icon.png?9950013723602844763"; height= 400/>
+</center>
+
+
+
+]
+
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
