@@ -7,6 +7,8 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 
 # [Descargar R y RStudio](https://posit.co/download/rstudio-desktop/)
 
+# [Posit Cloud](https://posit.cloud/)
+
 # Estadística con R
 
 - [*R para Ciencia de Datos*](https://es.r4ds.hadley.nz/)

@@ -5,7 +5,7 @@ main:
   - name: "Ejemplos, Guías y Datos"
     url: "/example_guide/"
     weight: 2   
-  - name: "Trabajos"
+  - name: "Actividades"
     url: "/team/"
     weight: 3
   - name: "Recursos de Información"

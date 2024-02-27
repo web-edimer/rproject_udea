@@ -1,7 +1,7 @@
 baseurl: ''
 exclude: ['README.md']
 permalink: pretty
-title: 'Estadística, R-Project y Experimentación Animal'
+title: 'Ciencia de Datos UdeA'
 
 google_analytics_id: null
 homepage:

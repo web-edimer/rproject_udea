@@ -1,17 +1,19 @@
 [
   {
-    "title": "R para Ciencia de Datos",
-    "description": "Libro de Garrett Grolemund y Hadley Wickham.",
-    "image": "images/features/libro_r4ds.svg"
+    "title": "Statistical Inference via Data Science",
+    "description": "Libro de Chester Ismay y Albert Y. Kim",
+    "image": "images/features/libro_r4ds.svg",
+    "url": "https://moderndive.com/"
   },
   {
-    "title": "Libro Vivo de Ciencia de Datos",
-    "description": "Libro de Pablo Casas.",
-    "image": "images/features/libro2.svg"
+    "title": "Modern Statistics for Modern Biology",
+    "description": "Libro de Susan Holmes y Wolfgang Huber",
+    "image": "images/features/libro2.svg",
+    "url": "https://web.stanford.edu/class/bios221/book/"
   },
   {
-    "title": "An Introduction to Statistical Learning: with Applications in R",
-    "description": "Libro de Gareth James, Daniela Witten, Trevor Hastie y Robert Tibshirani.",
+    "title": "Advanced Data Science - tatistics and Prediction Algorithms Through Case Studies",
+    "description": "Libro de Rafael A. Irizarry",
     "image": "images/features/libro3.svg"
   }
 ]
