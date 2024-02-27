@@ -2,17 +2,20 @@
   {
     "title": "Statistical Inference via Data Science",
     "description": "Libro de Chester Ismay y Albert Y. Kim",
-    "image": "images/features/libro_r4ds.svg"
+    "image": "images/features/libro_r4ds.svg",
+    "link": "https://moderndive.com/"
   },
   {
     "title": "Modern Statistics for Modern Biology",
     "description": "Libro de Susan Holmes y Wolfgang Huber",
-    "image": "images/features/libro2.svg"
+    "image": "images/features/libro2.svg",
+    "link": "https://web.stanford.edu/class/bios221/book/"
   },
   {
     "title": "Advanced Data Science - Statistics and Prediction Algorithms Through Case Studies",
     "description": "Libro de Rafael A. Irizarry",
-    "image": "images/features/libro3.svg"
+    "image": "images/features/libro3.svg",
+    "link": "https://rafalab.dfci.harvard.edu/dsbook-part-2/"
   }
 ]
 
