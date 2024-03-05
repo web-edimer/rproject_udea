@@ -1,0 +1,4 @@
+- source: 03-datos-ordenados.qmd
+  quarto-pub:
+    - id: 6fb2777d-e99c-43d7-b223-07ad7b835a9f
+      url: 'https://edimer.quarto.pub/datos-ordenados'
