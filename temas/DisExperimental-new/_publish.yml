@@ -1,0 +1,4 @@
+- source: 02-muestreo.qmd
+  quarto-pub:
+    - id: 66861f4f-bb03-4506-9b7a-9ce92ce51fed
+      url: 'https://edimer.quarto.pub/muestreo'

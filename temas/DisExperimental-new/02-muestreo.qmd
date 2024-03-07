@@ -1,0 +1,218 @@
+---
+title: <h1 style='color:white;'>Muestreo</h1>
+subtitle: <h4 style='color:white;'>Diseño Experimental</h4>
+author: <h4 style='color:red;'>Edimer David Jaramillo</h4>
+date: '2024-03-07'
+format:
+  revealjs:
+    df-print: paged
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+    title-slide-attributes:
+      data-background-image: images/fondo.jpg
+      data-background-size: cover
+---
+
+## Preguntas...
+
+::: incremental
+1.  ¿Qué proporción de estudiantes de *Ingeniería Agropecuaría* en la *Universidad de Antioquia tienen trabajo?*
+
+2.  ¿Cuál es el **promedio** del *promedio académico* de los estudiantes de *Ingeniería Agropecuaría* en la *Universidad de Antioquia?*
+:::
+
+![](https://static.thenounproject.com/png/4936538-200.png){fig-align="center" width="25%"}
+
+## Muestras (encuestas) de datos
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(tidyverse)
+library(readxl)
+datos <- read_excel("../data/datos-encuestas-historia.xlsx")
+datos
+```
+
+## ¿Qué queremos entender? 🤔🤔🤔
+
+::: {.panel-tabset}
+
+### $p_{trabajo}$
+
+::: columns
+
+::: {.column width="40%"}
+
+<br>
+
+```{r}
+#| fig-width: 4.5
+#| fig-height: 3.3
+#| fig-align: center
+datos |> 
+  count(trabaja) |> 
+  mutate(prop = n / sum(n)) |> 
+  ggplot(aes(x = trabaja, y = n, fill = trabaja, color = trabaja)) +
+  geom_col(alpha = 0.5) +
+  geom_label(aes(label = str_c(round(prop*100, 1), "%")), color = "white") +
+  labs(y = "Proporción", x = "¿Trabaja?", color = "¿Trabaja?", fill = "¿Trabaja?") +
+  scale_color_manual(values = c("#2c6878", "#a14e3d")) +
+  scale_fill_manual(values = c("#2c6878", "#a14e3d")) +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+:::
+  
+::: {.column width="60%"}
+
+```{r}
+#| fig-width: 6.5
+#| fig-height: 4.8
+#| fig-align: center
+datos |> 
+  count(muestra, trabaja) |> 
+  ggplot(aes(x = muestra, y = n, fill = trabaja, color = trabaja)) +
+  geom_col(position = "fill", alpha = 0.65) +
+  coord_flip() +
+  labs(y = "Proporción", x = "Muestra", color = "¿Trabaja?", fill = "¿Trabaja?") +
+  scale_color_manual(values = c("#2c6878", "#a14e3d")) +
+  scale_fill_manual(values = c("#2c6878", "#a14e3d")) +
+  theme_bw() +
+  theme(legend.position = "top")
+```
+
+:::
+  
+:::
+
+
+
+### $\mu_{PA}$
+
+
+::: columns
+
+::: {.column width="40%"}
+
+```{r}
+#| fig-width: 4.5
+#| fig-height: 3.3
+#| fig-align: center
+datos |> 
+  ggplot(aes(x = promedio_acad)) +
+  geom_histogram(alpha = 0.65, color = "#a14e3d", fill = "#2c6878", bins = 10) +
+  labs(x = "Promedio académico", y = "Frecuencia") +
+  theme_bw() +
+  theme(legend.position = "top")
+```
+
+```{r}
+cat("Promedio:", mean(datos$promedio_acad), "\nDesviación Estándar:", sd(datos$promedio_acad))
+```
+
+
+:::
+  
+::: {.column width="60%"}
+
+```{r}
+#| fig-width: 5.5
+#| fig-height: 5.4
+#| fig-align: center
+datos |> 
+  ggplot(aes(x = promedio_acad)) +
+  facet_wrap(~muestra, ncol = 1, scales = "free_y") +
+  geom_histogram(alpha = 0.65, color = "#a14e3d", fill = "#2c6878", bins = 10) +
+  labs(x = "Promedio académico", y = "Frecuencia") +
+  theme_bw() +
+  theme(legend.position = "top")
+```
+
+:::
+  
+:::
+
+
+
+### $\mu_{sí} - \mu_{no}$
+
+::: columns
+
+::: {.column width="40%"}
+
+```{r}
+#| fig-width: 4.5
+#| fig-height: 3.3
+#| fig-align: center
+datos |> 
+  ggplot(aes(x = promedio_acad, color = trabaja, fill = trabaja)) +
+  geom_density(alpha = 0.65, bins = 10) +
+  scale_color_manual(values = c("#2c6878", "#a14e3d")) +
+  scale_fill_manual(values = c("#2c6878", "#a14e3d")) +
+  labs(x = "Promedio académico", y = "Densidad", color = "¿Trabaja?", fill = "¿Trabaja?") +
+  theme_bw() +
+  theme(legend.position = "top")
+```
+
+```{r}
+datos |> 
+  group_by(trabaja) |> 
+  reframe(Promedio = mean(promedio_acad),
+          Desviación = sd(promedio_acad)) |> 
+  rename(Trabaja = trabaja) |> 
+  gt::gt()
+```
+
+
+:::
+  
+::: {.column width="60%"}
+
+```{r}
+#| fig-width: 5.5
+#| fig-height: 5.2
+#| fig-align: center
+datos |> 
+  ggplot(aes(x = promedio_acad, color = trabaja, fill = trabaja)) +
+  facet_wrap(~muestra, ncol = 1, scales = "free_y") +
+  geom_density(alpha = 0.65, bins = 10) +
+  scale_color_manual(values = c("#2c6878", "#a14e3d")) +
+  scale_fill_manual(values = c("#2c6878", "#a14e3d")) +
+  labs(x = "Promedio académico", y = "Densidad", color = "¿Trabaja?", fill = "¿Trabaja?") +
+  theme_bw() +
+  theme(legend.position = "top")
+```
+
+:::
+  
+:::
+
+
+
+:::
+ 
+## La moraleja 💡
+
+![](https://moderndive.com/images/accuracy_vs_precision.jpg){fig-align="center"}
+
+## 
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](images/gracias.gif){fig-align="center"}

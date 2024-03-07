@@ -24,6 +24,7 @@ intro_image_hide_on_mobile: true
 - [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
 - [Encuesta (depurada) en .xlsx](/temas/data/encuesta_depurada2024.xlsx)
 - [Encuesta varios formatos (archivo .zip)](/temas/data/datos-encuesta.zip)
+- [Histórico encuesta](/temas/data/datos-encuestas-historia.xlsx)
 
 # Funciones auxiliares
 
