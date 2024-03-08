@@ -1,0 +1,60 @@
+---
+title: "Taller 1"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Descripción
+
+Teniendo en cuenta el siguiente diagrama que define la metodología estadística [*PPDAC: The Statistical Method*](https://www.statsref.com/HTML/statistics__statistical_analys.html) usted debe considerar los siguientes aspectos para dar por finalizada su actividad:
+
+1.  Seleccionar una base de datos de interés.
+
+2.  Plantear un mínimo de dos preguntas que pueda responderndefined con los datos.
+
+3.  Proporcione contexto a su pregunta, defina cuál es el problema que desea resolver y cuál es el alcance de sus preguntas.
+
+4.  ¿Cuál o cuáles son los parámetros de interés en sus preguntas?
+
+5.  Use las siguientes herramientas para construir una narrativa corta acerca de la base de datos elegida y las preguntas abordadas.
+
+    1.  [App `radiant`](https://vnijs.shinyapps.io/radiant/?SSUID=b6a8956d87)
+
+    2.  [App PB.PERFECT](https://allanbiotools.shinyapp)
+    
+    3. [Biblioteca `esquisse`](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)
+
+![](https://www.researchgate.net/publication/365808973/figure/fig1/AS:11431281103467775@1669707704224/Elements-in-the-PPDAC-problem-solving-cycle.ppm){fig-align="center"}
+
+# Fecha máxima de entrega
+
+- **Fecha de entrega máxima:** lunes 11 de marzo de 2024.

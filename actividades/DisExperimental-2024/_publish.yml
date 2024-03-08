@@ -1,0 +1,4 @@
+- source: 01-taller1.qmd
+  quarto-pub:
+    - id: c5834c8e-2206-4818-a38f-90ace0247fe8
+      url: 'https://edimer.quarto.pub/taller-1'
