@@ -25,6 +25,7 @@ intro_image_hide_on_mobile: true
 - [Encuesta (depurada) en .xlsx](/temas/data/encuesta_depurada2024.xlsx)
 - [Encuesta varios formatos (archivo .zip)](/temas/data/datos-encuesta.zip)
 - [Histórico encuesta](/temas/data/datos-encuestas-historia.xlsx)
+- [Ejemplos de datos desordenados](/temas/data/datos-desordenados.zip)
 
 # Funciones auxiliares
 
