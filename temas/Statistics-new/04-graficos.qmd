@@ -1,0 +1,144 @@
+---
+title: "Estadística Descriptiva y Exploratoria"
+subtitle: "Visualización con R"
+author: "Edimer David Jaramillo"
+date: "2024-04-08"
+format:
+  revealjs:
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## *"La mejor gráfica de la historia"* — Edward Tufte
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+![](https://www.edwardtufte.com/tufte/graphics/minard_lg.gif){fig-align="center"}
+
+## John Tukey
+
+![](https://www.ecured.cu/images/thumb/4/48/Tukey.jpeg/260px-Tukey.jpeg){fig-align="center"}
+
+
+> *“Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo.”* — John Tukey
+
+## Exploración de datos
+
+![](https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/data-science-explore.svg){fig-align="center"}
+
+## Diccionario de gráficos
+
+::: columns
+
+::: {.column width="50%"}
+
+### 1. Cantidades
+
+### 2. Distribuciones
+
+### 3. Proporciones
+
+### 4. Relaciones *x - y*
+
+### 5. Datos geoespaciales
+
+### 6. Incertidumbre
+
+:::
+
+::: {.column width="50%"}
+
+![](images/graficos.png){fig-align="center"}
+
+
+
+:::
+
+:::
+
+::: footer
+[Fuente: *capítulo 5 Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/directory-of-visualizations.html)
+::: 
+
+##  `ggplot2`
+
+![](https://ggplot2.tidyverse.org/logo.png){fig-align="center"}
+
+[La gramática de gráficos en capas (artículo Hadley Wickham)](http://vita.had.co.nz/papers/layered-grammar.pdf)
+
+[Capítulo 3 R for Data Science - Visualización de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
+
+## Tipos de gráficos
+
+::: columns
+
+::: {.column width="50%"}
+
+- **Una variable:**
+  - **Variable cuantitativa:**
+    - Histogramas `->` `geom_histogram()`
+    - Densidades `->` `geom_density()`
+    - Cuantil-cuantil (*Q-Q Norm*) `->` `geom_qq()` y `geom_qq_line()`
+    - Boxplot `->` `geom_boxplot()`
+  - **Variable cualitativa:**
+    - Diagrama de barras `->` `geom_bar()`
+    - Diagrama de sectores `->` `geom_bar()`
+    
+- **Dos variables cuantitativas:**
+  - Diagrama de dispersión `->` `geom_point()`
+  - Tendencias `->` `geom_smooth()`
+:::
+
+::: {.column width="50%"}
+- **Dos variables cualitativas:**
+  - Diagrama puntos superpuestos `->` `geom_count()`
+  
+- **Dos variables - cuantitativa y cualitativa:**
+  - Diagrama de barras `->` `geom_col()`
+  - Boxplot `->` `geom_boxplot()`
+
+- **Dos variables - cuantitativa y tiempo:**
+  - Diagrama de líneas `->` `geom_line()`
+  - Diagrama de área `->` `geom_area()`
+  
+- **Visualizando incertidumbre:**
+  - Barras de errores `->` `geom_errorbar()` 
+:::
+
+:::
+
+## ¿Cómo funciona `ggplot2`?
+
+::: columns
+
+::: {.column width="50%"}
+![](images/ggplot2_1.PNG){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/ggplot2_2.PNG){fig-align="center"}
+:::
+
+:::
+
+## 
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](images/gracias.gif){fig-align="center"}

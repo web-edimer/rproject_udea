@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="03-datos-ordenados_files/libs/clipboard/clipboard.min.js"></script>
-<script src="03-datos-ordenados_files/libs/quarto-html/tabby.min.js"></script>
-<script src="03-datos-ordenados_files/libs/quarto-html/popper.min.js"></script>
-<script src="03-datos-ordenados_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="03-datos-ordenados_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="03-datos-ordenados_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03-datos-ordenados_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="03-datos-ordenados_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="04-graficos_files/libs/clipboard/clipboard.min.js"></script>
+<script src="04-graficos_files/libs/quarto-html/tabby.min.js"></script>
+<script src="04-graficos_files/libs/quarto-html/popper.min.js"></script>
+<script src="04-graficos_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="04-graficos_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="04-graficos_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="04-graficos_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="04-graficos_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Edimer David Jaramillo">
-  <meta name="dcterms.date" content="2024-03-05">
-  <title>Datos Ordenados</title>
+  <meta name="dcterms.date" content="2024-04-08">
+  <title>Estadística Descriptiva y Exploratoria</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="03-datos-ordenados_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="03-datos-ordenados_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="04-graficos_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="04-graficos_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,13 +31,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="03-datos-ordenados_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="03-datos-ordenados_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="04-graficos_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="04-graficos_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="04-graficos_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="04-graficos_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="04-graficos_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="04-graficos_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="04-graficos_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -330,8 +330,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Datos Ordenados</h1>
-  <p class="subtitle">Estadística</p>
+  <h1 class="title">Estadística Descriptiva y Exploratoria</h1>
+  <p class="subtitle">Visualización con R</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -341,133 +341,126 @@ Edimer David Jaramillo
 </div>
 </div>
 
-  <p class="date">2024-03-05</p>
+  <p class="date">2024-04-08</p>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="rows">
-<div class="row" height="30%">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://bookdown.org/paradinas_iosu/CursoR/images/procesar_datos.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<section id="la-mejor-gráfica-de-la-historia-edward-tufte" class="slide level2">
+<h2><em>“La mejor gráfica de la historia”</em> — Edward Tufte</h2>
+
+<div style="float:left">
+
 </div>
-</div>
-<div class="row" height="70%">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/02-tidy-animado.png" class="quarto-figure quarto-figure-center" style="width:35.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="footer">
-<p>Fuente de imagen: <a href="https://openscapes.org/blog/2020-10-12-tidy-data/"><em>Tidy data for efficiency, reproducibility, and collaboration</em></a></p>
-</div>
+<hr color="#EB811B" size="1px" width="720px">
+
+
+<img data-src="https://www.edwardtufte.com/tufte/graphics/minard_lg.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="john-tukey" class="slide level2">
+<h2>John Tukey</h2>
+
+<img data-src="https://www.ecured.cu/images/thumb/4/48/Tukey.jpeg/260px-Tukey.jpeg" class="quarto-figure quarto-figure-center r-stretch"><blockquote>
+<p><em>“Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo.”</em> — John Tukey</p>
+</blockquote>
 </section>
-<section id="tidy-data" class="slide level2">
-<h2><em>Tidy Data</em></h2>
+<section id="exploración-de-datos" class="slide level2">
+<h2>Exploración de datos</h2>
+
+<img data-src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/data-science-explore.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="diccionario-de-gráficos" class="slide level2">
+<h2>Diccionario de gráficos</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="images/01-paper-tidy.png"></p>
-</div><div class="column" style="width:40%;">
-<p><br> <br> <br></p>
-<p><img data-src="https://www.rstudio.com/resources/rstudioglobal-2021/maintaining-the-house-the-tidyverse-built/thumbnail_hu198674cced4c35ea8b5390db4aafe090_435862_1000x0_resize_q75_box.jpg"></p>
+<div class="column" style="width:50%;">
+<h3 id="cantidades">1. Cantidades</h3>
+<h3 id="distribuciones">2. Distribuciones</h3>
+<h3 id="proporciones">3. Proporciones</h3>
+<h3 id="relaciones-x---y">4. Relaciones <em>x - y</em></h3>
+<h3 id="datos-geoespaciales">5. Datos geoespaciales</h3>
+<h3 id="incertidumbre">6. Incertidumbre</h3>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/graficos.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
 </div>
-<div class="footer">
-<p>Artículo: <a href="https://vita.had.co.nz/papers/tidy-data.pdf"><em>Tidy Data</em></a></p>
-</div>
-</section>
-<section id="section-1" class="slide level2">
-<h2>⚠️🤔</h2>
-
-<img data-src="https://openscapes.org/img/blog/tidydata/tidydata_2.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="footer">
-<p>Fuente de imagen: <a href="https://openscapes.org/blog/2020-10-12-tidy-data/"><em>Tidy data for efficiency, reproducibility, and collaboration</em></a></p>
-</div>
-</section>
-<section id="principios-del-tidy-data" class="slide level2">
-<h2>Principios del <em>Tidy Data</em></h2>
-<div>
-<ul>
-<li class="fragment">Cada variable es una columna</li>
-<li class="fragment">Cada fila es una observación</li>
-<li class="fragment">Cada celda es un valor</li>
-</ul>
-</div>
-
-<img data-src="images/03-datos-ordenados.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="footer">
-<p>Fuente de imagen: <a href="https://r4ds.hadley.nz/data-tidy.html"><em>R for Data Science (2e) - Chapter 5</em></a></p>
-</div>
-</section>
-<section id="ejemplo-1-pivotear-tablas" class="slide level2">
-<h2>Ejemplo 1: <em>pivotear tablas</em></h2>
-
-<img data-src="https://r4ds.hadley.nz/diagrams/tidy-data/variables.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"><div>
-<ul>
-<li class="fragment"><a href="https://fedearroz.com.co/es/fondo-nacional-del-arroz/investigaciones-economicas/estadisticas-arroceras/costos/">Costos Fedearroz</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/PRODUCCI-N-EN-TONELADAS-DE-CULTIVOS-DE-HORTALIZAS-/6bym-ygip/about_data">Producción en toneladas de cultivos de hortalizas en el Valle del Cauca</a></li>
-</ul>
 </div>
 <div class="footer">
-<p>Fuente de imagen: <a href="https://r4ds.hadley.nz/data-tidy.html"><em>R for Data Science (2e) - Chapter 5</em></a></p>
+<p><a href="https://clauswilke.com/dataviz/directory-of-visualizations.html">Fuente: <em>capítulo 5 Fundamentals of Data Visualization</em></a></p>
 </div>
 </section>
-<section id="ejemplo-2-variables-en-los-nombres-de-las-columnas" class="slide level2">
-<h2>Ejemplo 2: variables en los nombres de las columnas</h2>
+<section id="ggplot2" class="slide level2">
+<h2><code>ggplot2</code></h2>
+
+<img data-src="https://ggplot2.tidyverse.org/logo.png" class="quarto-figure quarto-figure-center r-stretch"><p><a href="http://vita.had.co.nz/papers/layered-grammar.pdf">La gramática de gráficos en capas (artículo Hadley Wickham)</a></p>
+<p><a href="https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html">Capítulo 3 R for Data Science - Visualización de datos</a></p>
+</section>
+<section id="tipos-de-gráficos" class="slide level2">
+<h2>Tipos de gráficos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Una variable:</strong>
+<ul>
+<li><strong>Variable cuantitativa:</strong>
+<ul>
+<li>Histogramas <code>-&gt;</code> <code>geom_histogram()</code></li>
+<li>Densidades <code>-&gt;</code> <code>geom_density()</code></li>
+<li>Cuantil-cuantil (<em>Q-Q Norm</em>) <code>-&gt;</code> <code>geom_qq()</code> y <code>geom_qq_line()</code></li>
+<li>Boxplot <code>-&gt;</code> <code>geom_boxplot()</code></li>
+</ul></li>
+<li><strong>Variable cualitativa:</strong>
+<ul>
+<li>Diagrama de barras <code>-&gt;</code> <code>geom_bar()</code></li>
+<li>Diagrama de sectores <code>-&gt;</code> <code>geom_bar()</code></li>
+</ul></li>
+</ul></li>
+<li><strong>Dos variables cuantitativas:</strong>
+<ul>
+<li>Diagrama de dispersión <code>-&gt;</code> <code>geom_point()</code></li>
+<li>Tendencias <code>-&gt;</code> <code>geom_smooth()</code></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Dos variables cualitativas:</strong>
+<ul>
+<li>Diagrama puntos superpuestos <code>-&gt;</code> <code>geom_count()</code></li>
+</ul></li>
+<li><strong>Dos variables - cuantitativa y cualitativa:</strong>
+<ul>
+<li>Diagrama de barras <code>-&gt;</code> <code>geom_col()</code></li>
+<li>Boxplot <code>-&gt;</code> <code>geom_boxplot()</code></li>
+</ul></li>
+<li><strong>Dos variables - cuantitativa y tiempo:</strong>
+<ul>
+<li>Diagrama de líneas <code>-&gt;</code> <code>geom_line()</code></li>
+<li>Diagrama de área <code>-&gt;</code> <code>geom_area()</code></li>
+</ul></li>
+<li><strong>Visualizando incertidumbre:</strong>
+<ul>
+<li>Barras de errores <code>-&gt;</code> <code>geom_errorbar()</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cómo-funciona-ggplot2" class="slide level2">
+<h2>¿Cómo funciona <code>ggplot2</code>?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://r4ds.hadley.nz/diagrams/tidy-data/multiple-names.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+<p><img data-src="images/ggplot2_1.PNG" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://r4ds.hadley.nz/diagrams/tidy-data/names-and-values.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+<p><img data-src="images/ggplot2_2.PNG" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
 </div>
-<div>
-<ul>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Inventario-de-Ganado-Bovino-DEPARTAMENTO-DE-BOYAC-/4wtf-sdh2/about_data">Inventario de Ganado Bovino - Boyacá</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Inventario-Poblacional-Del-Ganado-Bovino-Valle-del/65mn-ybz5/about_data">Inventario Poblacional Del Ganado Bovino Valle del Cauca</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Inventario-anual-de-Bovinos-en-Antioquia-desde-200/fy9z-8zxt/about_data">Inventario anual de Bovinos en Antioquia desde 2000</a></li>
-</ul>
-</div>
-<div class="footer">
-<p>Fuente de imagen: <a href="https://r4ds.hadley.nz/data-tidy.html"><em>R for Data Science (2e) - Chapter 5</em></a></p>
-</div>
 </section>
-<section id="ejemplo-3-múltiples-tablas-para-una-misma-unidad-experimental" class="slide level2">
-<h2>Ejemplo 3: múltiples tablas para una misma unidad experimental</h2>
-
-<img data-src="https://blog.conholdate.com/total/combine-multiple-excel-files-into-one-using-java/images/combine-multiple-excel-files-into-one-using-java.jpg#center" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><div>
-<ul>
-<li class="fragment">Raíces Bulbos y Tubérculos en el departamento del Valle del Cauca:
-<ul>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Sembrada-con-Ra-ces-Bulbos-y-Tub-rculos/h7vs-gf6t/about_data">Superficie Sembrada</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Cosechada-con-Ra-ces-Bulbos-y-Tub-rculo/2uev-8vbt/about_data">Superficie Cosechada</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Producci-n-en-Toneladas-por-Hect-reas-de-Ra-ces-Bu/hg7h-itmt/about_data">Producción en Toneladas</a></li>
-<li class="fragment"><a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Rendimiento-en-toneladas-por-hect-reas-en-Cultivos/239z-ikj9/about_data">Rendimiento en toneladas por hectárea</a></li>
-</ul></li>
-</ul>
-</div>
-<div class="footer">
-<p>Fuente de imagen: <a href="https://blog.groupdocs.cloud/merger/merge-multiple-excel-files-into-one-using-rest-api-in-node-js/"><em>Merge Multiple Excel Files into One using REST API in Node.js</em></a></p>
-</div>
-</section>
-<section id="en-conclusión" class="slide level2">
-<h2>En conclusión…</h2>
-
-<img data-src="https://openscapes.org/img/blog/tidydata/tidydata_7.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:85.0%"></section>
-<section id="biblioteca-tidyr" class="slide level2">
-<h2>Biblioteca <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a></h2>
-
-<img data-src="https://tidyr.tidyverse.org/logo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
-<section id="section-2" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <center>
 🤝🙂🤝
@@ -489,20 +482,20 @@ Edimer David Jaramillo
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="03-datos-ordenados_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="04-graficos_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="03-datos-ordenados_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="04-graficos_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

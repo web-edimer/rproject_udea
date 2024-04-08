@@ -2,3 +2,7 @@
   quarto-pub:
     - id: 6fb2777d-e99c-43d7-b223-07ad7b835a9f
       url: 'https://edimer.quarto.pub/datos-ordenados'
+- source: 04-graficos.qmd
+  quarto-pub:
+    - id: 6460c4fe-c258-4f47-b655-d23eb64e7cfb
+      url: 'https://edimer.quarto.pub/estadística-descriptiva-y-exploratoria'
