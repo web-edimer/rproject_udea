@@ -78,7 +78,7 @@ format:
 
 [La gramática de gráficos en capas (artículo Hadley Wickham)](http://vita.had.co.nz/papers/layered-grammar.pdf)
 
-[Capítulo 3 R for Data Science - Visualización de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
+[Capítulo 3 R for Data Science - Visualización de datos](https://es.r4ds.hadley.nz/03-visualize.html)
 
 ## Tipos de gráficos
 
