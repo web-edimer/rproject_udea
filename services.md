@@ -22,6 +22,7 @@ intro_image_hide_on_mobile: true
 | *Presentación del curso* | [🖥️](/temas/DisExperimental/00-Curso/00-Curso.html) | |
 | *Introducción a la inferencia estadística* | [🖥️](/temas/DisExperimental/01-Intro/01-Intro.html) | [📖](https://edimer.quarto.pub/resultados-encuesta/) [📕](https://edimer.quarto.pub/distribuciones/) |
 | *Muestreo* | [🖥️](https://edimer.quarto.pub/muestreo/#/title-slide) | [📖](https://edimer.quarto.pub/variacion-del-muestreo/) |
+| *Inferencia Estadística* | [🖥️]() | [📖](https://edimer.quarto.pub/inferencia/) |
 
   
 

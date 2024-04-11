@@ -1,0 +1,44 @@
+---
+title: "Taller 2"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Descripción
+
+Teniendo en cuenta el siguiente diagrama que define la metodología estadística [*PPDAC: The Statistical Method*](https://www.statsref.com/HTML/statistics__statistical_analys.html) y tomando en consideración las apreciaciones y preguntas que formulé para cada uno, usted deberá dar continuidad a la [actividad 01](https://edimer.quarto.pub/taller-1/) y desarrollar la actividad 02 con base en el documento PDF que les entregué.
+
+![](https://www.researchgate.net/publication/365808973/figure/fig1/AS:11431281103467775@1669707704224/Elements-in-the-PPDAC-problem-solving-cycle.ppm){fig-align="center"}
+
+# Fecha máxima de entrega
+
+- **Fecha de entrega máxima:** viernes 19 de abril de 2024.

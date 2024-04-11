@@ -14,4 +14,5 @@ intro_image_hide_on_mobile: true
 # Actividades Diseño Experimental
 
 - [Taller 1](https://edimer.quarto.pub/taller-1/)
+- [Taller 2](https://edimer.quarto.pub/taller-2/)
 
