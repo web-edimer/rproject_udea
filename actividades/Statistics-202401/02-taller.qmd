@@ -1,0 +1,52 @@
+---
+title: "Taller en clase"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Descripción
+
+Este taller tiene como propósito evaluar los principios del *tidy data*. Para ello usted deberá elegir uno de los tres enunciados y construir una plantilla en *excel* que muestre cómo deberían ser registrados los datos.
+
+# Enunciados
+
+## Enunciado 1
+
+Usted está a cargo de un proyecto de investigación en siete granjas. El objetivo del proyecto es estudiar el crecimiento de diferentes variedades de maíz en función de diferentes factores, como la cantidad de agua, el tipo de fertilizante y la dosis de fertilización. Como parte del proyecto, deben diseñar una plantilla de base de datos en Excel para recopilar los datos de cada planta de maíz. La plantilla debe seguir los principios de  *tidy data*, lo que significa que cada columna debe representar una variable, cada fila debe representar una observación y cada celda debe representar un valor. Además, los datos son longitudinales, lo que significa que deben recopilar datos sobre cada planta de maíz a través de los meses. Esto les permitirá analizar cómo cambian las variables a lo largo del tiempo y cómo afectan el crecimiento de la planta.
+
+## Enunciado 2
+
+Usted está liderando un proyecto de investigación en tres granjas de producción porcina. El objetivo del proyecto es estudiar el crecimiento de cerdos en función de diferentes factores, como la alimentación o tipo de dieta, la temperatura y la genética de los animales. Como parte de este proyecto, deben diseñar una plantilla de base de datos en Excel para recopilar los datos de cada cerdo. La plantilla debe seguir los principios del *tidy data*, lo que significa que cada columna debe representar una variable, cada fila debe representar una observación y cada celda debe representar un valor. Además, los datos son longitudinales, lo que significa que deben recopilar datos sobre cada cerdo a través de los días. Esto les permitirá analizar cómo cambian las variables a lo largo del tiempo y cómo afectan el crecimiento de los cerdos.
+
+## Enunciado 3
+
+Usted está participando en un proyecto de investigación en el cultivo de hortalizas (lechuga, espinaca y acelga) en 5 departamentos de Colombia, El objetivo del proyecto es estudiar el crecimiento y desarrollo de estas hortalizas en diferentes condiciones de suelo, temperaturas y regímenes de humedad (diferente cantidad de agua). Como parte de este proyecto, deben diseñar una plantilla de base de datos en Excel para recopilar los datos de cada planta de hortaliza. La plantilla debe seguir los principios de *tidy data*, lo que significa que cada columna debe representar una variable, cada fila debe representar una observación y cada celda debe representar un valor. Además, los datos son longitudinales, lo que significa que deben recopilar datos sobre cada planta a través de las semanas. Esto les permitirá analizar cómo cambian las variables a lo largo del tiempo y cómo afectan el crecimiento de las hortalizas.

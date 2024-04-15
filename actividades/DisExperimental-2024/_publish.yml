@@ -6,3 +6,7 @@
   quarto-pub:
     - id: d0bdfdb3-1a18-4922-8dda-03a8781b4223
       url: 'https://edimer.quarto.pub/taller-2'
+- source: 03-taller3.qmd
+  quarto-pub:
+    - id: 429e2415-908c-4bf9-936b-9bd7ea2c2a2a
+      url: 'https://edimer.quarto.pub/taller-3'

@@ -1,0 +1,4 @@
+- source: 02-taller.qmd
+  quarto-pub:
+    - id: 239b2a3e-5179-4664-ae74-b822afafebb6
+      url: 'https://edimer.quarto.pub/taller-en-clase'
