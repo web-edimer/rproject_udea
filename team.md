@@ -16,4 +16,5 @@ intro_image_hide_on_mobile: true
 
 - [Taller 1](https://edimer.quarto.pub/taller-1/)
 - [Taller 2](https://edimer.quarto.pub/taller-2/)
+- [Taller 3](https://edimer.quarto.pub/taller-3/)
 

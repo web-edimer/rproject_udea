@@ -35,14 +35,13 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
 
 # Descripción
 
-  1. Instalar alguna de las aplicaciones: [Arduino Science Journal](https://www.arduino.cc/education/science-journal) o [PyPhox](https://phyphox.org/)
-  2. Realizar mediciones de intensidad sonora (decibeles) en la biblioteca de la universidad. Las mediciones deberán ser realizadas en al menos 5 días.
+  1. Instalar alguna de las aplicaciones: [Arduino Science Journal](https://www.arduino.cc/education/science-journal) o [PyPhox.](https://phyphox.org/)
+  2. Realizar mediciones de intensidad sonora (decibeles) en algún lugar de interés, puede ser dentro de la universidad o por fuera de ella. Las mediciones deberán ser realizadas en al menos 5 días. Utilice la [guía de Arduino Science Journal](https://rpubs.com/Edimer/954711).
   3. Construya un resumen descriptivo con los resultados de las mediciones.
   4. Construya un gráfico que permita comparar la distribución de la intensidad sonora en los días que realizó las mediciones.
-  5. La [Organización Mundial de la Salud - OMS](https://www.who.int/es/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening) sugiere que el nivel de ruido permitido en las bibliotecas es 40 dB, su tarea es validar la siguiente hipótesis:
+  5. La [Organización Mundial de la Salud - OMS](https://www.who.int/es/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening) sugiere niveles de referencia para algunas fuentes, con base en ello formule un juego de hipótesis para llevar a cabo el proceso de inferencia estadística.
 
-$$H_0: \mu = 40$$
-$$H_1: \mu \neq 40$$
+![](oms.png){fig-align="center"}  
 
   6. Valide el supuesto de normalidad en sus datos.
   7. Determine si es adecuado utilizar métodos paramétricos o no paramétricos para contrastar la hipótesis y proporcionar un intervalo de confianza.
@@ -50,4 +49,4 @@ $$H_1: \mu \neq 40$$
 
 # Fecha máxima de entrega
 
-- **Fecha de entrega máxima:** viernes 26 de abril de 2024.
+- **Fecha de entrega máxima:** lunes 29 de abril de 2024.
