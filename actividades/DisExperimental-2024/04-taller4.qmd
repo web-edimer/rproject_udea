@@ -1,0 +1,75 @@
+---
+title: "Taller 4"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Punto 1
+
+Una empresa de bebidas quiere determinar si la media de azúcar en sus botellas de refresco es de 12 gramos. Selecciona una muestra aleatoria de 36 botellas y se encuentra que la media de azúcar es de 11.8 gramos con una desviación estándar de 0.5 gramos. ¿Cuáles son la hipótesis nula y la hipótesis alternativa adecuadas para esta situación?
+
+A) H0: μ = 12 gramos, H1: μ ≠ 12 gramos
+B) H0: μ ≠ 12 gramos, H1: μ = 12 gramos
+C) H0: μ < 12 gramos, H1: μ ≥ 12 gramos
+D) H0: μ > 12 gramos, H1: μ ≤ 12 gramos
+
+# Punto 2
+
+Un investigador agrícola quiere determinar si un nuevo tipo de fertilizante aumenta la producción de maíz por hectárea. Selecciona una muestra aleatoria de 25 parcelas  y se aplica el nuevo fertilizante a cada una de ellas. Después de la cosecha, se encuentra que la producción media de maíz por hectárea es de 8.2 toneladas con una desviación estándar de 0.8 toneladas. Se conoce que la producción media de maíz por hectárea en la región es de 7.5 toneladas. ¿Cuál es el intervalo de confianza del 95% para la media poblacional de producción de maíz por hectárea con el nuevo fertilizante? **Nota:** el valor $t_{\alpha/2, n-1} = 1.96$
+
+$$\bar{X} - t_{\alpha/2, n-1} \times \frac{s}{\sqrt{n}}$$
+
+$$\bar{X} + t_{\alpha/2, n-1} \times \frac{s}{\sqrt{n}}$$
+
+# Punto 3
+
+Continuando con el punto 2 y haciendo uso del intervalo de confianza que calculó, concluya respecto al siguiente juego de hipótesis:
+
+$$H_0: \mu = 7.5$$
+$$H_0: \mu \neq 7.5$$
+
+# Punto 4
+
+Un investigador agrícola quiere determinar si un nuevo tipo de fertilizante aumenta la producción de mango en una región específica. Se selecciona una muestra aleatoria de 100 árboles de mango y se aplica el nuevo fertilizante a la mitad de ellos. Después de la cosecha, se encuentra que la producción media de mango por árbol es de 25 kg en los árboles con el nuevo fertilizante y de 20 kg en los árboles sin el fertilizante. Al realizar una prueba de hipótesis, se obtiene un valor P de 0.02. ¿Qué conclusión se puede sacar sobre la relación entre el nuevo fertilizante y la producción de mango? **Nota:** interprete los resultados con el nivel de significancia que considere adecuado.
+
+A) No hay suficiente evidencia para concluir que el nuevo fertilizante está relacionado con la producción de mango.
+B) Hay una relación significativa entre el nuevo fertilizante y la producción de mango, por tal motivo, existe evidencia para rechazar la hipótesis nula.
+C) El 2% de los árboles de mango producen más de 25 kg de mango debido al azar.
+D) La probabilidad de producir más de 25 kg de mango es del 2% si se utiliza el nuevo fertilizante.
+
+# Punto 5
+
+Un estudio encontró que la media de la producción de naranjas en una región es de 22 kg por árbol, con un intervalo de confianza del 95% de (20, 24) kg. ¿Qué conclusión se puede extraer sobre la producción de naranjas en la región teniendo en cuenta el siguiente juego de hipótesis?
+
+$$H_0: \mu = 18$$
+$$H_0: \mu < 18$$
+
