@@ -2,3 +2,7 @@
   quarto-pub:
     - id: 66861f4f-bb03-4506-9b7a-9ce92ce51fed
       url: 'https://edimer.quarto.pub/muestreo'
+- source: 03-resumen-inferencia.qmd
+  quarto-pub:
+    - id: 3d00d6da-1446-47a0-94ca-a61a50506e5a
+      url: 'https://edimer.quarto.pub/inferencia-estadistica-resumen'

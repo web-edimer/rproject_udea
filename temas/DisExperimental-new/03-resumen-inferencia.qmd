@@ -1,0 +1,461 @@
+---
+title: "Inferencia Estadística"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-04-26"
+format:
+  revealjs:
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## Inferencia
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="images/img01.PNG" width = 700/>
+</center>
+
+
+
+## Inferencia {.scrollable}
+
+::: columns
+
+::: {.column width="50%"}
+
+- Métodos de inferencia estadística:
+  - Clásico
+  - Bayesiano
+- Inferencia:
+  - Estimación
+      - Puntual
+      - Intervalos
+  - Pruebas de hipótesis
+
+:::
+
+::: {.column width="50%"}
+
+- **Parámetro:** medida numérica que se obtiene con todos los datos de la población. Los parámetros generalmente son desconocidos.
+- **Estadístico:** medida numérica que se obtiene de las muestras con determinado nivel de variación entre muestras.
+- **Inferencia estadística:** proceso mediante el cual se generalizan conclusiones a la población, cuyo punto de partida son las muestras. Objetivos de la inferencia estadística:
+  - Estimación de parámetros
+      - Estimación puntual
+      - Intervalos de confianza
+  - Pruebas de hipótesis o test de significancia estadística
+- Un estadístico muestral, proveniente de una muestra aleatoria, tiene un patrón de comportamiento (predecible) en repetidas muestras, dicho patrón se conoce como la distribución muestral del estadístico.
+- Si se conoce la distribución muestral, es posible hacer inferencia estadística.
+
+:::
+
+:::
+
+## Estimación de parámetros {.scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="images/img9.gif" width = 700/>
+</center>
+
+## Tipos de estimación {.scrollable}
+
+::: {.panel-tabset}
+
+### Estimación puntual
+
+<center>
+<img src="images/img2.PNG" width = 700/>
+</center>
+
+
+
+
+### Estimacón por intervalo
+
+<center>
+<img src="images/img3.PNG" width = 700/>
+</center>
+
+
+### Nivel de significancia
+
+- Nivel $\alpha$ de uso frecuente:
+  - 0.10
+  - 0.05
+  - 0.01
+- Nivel de confianza de uso frecuente:
+  - 0.90
+  - 0.95
+  - 0.99
+- $NC + \alpha = 1$
+
+::: 
+
+
+
+## Intervalos de confianza
+
+::: {.panel-tabset}
+
+### Representación
+
+**Ejemplo con un $NC = 97\%(0.97)$ y $\alpha = 3\%(0.03)$**
+
+<center>
+<img src="images/img4.PNG" width = 700/>
+</center>
+
+
+### Intervalos usuales
+
+::: columns
+
+::: {.column width="50%"}
+
+- Para una muestra:
+  - $\mu$
+  - $p$
+  - $\sigma^2$
+  
+:::  
+
+::: {.column width="50%"}
+
+- Para dos muestras:
+  - $\mu_1 - \mu_2$
+  - $\mu_1 - \mu_2\ (pareadas)$
+  - $p_1-p_2$
+  - $\sigma^2_1/\sigma^2_2$
+
+:::
+
+:::
+
+:::
+
+## Pruebas de Hipótesis
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="images/img10.png" width = 700/>
+</center>
+
+
+
+## Pruebas de hipótesis
+
+::: {.panel-tabset}
+
+### Tipos de hipótesis
+
+<center>
+<img src="images/img5.PNG" width = 700/>
+</center>
+
+
+
+### Tipos de pruebas 
+
+<center>
+<img src="images/img6.PNG" width = 700/>
+</center>
+
+
+### Pruebas usuales
+
+
+::: columns
+
+::: {.column width="50%"}
+
+- Para una muestra:
+  - $\mu$
+  - $p$
+  - $\sigma^2$
+  
+:::
+
+::: {.column width="50%"}
+- Para dos muestras:
+  - $\mu_1 - \mu_2$
+  - $\mu_1 - \mu_2\ (pareadas)$ 
+  - $p_1-p_2$
+  - $\sigma^2_1/\sigma^2_2$
+
+:::
+
+:::
+
+### Etapas
+
+- Definir la hipótesis nula y la alternativa
+- Tomar la muestra (muestreo)
+- Calcular el estadístico (evidencias)
+- Determinar el nivel $\alpha$    
+- Calcular el valor P
+- Concluir (toma de decisiones)
+
+:::
+
+
+## Tipos de errores
+
+<center>
+<img src="images/img7.PNG" width = 700/>
+</center>
+
+- $\alpha$: máxima probabilidad de cometer el error tipo I
+- **Potencia de la prueba $(1- \beta)$:** probabilidad de rechazar una hipótesis nula que es falsa. 
+
+
+## Valor p
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+- Se puede definir como la probabilidad exacta de cometer el error tipo I.
+- Probabilidad de obtener un estadístico de prueba (evidencias) igual al que se obtuvo o más extremo.
+- Es la probabilidad calculada, suponiendo que la hipótesis nula es verdadera, de obtener un estadístico de prueba tan discrepante a $H_0$ como el valor que en realidad se obtuvo.
+- En la medida que el valor P se hace más pequeño, más contradictorios son los datos con $H_0$
+
+## Conclusión en pruebas de hipótesis {.scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="images/img8.PNG" width = 550/>
+</center>
+
+- Contraste de hipótesis:
+  - Intervalos de confianza
+  - Región de rechazo
+  - Valor P
+
+## Métodos estadísticos {.scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "images/img11.png" />
+</center>
+
+| Tipo de análisis | Método Paramétrico | Método no Paramétrico |
+| :--- | :----------------: | :----: |
+| Correlación | *Pearson* | *Spearman* o *Kendall* |
+| Comparar medias (2 grupos) | *t-Student* | *Wilcoxon* |
+
+
+## Normalidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+![](images/new1.jpg){fig-align="center"}
+
+## Variación del muestreo: *Bootstrapping*
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://miro.medium.com/max/1400/1*9x2lAp3QF2FyIyQNaePkVA.png" width = 700 />
+</center>
+
+# Inferencia sobre una población
+
+## Prueba de hipótesis para $\mu$ {.scrollable}
+
+1. Comprobar que la variable aleatoria se distribuye de forma normal.
+2. Definir la hipóteis nula y alternativa: $$H_0: nula$$
+   $$H_1: alternativa$$
+3. Calcular el estadístico $$t = \frac{\bar{X}- \mu_0}{s/\sqrt{n}}$$
+4. Definir el error tipo I $\alpha$
+5. Calcular el valor P en una distribución $t-student$ con $n-1$ grados de libertad
+6. Comparar el valor P con $\alpha$ y concluir.
+
+## Intervalos de confianza para $\mu$ {.scrollable}
+
+::: {.panel-tabset}
+
+### Varianza conocida
+
+Si $\bar{x}$ es la media de una muestra aleatoria de tamaño $n$ de una población normal con varianza $\sigma^2$ conocida, un intervalo de confianza del $(1-\alpha)100\%$ para $\mu$ está dado por la siguiente expresión:
+
+![](images/img3_infer1 (1).png){fig-align="center"}
+
+### Valores *Z* {.scrollable}
+
+![](images/img3_infer1 (2).png){fig-align="center"}
+
+- Nivel de confianza (NC) y $\alpha$: $Z_{\alpha/2}$:
+  - $NC = 90\%,\ y\ \alpha = 0.10: Z_{\alpha/2} = 1.645$
+  - $NC = 95\%,\ y\ \alpha = 0.05: Z_{\alpha/2} = 1.960$
+  - $NC = 99\%,\ y\ \alpha = 0.01: Z_{\alpha/2} = 2.576$
+
+### Varianza desconocida {.scrollable}
+
+Si $\bar{x}$ es la media de una muestra aleatoria de tamaño $n$ de una población normal con varianza $\sigma^2$ desconocida, un intervalo de confianza del $(1-\alpha)100\%$ para $\mu$ está dado por la siguiente expresión:
+
+![](images/img3_infer1 (3).png){fig-align="center"}
+
+::: 
+
+# Inferencia sobre  $p$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="https://cdn.iconscout.com/icon/free/png-256/proportion-chart-2772330-2302447.png" width = 500/>
+</center>
+
+## Prueba de hipótesis para $p$ {.scrollable}
+
+1. Definir la hipótesis nula y alternativa 
+$$H_0: nula$$
+$$H_1: alternativa$$
+2. Calcular el estadístico
+$$Z_0 = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$$
+3. Definir el error tipo I $\alpha$
+4. Calcular el valor P en una distribución normal estándar
+5. Comparar el valor P con $\alpha$ y concluir.
+
+
+## Intervalo de confianza para $p$ {.scrollable}
+
+Si $\hat{p}$ es la proporción de éxitos en una muestra aleatoria de tamaño $n$, un intervalo de confianza del $(1-\alpha)100\%$ para $p$ está dado por la siguiente expresión:
+
+$$\hat{p}-Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} < p < \hat{p}+Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+# Inferencia sobre $\sigma_1^2/\sigma_2^2$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+## Prueba de hipótesis para $\sigma_1^2/\sigma_2^2$ {.scrollable}
+
+**Previamente:**
+
+  - Comprobar normalidad
+
+**Luego:**
+
+- Definir la hipótesis nula y alternativa 
+- Calcular el estadístico
+
+$$F = \frac{S_1^2}{S_2^2}$$
+
+- Definir el error tipo I $\alpha$
+- Calcular el valor P
+- Comparar el valor P con $\alpha$ y concluir
+
+## Intervalo de confianza para $\sigma^2_1/\sigma^2_2$
+
+Si $S^2_1$ y $S^2_2$ son las varianzas muestrales de muestras aleatorias independientes de tamaño $n_1$ y $n_2$ de poblaciones normales, un intervalo de confianza del $(1-\alpha)100\%$ para $\sigma^2_1/\sigma^2_2$ está dado por la siguiente expresión:
+
+```{r, echo=FALSE, out.width = "680px", out.height="140px", fig.align='center'}
+knitr::include_graphics("images/difvar.png")
+```
+
+# Inferencia sobre $\mu_1 - \mu_2$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+## $\mu_1 - \mu_2$, $\sigma$ desconocidas e iguales  {.scrollable}
+
+- Comprobar la normalidad.
+- Definir la hipótesis nula y alternativa.
+- Calcular el estadístico
+$$t = \frac{\bar{x_1}-\bar{x_2}-\delta_0}{S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+
+Donde: 
+$$S_p = \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$$
+
+- Definir el error tipo I $\alpha$
+- Calcular el valor P en una distribución $t-student$ con $n_1+n_2-2$ grados de libertad
+- Comparar el valor P con $\alpha$ y concluir.
+
+## $\mu_1 - \mu_2$, $\sigma$ desconocidas y diferentes {.scrollable}
+
+- Comprobar la normalidad y la homocedasticidad (igualdad de varianzas)s.
+- Definir la hipótesis nula y alternativa.
+- Calcular el estadístico
+$$t = \frac{\bar{x_1}-\bar{x_2}-\delta_0}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}$$
+
+Donde $t \sim t_v$, con grados de libertad $v$:
+
+<center>
+```{r, echo=FALSE, out.width = "250px"}
+knitr::include_graphics("images/v.png")
+```
+</center>
+
+- Definir el error tipo I $\alpha$
+- Calcular el valor P y concluir
+
+## Intervalos de confianza para $\mu_1 - \mu_2$  {.scrollable}
+
+### Varianzas conocidas
+
+Si $\bar{X_1}$ y $\bar{X_2}$ son las medias muestrales de dos muestras aleatorias independientes de tamaño $n_1$ y $n_2$ de poblaciones normales con varianzas conocidas $\sigma^2_1$ y $\sigma^2_2$, respectivamente, un intervalo de confianza del $(1-\alpha)100\%$ para $\mu_1-\mu_2$ está dado por la siguiente expresión:
+
+```{r, echo=FALSE, out.width = "650px", out.height="170px", fig.align='center'}
+knitr::include_graphics("images/difmedia.png")
+```
+
+### V. Desconocidas e iguales
+
+Si $\bar{X_1}$ y $\bar{X_2}$ son las medias muestrales de dos muestras aleatorias independientes de tamaño $n_1$ y $n_2$ de poblaciones normales con varianzas desconocidas e iguales, un intervalo de confianza del $(1-\alpha)100\%$ para $\mu_1-\mu_2$ está dado por la siguiente expresión:
+
+```{r, echo=FALSE, out.width = "670px", out.height="180px", fig.align='center'}
+knitr::include_graphics("images/difmedia2.png")
+```
+
+Donde $v = n_1 + n_2 - 2$ y $S_p$:
+
+$$S_p = \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$$
+
+### . Desconocidas y diferentes
+
+Si $\bar{X_1}$ y $\bar{X_2}$ son las medias muestrales de dos muestras aleatorias independientes de tamaño $n_1$ y $n_2$ de poblaciones normales con varianzas diferentes y desconocidas, un intervalo de confianza del $(1-\alpha)100\%$ para $\mu_1-\mu_2$ está dado por la siguiente expresión:
+
+```{r, echo=FALSE, out.width = "650px", out.height="180px", fig.align='center'}
+knitr::include_graphics("images/descarga.png")
+```
+
+Donde $v$:
+
+```{r, echo=FALSE, out.width = "320px", out.height="110px", fig.align='center'}
+knitr::include_graphics("images/v.png")
+```
+
+
+
+# Inferencia sobre $\hat{p_1}-\hat{p_2}$
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+## Prueba de hipótesis para $\hat{p_1}-\hat{p_2}$
+
+1. Definir la hipóteis nula y alternativa
+3. Calcular el estadístico
+$$z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}}$$
+4. Definir el error tipo I $\alpha$
+5. Calcular el valor P en una distribución normal estándar ($z$)
+6. Comparar el valor P con $\alpha$ y concluir.
+
+## Intervalo de confianza para $\hat{p_1}-\hat{p_2}$
+
+Si $\hat{p_1}$ y $\hat{p_2}$ son las proporciones de éxito de dos muestras aleatorias independientes de tamaño $n_1$ y $n_2$, entonces un intervalo del $(1-\alpha)100\%$ para $\hat{p_1}-\hat{p_2}$ está dado por la siguiente expresión:
+
+```{r, echo=FALSE, out.width = "580px", out.height="120px", fig.align='center'}
+knitr::include_graphics("images/difp.png")
+```
+
+## ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="images/gracias.gif"/>
+</center>
