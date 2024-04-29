@@ -1,0 +1,61 @@
+---
+title: "Trabajo Final"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Contexto: *Storytelling*
+
+![](metodo.jpg){fig-align="center"}
+
+Deberá hacer uso de métodos estadísticos descriptivos como tablas, métricas y gráficos para narrar la historia que compete a sus mediciones. Es muy importante que identifique cuáles son las preguntas que desea responder con base en su análisis. Profundice lo suficiente en el análisis descriptivo para que pueda elegir los resultados que desea incluir en su tablero de datos.
+
+- [¿Qué es Data Storytelling?](https://www.iebschool.com/blog/data-storytelling-que-es-big-data/)
+- [¿Qué es la narración de datos?](https://www.sap.com/latinamerica/products/technology-platform/cloud-analytics/what-is-data-storytelling.html)
+
+# Descripción
+
+  1. Instalar alguna de las aplicaciones: [Arduino Science Journal](https://www.arduino.cc/education/science-journal) o [PyPhox.](https://phyphox.org/)
+  2. Realizar mediciones de intensidad sonora (decibeles) en algún lugar de interés, puede ser dentro de la universidad o por fuera de ella. Las mediciones deberán ser realizadas en al menos 10 días. Utilice la [guía de Arduino Science Journal](https://rpubs.com/Edimer/954711). La [Organización Mundial de la Salud - OMS](https://www.who.int/es/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening) sugiere niveles de referencia para algunas fuentes, con base en ello defina el lugar donde desea realizar las mediciones y tenga en cuenta este nivel de referencia para el desarrollo del tablero de datos.
+
+![](oms.png){fig-align="center"}
+  
+  3. Intregre en su narrativa tablas con resúmenes descriptivos con los resultados de las mediciones.
+  4. Intregre en su narrativa gráficos que permitan comparar la distribución de la intensidad sonora en los días que realizó las mediciones.
+  5. Construya un tablero de datos ([descargar plantillas](https://rproject-udea.netlify.app/temas/Guides/plantillas-R-udea.zip)) donde *cuente una historia* con las mediciones que obtuvo.
+  
+# Entregables
+
+- **Documento (pdf, word, etc):**  deberá entregar un documento en pdf o word de máximo 3 páginas donde describa los objetivos, el marco metodológico de su análisis, resultados y discusión. **NO SE CALIFICARÁN CÓDIGOS DE R**.
+- **Tablero de datos (HTML):** deberá entregar un tablero de datos en formato HTML con los resultados que considerere pertinentes.
+
+# Fecha máxima de entrega
+
+- **Fecha de entrega máxima:** viernes 31 de mayo de 2024.
