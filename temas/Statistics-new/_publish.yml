@@ -8,3 +8,9 @@
       url: 'https://edimer.quarto.pub/estadística-descriptiva-y-exploratoria'
     - id: 1501ee1a-2e78-4733-be0e-125cf86fc897
       url: 'https://edimer.quarto.pub/eda'
+- source: 05-graficos-misleading.qmd
+  quarto-pub:
+    - id: c786a60f-4fca-47b4-9d4b-7b0e5702a1a4
+      url: 'https://edimer.quarto.pub/estadística-descriptiva-y-exploratoria'
+    - id: 65052f26-e1cf-4fc8-809b-a10ebb8411c5
+      url: 'https://edimer.quarto.pub/graficos-misleading'

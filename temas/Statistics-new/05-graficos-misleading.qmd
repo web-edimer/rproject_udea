@@ -1,0 +1,178 @@
+---
+title: "Estadística Descriptiva y Exploratoria"
+subtitle: "Gráficos engañosos"
+author: "Edimer David Jaramillo"
+date: "2024-04-30"
+format:
+  revealjs:
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## *"La mejor gráfica de la historia"* — Edward Tufte
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+![](https://www.edwardtufte.com/tufte/graphics/minard_lg.gif){fig-align="center"}
+
+## ¿Cuál es el propósito de un gráfico?
+
+::: columns
+
+::: {.column width="50%"}
+
+### [John W. Tukey](https://es.wikipedia.org/wiki/John_W._Tukey)
+
+![](https://upload.wikimedia.org/wikipedia/en/e/e9/John_Tukey.jpg){fig-align="center"}
+
+> *“Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo”*
+
+:::
+
+::: {.column width="50%"}
+
+- Mejorar la compresión de los datos, es decir, que no confunden ni engañan.   
+- Explorar y aprender acerca de la información recopilada.    
+- Facilitar la comunicación de hallazgos e ideas a otras personas.    
+- Búsqueda de patrones ocultos:   
+  - Tendencias
+  - Relaciones
+  - Agrupaciones
+
+#### ¿Todos los gráficos son buenos?
+
+- **Respuesta:** ¡Noooo! [¡Los gráficos circulares  apestan!](https://medium.com/the-mission/to-pie-charts-3b1f57bcb34a)
+- **Respuesta de [Edward Tufte](https://www.edwardtufte.com/tufte/):** *"el único diseño peor que un gráfico circular son varios de ellos"*.
+
+:::
+
+:::
+
+# [Gráficos engañosos](https://es.qaz.wiki/wiki/Misleading_graph)
+
+
+## Características
+
+::: columns
+
+::: {.column width="50%"}
+- Omitir la línea de base
+
+![](images/mis1.png){fig-align="center"}
+
+- Manipular el eje Y
+
+![](images/mis2.png){fig-align="center"}
+
+- Ir en contra de las convenciones
+
+![](images/mis5.png){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+- Datos "amañados"
+
+![](images/mis3.png){fig-align="center"}
+
+- Usando el gráfico incorrecto
+
+![](images/mis4.png){fig-align="center"}
+
+- Más ejemplos de gráficos engañosos:
+  - [Misleading Graphs: Real Life Examples](https://www.statisticshowto.com/misleading-graphs/)
+  - [Stopping COVID-19 with Misleading Graphs](https://towardsdatascience.com/stopping-covid-19-with-misleading-graphs-6812a61a57c9)
+  - [13 Graphs That Are Clearly Lying](https://www.buzzfeednews.com/article/katienotopoulos/graphs-that-lied-to-us)
+  - [Misleading Graphs and Statistics](https://faculty.atu.edu/mfinan/2043/section31.pdf)
+
+:::
+
+:::
+
+## Gráficos engañosos: Colombia
+
+![](images/encuesta1.png){fig-align="center"}
+
+![](images/encuesta2.png){fig-align="center"}
+
+## Gráficos engañosos: Colombia
+
+![](images/encuesta3.png){fig-align="center"}
+
+![](images/encuesta4.png){fig-align="center"}
+
+
+## Gráficos engañosos: Colombia
+
+![](images/encuesta5.png){fig-align="center"}
+
+![](images/encuesta6.png){fig-align="center"}
+
+## Gráficos engañosos: Colombia
+
+![](images/encuesta7.png){fig-align="center"}
+
+![](images/encuesta8.png){fig-align="center"}
+
+## Gráficos engañosos: Colombia
+
+![](images/img9.png){fig-align="center"}
+
+![](images/img10.png){fig-align="center"}
+
+## Gráficos engañosos: Colombia
+
+![](images/img11.png){fig-align="center"}
+
+![](images/img12.png){fig-align="center"}
+
+
+## Gráficos engañosos: Colombia
+
+![](images/img13.png){fig-align="center"}
+
+
+## Gráficos engañosos: Colombia
+
+![](images/img14.png){fig-align="center"}
+
+![](images/img15.png){fig-align="center"}
+
+
+
+## Gráficos engañosos: Colombia (2020)
+
+![](images/nueva1.png){fig-align="center"}
+
+![](images/nueva4.png){fig-align="center"}
+
+
+
+## Gráficos engañosos: Colombia (2020)
+
+![](images/nueva3.png){fig-align="center"}
+
+![](images/nueva2.png){fig-align="center"}
+
+## 
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](images/gracias.gif){fig-align="center"}
