@@ -27,6 +27,9 @@ intro_image_hide_on_mobile: true
 - [Histórico encuesta](/temas/data/datos-encuestas-historia.xlsx)
 - [Ejemplos de datos desordenados](/temas/data/datos-desordenados.zip)
 - [Volumen embalses de Colomboa](/temas/data/PorcVoluUtilDiar.csv)
+- [Datos de exámenes parciales](/temas/data/datos_parciales.xlsx)
+- [Datos de trigo](/temas/data/datos_trigo.xlsx)
+- [Datos de cebada](/temas/data/datos_cebada.xlsx)
 
 # Funciones auxiliares
 
