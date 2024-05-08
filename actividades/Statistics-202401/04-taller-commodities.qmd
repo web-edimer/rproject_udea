@@ -1,0 +1,61 @@
+---
+title: "Taller 3"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Descripción
+
+En esta actividad utilizará [precios mensuales de commodities](https://www.indexmundi.com/es/precios-de-mercado/) en los últimos 30 años. Cada base de datos cuenta con las variables `mes`, `año`, `precio commoditie 1` y `precio commoditie 2`, los precios están en pesos colombianos. El objetivo es que desarrolle  análisis exploratorio de datos (métricas de resumen, tablas de resumen o gráficos) que permita responder a los siguientes planteamientos.
+
+- ¿Existen tendencias temporales en los precios de los commodities?
+- ¿Cuál de los dos commodities tiene mayor asimetría en el precio histórico?
+- Establezca si existe relación en el precio de los commodities a través del tiempo.
+- Cree una nueva variable de nombre `ratio_precios` con el cociente entre los precios de los commodities. Usted es libre de utilizar cualquiera de los dos en el numerador y denominador. ¿Existe alguna tendencia a través del tiempo?
+- ¿Cuál es el año de mayor dispersión en el precio de los commodities?
+- Si tuviera que elegir uno de los commodities como *variable respuesta* ¿cuál elegiría y por qué?
+- Obtenga una variable que contenga información de la variación porcentual del precio $t$ respecto al precio $t-1$ ($t$ es el mes) en cada commoditie. ¿Cuál de los dos presenta mayor variación promedio?
+- ¿Cuál es el mes de mayor dispersión en el precio de los commodities?
+  
+# Datos
+
+Las bases de datos están en un archivo *.zip* que contiene 15 archivos con el nombre de los dos commodities separados por un guión, por ejemplo, `algodón-urea`.
+
+- [Descargar aquí](https://rproject-udea.netlify.app/temas/data/datos-commodities.zip)
+  
+# Entregable
+
+Deberá entregar un documento pdf, word o HTML con el resultado de sus análisis. El documento debe tener un hilo conductor en la interpretación de resultados, para lo cual siéntase libre de abordar los planteamientos anteriores en el orden que considere necesario. **Nota:** no se calificarán resultados que no tengan interpretación.
+
+# Fecha de entrega
+
+- Máximo el sábado 18 de mayo de 2024

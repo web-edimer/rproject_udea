@@ -6,3 +6,7 @@
   quarto-pub:
     - id: 65811861-cb25-4318-a6d0-4cc952575343
       url: 'https://edimer.quarto.pub/trabajo-final-estadistica'
+- source: 04-taller-commodities.qmd
+  quarto-pub:
+    - id: 5a0a7d23-3261-4fab-9261-567a5e1702e5
+      url: 'https://edimer.quarto.pub/taller3-estadistica'
