@@ -30,6 +30,7 @@ intro_image_hide_on_mobile: true
 - [Datos de exámenes parciales](/temas/data/datos_parciales.xlsx)
 - [Datos de trigo](/temas/data/datos_trigo.xlsx)
 - [Datos de cebada](/temas/data/datos_cebada.xlsx)
+- [Precios de commodities - Taller 3 Estadística](/temas/data/datos-commodities.zip)
 
 # Funciones auxiliares
 
