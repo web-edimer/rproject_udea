@@ -4,7 +4,7 @@
     <title>Introducción al diseño experimental</title>
     <meta charset="utf-8" />
     <meta name="author" content="Edimer David Jaramillo" />
-    <meta name="date" content="2024-05-09" />
+    <meta name="date" content="2024-05-10" />
     <script src="libs/header-attrs-2.26/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -28,7 +28,7 @@ class: center, middle, inverse, title-slide
 ### Universidad de Antioquia
 ]
 .date[
-### 2024-05-09
+### 2024-05-10
 ]
 
 ---
@@ -36,6 +36,16 @@ class: center, middle, inverse, title-slide
 
 
 
+class: inverse, center, middle
+
+# Inferencia Estadística
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+&lt;center&gt;
+&lt;img src = "https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png" /&gt;
+&lt;/center&gt;
+
+---
 class: inverse, center, middle
 
 # Modelos Estadísticos
@@ -64,6 +74,22 @@ class: inverse, center, middle
 | Comparar medias (1 o 2 grupos) | *t-Student* | *Wilcoxon* |
 | Comparar medias (&gt; 2 grupos) | *Anova*  | *Kruskal-Wallis* |
 
+
+---
+
+# ¿Cómo comparar más de 2 grupos?
+
+`$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$`
+
+Donde:
+- `\(y_{ij}\)`: variable respuesta o dependiente
+- `\(\mu\)`: media general
+- `\(\tau_{J}\)`: efecto del `\(j-ésimo\)` tratamiento
+- `\(\epsilon_{ij}\)`: error aleatorio experimental, se debe garantizar que `\(\epsilon_{ij} \sim N(\mu=0,\sigma^2)\)`
+
+&lt;center&gt;
+&lt;img src = "img/prueba.png" /&gt;
+&lt;/center&gt;
 
 ---
 
@@ -126,6 +152,74 @@ class: inverse, center, middle
 - Efectos multiplicativos (interacción)
 
 ]
+
+]
+
+---
+
+# Tipos de diseños
+
+.panelset.sideways[
+  
+.panel[.panel-name[Diseño Completamente al Azar (DCA)] 
+
+`$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$`
+
+Donde:
+- `\(y_{ij}\)`: variable respuesta o dependiente
+- `\(\mu\)`: media general
+- `\(\tau_{j}\)`: efecto del `\(j-ésimo\)` tratamiento
+- `\(\epsilon_{ij}\)`: error aleatorio experimental, se debe garantizar que `\(\epsilon_{ij} \sim N(\mu=0,\sigma^2)\)`
+           
+]
+  
+.panel[.panel-name[Diseño en Bloques al Azar (DBA)] 
+
+`$$y_{ijk} = \mu + \tau_j + \beta_k + \epsilon_{ijk}$$`
+
+Donde:
+- `\(y_{ijk}\)`: variable respuesta o dependiente
+- `\(\mu\)`: media general
+- `\(\tau_{j}\)`: efecto del `\(j-ésimo\)` tratamiento
+- `\(\beta_k\)`: efecto del `\(k-ésimo\)` tratamiento
+- `\(\epsilon_{ijk}\)`: error aleatorio experimental, se debe garantizar que `\(\epsilon_{ijk} \sim N(\mu=0,\sigma^2)\)`
+           
+]
+  
+.panel[.panel-name[Diseños factoriales] 
+
+&lt;center&gt;
+&lt;img src = "https://asdlib.org/imageandvideoexchangeforum/files/2013/08/Figure14.12.jpg" width = 300/&gt;
+&lt;/center&gt;
+
+- Modelo aditivo:
+
+`$$y_{ij...} = \mu + \tau_j + \tau_j + ... + \tau_j + \epsilon_{ij...}$$`
+
+- Modelo multiplicativo:
+
+`$$y_{ij...} = \mu + (\tau \tau)_{jk} + ... + \epsilon_{ij...}$$`
+
+
+
+
+           
+]
+  
+
+.panel[.panel-name[Representación Diseños Factoriales] 
+
+
+- Representación:
+
+&lt;center&gt;
+&lt;img src = "https://www.researchgate.net/profile/Roy-Bruns/publication/6155271/figure/fig1/AS:280714760212480@1443939022484/a-the-cube-for-BBD-and-three-interlocking-2-2-factorial-design-b.png" width = 300/&gt;
+&lt;/center&gt;
+           
+]
+
+
+
 
 ]
 
