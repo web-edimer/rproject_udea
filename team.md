@@ -20,4 +20,4 @@ intro_image_hide_on_mobile: true
 - [Taller 2](https://edimer.quarto.pub/taller-2/)
 - [Taller 3](https://edimer.quarto.pub/taller-3/)
 - [Taller 4 (en clase)](https://edimer.quarto.pub/taller-4/)
-
+- [Taller 5](https://edimer.quarto.pub/taller-5/)

@@ -1,0 +1,52 @@
+---
+title: "Taller 5"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+```
+
+# Actividad
+
+En esta actividad usted deberá elegir un cultivo de la base de datos [Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2022. Base Agrícola](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/uejq-wxrr/about_data) y validar las siguientes hipótesis para la variable **rendimiento (t/ha)** en dos departamentos de su interés (*D1* y *D2*). **Nota:** debe realizar todo el proceso de inferencia estadística e incluir los intervalos de confianza, además, no olvide validar los supuestos matemáticos necesarios.
+
+## Hipótesis 1
+
+$$H_0: \mu_{D1} = \mu_{D2}$$
+$$H_1: \mu_{D1} \neq \mu_{D2}$$
+
+## Hipótesis 2
+
+$$H_0: \sigma^2_{D1} / \sigma^2_{D2} = 1$$
+$$H_1: \sigma^2_{D1} / \sigma^2_{D2}  \neq 1$$
+
+# Fecha de entrega
+
+- Máximo el lunes 20 de mayo de 2024

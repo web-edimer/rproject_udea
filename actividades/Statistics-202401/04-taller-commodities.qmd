@@ -58,4 +58,4 @@ Deberá entregar un documento pdf, word o HTML con el resultado de sus análisis
 
 # Fecha de entrega
 
-- Máximo el sábado 18 de mayo de 2024
+- Máximo el domingo 19 de mayo de 2024

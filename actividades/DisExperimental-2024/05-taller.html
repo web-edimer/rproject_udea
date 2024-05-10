@@ -8,7 +8,7 @@
 
 <meta name="author" content="Edimer David Jaramillo">
 
-<title>Taller 3</title>
+<title>Taller 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,20 +58,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="04-taller-commodities_files/libs/clipboard/clipboard.min.js"></script>
-<script src="04-taller-commodities_files/libs/quarto-html/quarto.js"></script>
-<script src="04-taller-commodities_files/libs/quarto-html/popper.min.js"></script>
-<script src="04-taller-commodities_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="04-taller-commodities_files/libs/quarto-html/anchor.min.js"></script>
-<link href="04-taller-commodities_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="04-taller-commodities_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="04-taller-commodities_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="04-taller-commodities_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="04-taller-commodities_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="05-taller_files/libs/clipboard/clipboard.min.js"></script>
+<script src="05-taller_files/libs/quarto-html/quarto.js"></script>
+<script src="05-taller_files/libs/quarto-html/popper.min.js"></script>
+<script src="05-taller_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="05-taller_files/libs/quarto-html/anchor.min.js"></script>
+<link href="05-taller_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="05-taller_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="05-taller_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="05-taller_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="05-taller_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
-<link href="04-taller-commodities_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<link href="05-taller_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 
-<script src="04-taller-commodities_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="05-taller_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -114,9 +114,11 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenido</h2>
    
   <ul>
-  <li><a href="#descripción" id="toc-descripción" class="nav-link active" data-scroll-target="#descripción">Descripción</a></li>
-  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
-  <li><a href="#entregable" id="toc-entregable" class="nav-link" data-scroll-target="#entregable">Entregable</a></li>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link active" data-scroll-target="#actividad">Actividad</a>
+  <ul class="collapse">
+  <li><a href="#hipótesis-1" id="toc-hipótesis-1" class="nav-link" data-scroll-target="#hipótesis-1">Hipótesis 1</a></li>
+  <li><a href="#hipótesis-2" id="toc-hipótesis-2" class="nav-link" data-scroll-target="#hipótesis-2">Hipótesis 2</a></li>
+  </ul></li>
   <li><a href="#fecha-de-entrega" id="toc-fecha-de-entrega" class="nav-link" data-scroll-target="#fecha-de-entrega">Fecha de entrega</a></li>
   </ul>
 </nav>
@@ -127,8 +129,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Taller 3</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
-<p class="subtitle lead">Estadística</p>
+<div class="quarto-title-block"><div><h1 class="title">Taller 5</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<p class="subtitle lead">Diseño Experimental</p>
 </div>
 
 
@@ -145,7 +147,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 de mayo de 2024</p>
+      <p class="date">10 de mayo de 2024</p>
     </div>
   </div>
   
@@ -157,35 +159,22 @@ window.Quarto = {
 </header>
 
 
-<section id="descripción" class="level1">
-<h1>Descripción</h1>
-<p>En esta actividad utilizará <a href="https://www.indexmundi.com/es/precios-de-mercado/">precios mensuales de commodities</a> en los últimos 30 años. Cada base de datos cuenta con las variables <code>mes</code>, <code>año</code>, <code>precio commoditie 1</code> y <code>precio commoditie 2</code>, los precios están en pesos colombianos. El objetivo es que desarrolle análisis exploratorio de datos (métricas de resumen, tablas de resumen o gráficos) que permita responder a los siguientes planteamientos.</p>
-<ul>
-<li>¿Existen tendencias temporales en los precios de los commodities?</li>
-<li>¿Cuál de los dos commodities tiene mayor asimetría en el precio histórico?</li>
-<li>Establezca si existe relación en el precio de los commodities a través del tiempo.</li>
-<li>Cree una nueva variable de nombre <code>ratio_precios</code> con el cociente entre los precios de los commodities. Usted es libre de utilizar cualquiera de los dos en el numerador y denominador. ¿Existe alguna tendencia a través del tiempo?</li>
-<li>¿Cuál es el año de mayor dispersión en el precio de los commodities?</li>
-<li>Si tuviera que elegir uno de los commodities como <em>variable respuesta</em> ¿cuál elegiría y por qué?</li>
-<li>Obtenga una variable que contenga información de la variación porcentual del precio <span class="math inline">\(t\)</span> respecto al precio <span class="math inline">\(t-1\)</span> (<span class="math inline">\(t\)</span> es el mes) en cada commoditie. ¿Cuál de los dos presenta mayor variación promedio?</li>
-<li>¿Cuál es el mes de mayor dispersión en el precio de los commodities?</li>
-</ul>
+<section id="actividad" class="level1">
+<h1>Actividad</h1>
+<p>En esta actividad usted deberá elegir un cultivo de la base de datos <a href="https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/uejq-wxrr/about_data">Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2022. Base Agrícola</a> y validar las siguientes hipótesis para la variable <strong>rendimiento (t/ha)</strong> en dos departamentos de su interés (<em>D1</em> y <em>D2</em>). <strong>Nota:</strong> debe realizar todo el proceso de inferencia estadística e incluir los intervalos de confianza, además, no olvide validar los supuestos matemáticos necesarios.</p>
+<section id="hipótesis-1" class="level2">
+<h2 class="anchored" data-anchor-id="hipótesis-1">Hipótesis 1</h2>
+<p><span class="math display">\[H_0: \mu_{D1} = \mu_{D2}\]</span> <span class="math display">\[H_1: \mu_{D1} \neq \mu_{D2}\]</span></p>
 </section>
-<section id="datos" class="level1">
-<h1>Datos</h1>
-<p>Las bases de datos están en un archivo <em>.zip</em> que contiene 15 archivos con el nombre de los dos commodities separados por un guión, por ejemplo, <code>algodón-urea</code>.</p>
-<ul>
-<li><a href="https://rproject-udea.netlify.app/temas/data/datos-commodities.zip">Descargar aquí</a></li>
-</ul>
+<section id="hipótesis-2" class="level2">
+<h2 class="anchored" data-anchor-id="hipótesis-2">Hipótesis 2</h2>
+<p><span class="math display">\[H_0: \sigma^2_{D1} / \sigma^2_{D2} = 1\]</span> <span class="math display">\[H_1: \sigma^2_{D1} / \sigma^2_{D2}  \neq 1\]</span></p>
 </section>
-<section id="entregable" class="level1">
-<h1>Entregable</h1>
-<p>Deberá entregar un documento pdf, word o HTML con el resultado de sus análisis. El documento debe tener un hilo conductor en la interpretación de resultados, para lo cual siéntase libre de abordar los planteamientos anteriores en el orden que considere necesario. <strong>Nota:</strong> no se calificarán resultados que no tengan interpretación.</p>
 </section>
 <section id="fecha-de-entrega" class="level1">
 <h1>Fecha de entrega</h1>
 <ul>
-<li>Máximo el domingo 19 de mayo de 2024</li>
+<li>Máximo el lunes 20 de mayo de 2024</li>
 </ul>
 <!-- -->
 
@@ -654,8 +643,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Taller 3"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Estadística"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Taller 5"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Diseño Experimental"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Edimer David Jaramillo"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es </span></span>
@@ -688,37 +677,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">                      message = FALSE)</span></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu"># Descripción</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu"># Actividad</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>En esta actividad utilizará <span class="co">[</span><span class="ot">precios mensuales de commodities</span><span class="co">](https://www.indexmundi.com/es/precios-de-mercado/)</span> en los últimos 30 años. Cada base de datos cuenta con las variables <span class="in">`mes`</span>, <span class="in">`año`</span>, <span class="in">`precio commoditie 1`</span> y <span class="in">`precio commoditie 2`</span>, los precios están en pesos colombianos. El objetivo es que desarrolle  análisis exploratorio de datos (métricas de resumen, tablas de resumen o gráficos) que permita responder a los siguientes planteamientos.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>En esta actividad usted deberá elegir un cultivo de la base de datos <span class="co">[</span><span class="ot">Evaluaciones Agropecuarias Municipales – EVA. 2019 - 2022. Base Agrícola</span><span class="co">](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA-2019-20/uejq-wxrr/about_data)</span> y validar las siguientes hipótesis para la variable **rendimiento (t/ha)** en dos departamentos de su interés (*D1* y *D2*). **Nota:** debe realizar todo el proceso de inferencia estadística e incluir los intervalos de confianza, además, no olvide validar los supuestos matemáticos necesarios.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>¿Existen tendencias temporales en los precios de los commodities?</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>¿Cuál de los dos commodities tiene mayor asimetría en el precio histórico?</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Establezca si existe relación en el precio de los commodities a través del tiempo.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cree una nueva variable de nombre <span class="in">`ratio_precios`</span> con el cociente entre los precios de los commodities. Usted es libre de utilizar cualquiera de los dos en el numerador y denominador. ¿Existe alguna tendencia a través del tiempo?</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>¿Cuál es el año de mayor dispersión en el precio de los commodities?</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Si tuviera que elegir uno de los commodities como *variable respuesta* ¿cuál elegiría y por qué?</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Obtenga una variable que contenga información de la variación porcentual del precio $t$ respecto al precio $t-1$ ($t$ es el mes) en cada commoditie. ¿Cuál de los dos presenta mayor variación promedio?</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>¿Cuál es el mes de mayor dispersión en el precio de los commodities?</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu"># Datos</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Las bases de datos están en un archivo *.zip* que contiene 15 archivos con el nombre de los dos commodities separados por un guión, por ejemplo, <span class="in">`algodón-urea`</span>.</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Descargar aquí</span><span class="co">](https://rproject-udea.netlify.app/temas/data/datos-commodities.zip)</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu"># Entregable</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Deberá entregar un documento pdf, word o HTML con el resultado de sus análisis. El documento debe tener un hilo conductor en la interpretación de resultados, para lo cual siéntase libre de abordar los planteamientos anteriores en el orden que considere necesario. **Nota:** no se calificarán resultados que no tengan interpretación.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fecha de entrega</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Máximo el domingo 19 de mayo de 2024</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hipótesis 1</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>$$H_0: \mu_{D1} = \mu_{D2}$$</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>$$H_1: \mu_{D1} \neq \mu_{D2}$$</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hipótesis 2</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$H_0: \sigma^2_{D1} / \sigma^2_{D2} = 1$$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>$$H_1: \sigma^2_{D1} / \sigma^2_{D2}  \neq 1$$</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fecha de entrega</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Máximo el lunes 20 de mayo de 2024</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<script src="04-taller-commodities_files/libs/quarto-html/zenscroll-min.js"></script>
+<script src="05-taller_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
