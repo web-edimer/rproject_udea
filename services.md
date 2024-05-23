@@ -24,7 +24,7 @@ intro_image_hide_on_mobile: true
 | *Introducción a la inferencia estadística* | [🖥️](/temas/DisExperimental/01-Intro/01-Intro.html) | [📖](https://edimer.quarto.pub/resultados-encuesta/) [📕](https://edimer.quarto.pub/distribuciones/) |
 | *Muestreo* | [🖥️](https://edimer.quarto.pub/muestreo/#/title-slide) | [📖](https://edimer.quarto.pub/variacion-del-muestreo/) |
 | *Inferencia Estadística* | [🖥️](https://edimer.quarto.pub/inferencia-estadistica-resumen/#/title-slide) | [📖](https://edimer.quarto.pub/inferencia/) [📕](https://edimer.quarto.pub/inferencia2/) |
-| *Introducción al diseño exprimental* | [🖥️](/temas/DisExperimental-new/04-dis-experimentos/12-Diseño-Experimentos.html) | |
+| *Introducción al diseño exprimental* | [🖥️](/temas/DisExperimental-new/04-dis-experimentos/12-Diseño-Experimentos.html) | [📖](https://edimer.quarto.pub/dca-dba-experimentos/) |
 
   
 

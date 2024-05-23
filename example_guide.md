@@ -32,6 +32,7 @@ intro_image_hide_on_mobile: true
 - [Datos de cebada](/temas/data/datos_cebada.xlsx)
 - [Precios de commodities - Taller 3 Estadística](/temas/data/datos-commodities.zip)
 - [Raster: nitrógeno SoilGrids](/temas/data/nitrogen_0-5cm_mean.tif)
+- [Experimento en ratones](/temas/data/experimento_ratones.xlsx)
 
 # Funciones auxiliares
 
