@@ -1,0 +1,219 @@
+---
+title: "Taller 4"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: true
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(cowplot)
+library(lubridate)
+theme_set(theme_minimal_hgrid())
+```
+
+# Descripción
+
+Esta actividad tiene como objetivo evaluar la capacidad de interpretar resultados, comunicar hallazgos de forma correcta (síntesis, redacción sistemática, etc.) y proponer mejoras en virtud de los resultados obtenidos. Esta es la última etapa (***Conclusion***) de la metodología PPDAC:
+
+![](https://www.researchgate.net/publication/365808973/figure/fig1/AS:11431281103467775@1669707704224/Elements-in-the-PPDAC-problem-solving-cycle.ppm){fig-align="center"}
+
+## Punto 1 
+
+- Usted ha sido designado para elaborar un informe corto acerca de *créditos agropecuarios*, otorgados a pequeños productores por la entidad *Finagro* en el periodo 2011-2021. Para tal propósito se le han suministrado 4 gráficos. Usted debe redactar un texto de mínimo 2000 caracteres (con espacios) donde resuma y narre de manera sistemática lo que observa en los gráficos. **Nota:** el orden de los gráficos no implica que deban ser interpretados de la misma manera.
+- **Fuente de datos:** [Agronet.gov.co](https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=44)
+
+::: {.panel-tabset}
+
+### Gráfico 1
+
+- Distribución del valor del crédito en millones de pesos, por departamento.
+
+```{r}
+read_excel("Creditos2011-2021.xlsx") %>%
+  clean_names() %>%
+  rename(valor_millones = valor_millones_de_pesos_colombianos) %>%
+  mutate(ano = as.numeric(ano)) %>% 
+  filter(ano >= 2011) %>% 
+  ggplot(aes(
+    x = fct_reorder(departamento, valor_millones, median),
+    y = valor_millones
+  )) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(
+    angle = 45,
+    hjust = 1,
+    size = 6
+  )) +
+  labs(x = "Dapartamento", y = "Millones de pesos ($)")
+```
+
+### Gráfico 2
+
+- Coeficiente de variación del valor del crédito en millones de pesos, por departamento.
+
+```{r}
+read_excel("Creditos2011-2021.xlsx") %>%
+  clean_names() %>%
+  rename(valor_millones = valor_millones_de_pesos_colombianos) %>%
+  mutate(ano = as.numeric(ano)) %>% 
+  filter(ano >= 2011) %>% 
+  group_by(departamento) %>%
+  summarise(coef_var = round(sd(valor_millones) / mean(valor_millones) * 100)) %>%
+  ggplot(aes(x = fct_reorder(departamento, coef_var),
+             y = coef_var)) +
+  geom_col() +
+  theme(axis.text.x = element_text(size = 7),
+        axis.text.y = element_text(size = 7)) +
+  labs(x = "Dapartamento", y = "Coeficiente de variación (%)") +
+  coord_flip()
+```
+
+### Gráfico 3
+
+- Serie temporal general (promedio) en la última década del valor del crédito en millones de pesos
+
+```{r}
+read_excel("Creditos2011-2021.xlsx") %>%
+  clean_names() %>%
+  rename(valor_millones = valor_millones_de_pesos_colombianos) %>% 
+  mutate(ano = as.numeric(ano)) %>% 
+  filter(ano >= 2011) %>% 
+  ggplot(aes(x = as.numeric(ano), y = valor_millones)) +
+  geom_smooth() +
+  labs(x = "Año", y = "Millones de pesos ($)") +
+  scale_x_continuous(breaks = seq(2011, 2021,))
+```
+
+### Gráfico 4
+
+- Serie temporal en la última década del valor del crédito en millones de pesos por departamento.
+
+```{r, fig.width=8, fig.height=20}
+read_excel("Creditos2011-2021.xlsx") %>%
+  clean_names() %>%
+  rename(valor_millones = valor_millones_de_pesos_colombianos) %>%
+  mutate(ano = as.numeric(ano)) %>%
+  filter(ano >= 2011)  %>%
+  ggplot(aes(x = as.numeric(ano), y = valor_millones)) +
+  facet_wrap(~departamento, scales = "free", ncol = 4) +
+  geom_line() +
+  labs(x = "Año", y = "Millones de pesos ($)") +
+  scale_x_continuous(breaks = seq(2011, 2021, 2)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8),
+        strip.background = element_rect(fill = "gray80"))
+```
+
+:::
+
+## Punto 2 
+
+- Desde el ministerio de agricultura se tiene interés en validar la relación del volumen de producción de leche con el precio de la misma, se plantean dos preguntas fundamentales:
+  - ¿Cómo influye el volumen de producción sobre el precio de la leche? Si el mes pasado el volumen de producción fue alto o bajo, ¿qué pasa con el precio de la leche del mes siguiente?
+  - ¿El patrón de comportamiento general se replica para cada departamento? Si el patrón de comportamiento (asociación) es el mismo en todos los departamentos se podría pensar que el volumen de producción tiene un impacto único sobre el precio de la leche, sin embargo, es posible que en algunos departamentos este fenómeno se eviencie con mayor o menor intensidad.
+- Para responder a estas inquietudes se le han suministrado los siguientes gráficos:
+  - **Gráfico 1:** serie temporal general (promedio) del precio del litro de leche y la serie temporal general (promedio) del volumen de producción. Este gráfico será de utilidad para intuir si existe alguna relación entre volumen y precio.
+  - **Gráfico 2:** este gráfico tiene en el eje x el volumen de producción del mes anterior al precio de leche, es decir, que relaciona el precio de leche en el tiempo $t$ con el volumen de producción en el tiempo $t-1$. Por ejemplo, el precio de la leche del mes de diciembre será asociado con el volumen de producción del mes anterior, es decir, noviembre. A este proceso se le conoce como [*rezago o retroceso (Lag Operator)*](https://en.wikipedia.org/wiki/Lag_operator#:~:text=In%20time%20series%20analysis%2C%20the,be%20represented%20as%20for%20all) y es de utilidad para estudiar el efecto de el "pasado" sobre el "futuro".
+- **Fuente de datos:** [Agronet.gov.co](https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=8)
+
+::: {.panel-tabset}
+
+### Gráfico 1
+
+```{r}
+g1 <-
+  read_excel("DatosPreciosLeche.xlsx") %>%
+  clean_names() %>%
+  separate(col = fecha, into = c("mes", "v1", "year")) %>%
+  select(-v1) %>%
+  unite(year, mes, col = "fecha", sep = "-") %>%
+  mutate(fecha = str_c(fecha, "-", "01"),
+         fecha = ymd(fecha)) %>%
+  group_by(fecha) %>%
+  summarise(
+    precio = mean(precio, na.rm = TRUE),
+    volumen_litros = mean(volumen_litros, na.rm = TRUE)
+  ) %>%
+  ungroup() %>% 
+  select(fecha, precio, volumen_litros) %>%
+  pivot_longer(cols = -fecha) %>%
+  ggplot(aes(x = fecha, y = value)) +
+  facet_wrap( ~ name,
+              scales = "free",
+              nrow = 2,
+              labeller = as_labeller(
+                c(precio = "Precio del litro de leche ($)",
+                  volumen_litros = "Volumen de producción (litros)")
+              )) +
+  geom_line()
+
+g1
+```
+
+### Gráfico 2
+
+```{r, fig.width=8, fig.height=10}
+g2 <-
+  read_excel("DatosPreciosLeche.xlsx") %>%
+  clean_names() %>%
+  separate(col = fecha, into = c("mes", "v1", "year")) %>%
+  select(-v1) %>%
+  unite(year, mes, col = "fecha", sep = "-") %>%
+  mutate(fecha = str_c(fecha, "-", "01"),
+         fecha = ymd(fecha)) %>%
+  # group_by(fecha) %>%
+  # summarise(
+  #   precio = mean(precio, na.rm = TRUE),
+  #   variacion_precio_percent = mean(variacion_precio_percent, na.rm = TRUE)
+  # ) %>%
+  # ungroup() %>%
+  select(departamento, fecha, precio, volumen_litros) %>%
+  group_by(departamento) %>%
+  mutate(volumen_litros = lag(volumen_litros, n = 1)) %>%
+  ungroup() %>%
+  ggplot(aes(x = volumen_litros, y = precio)) +
+  facet_wrap( ~ departamento, scales = "free", ncol = 4) +
+  geom_point(size = 0.7, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Volumen en litros (t-1) \n Rezago n = 1",
+       y = "Precio del litro de leche ($)")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+g2
+```
+
+::: 
+
+# Fecha de entrega
+
+- **Fecha máxima de entrega:** miércoles 05 de junio de 2024.
+- **Formato de entrega:** cualquierf formato: *HTML*, *pdf*, *word*, etc.
+- La actividad podrá ser desarrollada de forma individual o máximo en parejas.

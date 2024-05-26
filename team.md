@@ -12,6 +12,7 @@ intro_image_hide_on_mobile: true
 - [Taller 1](/actividades/Statistics-202401/01-actividad/Actividad-01.html)
 - [Taller 2 (en clase)](https://edimer.quarto.pub/taller-en-clase/)
 - [Taller 3](https://edimer.quarto.pub/taller3-estadistica/)
+- [Taller 4](https://edimer.quarto.pub/taller4-estadistica/)
 - [Trabajo final](https://edimer.quarto.pub/trabajo-final-estadistica/)
 
 # Actividades Diseño Experimental

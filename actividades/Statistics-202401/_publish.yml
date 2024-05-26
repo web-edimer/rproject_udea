@@ -10,3 +10,7 @@
   quarto-pub:
     - id: 5a0a7d23-3261-4fab-9261-567a5e1702e5
       url: 'https://edimer.quarto.pub/taller3-estadistica'
+- source: 05-taller4.qmd
+  quarto-pub:
+    - id: 19d89593-7ea8-48b7-bae1-9260ec353956
+      url: 'https://edimer.quarto.pub/taller4-estadistica'
