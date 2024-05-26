@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Edimer David Jaramillo">
+
+<title>Trabajo final</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="06-trabajo-final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="06-trabajo-final_files/libs/quarto-html/quarto.js"></script>
+<script src="06-trabajo-final_files/libs/quarto-html/popper.min.js"></script>
+<script src="06-trabajo-final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="06-trabajo-final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="06-trabajo-final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="06-trabajo-final_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="06-trabajo-final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="06-trabajo-final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="06-trabajo-final_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="06-trabajo-final_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+
+<script src="06-trabajo-final_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenido</h2>
+   
+  <ul>
+  <li><a href="#inferencia-estadística" id="toc-inferencia-estadística" class="nav-link active" data-scroll-target="#inferencia-estadística">Inferencia estadística</a>
+  <ul class="collapse">
+  <li><a href="#punto-1" id="toc-punto-1" class="nav-link" data-scroll-target="#punto-1">Punto 1</a></li>
+  <li><a href="#punto-2" id="toc-punto-2" class="nav-link" data-scroll-target="#punto-2">Punto 2</a></li>
+  <li><a href="#punto-3" id="toc-punto-3" class="nav-link" data-scroll-target="#punto-3">Punto 3</a></li>
+  </ul></li>
+  <li><a href="#casos-prácticos" id="toc-casos-prácticos" class="nav-link" data-scroll-target="#casos-prácticos">Casos prácticos</a></li>
+  <li><a href="#caso-1" id="toc-caso-1" class="nav-link" data-scroll-target="#caso-1">Caso 1</a></li>
+  <li><a href="#caso-2" id="toc-caso-2" class="nav-link" data-scroll-target="#caso-2">Caso 2</a></li>
+  <li><a href="#fecha-de-entrega" id="toc-fecha-de-entrega" class="nav-link" data-scroll-target="#fecha-de-entrega">Fecha de entrega</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Trabajo final</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver el código fuente</a></li></ul></div></div>
+<p class="subtitle lead">Diseño Experimental</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Edimer David Jaramillo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">26 de mayo de 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ul>
+<li><strong>Nota:</strong> cargue la biblioteca <em>tidyverse</em> para ejecutar los códigos de este documento.</li>
+</ul>
+<section id="inferencia-estadística" class="level1">
+<h1>Inferencia estadística</h1>
+<section id="punto-1" class="level2">
+<h2 class="anchored" data-anchor-id="punto-1">Punto 1</h2>
+<ul>
+<li>En una encuesta realizada en Colombia a 128 sistemas de producción de aguacate, se encontró que 47 de ellos usan fertilización orgánica y el restante utilizan fertilización química. Construya un intervalo de confianza del 99% para la proporción del uso de fertilizante orgánico en este tipo de sistemas de producción. Interprete sus resultados.</li>
+</ul>
+</section>
+<section id="punto-2" class="level2">
+<h2 class="anchored" data-anchor-id="punto-2">Punto 2</h2>
+<ul>
+<li>Usted fue asignado (a) para probar a través de métodos estadísticos si en promedio la grasa dorsal (mm) de dos líneas genéticas de porcinos presentan diferencias estadísticas y ¿cuál sería el rango de valores esperados para la diferencia de esas dos líneas genéticas? ¿Cuál línea genética recomendaría?</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>linea_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">13.94</span>, <span class="fl">15.30</span>, <span class="fl">16.92</span>, <span class="fl">14.89</span>, <span class="fl">17.34</span>, <span class="fl">17.43</span>, <span class="fl">16.83</span>, <span class="fl">15.61</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>             <span class="fl">16.95</span>, <span class="fl">17.69</span>, <span class="fl">15.16</span>, <span class="fl">16.53</span>, <span class="fl">17.22</span>, <span class="fl">15.17</span>, <span class="fl">16.63</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>linea_b <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">15.62</span>, <span class="fl">13.84</span>, <span class="fl">14.25</span>, <span class="fl">12.79</span>, <span class="fl">17.01</span>, <span class="fl">16.92</span>, <span class="fl">11.13</span>, <span class="fl">13.72</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="fl">14.26</span>, <span class="fl">14.55</span>, <span class="fl">14.11</span>, <span class="fl">18.04</span>, <span class="fl">12.17</span>, <span class="fl">13.59</span>, <span class="fl">13.81</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="punto-3" class="level2">
+<h2 class="anchored" data-anchor-id="punto-3">Punto 3</h2>
+<ul>
+<li>Se realizaron 30 experimentos independientes en donde se evaluó la afección de una plaga en hojas de cítricos, en cada uno de ellos se calculó el promedio del área afectada (en porcentaje) de las hojas bajo análisis. Utilizando técnicas de Bootstrapping construya un intervalo de confianza (con cualquiera de los dos métodos: error estándar o percentil) del 95% para el promedio del área afectada.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">area =</span> <span class="fu">c</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="fl">29.2</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.0</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="fl">28.9</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.3</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="fl">13.8</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="fl">5.8</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="fl">27.5</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.2</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="fl">27.6</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.9</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="fl">32.8</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="fl">22.6</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="fl">15.3</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="fl">23.3</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="fl">12.4</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.0</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="fl">19.5</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.0</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.7</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="fl">20.4</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.6</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="fl">44.1</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.9</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.9</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.0</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      <span class="fl">25.1</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="fl">24.3</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      <span class="fl">22.1</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="fl">21.8</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="fl">21.9</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>area <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["area"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"29.2","_rn_":"1"},{"1":"17.0","_rn_":"2"},{"1":"28.9","_rn_":"3"},{"1":"17.3","_rn_":"4"},{"1":"13.8","_rn_":"5"},{"1":"5.8","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="casos-prácticos" class="level1">
+<h1>Casos prácticos</h1>
+</section>
+<section id="caso-1" class="level1">
+<h1>Caso 1</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Datos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Descripción del problema</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li><strong>Número de filas:</strong> 17472</li>
+<li><strong>Número de columnas:</strong> 25</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_caso4 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Alimentro-Depurada.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_caso4 <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["ingrediente"],"name":[1],"type":["chr"],"align":["left"]},{"label":["departamento"],"name":[2],"type":["chr"],"align":["left"]},{"label":["municipio"],"name":[3],"type":["chr"],"align":["left"]},{"label":["topografia"],"name":[4],"type":["chr"],"align":["left"]},{"label":["textura_de_suelo"],"name":[5],"type":["chr"],"align":["left"]},{"label":["epoca_recoleccion"],"name":[6],"type":["chr"],"align":["left"]},{"label":["altura_corte_cm"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["altura_planta_cm"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["edad_corte_d"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["proteina"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["ceniza"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["extracto_etereo"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["FDN"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["FDA"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["lignina"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["hemicelulosa"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["almidon"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["carbohidratos_noes"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["carbohidratos_solubles"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["digestibilidad_ms"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["energia_digestible"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["energia_metabolizable"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["energia_neta_manten"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["energia_neta_ganancia"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["energia_neta_lactancia"],"name":[25],"type":["dbl"],"align":["right"]}],"data":[{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Putumayo","3":"Sibundoy","4":"Plana","5":"ND","6":"Transición sequía a lluvia","7":"5","8":"25","9":"35","10":"18.35","11":"9.62","12":"3.14","13":"50.45","14":"26.37","15":"5.15","16":"24.08","17":"8.78","18":"13.57","19":"4.80","20":"65.85","21":"2.76","22":"2.21","23":"1.34","24":"0.77","25":"1.36"},{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Putumayo","3":"Sibundoy","4":"Plana","5":"ND","6":"Transición sequía a lluvia","7":"5","8":"25","9":"35","10":"26.80","11":"10.69","12":"3.26","13":"46.55","14":"26.22","15":"5.14","16":"20.33","17":"8.28","18":"11.76","19":"3.48","20":"72.62","21":"3.12","22":"2.48","23":"1.59","24":"0.99","25":"1.51"},{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Cundinamarca","3":"Mosquera","4":"Plana","5":"Franco arcilloso","6":"Lluvia","7":"10","8":"48","9":"77","10":"12.36","11":"10.00","12":"2.80","13":"62.84","14":"33.34","15":"8.03","16":"29.50","17":"5.79","18":"9.05","19":"3.27","20":"58.88","21":"2.46","22":"1.92","23":"1.08","24":"0.52","25":"1.20"},{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Cundinamarca","3":"Mosquera","4":"Plana","5":"Franco arcilloso","6":"Lluvia","7":"10","8":"48","9":"77","10":"12.08","11":"10.06","12":"2.77","13":"62.87","14":"34.29","15":"8.04","16":"28.58","17":"5.85","18":"9.83","19":"3.98","20":"58.35","21":"2.43","22":"1.90","23":"1.06","24":"0.50","25":"1.19"},{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Cundinamarca","3":"Mosquera","4":"Plana","5":"Franco arcilloso","6":"Lluvia","7":"10","8":"48","9":"77","10":"11.67","11":"9.74","12":"2.67","13":"62.80","14":"34.07","15":"8.33","16":"28.73","17":"6.18","18":"10.14","19":"3.97","20":"58.10","21":"2.41","22":"1.89","23":"1.05","24":"0.49","25":"1.18"},{"1":"Ryegrass perenne - Lolium perenne - Hoja, Tallo","2":"Cundinamarca","3":"Mosquera","4":"Plana","5":"Franco arcilloso","6":"Lluvia","7":"10","8":"48","9":"77","10":"11.68","11":"9.56","12":"2.85","13":"63.75","14":"34.22","15":"8.18","16":"29.53","17":"6.11","18":"10.27","19":"4.16","20":"58.06","21":"2.42","22":"1.89","23":"1.05","24":"0.49","25":"1.18"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li>En este caso analizará la composición bromatológica de 5 gramíneas forrajeras con registros de 18 departamentos y 174 municipios de Colombia. Es de interés identificar factores (variables) que puedan ser considerados como importantes en la variabilidad de la composición bromatológica de las especies. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+<ul>
+<li><strong>Validación de datos:</strong> deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.</li>
+<li><strong>Exploración de datos:</strong> construir gráficos que permitan atender la necesidad del planteamiento inicial.</li>
+<li><strong>Propuesta de modelación</strong> debe construir mínimo 3 modelos que permitan explicar y predecir la variable <em>proteína</em>. Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.</li>
+<li><strong>Preguntas adicionales:</strong>
+<ul>
+<li>¿Es posible predecir la <em>lignina</em> con base en la <em>altura</em> y <em>edad de corte</em>?</li>
+<li>¿Existen interacciones en los modelos que construyó para la variable <em>proteína</em>?</li>
+<li>Si alguien está interesado en establecer cuál es la mejor <em>época de recolección</em>, ¿usted qué le diría en términos estadísticos?</li>
+</ul></li>
+</ul></li>
+<li>Las especies forrajeras son las siguientes:
+<ul>
+<li><em>Megathyrsus maximus sp.</em></li>
+<li><em>Kikuyo - Cenchrus clandestinus</em></li>
+<li><em>Ryegrass perenne - Lolium perenne</em></li>
+<li><em>Buffel - Cenchrus ciliaris</em></li>
+<li><em>Rhodes - Chloris gayana</em></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="caso-2" class="level1">
+<h1>Caso 2</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Datos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Descripción del problema</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ul>
+<li><strong>Número de filas:</strong> 12991</li>
+<li><strong>Número de columnas:</strong> 32</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_caso5 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"PapaCanadá-Depurada.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_caso5 <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["NoBloc"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["NoTraitement"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["test_type"],"name":[3],"type":["chr"],"align":["left"]},{"label":["NtotDose"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["PtotDose"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["KtotDose"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["NsemisDose"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["NfracDose"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["LatDD"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["LonDD"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Annee"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["DatePlantation"],"name":[12],"type":["date"],"align":["right"]},{"label":["DensitePlants"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["PrecCropFiveClasses"],"name":[14],"type":["chr"],"align":["left"]},{"label":["Cultivar"],"name":[15],"type":["chr"],"align":["left"]},{"label":["Maturity5"],"name":[16],"type":["chr"],"align":["left"]},{"label":["pH1dans1"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["MOsol"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["CaSol"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["MgSol"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["Ksol"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["CuSol"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["ZnSol"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["FeSol"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["MnSol"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["AlSol"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["Psol"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["Texture"],"name":[28],"type":["chr"],"align":["left"]},{"label":["ArgileMesure"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["SableMesure"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["LimonCentroid"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["Yield"],"name":[32],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"1","3":"N","4":"0","5":"190","6":"270","7":"0","8":"0","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"18.9442"},{"1":"1","2":"2","3":"N","4":"70","5":"190","6":"270","7":"70","8":"0","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"40.3518"},{"1":"1","2":"3","3":"N","4":"100","5":"190","6":"270","7":"100","8":"0","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"33.0379"},{"1":"1","2":"4","3":"N","4":"130","5":"190","6":"270","7":"130","8":"0","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"37.5505"},{"1":"1","2":"5","3":"N","4":"160","5":"190","6":"270","7":"160","8":"0","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"46.0089"},{"1":"1","2":"6","3":"N","4":"190","5":"190","6":"270","7":"160","8":"30","9":"46.75306","10":"-72.33861","11":"2003","12":"2003-05-19","13":"31226","14":"Cereal","15":"Goldrush","16":"mid-season","17":"5.062","18":"3.54","19":"586.7159","20":"59.37605","21":"99.53036","22":"1.610198","23":"3.119758","24":"180.6441","25":"5.73633","26":"2081.181","27":"20.98738","28":"Sable loameux","29":"1.6","30":"73.2","31":"12.1","32":"41.0167"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ul>
+<li>En este caso analizará datos de producción de papa en Canadá, recolectados desde el año 1957 hasta 2017. Se pretende construir una herramienta que permita planes de fertilización sitio-específico, es decir, que para cada coordenadas (<em>LatDD</em> y <em>LonDD</em>) se logre establecer con precisión cómo y cuánto fertilizante aplicar. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+<ul>
+<li><strong>Validación de datos:</strong> deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.</li>
+<li><strong>Exploración de datos:</strong> construir gráficos que permitan atender la necesidad del planteamiento inicial.</li>
+<li><strong>Propuesta de modelación</strong> debe construir mínimo 3 modelos que permitan explicar y predecir la variable producción (<em>Yield</em>). Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.</li>
+<li><strong>Preguntas adicionales:</strong>
+<ul>
+<li>¿Cuál podría ser considerada la variable más influyente sobre la producción?</li>
+<li>¿Cómo mediría el nivel de variabilidad que ha tenido la producción (<em>Yield</em>) a través del tiempo?</li>
+<li>¿Cuál de los tratamientos recomendaría usted y por qué?</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="fecha-de-entrega" class="level1">
+<h1>Fecha de entrega</h1>
+<ul>
+<li>Máximo el viernes 07 de junio de 2024</li>
+<li>La actividad podrá ser desarrollada de forma individual o máximo en parejas.</li>
+</ul>
+<!-- -->
+
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Trabajo final"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Diseño Experimental"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Edimer David Jaramillo"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es </span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    page-layout: article</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 6</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 4.5</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: "Tabla de contenido"</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: paged</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">    number-depth: 4</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: yeti</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="in">                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="in">                      message = FALSE)</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Nota:** cargue la biblioteca *tidyverse* para ejecutar los códigos de este documento.</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Inferencia estadística</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Punto 1</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En una encuesta realizada en Colombia a 128 sistemas de producción de aguacate, se encontró que 47 de ellos usan fertilización orgánica y el restante utilizan fertilización química. Construya un intervalo de confianza del 99% para la proporción del uso de fertilizante orgánico en este tipo de sistemas de producción. Interprete sus resultados.</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Punto 2</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usted fue asignado (a) para probar a través de métodos estadísticos si en promedio la grasa dorsal (mm) de dos líneas genéticas de porcinos presentan diferencias estadísticas y ¿cuál sería el rango de valores esperados para la diferencia de esas dos líneas genéticas? ¿Cuál línea genética recomendaría?</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>linea_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">13.94</span>, <span class="fl">15.30</span>, <span class="fl">16.92</span>, <span class="fl">14.89</span>, <span class="fl">17.34</span>, <span class="fl">17.43</span>, <span class="fl">16.83</span>, <span class="fl">15.61</span>,</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>             <span class="fl">16.95</span>, <span class="fl">17.69</span>, <span class="fl">15.16</span>, <span class="fl">16.53</span>, <span class="fl">17.22</span>, <span class="fl">15.17</span>, <span class="fl">16.63</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>linea_b <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">15.62</span>, <span class="fl">13.84</span>, <span class="fl">14.25</span>, <span class="fl">12.79</span>, <span class="fl">17.01</span>, <span class="fl">16.92</span>, <span class="fl">11.13</span>, <span class="fl">13.72</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>            <span class="fl">14.26</span>, <span class="fl">14.55</span>, <span class="fl">14.11</span>, <span class="fl">18.04</span>, <span class="fl">12.17</span>, <span class="fl">13.59</span>, <span class="fl">13.81</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Punto 3</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Se realizaron 30 experimentos independientes en donde se evaluó la afección de una plaga en hojas de cítricos, en cada uno de ellos se calculó el promedio del área afectada  (en porcentaje) de las hojas bajo análisis.  Utilizando técnicas de Bootstrapping construya un intervalo de confianza (con cualquiera de los dos métodos: error estándar o percentil) del 95% para el promedio del área afectada.</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">area =</span> <span class="fu">c</span>(</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>      <span class="fl">29.2</span>,</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.0</span>,</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>      <span class="fl">28.9</span>,</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.3</span>,</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>      <span class="fl">13.8</span>,</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>      <span class="fl">5.8</span>,</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>      <span class="fl">27.5</span>,</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.2</span>,</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>      <span class="fl">27.6</span>,</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.9</span>,</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>      <span class="fl">32.8</span>,</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>      <span class="fl">22.6</span>,</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>      <span class="fl">15.3</span>,</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>      <span class="fl">23.3</span>,</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>      <span class="fl">12.4</span>,</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.0</span>,</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>      <span class="fl">19.5</span>,</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.0</span>,</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.7</span>,</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>      <span class="fl">20.4</span>,</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.6</span>,</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>      <span class="fl">44.1</span>,</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.9</span>,</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>      <span class="fl">17.9</span>,</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>      <span class="fl">30.0</span>,</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>      <span class="fl">25.1</span>,</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>      <span class="fl">24.3</span>,</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>      <span class="fl">22.1</span>,</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>      <span class="fl">21.8</span>,</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>      <span class="fl">21.9</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>area <span class="sc">|&gt;</span> <span class="fu">head</span>()</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="fu"># Casos prácticos</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="fu"># Caso 1 </span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos</span></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Número de filas:** 17472</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Número de columnas:** 25 </span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>df_caso4 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Alimentro-Depurada.csv"</span>)</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>df_caso4 <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descripción del problema</span></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En este caso analizará la composición bromatológica de 5 gramíneas forrajeras con registros de 18 departamentos y 174 municipios de Colombia. Es de interés identificar factores (variables) que puedan ser considerados como importantes en la variabilidad de la composición bromatológica de las especies. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.</span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. </span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable *proteína*.  Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.</span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Preguntas adicionales:**</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>¿Es posible predecir la *lignina* con base en la *altura* y *edad de corte*?</span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>¿Existen interacciones en los modelos que construyó para la variable *proteína*?</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Si alguien está interesado en establecer cuál es la mejor *época de recolección*, ¿usted qué le diría en términos estadísticos?</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Las especies forrajeras son las siguientes:</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*Megathyrsus maximus sp.*</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*Kikuyo - Cenchrus clandestinus*</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*Ryegrass perenne - Lolium perenne* </span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*Buffel - Cenchrus ciliaris* </span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*Rhodes - Chloris gayana*</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="fu"># Caso 2</span></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos</span></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Número de filas:** 12991</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Número de columnas:** 32 </span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>df_caso5 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"PapaCanadá-Depurada.csv"</span>)</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>df_caso5 <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descripción del problema</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En este caso analizará datos de producción de papa en Canadá, recolectados desde el año 1957 hasta 2017. Se pretende construir una herramienta que permita planes de fertilización sitio-específico, es decir, que para cada coordenadas (*LatDD* y *LonDD*) se logre establecer con precisión cómo y cuánto fertilizante aplicar. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. </span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable producción (*Yield*).  Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Preguntas adicionales:**</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>¿Cuál podría ser considerada la variable más influyente sobre la producción?</span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>¿Cómo mediría el nivel de variabilidad que ha tenido la producción (*Yield*) a través del tiempo?</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>¿Cuál de los tratamientos recomendaría usted y por qué?</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fecha de entrega</span></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Máximo el viernes 07 de junio de 2024</span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La actividad podrá ser desarrollada de forma individual o máximo en parejas.</span>
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="06-trabajo-final_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -33,6 +33,8 @@ intro_image_hide_on_mobile: true
 - [Precios de commodities - Taller 3 Estadística](/temas/data/datos-commodities.zip)
 - [Raster: nitrógeno SoilGrids](/temas/data/nitrogen_0-5cm_mean.tif)
 - [Experimento en ratones](/temas/data/experimento_ratones.xlsx)
+- [Datos Alimentro (trabajo final diseño experimental)](/temas/data/Alimentro-Depurada.csv)
+- [Datos de fertilización en Canadá (trabajo final diseño experimental)](/temas/data/PapaCanadá-Depurada.csv)
 
 # Funciones auxiliares
 

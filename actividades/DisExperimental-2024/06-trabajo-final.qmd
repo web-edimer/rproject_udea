@@ -1,0 +1,168 @@
+---
+title: "Trabajo final"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+lang: es 
+execute: 
+  eval: true
+  echo: true
+  warning: false
+format:
+  html:
+    page-layout: article
+    fig-width: 6
+    fig-height: 4.5
+    toc: true
+    toc-title: "Tabla de contenido"
+    smooth-scroll: true
+    code-fold: show
+    df-print: paged
+    toc-location: left
+    number-depth: 4
+    theme: yeti
+    code-copy: true
+    highlight-style: github
+    code-tools:
+      source: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center",
+                      fig.width = 5.5, fig.height = 4.5, warning = FALSE,
+                      message = FALSE)
+library(tidyverse)
+```
+
+- **Nota:** cargue la biblioteca *tidyverse* para ejecutar los códigos de este documento.
+
+# Inferencia estadística
+
+## Punto 1
+
+- En una encuesta realizada en Colombia a 128 sistemas de producción de aguacate, se encontró que 47 de ellos usan fertilización orgánica y el restante utilizan fertilización química. Construya un intervalo de confianza del 99% para la proporción del uso de fertilizante orgánico en este tipo de sistemas de producción. Interprete sus resultados.
+
+## Punto 2
+
+- Usted fue asignado (a) para probar a través de métodos estadísticos si en promedio la grasa dorsal (mm) de dos líneas genéticas de porcinos presentan diferencias estadísticas y ¿cuál sería el rango de valores esperados para la diferencia de esas dos líneas genéticas? ¿Cuál línea genética recomendaría?
+
+```{r}
+linea_a <- c(13.94, 15.30, 16.92, 14.89, 17.34, 17.43, 16.83, 15.61,
+             16.95, 17.69, 15.16, 16.53, 17.22, 15.17, 16.63)
+
+linea_b <-c(15.62, 13.84, 14.25, 12.79, 17.01, 16.92, 11.13, 13.72,
+            14.26, 14.55, 14.11, 18.04, 12.17, 13.59, 13.81)
+```
+
+## Punto 3
+
+- Se realizaron 30 experimentos independientes en donde se evaluó la afección de una plaga en hojas de cítricos, en cada uno de ellos se calculó el promedio del área afectada  (en porcentaje) de las hojas bajo análisis.  Utilizando técnicas de Bootstrapping construya un intervalo de confianza (con cualquiera de los dos métodos: error estándar o percentil) del 95% para el promedio del área afectada.
+
+```{r}
+area <-
+  data.frame(
+    area = c(
+      29.2,
+      17.0,
+      28.9,
+      17.3,
+      13.8,
+      5.8,
+      27.5,
+      18.2,
+      27.6,
+      30.9,
+      32.8,
+      22.6,
+      15.3,
+      23.3,
+      12.4,
+      30.0,
+      19.5,
+      17.0,
+      18.7,
+      20.4,
+      18.6,
+      44.1,
+      17.9,
+      17.9,
+      30.0,
+      25.1,
+      24.3,
+      22.1,
+      21.8,
+      21.9
+    )
+  )
+
+area |> head()
+```
+
+# Casos prácticos
+
+# Caso 1 
+
+::: {.panel-tabset}
+
+## Datos
+
+- **Número de filas:** 17472
+- **Número de columnas:** 25 
+
+
+```{r}
+df_caso4 <- read_csv("Alimentro-Depurada.csv")
+df_caso4 %>% head()
+```
+
+## Descripción del problema
+
+- En este caso analizará la composición bromatológica de 5 gramíneas forrajeras con registros de 18 departamentos y 174 municipios de Colombia. Es de interés identificar factores (variables) que puedan ser considerados como importantes en la variabilidad de la composición bromatológica de las especies. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable *proteína*.  Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.
+  - **Preguntas adicionales:**
+    - ¿Es posible predecir la *lignina* con base en la *altura* y *edad de corte*?
+    - ¿Existen interacciones en los modelos que construyó para la variable *proteína*?
+    - Si alguien está interesado en establecer cuál es la mejor *época de recolección*, ¿usted qué le diría en términos estadísticos?
+- Las especies forrajeras son las siguientes:
+  - *Megathyrsus maximus sp.*
+  - *Kikuyo - Cenchrus clandestinus*
+  - *Ryegrass perenne - Lolium perenne* 
+  - *Buffel - Cenchrus ciliaris* 
+  - *Rhodes - Chloris gayana*
+
+::: 
+
+# Caso 2
+
+::: {.panel-tabset}
+
+## Datos
+
+- **Número de filas:** 12991
+- **Número de columnas:** 32 
+
+
+```{r}
+df_caso5 <- read_csv("PapaCanadá-Depurada.csv")
+df_caso5 %>% head()
+```
+
+## Descripción del problema
+
+- En este caso analizará datos de producción de papa en Canadá, recolectados desde el año 1957 hasta 2017. Se pretende construir una herramienta que permita planes de fertilización sitio-específico, es decir, que para cada coordenadas (*LatDD* y *LonDD*) se logre establecer con precisión cómo y cuánto fertilizante aplicar. Bajo esa premisa, su objetivo está orientado a ejecutar las siguientes actividades:
+  - **Validación de datos:** deberá implementar algún mecanismo que le permita detectar (si existen) posibles errores en los datos.
+  - **Exploración de datos:** construir gráficos que permitan atender la necesidad del planteamiento inicial. 
+  - **Propuesta de modelación** debe construir mínimo 3 modelos que permitan explicar y predecir la variable producción (*Yield*).  Estime el tamaño del efecto, reporte la significancia estadística y obtenga la potencia estadística de sus inferencias.
+  - **Preguntas adicionales:**
+    - ¿Cuál podría ser considerada la variable más influyente sobre la producción?
+    - ¿Cómo mediría el nivel de variabilidad que ha tenido la producción (*Yield*) a través del tiempo?
+    - ¿Cuál de los tratamientos recomendaría usted y por qué?
+
+:::
+
+# Fecha de entrega
+
+- Máximo el viernes 07 de junio de 2024
+- La actividad podrá ser desarrollada de forma individual o máximo en parejas.

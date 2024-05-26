@@ -18,3 +18,7 @@
   quarto-pub:
     - id: 36a44579-1dbb-4b1c-9e98-7739a8cf1e6a
       url: 'https://edimer.quarto.pub/taller-5'
+- source: 06-trabajo-final.qmd
+  quarto-pub:
+    - id: b84f26b9-6ec7-475d-ac0b-6e6e1d5cb26d
+      url: 'https://edimer.quarto.pub/trabajo-final-de'
