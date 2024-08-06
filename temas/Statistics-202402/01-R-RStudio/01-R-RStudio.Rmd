@@ -1,0 +1,264 @@
+---
+title: "Estadística:"
+subtitle: "R, RStudio y R Markdown"
+author: "Edimer David Jaramillo"
+institute: "Universidad de Antioquia"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Motivación
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://cdn2.iconfinder.com/data/icons/entrepreneur-line-color-overweight-invest/512/Motivation-512.png"; width = 350/>
+</center>
+
+---
+
+# Ciencia de Datos (*Data Science*)
+
+<center>
+<img src = "https://www.kdnuggets.com/wp-content/uploads/Fig1-Abisiga-top-10-lists-data-science.jpg"; width = 350/>
+</center>
+
+<center>
+<img src = "https://bigdataanalyticsnews.com/wp-content/uploads/2020/04/data-science-1024x316.jpg"; width = 650/>
+</center>
+
+---
+
+# Conceptos relacionados
+
+<br>
+<br>
+<center>
+<img src = "https://pbs.twimg.com/media/DTZxeXJX4AAZXmN.jpg"; width = 550/>
+</center>
+
+---
+
+class: inverse, center, middle
+
+# Estadística Computacional
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://cdn1.iconfinder.com/data/icons/business-873/132/10-512.png"; width = 350/>
+</center>
+
+---
+
+# R y RStudio
+
+<center>
+<img src = "https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png"; width = 450/>
+</center>
+
+.pull-left[
+
+#### ¿Qué es R?
+
+  - R es un lenguaje de acceso libre para computación estadística y gráficos, que proporciona una amplia variedad de técnicas estadísticas y gráficas: modelado lineal y no lineal, pruebas estadísticas, análisis de series de tiempo, clasificación, agrupamiento, etc. [Página oficial de R.](https://cran.r-project.org/)
+
+]
+
+.pull-right[
+
+#### ¿Qué es RStudio?
+
+- RStudio es un entorno de desarrollo integrado (IDE) para R. [Página oficial de RStudio.](https://rstudio.com/)
+
+#### Descargar R y RStudio
+
+- [Clic aquí para descargar R y RStudio](https://posit.co/download/rstudio-desktop/)
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Interfaz Gráfica de Usuario (GUI) - R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "img/r.PNG"/>
+</center>
+
+---
+
+class: inverse, center, middle
+
+# Entorno de Desarrollo Integrado (IDE) - RStudio
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "img/rstudio.PNG"/>
+</center>
+
+---
+
+# Elementos básicos de R
+
+.pull-left[
+
+#### Ejecutar código de R
+
+<center>
+<img src = "img/ejecutar.PNG"/>
+</center>
+
+#### Limpiar consola
+
+<center>
+<img src = "img/limpiar.PNG"/>
+</center>
+
+]
+
+.pull-right[
+
+#### Comentario en R
+
+<center>
+<img src = "img/numeral.PNG"/>
+</center>
+
+```{r}
+# Este es un comentario
+# 10 + 10
+2 + 5
+```
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Proceso de Análisis de Datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "img/proceso.PNG"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Ecosistema R Markdown
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "img/rmarkdown.PNG"; width = 650/>
+</center>
+
+---
+
+# Abrir R Markdown
+
+- **Crear archivo:** *File* `->` *New File* `->` *R Markdown*
+
+<center>
+<img src = "img/rmarkdown2.PNG"; height = 400/>
+</center>
+
+- **Guardar archivo:** *File* `->` *Save with Encoding* `->` *UTF-8*
+
+---
+
+# Componentes de R Markdown
+
+- **Metadatos:**
+
+<center>
+<img src = "img/metadatos.PNG"; height = 100/>
+</center>
+
+- **Fragmentos (chunk) de R: **
+
+<center>
+<img src = "img/chunk.PNG"; height = 100/>
+</center>
+
+- **Markdown:** 
+
+<center>
+<img src = "img/markdown.PNG"; width = 900; height = 130/>
+</center>
+
+---
+
+# Elementos básicos de Markdown
+
+.pull-left[
+- **Título o encabezados:** 
+```
+# Título principal
+## Título secundario
+### Título 3
+```
+- **Opciones de texto:**
+```
+**cursiva*
+***negrilla**
+****negrilla cursiva***
+```
+
+- **Viñetas:** las viñetas se pueden agregar con guión, asterisco o el símbolo más (+).
+
+- **Hipervínculos:** 
+```
+[Texto](link o url)
+```
+]
+
+.pull-right[
+
+- **Insertar imagen:**
+```
+![](link o url de imagen)
+```
+
+- **Teclas de acceso rápido:**
+    - **Ctrl + Shift + K **`->` compilar documento.
+    - **Ctrl + Alt + i **`->` insertar fragmento de R.
+
+<center>
+<img src = "img/libro1.png"; height = 150/>
+</center>
+
+- [R Markdown: The Definitive Guide.](https://bookdown.org/yihui/rmarkdown/)
+
+]
+
+---
+class: inverse, center, middle
+
+# Publicar en Rpubs
+
+Publicación de documentos en  [Rpubs.](https://rpubs.com/)
+Regístrese [aquí.](https://rpubs.com/users/new)  
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+

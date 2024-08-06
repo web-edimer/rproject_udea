@@ -9,17 +9,8 @@ intro_image_hide_on_mobile: true
 
 # Actividades Estadística
 
-- [Taller 1](/actividades/Statistics-202401/01-actividad/Actividad-01.html)
-- [Taller 2 (en clase)](https://edimer.quarto.pub/taller-en-clase/)
-- [Taller 3](https://edimer.quarto.pub/taller3-estadistica/)
-- [Taller 4](https://edimer.quarto.pub/taller4-estadistica/)
-- [Trabajo final](https://edimer.quarto.pub/trabajo-final-estadistica/)
+
 
 # Actividades Diseño Experimental
 
-- [Taller 1](https://edimer.quarto.pub/taller-1/)
-- [Taller 2](https://edimer.quarto.pub/taller-2/)
-- [Taller 3](https://edimer.quarto.pub/taller-3/)
-- [Taller 4 (en clase)](https://edimer.quarto.pub/taller-4/)
-- [Taller 5](https://edimer.quarto.pub/taller-5/)
-- [Trabajo final](https://edimer.quarto.pub/trabajo-final-de/)
+

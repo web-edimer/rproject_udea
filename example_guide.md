@@ -22,19 +22,6 @@ intro_image_hide_on_mobile: true
 
 - [Mapa Colombia - Departamentos](/temas/data/MGN2021_DPTO_POLITICO.rar)
 - [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
-- [Encuesta (depurada) en .xlsx](/temas/data/encuesta_depurada2024.xlsx)
-- [Encuesta varios formatos (archivo .zip)](/temas/data/datos-encuesta.zip)
-- [Histórico encuesta](/temas/data/datos-encuestas-historia.xlsx)
-- [Ejemplos de datos desordenados](/temas/data/datos-desordenados.zip)
-- [Volumen embalses de Colomboa](/temas/data/PorcVoluUtilDiar.csv)
-- [Datos de exámenes parciales](/temas/data/datos_parciales.xlsx)
-- [Datos de trigo](/temas/data/datos_trigo.xlsx)
-- [Datos de cebada](/temas/data/datos_cebada.xlsx)
-- [Precios de commodities - Taller 3 Estadística](/temas/data/datos-commodities.zip)
-- [Raster: nitrógeno SoilGrids](/temas/data/nitrogen_0-5cm_mean.tif)
-- [Experimento en ratones](/temas/data/experimento_ratones.xlsx)
-- [Datos Alimentro (trabajo final diseño experimental)](/temas/data/Alimentro-Depurada.csv)
-- [Datos de fertilización en Canadá (trabajo final diseño experimental)](/temas/data/PapaCanadá-Depurada.csv)
 
 # Funciones auxiliares
 
