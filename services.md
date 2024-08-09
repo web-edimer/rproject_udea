@@ -11,13 +11,14 @@ intro_image_hide_on_mobile: true
 | Tema | Diapositivas | Ejemplos |
 | :--- | :----------: | :------: |
 | *Presentación del curso* | [🖥️](/temas/Statistics-202402/00-Curso/00-Curso.html) | |
-| *Introducción a R y RStudio* | [🖥️](/temas/Statistics-202402/01-R-RStudio/01-R-RStudio.html) | [📖](https://edimer.quarto.pub/lectura-de-datos-con-r/) |
+| *Introducción a R y RStudio* | [🖥️](/temas/Statistics-202402/01-R-RStudio/01-R-RStudio.html) | [📖]() |
 
 # Temas Diseño Experimental
 
 | Tema | Diapositivas | Ejemplos |
 | :--- | :----------: | :------: |
-
+| *Presentación del curso* | [🖥️](/temas/DisExperimental-202402/01-presentacion-curso.html) | |
+| *Introducción al diseño experimental* | [🖥️]() | [📖]() |
   
 
   

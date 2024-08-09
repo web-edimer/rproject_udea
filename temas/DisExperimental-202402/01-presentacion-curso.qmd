@@ -1,0 +1,113 @@
+---
+title: "Presentación del curso"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-08-09"
+format:
+  revealjs:
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## Objetivos y unidades {.scrollable .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+### Objetivos
+
+- Proporcionar los elementos necesarios para el planteamiento teórico y práctico del diseño de experimentos.
+- Implementar técnicas estadísticas para el diseño y análisis de experimentos.
+- Comprender la importancia del diseño y análisis estadístico de experimentos en la implementación del método científico.
+- Usar herramientas técnológicas que faciliten el procesamiento de datos y la generación de conocimiento.
+
+### Unidades
+
+- **Unidad 1:** Análisis de regresión lineal simple y múltiple.
+- **Unidad 2:** Introducción al diseño de experimentos (elementos de inferencia estadística). 
+- **Unidad 3:** Diseños factoriales, cuadros latinos y parcelas divididas.
+- **Unidad 4:** Modelos lineales mixtos (medidas repetidas en el tiempo).
+
+## Evaluación del curso  {.scrollable .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+- **Talleres en clase:** 
+  - Resolución de ejercicios y problemas
+  - 50 %
+- **Actividad 2:** 
+  - Trabajo escrito
+  - Resolución de ejercicios y problemas
+  - 20 %
+- **Actividad 3:** 
+  - Exposición y trabajo escrito
+  - Ejemplo aplicado en un problema real bajo enfoque de Ciencia de Datos.
+  - 30 %
+
+# Recursos de Información
+
+## Design and Analysis of Experiments
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/libro0.png){fig-align="center"}
+
+::: footer
+[Design and Analysis of Experiments](https://antivirus.uclv.edu.cu/update/libros/Mathematics%20and%20Statistics/Design%20and%20Analysis%20of%20Experiments%20-%20Angela%20Dean%2C%20Daniel%20Voss%2C%20Danel%20Dragulji%2C%202nd%20ed.%202017%20-%20978-3-319-52250-0.pdf)
+::: 
+
+## Statistical Inference via Data Science
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/libro5.png){fig-align="center"}
+
+::: footer
+[Statistical Inference via Data Science](https://moderndive.com/)
+::: 
+
+## Design and Analysis of Experiments with R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/Libro1.png){fig-align="center"}
+
+::: footer
+[Design and Analysis of Experiments with R](http://www.ru.ac.bd/stat/wp-content/uploads/sites/25/2019/03/502_07_00_Lawson_Design-and-Analysis-of-Experiments-with-R-2017.pdf)
+::: 
+
+## Design and Analysis of Experiments and Observational Studies using R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/libro4.jpg){fig-align="center"}
+
+::: footer
+[Design and Analysis of Experiments and Observational Studies using R](https://designexptr.org/index.html)
+::: 
+
+## Mixed Models: Theory and Applications with R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/libro2.png){fig-align="center"}
+
+::: footer
+[Mixed Models: Theory and Applications with R](https://www.isical.ac.in/~arnabc/linmod/demidenko.pdf)
+::: 
+
+## Modelos Mixtos con R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/libro3.jpg){fig-align="center"}
+
+::: footer
+[Modelos Mixtos con R](https://fhernanb.github.io/libro_modelos_mixtos/)
+::: 
+
+
+## ¡Gracias!
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/gracias.gif){fig-align="center"}
