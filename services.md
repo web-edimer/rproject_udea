@@ -18,7 +18,7 @@ intro_image_hide_on_mobile: true
 | Tema | Diapositivas | Ejemplos |
 | :--- | :----------: | :------: |
 | *Presentación del curso* | [🖥️](/temas/DisExperimental-202402/01-presentacion-curso.html) | |
-| *Introducción al diseño experimental* | [🖥️]() | [📖]() |
+| *Introducción al diseño experimental* | [🖥️](/temas/DisExperimental-202402/02-introduccion.html) | [📖]() |
   
 
   

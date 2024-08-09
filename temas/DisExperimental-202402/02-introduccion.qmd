@@ -1,0 +1,46 @@
+---
+title: "Introducción"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-08-09"
+format:
+  revealjs:
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## Método científico
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/scientific-method.png){fig-align="center"}
+
+## Método PPDAC
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+- [The Statistical Method - PPDAC](https://www.statsref.com/HTML/statistics__statistical_analys.html)
+
+![](images/ppdac.ppm){fig-align="center"}
+
+## Inferencia estadística
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>
+
+![](images/inferencia.png){fig-align="center"}
+
+## Proceso de análisis de datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/data-science-workflow2.png){fig-align="center"}
+
+## ¡Gracias!
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/gracias.gif){fig-align="center"}
