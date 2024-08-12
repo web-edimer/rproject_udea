@@ -9,6 +9,8 @@ En esta sección usted podrá encontrar material bibliogŕafico de apoyo para lo
 
 # [Posit Cloud](https://posit.cloud/)
 
+# [Descargar Quarto](https://quarto.org/docs/get-started/)
+
 # Estadística con R
 
 - [*R para Ciencia de Datos*](https://es.r4ds.hadley.nz/)
