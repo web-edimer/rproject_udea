@@ -1,0 +1,4 @@
+- source: 01-R-RStudio.qmd
+  quarto-pub:
+    - id: 27db2ba0-d831-4531-9729-e57251ac676a
+      url: 'https://edimer.quarto.pub/r-rstudio-r-markdown-y-quarto'
