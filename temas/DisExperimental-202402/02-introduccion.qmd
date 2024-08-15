@@ -40,6 +40,102 @@ format:
 
 ![](images/data-science-workflow2.png){fig-align="center"}
 
+## Planificación e implementación de un estudio {.scrollable  .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+::: {.incremental}
+
+- **Objetivo del estudio:** ¿Qué esperan aprender o entender las partes interesadas en el experimento?
+- **Selección de respuestas:** ¿Qué variable (s) se utilizarán para evaluar el objetivo del estudio?
+- **Selección de tratamientos y otras covariables:**
+  - **Factor:** variable que se cree afectará a la variable respuesta
+  - **Tipos de factores:** cuantitativos y cualitativos
+  - **Factores cuantitativos:** toman valores en un rango continuo
+  - **Factores cualitativos:** los valores de una factor se denominan niveles, un **tratamiento** es un nivel del factor o una combinación de niveles de varios factores
+- **Desarrollar un plan de estudio:** ¿Cómo se recopilarán los datos? ¿Cada cuánto se realizarán mediciones? ¿Quién es la **unidad experimental**?
+- **Recopilación de datos:** describa con detalle los valores reales de los factores y cómo se registrará la variable respuesta
+- **Análisis de datos:** realice análisis de datos para evaluar la relación entre los factores y las variables respuesta.
+- **Extraer conclusiones:** el análisis de datos deberá ser de utilidad para extraer conclusiones, armar conjeturas o nuevas hipótesis y establecer recomendaciones.
+
+:::
+
+## Algunas preguntas de interés... {.scrollable .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+::: columns
+
+::: {.column width="50%"}
+
+- ¿Cuál es la proporción de semillas germinadas para la marca *X*?
+- ¿Existen diferencias en la proporción de frutas afectadas para dos casas comerciales que proveen un producto que inhibe el efecto de plagas?
+- ¿Cuál es el promedio del rendimiento (en toneladas por hectárea) para el cultivo de café en Colombia?
+- ¿Existen diferencias en el promedio de producción de leche al suministrar el *aditivo A* vs *aditivo B* en la dieta de las vacas?
+- ¿Existe alguna relación entre la cantidad de forraje verde consumido vs la producción de leche?
+- ¿Existe alguna relación entre la edad de parto y el peso de los animales?
+
+
+:::
+
+::: {.column width="50%"}
+
+![](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png){fig-align="center"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/1200px-The_Scientific_Method.svg.png){fig-align="center"}
+
+:::
+
+:::
+
+## Parámetros de interés en la regresión {.scrollable .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$
+
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Pendiente de regresión poblacional | $\beta_i$ | $\hat{\beta_i}$  | Pendiente de regresión muestral | $$H_0: \beta_i = 0 \\ H_1: \beta_i \neq 0$$ |
+
+
+
+::: columns
+
+::: {.column width="50%"}
+
+<br>
+
+#### Supuestos matemáticos de modelos lineales
+
+- Normalidad
+- Homocedasticidad
+- Independencia
+- Linealidad
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png){fig-align="center"}
+
+:::
+
+:::
+
+## Otros parámetros de interés {.scrollable .smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+| Parámetro Poblacional | Notación | Estadístico | Estimación | Hipótesis |
+| :--- | :----------------: | :----: | :-----: | :-------: |
+| Proporción poblacional | $p$ | $\hat{p}$  | Proporción muestral | $$H_0: p = \theta \\ H_1: p \neq \theta$$ |
+| Media poblacional | $\mu$ | $\bar{x}$  | Media muestral | $$H_0: \mu = \theta \\ H_1: \mu \neq \theta$$ |
+| Diferencia de proporciones poblacionales | $p_1 - p_2$ | $\hat{p_1} - \hat{p_2}$  | Diferencia de proporciones muestrales | $$H_0: p_1 - p_2 = 0 \\ H_1: p_1 - p_2 \neq 0$$ |
+| Diferencia de medias poblacionales | $\mu_1 - \mu_2$ | $\bar{x_1} - \bar{x_2}$  | Diferencia de medias muestrales | $$H_0: \mu_1 - \mu_2 = 0 \\ H_1: \mu_1 - \mu_2 \neq 0$$ |
+
 ## ¡Gracias!
 <html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
 
