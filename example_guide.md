@@ -20,6 +20,8 @@ intro_image_hide_on_mobile: true
 
 # Bases de datos
 
+- [Ejemplo de importación de datos](/temas/data/ejemeplos-importacion.zip)
+- [Datos desordenados](/temas/data/datos-desordenados.zip)
 - [Mapa Colombia - Departamentos](/temas/data/MGN2021_DPTO_POLITICO.rar)
 - [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
 
