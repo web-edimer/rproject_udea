@@ -12,7 +12,7 @@ intro_image_hide_on_mobile: true
 | :--- | :----------: | :------: |
 | *Presentación del curso* | [🖥️](/temas/Statistics-202402/00-Curso/00-Curso.html) | |
 | *Introducción a R y RStudio* | [🖥️](/temas/Statistics-202402/01-R-RStudio/01-r-rstudio.html) |  |
-| *Datos ordenados* | [🖥️](/temas/Statistics-202402/02-datos-ordenados/03-datos-ordenados.html) | [📖]() |
+| *Datos ordenados* | [🖥️](/temas/Statistics-202402/02-datos-ordenados/03-datos-ordenados.html) | [📖](https://edimer.quarto.pub/importar-datos-r/)[📕](https://edimer.quarto.pub/datos-ordenados-b64b/) |
 
 # Temas Diseño Experimental
 
