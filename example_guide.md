@@ -22,6 +22,7 @@ intro_image_hide_on_mobile: true
 
 - [Ejemplo de importación de datos](/temas/data/ejemeplos-importacion.zip)
 - [Datos desordenados](/temas/data/datos-desordenados.zip)
+- [Datos lechería EEUU](/temas/data/lecheria_eeuu.csv)
 - [Mapa Colombia - Departamentos](/temas/data/MGN2021_DPTO_POLITICO.rar)
 - [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
 
