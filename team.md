@@ -9,8 +9,8 @@ intro_image_hide_on_mobile: true
 
 # Actividades Estadística
 
-
+- [Taller 1](https://edimer.quarto.pub/taller1-estad-202402/)
 
 # Actividades Diseño Experimental
 
-
+- [Taller 1](https://edimer.quarto.pub/taller1-disexp-202402/)
