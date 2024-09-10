@@ -1,0 +1,98 @@
+---
+title: "Manejo de datos"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "2024-09-10"
+format:
+  revealjs:
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## Transformar datos
+
+![](https://gf0604-procesamientodatosgeograficos.github.io/2023-i/img/data-science-explore.svg){fig-align="center"}
+
+::: footer
+Fuente de imagen: [*Tidyverse - colección de paquetes para ciencia de datos*](https://gf0604-procesamientodatosgeograficos.github.io/2023-i/09-tidyverse.html)
+:::
+
+## `select()`
+
+![](https://r-coder.com/images/featured/select-dplyr-r.png){fig-align="center"}
+
+## `rename()`
+
+![](https://r-coder.com/images/featured/rename-dplyr-r.png){fig-align="center"}
+
+## `relocate()`
+
+![](images/relocate.png){fig-align="center"}
+
+## `mutate()`
+
+![](https://r-coder.com/images/featured/mutate-dplyr-r.png){fig-align="center"}
+
+## `filter()`
+
+![](https://r-coder.com/images/featured/filter-dplyr-r.png){fig-align="center"}
+
+## `slice()`
+
+![](https://ohi-science.org/data-science-training/img/rstudio-cheatsheet-filter.png){fig-align="center"}
+
+## `arrange()`
+
+![](https://r-coder.com/images/featured/arrange-dplyr-r.png){fig-align="center"}
+
+## `group_by()`
+
+![](https://swcarpentry.github.io/r-novice-gapminder/fig/13-dplyr-fig2.png){fig-align="center"}
+
+## `group_by()` + `summarise()` (`reframe()`)
+
+![](https://swcarpentry.github.io/r-novice-gapminder/fig/13-dplyr-fig3.png){fig-align="center"}
+
+## *Joins*
+
+![](https://r4ds.hadley.nz/diagrams/join/venn.png){fig-align="center"}
+
+
+## `inner_join()`
+
+![](https://r4ds.hadley.nz/diagrams/join/inner.png){fig-align="center"}
+
+## `left_join()`
+
+![](https://r4ds.hadley.nz/diagrams/join/left.png){fig-align="center"}
+
+## `right_join()`
+
+![](https://r4ds.hadley.nz/diagrams/join/right.png){fig-align="center"}
+
+## `full_join()`
+
+![](https://r4ds.hadley.nz/diagrams/join/full.png){fig-align="center"}
+
+## 
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](images/gracias.gif){fig-align="center"}

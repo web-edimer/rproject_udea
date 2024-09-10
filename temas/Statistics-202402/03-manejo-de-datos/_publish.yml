@@ -1,0 +1,4 @@
+- source: 03-manejo-de-datos.qmd
+  quarto-pub:
+    - id: 32020230-ceae-47b8-9329-2a36e07e66f1
+      url: 'https://edimer.quarto.pub/manejo-de-datos'
