@@ -25,6 +25,8 @@ intro_image_hide_on_mobile: true
 - [Datos lechería EEUU](/temas/data/lecheria_eeuu.csv)
 - [Mapa Colombia - Departamentos](/temas/data/MGN2021_DPTO_POLITICO.rar)
 - [Mapa Colombia - Municipios](/temas/data/MGN2021_MPIO_POLITICO.rar)
+- [Evaluaciones agropecuarias 2019-2023](https://upra.gov.co/es-co/Paginas/eva_2023.aspx)
+- [Créditos agropecuarios 2021-2024](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Colocaciones-de-Cr-dito-Sector-Agropecuario-2021-2/w3uf-w9ey/about_data)
 
 # Funciones auxiliares
 
