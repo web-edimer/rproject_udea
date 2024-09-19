@@ -21,6 +21,7 @@ intro_image_hide_on_mobile: true
 | :--- | :----------: | :------: |
 | *Presentación del curso* | [🖥️](/temas/DisExperimental-202402/01-presentacion-curso.html) | |
 | *Introducción al diseño experimental* | [🖥️](/temas/DisExperimental-202402/02-introduccion.html) | [📖](https://edimer.quarto.pub/regresion-lineal-simple/) |
+| *Regresión lineal simple* | [🖥️](/temas/DisExperimental-202402/03-regresion-lineal-simple.html) | [📖](https://edimer.quarto.pub/reglineal-transformaciones/) |
   
 
   

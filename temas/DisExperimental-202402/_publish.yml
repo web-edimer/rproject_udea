@@ -1,0 +1,4 @@
+- source: 03-regresion-lineal-simple.qmd
+  quarto-pub:
+    - id: 8087d157-a4d8-4796-a0ff-0d951565f65d
+      url: 'https://edimer.quarto.pub/regresion-lineal-transformaciones'

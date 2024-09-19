@@ -1,0 +1,269 @@
+---
+title: "Regresión Lineal"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-09-19"
+format:
+  revealjs:
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+css: estilo.css
+---
+
+## <col_blanco> Regresión Lineal </col_blanco>  {background-image="https://media.giphy.com/media/1kTNRve3ou82rqpSC2/giphy.gif" background-size="100%"}
+
+
+::: footer
+Fuente de imagen: [La regresión lineal](https://elultimoversodefermat.wordpress.com/2019/03/11/la-regresion-lineal/)
+::: 
+
+## Tipos de regresión {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/reg-lineal-simple-multiple.jfif){fig-align="center"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+$$\hat{Y_i} = \hat{\beta_0}\ + \hat{\beta_1}X_i\ + \hat{\epsilon_i}$$
+
+:::
+
+::: {.column width="50%"}
+
+$$\hat{Y_{ijp}} = \hat{\beta_0}\ + \hat{\beta_i}X_i\ + \hat{\beta_j}X_j\ + ... + \hat{\beta_p}X_p\ +  \hat{\epsilon_{ijp}}$$
+
+:::
+
+::::
+
+::: footer
+Fuente de imagen: [Understanding Linear Regression: The Basics](https://www.linkedin.com/pulse/understanding-linear-regression-basics-divyesh-sonar-snv4c)
+::: 
+
+## Previo a la inferencia... {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+![](images/inferencia.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+
+::: {.incremental}
+
+:::
+
+:::
+
+::::
+
+## Previo a la inferencia... {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+![](images/inferencia2.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+
+::: {.incremental}
+
+<br>
+
+- Validar patrones distribucionales
+- Cálculo de correlaciones
+  - Correlación paramétrica
+  - Correlación no paramétrica
+- Detección de relaciones lineales y no lineales &rarr; Diagramas de dispersión (`geom_point()`)
+- Detección de atipicidades (observaciones ausentes, valores atípicos, registros errados, etc.)
+
+:::
+
+:::
+
+::::
+
+## Ajuste de modelos {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<br>
+<br>
+
+![](https://auca.kg/uploads/LAS/images/amath.jpg){fig-align="center"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {.panel-tabset}
+
+### Con R
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(ggpubr)
+library(qqplotr)
+
+datos <- read_csv("data/lecheria_eeuu.csv")
+```
+
+
+```{r}
+#| code-line-numbers: "2"
+#| echo: true
+
+# Regresión lineal simple
+modelo <- lm(avg_price_milk ~ dairy_ration, data = datos)
+modelo |> summary()
+```
+
+### Manual
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+
+```{r}
+#| echo: true
+
+# Variables predictora y respuesta
+var_predictora <- datos$dairy_ration
+var_y <- datos$avg_price_milk
+
+# Matriz X
+matriz_x <- cbind(1, var_predictora)
+
+# Transpuesta de X
+transpuesta_x <- t(matriz_x)
+
+# X transpuesta * X
+tranx_x <- transpuesta_x %*% matriz_x
+
+# Inversa de X transpuesta * X
+inversa <- solve(tranx_x)
+
+# Inveresa de X transpuesta * X por transpuesta  de X
+inversa_tranx <- inversa %*% t(matriz_x)
+
+# Betas
+betas <- inversa_tranx %*% var_y
+betas
+```
+
+:::
+
+:::
+
+::::
+
+## Evaluación del modelo {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+- [Coeficiente de determinación (R cuadrado - $R^2$)](https://es.wikipedia.org/wiki/Coeficiente_de_determinaci%C3%B3n)
+
+$$R^2 = \rho^2$$
+
+- [Coeficiente de determinación ajustado](https://www.ibm.com/docs/es/cognos-analytics/11.2.0?topic=terms-adjusted-r-squared)
+
+$$R^2_a = 1 - \frac{N-1}{N-k-1} (1 - R^2)$$
+
+- [Raíz del error cuadrático medio](https://es.wikipedia.org/wiki/Ra%C3%ADz_del_error_cuadr%C3%A1tico_medio)
+
+$$RMSE = \sqrt{\frac{\sum_{i = 1}^{n} (y - \hat{y})^2}{N}}$$
+
+- [Criterio de información de Akaike](https://es.wikipedia.org/wiki/Criterio_de_informaci%C3%B3n_de_Akaike#:~:text=El%20criterio%20de%20informaci%C3%B3n%20de,y%20la%20complejidad%20del%20modelo.)
+
+$$AIC = -2ln(L) + k\times n_{par}$$
+
+## Análisis de residuales {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://chem.libretexts.org/@api/deki/files/162690/Figure5.10.png){fig-align="center"}
+
+## Diagnósticos del modelo {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+```{r}
+#| echo: true
+par(mfrow = c(2, 2))
+modelo |> plot()
+```
+
+![](https://fhernanb.github.io/libro_regresion/images/patrones_ei_versus_mui.png){fig-align="center"}
+
+## Predicciones
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+::: {.panel-tabset}
+
+### Manual
+
+$$\hat{y} = 0.086176 + (1.038172 \times X)$$
+
+```{r}
+#| echo: true
+nueva_x <- 0.082
+0.086176 + (1.038172 * nueva_x)
+```
+
+### Con R
+
+```{r}
+#| echo: true
+datos_ejemplo <-
+  datos |> 
+  sample_n(size = 10) |> 
+  select(dairy_ration)
+
+predict(object = modelo, newdata = datos_ejemplo)
+```
+
+
+:::
+
+# Transformaciones matemáticas
+
+![](https://substackcdn.com/image/fetch/w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F55f8f694-97a9-49fa-8aeb-6effc1f854f2_400x250.webp){fig-align="center"}
+
+::: footer
+Fuente de imagen: [Log Linear Model](https://bowtiedraptor.substack.com/p/log-linear-model)
+::: 
+
+# Regresión con variables categóricas 🤔
+
+![](https://storage.googleapis.com/kaggle-media/learn/images/TW5m0aJ.png){fig-align="center"}
+
+## ¡Gracias!
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/gracias.gif){fig-align="center"}
