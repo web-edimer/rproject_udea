@@ -14,7 +14,7 @@ intro_image_hide_on_mobile: true
 | *Introducción a R y RStudio* | [🖥️](/temas/Statistics-202402/01-R-RStudio/01-r-rstudio.html) |  |
 | *Datos ordenados* | [🖥️](/temas/Statistics-202402/02-datos-ordenados/03-datos-ordenados.html) | [📖](https://edimer.quarto.pub/importar-datos-r/)[📕](https://edimer.quarto.pub/datos-ordenados-b64b/) |
 | *Manejo de datos* | [🖥️](/temas/Statistics-202402/03-manejo-de-datos/03-manejo-de-datos.html) | [📖](https://edimer.quarto.pub/ejemplo-manejo-datos/) |
-| *Métricas estadísticas* | [🖥️](/temas/Statistics-202402/04-metricas-estadisticas/04-metricas-estadisticas.html) | [📖]() |
+| *Métricas estadísticas* | [🖥️](/temas/Statistics-202402/04-metricas-estadisticas/04-metricas-estadisticas.html) | [📖](https://edimer.quarto.pub/metricas-estadisticas/) |
 
 # Temas Diseño Experimental
 
