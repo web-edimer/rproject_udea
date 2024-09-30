@@ -1,51 +1,45 @@
 ---
-title: "Estadística:"
-subtitle: "Tipos de métricas estadísticas"
+title: "Métricas estadísticas"
+subtitle: "Estadística"
 author: "Edimer David Jaramillo"
-institute: "Universidad de Antioquia"
-date: "`r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    css: ["mtheme_max.css", "metropolis-fonts"]
-    lib_dir: libs
-    yolo: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+date: "2024-09-23"
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    highlight-style: breezedark
+    menu:
+      side: left
+      width: wide
+execute: 
+  echo: true
+  eval: false
 ---
 
-class: inverse, center, middle
-
-# Medidas de resumen para una variable
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
----
-
-# Medidas de resumen
+# Medidas de resumen {background-color="#23373B"}
 
 - Las medidas de resumen permiten caracterizar la información que aportan los $n$ datos de la muestra bajo análisis.
 
 - Los **estadísticos** o **valores típicos** pretenden caracterizar o describir la muestra, indicando el valor de la variable hacia el cual tienden a agruparse los datos.
 
-<center>
-<img src = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Measure_illustration_%28Vector%29.svg" width = 220 />
-</center>
+![](https://upload.wikimedia.org/wikipedia/commons/2/2f/Measure_illustration_%28Vector%29.svg){fig-align="center"}
 
----
+# Medidas de tendencia central {background-color="#23373B"}
 
-class: inverse, center, middle
+![](https://cdn.corporatefinanceinstitute.com/assets/central-tendency4.png){fig-align="center"}
 
-# Medidas de tendencia central
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-<center>
-<img src = "https://cdn.corporatefinanceinstitute.com/assets/central-tendency4.png"/>
-</center>
-
----
-
-# Media aritmética
+## Media aritmética
 
 - **Media aritmética $(\bar{x})$:**   el promedio es la suma de los valores $x_{i}$ (observaciones) dividido por el tamaño $n$ de la muestra.
  
@@ -62,13 +56,13 @@ mean(x, na.rm = TRUE) # Media aritmética
 
 - *`x`*: debe ser de tipo numérico o entero (cuantitativo).
 
----
 
-# Media ponderada
+## Media ponderada
 
 - Medida apropiada cuando en un conjunto de datos cada uno de ellos tiene una importancia relativa (o peso) respecto de los demás datos.
 
 $$\bar{X}_p = \frac{\sum\nolimits_{i=1}^nx_i\times w_i}{\sum\nolimits_{i = 1}^nw_i}=\frac{x_{1} \times w_1+x_{2} \times w_2+...+x_{n} \times w_n}{w_1 + w_2 + ...+w_n}$$
+
 ### Promedio ponderado en R
 
 ```{r, eval=FALSE}
@@ -78,17 +72,13 @@ weighted.mean(x, w, na.rm = TRUE)
 - *`x`*: debe ser de tipo numérico o entero (cuantitativo).
 - *`w`*: debe ser de tipo numérico o entero (cuantitativo).
 
----
-
-# Mediana
+## Mediana
 
 
 - **Mediana:** la mediana es el valor central en el sentido del orden. La mediana deja por encima y por debajo de ella, el 50% de los datos.
   - No se afecta por valores extremos. 
 
-<center>
-<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Finding_the_median.png/1200px-Finding_the_median.png" width = 300 />
-</center>  
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Finding_the_median.png/1200px-Finding_the_median.png){fig-align="center"}
   
 ### Mediana con R
 
@@ -99,9 +89,7 @@ median(x, na.rm = TRUE)
 - *`x`*: debe ser de tipo numérico o entero (cuantitativo).
 
 
----
-
-# Moda
+## Moda
 
 - **Moda:** la moda es el valor que ocurre con mayor frecuencia, es decir, el dato que más se repite.
   - Unimodal: una sola moda
@@ -120,38 +108,24 @@ moda <- function(x) {
 
 - *`x`*: puede ser de tipo cuantitativo o cualitativo.
 
----
-
-# Relación de media, mediana y moda
+## Relación de media, mediana y moda
 
 - En distribuciones simétricas, la media, la mediana y la moda son aproximadamente iguales.
 - En distribuciones con sesgo a la derecha (sesgo positivo), la media tiende a ser mayor que la mediana y la moda.
 - En distribuciones con sesgo a la izquierda (sesgo negativo) la media tiede a ser menor que la mediana y la moda.
 
-<center>
-<img src ="img/rel_med_prom_moda.png" width = 750 />
-</center>
+![](images/rel_med_prom_moda.png){fig-align="center"}
 
----
 
-class: inverse, center, middle
+# Medidas de posición {background-color="#23373B"}
 
-# Medidas de posición
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+![](https://www.mathsisfun.com/data/images/percentile-80.svg){fig-align="center"}
 
-<center>
-<img src = "https://www.mathsisfun.com/data/images/percentile-80.svg" width = 800/>
-</center>
-
----
-
-# Percentiles
+## Percentiles
 
 - **Percentiles:** dividen la muestra en 100 partes iguales. Son los valores que dejan determinado porcentaje de observaciones por debajo de ellos. Por ejemplo, el percentil 10, es el valor superior al 10% de los datos, pero inferior al 90% restante.
 
-<center>
-<img src = "img/percentil.png" />
-</center>
+![](images/percentil.png){fig-align="center"}
 
 Ubicación del percentil $k$: $$P_{k}=\frac{k(n+1)}{100}$$
 
@@ -162,15 +136,11 @@ quantile(x, na.rm = TRUE, probs = seq(0, 1, 0.01)) # Todos los percentiles
 quantile(x, na.rm = TRUE, probs = 0.45) # Percentil 45
 ```
 
----
-
-# Deciles
+## Deciles
 
   - **Deciles:** dividen la muestra en 10 partes iguales.
 
-<center>
-<img src = "img/deciles.png" />
-</center>
+![](images/deciles.png){fig-align="center"}
 
 Ubicación del decil $k$: $$D_{k}=\frac{k(n+1)}{10}$$
 
@@ -181,18 +151,14 @@ quantile(x, na.rm = TRUE, probs = seq(0, 1, 0.1)) # Todos los deciles
 quantile(x, na.rm = TRUE, probs = 0.20) # Decil 2
 ```
 
----
-
-# Cuartiles
+## Cuartiles
 
 - **Cuartiles:** dividen la muestra en cuatro partes iguales.
   - Cuartil 1: 25% de las observaciones
   - Cuartil 2: 50% de las observaciones
   - Cuartil 3: 75% de las observaciones
 
-<center>
-<img src = "img/cuartil.png" />
-</center>
+![](images/cuartil.png){fig-align="center"}
 
 Ubicación del cuartil $k$: $$Q_{k}=\frac{k(n+1)}{4}$$
 
@@ -203,20 +169,13 @@ quantile(x, na.rm = TRUE, probs = seq(0, 1, 0.25)) # Todos los deciles
 quantile(x, na.rm = TRUE, probs = 0.75) # Cuartil 3
 ```
 
----
 
-class: inverse, center, middle
+# Medidas de dispersión {background-color="#23373B"}
 
-# Medidas de dispersión
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+![](https://conjointly.com/kb/Assets/images/stat_t2.gif){fig-align="center"}
 
-<center>
-<img src = "https://conjointly.com/kb/Assets/images/stat_t2.gif" width = 650/>
-</center>
 
----
-
-# Varianza
+## Varianza
   
   - **Varianza $(S^2)$:** proporciona una medida de dispersión de las distintas observaciones respecto a la media aritmética $\bar{x}$. Se define como la suma de los cuadrados de las diferencias entre cada valor de la muestra y su media.
     
@@ -230,9 +189,7 @@ class: inverse, center, middle
 var(x, na.rm = TRUE)
 ```
 
----
-
-# D. Estándar y coeficiente de variación
+## D. Estándar y coeficiente de variación
 
 - **Desviación estándar $(S)$:** se define como la raíz cuadrada de la varianza. Tiene la propiedad de estar definida en las mismas unidades de la variable analizada.
   
@@ -244,23 +201,20 @@ $$S=\sqrt{S^2}$$
 - **Coeficiente de variación $(CV)$:** se define como el cociente entre la desviación estándar y la media aritmética, expresado en porcentaje.
   
 $$CV=\frac{S}{\bar{x}} \times 100$$
+
 ### Desviación estándar en R
 
 ```{r, eval = FALSE}
 sd(x, na.rm = TRUE)
 ```
 
----
-
-# Rango y rango intercuartílico
+## Rango y rango intercuartílico
 
 - **Rango:** es la diferencia entre el valor máximo y el mínimo. $$Máximo - Mínimo$$
 
 - **Rango intercuartil:** el rango intercuartílico (RIQ) se obtiene como la diferencia entre los cuartiles 3 (Q3) y 1 (Q1). La mitad de las observaciones se clasifican dentro de este rango.
 
-<center>
-<img src = "img/rangointer.png" width = 400/>
-</center>
+![](images/rangointer.png){fig-align="center"}
 
 $$RIQ\ =\ Q3-Q1$$
 
@@ -271,22 +225,15 @@ range(x, na.rm = TRUE) #Rango
 IQR(x, na.rm = TRUE) # Rango intercuartílico
 ```
 
----
+# Medidas de distribución o forma {background-color="#23373B"}
 
-class: inverse, center, middle
+![](https://www.researchgate.net/profile/Attila-Bonyar/publication/298415862/figure/fig1/AS:340236723867648@1458130164255/Illustration-of-the-skewness-and-kurtosis-values-and-how-they-correlate-with-the-shape-of.png){fig-align="center"}
 
-# Medidas de distribución o forma
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+## Coeficiente de asimetría
 
-<center>
-<img src = "https://www.researchgate.net/profile/Attila-Bonyar/publication/298415862/figure/fig1/AS:340236723867648@1458130164255/Illustration-of-the-skewness-and-kurtosis-values-and-how-they-correlate-with-the-shape-of.png" width = 750/>
-</center>
+::: columns
 
----
-
-# Coeficiente de asimetría
-
-.pull-left[
+::: {.column width="50%"}
 
 - **Coeficiente de asimetría $(g_{1})$:** indica el grado de simetría de la distribución de datos. Puede ser:
   
@@ -298,23 +245,23 @@ Fórmula del coeficiente de asimetría:
 
 $$g_{1}=\left[\frac{{n}}{(n-1)(n-2)}\right]\left[\frac{\sum\nolimits_{i=1}^n(x_{i}-\bar{x})^3}{S^3}\right]$$
 
-]
+:::
+  
+::: {.column width="50%"}
 
-.pull-right[
-<br>
-<center>
-<img src = "img/asimetria.png" width = 750/>
-</center>
+![](images/asimetria.png){fig-align="center"}  
 
-]
+:::
+  
+:::
 
 - Instalar biblioteca `moments` `->` `skewness()`
 
----
+## Coeficiente de curtosis
 
-# Coeficiente de curtosis
+::: columns
 
-.pull-left[
+::: {.column width="50%"}
 
 - **Coeficiente de curtosis $(g_{2})$:** evalua el grado de concentración de los datos alrededor de la media y de los extremos (o colas). Puede ser:
   
@@ -328,28 +275,19 @@ Fórmula del coeficiente de curtosis:
 <br>
 $$g_{2}=\left[\frac{{n(n+1)}}{(n-1)(n-2)(n-3)}\right]\left[\frac{\sum\nolimits_{i=1}^n(x_{i}-\bar{x})^4}{S^4}\right]-\left[\frac{{3(n-1)^2}}{(n-2)(n-3)}\right]$$
 
-]
+:::
+  
+::: {.column width="50%"}
 
-.pull-right[
-<center>
-<img src = "img/curtosis.png" width = 750/>
-</center>
+![](images/curtosis.png){fig-align="center"}  
 
-]
+:::
+  
+:::
 
 - Instalar biblioteca `moments` `->` `kurtosis()`
 
----
-
-class: inverse, center, middle
-
-# Funciones para estadística descriptiva con R
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
-
----
-
-# Lista de funciones
+## Funciones para estadística descriptiva con R {background-color="#23373B" .scrollable}
 
 | Función | Descripción | Tipo de variable |
 | :--- | :----------------: | :----: |
@@ -365,21 +303,16 @@ class: inverse, center, middle
 | `max()` | Valor máximo  | Cuantitativa |
 | * `moda()`  | Moda | Cuantitativa y cualitativa |
 
-.foot-note[
-*`->` Función personalizada.
-]
+# Tablas de frecuencia {background-color="#23373B"}
 
+![](https://media.gcflearnfree.org/content/63ea6e969695f31b88231f71_02_13_2023/stats_image_13_relative_frequency.png){fig-align="center"}
 
-
----
-class: inverse, center, middle
-
-# ¡Gracias!
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
-
+## 
+ 
 <center>
-<img src="img/gracias.gif"/>
+🤝🙂🤝
 </center>
 
+<br>
 
+![](images/gracias.gif){fig-align="center"}
