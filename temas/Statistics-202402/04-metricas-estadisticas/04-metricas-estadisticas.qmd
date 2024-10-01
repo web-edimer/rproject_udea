@@ -307,6 +307,10 @@ $$g_{2}=\left[\frac{{n(n+1)}}{(n-1)(n-2)(n-3)}\right]\left[\frac{\sum\nolimits_{
 
 ![](https://media.gcflearnfree.org/content/63ea6e969695f31b88231f71_02_13_2023/stats_image_13_relative_frequency.png){fig-align="center"}
 
+# Correlaciones {background-color="#23373B"}
+
+![](https://www.simplypsychology.org/wp-content/uploads/correlation.jpg){fig-align="center"}
+
 ## 
  
 <center>
