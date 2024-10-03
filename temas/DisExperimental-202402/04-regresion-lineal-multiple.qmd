@@ -1,0 +1,162 @@
+---
+title: "Regresión Lineal Múltiple"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-10-03"
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    highlight-style: breezedark
+    menu:
+      side: left
+      width: wide
+execute: 
+  echo: true
+  eval: false
+---
+
+## Regresión Lineal Múltiple  {background-color="#23373B"}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://learnche.org/pid/_images/least-squares-two-x-variables.png){fig-align="center"}
+
+## Modelos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+#### Modelo Lineal
+
+$$y = b + mx \\$$
+
+#### Modelo Lineal (Estadística)
+
+$$y = \beta_0 + \beta_1X_i +  \epsilon \\ 
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_i +  \hat{\epsilon}$$
+
+#### Modelo Lineal Múltiple
+
+$$\hat{y} = \hat{\beta_0} + \hat{\beta_1}X_{i1} + \hat{\beta_2}X_{i2} + ... + \hat{\beta_{p-1}}X_{i_{(p-1)}} +  \hat{\epsilon}$$
+
+## Aproximación matricial
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](images/formula1.png){fig-align="center"}
+
+- Estimación por mínimos cuadrados:
+
+![](images/formula2.png){fig-align="center"}
+
+$$\beta = (X^TX)^{-1}X^Ty$$
+
+## Hiperplano
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://miro.medium.com/max/936/1*o_ZrNQXcd9sUEqfSRti8LQ.gif){fig-align="center"}
+
+## Supuestos matemáticos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+<br>
+<br>
+<br>
+
+- Normalidad
+- Homocedasticidad
+- Indepedencia
+- Linealidad
+:::
+
+::: {.column width="60%"}
+<br>
+![](https://bookdown.org/roback/bookdown-BeyondMLR/bookdown-BeyondMLR_files/figure-html/OLSassumptions-1.png){fig-align="center"}
+:::
+
+::::
+
+## Predictores numéricos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://nickmichalak.com/post/2019-12-11-logistic-regression-in-r/2019-12-11-logistic-regression-in-r_files/figure-html/unnamed-chunk-49-.gif){fig-align="center"}
+
+## Predictores categóricos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://stats.idre.ucla.edu/wp-content/uploads/2016/02/movie.gif){fig-align="center"}
+
+## Interacciones
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/interacciones.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](https://online.stat.psu.edu/onlinecourses/sites/stat501/files/multiple-linear-regression-1.png){fig-align="center"}
+
+![](https://www.researchgate.net/profile/Thorsten-Buch/publication/261034146/figure/fig5/AS:669677978148869@1536675080229/Interaction-effects-calculated-by-multiple-linear-regression-This-schematic.ppm){fig-align="center"}
+:::
+
+::::
+
+
+
+# Multicolinealidad {background-color="#23373B"}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://www.creative-wisdom.com/computer/sas/variance_explained.gif){fig-align="center"}
+
+## Detección de multicolinealidad
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>
+
+- ¿Cómo detectarla o inferirla?
+  - Matriz de correlación
+  - Pruebas estadísticas (Factor Inflacionario de Varianza - *VIF*)
+  - Valores de *VIF* mayores a 5 o 10 son indicios de sesgo en la estimación de los coeficientes.
+  
+$$VIF = \frac{1}{1-R^2_p}$$ 
+
+![](https://www.theanalysisfactor.com/wp-content/uploads/2019/10/Multicollinearity-2.png){fig-align="center"}
+
+# Selección de variables {background-color="#23373B"}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>
+
+![](https://www.researchgate.net/publication/360323986/figure/fig2/AS:1155214958698551@1652436117553/Example-of-forward-stepwise-selection-with-five-variables-43.jpg){fig-align="center"}
+
+## Métodos de selección {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>
+
+- ¿Cómo comparar modelos?
+  - RMSE
+  - Criterios de información estadística:
+      - $LogLik$: logaritmo de la [verosimilitud](https://en.wikipedia.org/wiki/Likelihood_function)
+      - $AIC = -2 \times logLik + k + n$
+      - $BIC = AIC,\ con\ k = log(n)$
+      
+![](https://www.researchgate.net/profile/Stefan-Rueping/publication/28356272/figure/fig9/AS:669078956027909@1536532262110/Backward-selection-forward-selection-and-stepwise-selection.png){fig-align="center"}      
+
+## {background-color="#23373B"}
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](images/gracias.gif){fig-align="center"}
