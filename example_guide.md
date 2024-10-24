@@ -29,6 +29,7 @@ intro_image_hide_on_mobile: true
 - [Créditos agropecuarios 2021-2024](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Colocaciones-de-Cr-dito-Sector-Agropecuario-2021-2/w3uf-w9ey/about_data)
 - [Nivel de embalses en Colombia](/temas/data/PorcVoluUtilDiar.csv)
 - [Análisis de suelos](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
+- [Encuestas presidenciales 2022](/temas/data/EncuestasColombia2022-Update.csv)
 
 # Funciones auxiliares
 
