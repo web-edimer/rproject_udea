@@ -30,6 +30,8 @@ intro_image_hide_on_mobile: true
 - [Nivel de embalses en Colombia](/temas/data/PorcVoluUtilDiar.csv)
 - [Análisis de suelos](/temas/data/Resultados_de_An_lisis_de_Laboratorio_Suelos_en_Colombia.csv)
 - [Encuestas presidenciales 2022](/temas/data/EncuestasColombia2022-Update.csv)
+- [Datos videojuego FIFA](/temas/data/df_fifa_total.csv)
+- [Datos de producción de miel en EEUU](/temas/data/abejas.csv)
 
 # Funciones auxiliares
 
