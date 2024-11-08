@@ -32,6 +32,7 @@ intro_image_hide_on_mobile: true
 - [Encuestas presidenciales 2022](/temas/data/EncuestasColombia2022-Update.csv)
 - [Datos videojuego FIFA](/temas/data/df_fifa_total.csv)
 - [Datos de producción de miel en EEUU](/temas/data/abejas.csv)
+- [Encuestas elecciones 2024 en Estados Unidos - Taller 3 DE](/temas/data/encuestas_elecciones_eeuu.zip)
 
 # Funciones auxiliares
 
