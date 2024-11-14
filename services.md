@@ -25,7 +25,7 @@ intro_image_hide_on_mobile: true
 | *Introducción al diseño experimental* | [🖥️](/temas/DisExperimental-202402/02-introduccion.html) | [📖](https://edimer.quarto.pub/regresion-lineal-simple/) |
 | *Regresión lineal simple* | [🖥️](/temas/DisExperimental-202402/03-regresion-lineal-simple.html) | [📖](https://edimer.quarto.pub/reglineal-transformaciones/) |
 | *Regresión lineal múltiple* | [🖥️](/temas/DisExperimental-202402/04-regresion-lineal-multiple.html) | [📖](https://edimer.quarto.pub/reg-lineal-multiple/) [📕](https://edimer.quarto.pub/multicolinealidad-seleccion-predictoras/)  |
-| *Inferencia estadística* | [🖥️](/temas/DisExperimental-202402/05-inferencia-estadistica.html) | [📖](https://edimer.quarto.pub/ley-grandes-numeros/) [📕](https://edimer.quarto.pub/inferencia-202402/) |  
+| *Inferencia estadística* | [🖥️](/temas/DisExperimental-202402/05-inferencia-estadistica.html) | [📖](https://edimer.quarto.pub/ley-grandes-numeros/) [📕](https://edimer.quarto.pub/inferencia-202402/) [📘](https://edimer.quarto.pub/inferencia-pruebas-hipotesis/) |  
 
   
     

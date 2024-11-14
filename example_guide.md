@@ -33,6 +33,8 @@ intro_image_hide_on_mobile: true
 - [Datos videojuego FIFA](/temas/data/df_fifa_total.csv)
 - [Datos de producción de miel en EEUU](/temas/data/abejas.csv)
 - [Encuestas elecciones 2024 en Estados Unidos - Taller 3 DE](/temas/data/encuestas_elecciones_eeuu.zip)
+- [Datos de encuesta de clase](/temas/data/encuesta_depurada.xlsx)
+- [Datos de cebada](/temas/data/datos_cebada.xlsx)
 
 # Funciones auxiliares
 
