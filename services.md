@@ -16,6 +16,8 @@ intro_image_hide_on_mobile: true
 | *Manejo de datos* | [🖥️](/temas/Statistics-202402/03-manejo-de-datos/03-manejo-de-datos.html) | [📖](https://edimer.quarto.pub/ejemplo-manejo-datos/) |
 | *Métricas estadísticas* | [🖥️](/temas/Statistics-202402/04-metricas-estadisticas/04-metricas-estadisticas.html) | [📖](https://edimer.quarto.pub/metricas-estadisticas/) |
 | *Visualización de datos* | [🖥️](/temas/Statistics-202402/05-visualizacion/05-visualizacion.html) | [📖](https://edimer.quarto.pub/visualizaciones-p1/) |
+| *Gráficos engañosos* | [🖥️](/temas/Statistics-202402/05-visualizacion/06-graficos-misleading.html) | |
+
 
 # Temas Diseño Experimental
 
