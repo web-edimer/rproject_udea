@@ -35,6 +35,8 @@ intro_image_hide_on_mobile: true
 - [Encuestas elecciones 2024 en Estados Unidos - Taller 3 DE](/temas/data/encuestas_elecciones_eeuu.zip)
 - [Datos de encuesta de clase](/temas/data/encuesta_depurada.xlsx)
 - [Datos de cebada](/temas/data/datos_cebada.xlsx)
+- [Datos de trigo](/temas/data/datos_trigo.xlsx)
+- [Datos de parciales (muestras pareadas)](/temas/data/datos_parciales.xlsx)
 
 # Funciones auxiliares
 
