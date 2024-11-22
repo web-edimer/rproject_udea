@@ -1,0 +1,96 @@
+---
+title: "Análisis de Experimentos"
+subtitle: "Diseño Experimental"
+author: "Edimer David Jaramillo"
+date: "2024-11-22"
+format:
+  revealjs:
+    smaller: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+## Inferencia Estadística
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1729/2017/04/15032158/m7_link_prob_statistical_inference_topic_7_1_m7_intro_inference_1_image1.png){fig-align="center"}
+
+## ¿Cómo comparar más de 2 grupos?
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$
+
+Donde:
+
+- $y_{ij}$: variable respuesta o dependiente
+- $\mu$: media general
+- $\tau_{J}$: efecto del $j-ésimo$ tratamiento
+- $\epsilon_{ij}$: error aleatorio experimental, se debe garantizar que $\epsilon_{ij} \sim N(\mu=0,\sigma^2)$
+
+![](images/prueba.png){fig-align="center"}
+
+
+# Tipos de diseños
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://cdn0.iconfinder.com/data/icons/future-farming-1/96/agro-chemical-future-farming-agriculture-science-512.png){fig-align="center"}
+
+## Diseño Completamente al Azar (DCA)
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+$$y_{ij} = \mu + \tau_j + \epsilon_{ij}$$
+
+Donde:
+
+- $y_{ij}$: variable respuesta o dependiente
+- $\mu$: media general
+- $\tau_{j}$: efecto del $j-ésimo$ tratamiento
+- $\epsilon_{ij}$: error aleatorio experimental, se debe garantizar que $\epsilon_{ij} \sim N(\mu=0,\sigma^2)$
+           
+## Diseño en Bloques al Azar (DBA)
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+$$y_{ijk} = \mu + \tau_j + \beta_k + \epsilon_{ijk}$$
+
+Donde:
+
+- $y_{ijk}$: variable respuesta o dependiente
+- $\mu$: media general
+- $\tau_{j}$: efecto del $j-ésimo$ tratamiento
+- $\beta_k$: efecto del $k-ésimo$ tratamiento
+- $\epsilon_{ijk}$: error aleatorio experimental, se debe garantizar que $\epsilon_{ijk} \sim N(\mu=0,\sigma^2)$
+  
+## Diseños factoriales {.scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://asdlib.org/imageandvideoexchangeforum/files/2013/08/Figure14.12.jpg){fig-align="center"}
+
+- Modelo aditivo:
+
+$$y_{ij...} = \mu + \tau_j + \tau_j + ... + \tau_j + \epsilon_{ij...}$$
+
+- Modelo multiplicativo:
+
+$$y_{ij...} = \mu + (\tau \tau)_{jk} + ... + \epsilon_{ij...}$$
+  
+
+### Representación Diseños Factoriales
+
+![](https://www.researchgate.net/profile/Roy-Bruns/publication/6155271/figure/fig1/AS:280714760212480@1443939022484/a-the-cube-for-BBD-and-three-interlocking-2-2-factorial-design-b.png){fig-align="center"}
+
+## ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px</html> 
+
+<center>
+<img src="images/gracias.gif"/>
+</center>
