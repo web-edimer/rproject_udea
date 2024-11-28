@@ -38,6 +38,7 @@ intro_image_hide_on_mobile: true
 - [Datos de trigo](/temas/data/datos_trigo.xlsx)
 - [Datos de parciales (muestras pareadas)](/temas/data/datos_parciales.xlsx)
 - [Raster elevación (.tif)](/temas/data/wc2.1_2.5m_elev.zip)
+- [Experimento en ratones](/temas/data/experimento_ratones.xlsx)
 
 # Funciones auxiliares
 
