@@ -1,0 +1,103 @@
+---
+title: "Presentación del curso"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "2025-02-09"
+format:
+  revealjs:
+    scrollable: true
+    code-copy: true
+    code-link: true
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    footer: <https://rproject-udea.netlify.app/>
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+# Yo...
+
+![](img/img17.PNG){fig-align="center"}
+
+::: footer
+- [Perfil de Github](https://github.com/Edimer) <br>
+- [Mi página web](https://edimer.netlify.app/en/)
+:::
+
+## {.smaller}
+
+> "Vivimos en una sociedad profundamente dependiente de la ciencia y la tecnología y en la que nadie sabe nada de estos temas. Ello constituye una fórmula segura para el desastre." - Carl Sagan
+
+
+![](img/carl-sagan.webp){fig-align="center"}
+
+::: footer
+Fuente de imagen: [*Encyclopedia Britannica - Carl Sagan American astronomer*](https://www.britannica.com/biography/Carl-Sagan)
+:::
+
+# Objetivo del curso {.smaller}
+
+![](img/data-science-venn.svg){fig-align="center"}
+
+# Contenido y bibliografía recomendada {.smaller background-gradient="radial-gradient(#283b95, #17b2c3)"}
+
+## Tópicos generales
+
+- **Unidad 1:** Software informático para análisis estadístico
+- **Unidad 2:** Análisis descriptivo y exploratorio de datos
+- **Unidad 3:** Probabilidad
+
+# Evaluación del curso {.smaller background-gradient="radial-gradient(#283b95, #17b2c3)"}
+
+
+- **Talleres:** 
+  - Desarrollo de talleres en clase (50 %)
+- **Actividad 1:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (25 %)
+- **Actividad 2:** 
+  - Desarrollo de estudio de casos y resolución de ejercicios y problemas (25 %) 
+
+
+# Recursos de Información {.smaller background-gradient="radial-gradient(#283b95, #17b2c3)"}
+
+## R para Ciencia de Datos
+
+![](img/libro2.PNG){fig-align="center"}
+
+::: footer
+[Libro: versión español.](https://es.r4ds.hadley.nz/)
+:::
+
+
+## Libro vivo de Ciencia de Datos
+
+![](img/libro3.PNG){fig-align="center"}
+
+::: footer
+[Libro: versión español.](https://librovivodecienciadedatos.ai/)
+:::
+
+## Statistical Inference via Data Science
+
+::: footer
+[Statistical Inference via Data Science](https://moderndive.com/)
+:::
+
+![](img/libro5.png){fig-align="center"}
+
+## 
+ 
+<center>
+🤝🙂🤝
+</center>
+
+<br>
+
+![](img/gracias.gif){fig-align="center"}

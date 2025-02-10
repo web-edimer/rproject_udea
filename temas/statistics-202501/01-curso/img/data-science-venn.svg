@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Círculo Matemáticas/Estadística -->
+  <circle cx="350" cy="250" r="180" fill="#ff00004d" stroke="#ff0000" stroke-width="2"/>
+  
+  <!-- Círculo Computación -->
+  <circle cx="500" cy="250" r="180" fill="#0000ff4d" stroke="#0000ff" stroke-width="2"/>
+  
+  <!-- Círculo Dominio del Conocimiento -->
+  <circle cx="425" cy="400" r="180" fill="#00ff004d" stroke="#00ff00" stroke-width="2"/>
+  
+  <!-- Textos principales -->
+  <text x="220" y="200" font-family="Arial" font-size="16" fill="#000">Matemáticas/</text>
+  <text x="220" y="220" font-family="Arial" font-size="16" fill="#000">Estadística</text>
+  
+  <text x="580" y="200" font-family="Arial" font-size="16" fill="#000">Computación</text>
+  
+  <text x="425" y="550" font-family="Arial" font-size="16" fill="#000">Dominio del</text>
+  <text x="425" y="570" font-family="Arial" font-size="16" fill="#000">Conocimiento</text>
+  
+  <!-- Intersecciones -->
+  <text x="425" y="180" font-family="Arial" font-size="14" fill="#000">Machine Learning</text>
+  <text x="425" y="200" font-family="Arial" font-size="12" fill="#444">• Algoritmos</text>
+  <text x="425" y="220" font-family="Arial" font-size="12" fill="#444">• Deep Learning</text>
+  
+  <text x="270" y="400" font-family="Arial" font-size="14" fill="#000">Investigación</text>
+  <text x="270" y="420" font-family="Arial" font-size="12" fill="#444">• Diseño experimental</text>
+  <text x="270" y="440" font-family="Arial" font-size="12" fill="#444">• Análisis estadístico</text>
+  
+  <text x="580" y="400" font-family="Arial" font-size="14" fill="#000">Software</text>
+  <text x="580" y="420" font-family="Arial" font-size="12" fill="#444">• Bases de datos</text>
+  <text x="580" y="440" font-family="Arial" font-size="12" fill="#444">• Programación</text>
+  
+  <!-- Centro - Ciencia de Datos -->
+  <text x="425" y="350" font-family="Arial" font-size="18" font-weight="bold" fill="#000">Ciencia</text>
+  <text x="425" y="370" font-family="Arial" font-size="18" font-weight="bold" fill="#000">de Datos</text>
+  
+  <!-- Elementos específicos en cada campo -->
+  <text x="200" y="150" font-family="Arial" font-size="12" fill="#444">• Probabilidad</text>
+  <text x="200" y="170" font-family="Arial" font-size="12" fill="#444">• Inferencia</text>
+  
+  <text x="600" y="150" font-family="Arial" font-size="12" fill="#444">• Estructuras de datos</text>
+  <text x="600" y="170" font-family="Arial" font-size="12" fill="#444">• Algoritmos</text>
+  
+  <text x="425" y="500" font-family="Arial" font-size="12" fill="#444">• Conocimiento del área</text>
+  <text x="425" y="520" font-family="Arial" font-size="12" fill="#444">• Contexto del problema</text>
+</svg>
