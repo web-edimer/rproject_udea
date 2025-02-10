@@ -2,7 +2,7 @@
 title: "Presentación del curso"
 subtitle: "Estadística"
 author: "Edimer David Jaramillo"
-date: "2025-02-09"
+date: "2025-02-10"
 format:
   revealjs:
     scrollable: true
