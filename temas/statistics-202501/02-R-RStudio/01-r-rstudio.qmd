@@ -1,0 +1,272 @@
+---
+title: "Herramientas informáticas"
+subtitle: "Estadística"
+author: "Edimer David Jaramillo"
+date: "2025-02-11"
+format:
+  revealjs:
+    auto-animate: true
+    progress: true
+    history: true
+    preview-links: true
+    slide-number: c
+    show-slide-number: all
+    chalkboard: true
+    logo: https://storage.googleapis.com/efor-static/UDEA/Cloudkey/Logohorizontal.png
+    menu:
+      side: left
+      width: wide
+---
+
+
+## {background-image="https://www.strategiclearning.asia/wp-content/uploads/2023/12/motivation.jpg"}
+
+## Ciencia de Datos (*Data Science*) {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](img/data-science-venn.svg){fig-align="center" width="60%"}
+
+## {background-image="https://bigdataanalyticsnews.com/wp-content/uploads/2020/04/data-science-1024x316.jpg" background-size="800px"}
+
+## {background-image="https://cdn-images-1.medium.com/max/1200/1*E1haIGB9K4K89PsFZgm-pw.jpeg" background-size="800px"}
+
+## R y RStudio {.smaller}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png){fig-align="center"}
+
+::: columns
+
+::: {.column width="50%"}
+
+#### ¿Qué es R?
+
+  - R es un lenguaje de acceso libre para computación estadística y gráficos, que proporciona una amplia variedad de técnicas estadísticas y gráficas: modelado lineal y no lineal, pruebas estadísticas, análisis de series de tiempo, clasificación, agrupamiento, etc. [Página oficial de R.](https://cran.r-project.org/)
+
+:::
+
+::: {.column width="50%"}
+
+#### ¿Qué es RStudio?
+
+- RStudio es un entorno de desarrollo integrado (IDE) para R. [Página oficial de RStudio.](https://rstudio.com/)
+
+#### Descargar R y RStudio
+
+- [Clic aquí para descargar R y RStudio](https://posit.co/download/rstudio-desktop/)
+
+:::
+
+:::
+
+## Interfaz Gráfica de Usuario (GUI) - R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](img/r.PNG){fig-align="center"}
+
+## IDE - RStudio 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](img/rstudio-ide.png){fig-align="center"}
+
+
+
+## Elementos básicos de R {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+::: columns
+
+::: {.column width="50%"}
+
+#### Ejecutar código de R
+
+
+![](img/ejecutar.PNG){fig-align="center"}
+
+#### Limpiar consola
+
+![](img/limpiar.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+#### Comentario en R
+
+![](img/numeral.PNG){fig-align="center" width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+# Este es un comentario
+2 + 5
+```
+
+<br>
+
+#### Asignación
+
+![](img/assignment-operator01.png){fig-align="center"}
+
+```{r}
+#| echo: true
+mi_variable <- 2
+```
+
+
+:::
+
+:::
+
+## Proceso de Análisis de Datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>  
+
+![](https://www.researchgate.net/publication/353791539/figure/fig1/AS:1055105608593409@1628568188605/Data-science-cycle-and-the-core-tidyverse-packages-that-address-each-phase.ppm){fig-align="center"}
+
+## R Markdown y Quarto
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+![](https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/featured.png){fig-align="center"}
+
+## Documento R Markdown
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+- **Crear archivo:** *File* `->` *New File* `->` *R Markdown*
+
+![](img/crear-rmarkdown.png){fig-align="center"}
+
+- **Guardar archivo:** *File* `->` *Save*
+
+## Documento Quarto
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+- **Crear archivo:** *File* `->` *New File* `->` *Quarto Document*
+
+![](img/crear-quarto.png){fig-align="center"}
+
+- **Guardar archivo:** *File* `->` *Save*
+
+## Componentes de R Markdown y Quarto {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+#### **Metadatos**
+
+::: columns
+
+::: {.column width="50%"}
+
+![](img/metadatos-rmarkdown.png){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+![](img/metadatos-quarto.png){fig-align="center"}
+
+:::
+
+:::
+
+#### **Fragmentos (chunk) de R**
+
+::: columns
+
+::: {.column width="100%"}
+
+![](img/chunk.PNG){fig-align="center"}
+
+:::
+
+:::
+
+
+#### **Markdown** 
+
+::: columns
+
+::: {.column width="100%"}
+
+![](img/markdown.PNG){fig-align="center"}
+
+
+![](img/markdown-quarto.png){fig-align="center"}
+
+:::
+
+:::
+
+## Elementos básicos de Markdown {.smaller .scrollable}
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+
+::: columns
+
+::: {.column width="50%"}
+
+- **Título o encabezados:** 
+
+```
+# Título principal
+## Título secundario
+### Título 3
+```
+
+- **Opciones de texto:**
+
+```
+**cursiva*
+***negrilla**
+****negrilla cursiva***
+```
+
+- **Viñetas:** las viñetas se pueden agregar con guión, asterisco o el símbolo más (+).
+
+- **Hipervínculos:** 
+
+```
+[Texto](link o url)
+```
+
+- **Insertar imagen:**
+```
+![](link o url de imagen)
+```
+
+- **Teclas de acceso rápido:**
+    - **Ctrl + Shift + K **`->` compilar documento.
+    - **Ctrl + Alt + i **`->` insertar fragmento de R.
+
+:::
+
+::: {.column width="50%"}
+
+![](img/libro1.png){fig-align="center"}
+
+- [R Markdown: The Definitive Guide.](https://bookdown.org/yihui/rmarkdown/)
+
+:::
+
+:::
+
+## Publicar documentos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html> 
+
+### Rpubs
+
+- Publicación de documentos en  [Rpubs](https://rpubs.com/)
+- Regístrese [aquí](https://rpubs.com/users/new)  
+
+### Quarto Pub
+
+- Publicación de documentos en  [Quarto Pub](https://quartopub.com/)
+- Regístrese [aquí](https://quartopub.com/sign-in)
+
+```bash
+quarto publish quarto-pub nombre_documento.qmd
+```
+
+## ¡Gracias!
+<html><div style='float:left'></div><hr color='#EB811B' size=1px></html>  
+
+![](img/gracias.gif){fig-align="center"}
+
